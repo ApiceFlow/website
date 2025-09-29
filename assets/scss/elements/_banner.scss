@@ -52,12 +52,12 @@
 
             span {
                 color: var(--color-primary);
-                font-weight: 800;
+                font-weight: 600;
             }
         }
 
         .title {
-            font-weight: 700;
+            font-weight: 450;
             line-height: 82px;
             margin-bottom: 23px;
             font-size: 60px;
@@ -147,7 +147,7 @@
 
         span {
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 450;
             letter-spacing: 1px;
         }
     }
@@ -224,7 +224,7 @@
 
 .inner-content-wrapper-four-banner {
     .pre {
-        font-weight: 700;
+        font-weight: 450;
         font-size: 16px;
         line-height: 21px;
         letter-spacing: 0.3em;
@@ -272,7 +272,7 @@
         margin: auto;
         text-align: center;
         margin-bottom: 25px;
-        font-weight: 500;
+        font-weight: 600;
         color: #fff;
         font-size: 18px;
         margin-bottom: 45px;
@@ -366,7 +366,7 @@
         .pre {
             color: #5D666F;
             font-size: 22px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .title {
@@ -394,7 +394,7 @@
 
             span {
                 font-style: italic;
-                font-weight: 500;
+                font-weight: 600;
             }
         }
 
@@ -657,7 +657,7 @@
             margin-bottom: 28px;
 
             span {
-                font-weight: 700;
+                font-weight: 450;
                 color: var(--color-primary);
             }
         }
@@ -680,7 +680,7 @@
             }
 
             span {
-                font-weight: 500;
+                font-weight: 600;
                 font-style: italic;
             }
         }
@@ -974,7 +974,7 @@
         font-size: 160px;
         text-transform: uppercase;
         color: #fff;
-        font-weight: 800;
+        font-weight: 600;
         line-height: 1.1;
 
         @media #{$smlg-device} {
@@ -1121,7 +1121,7 @@
         }
 
         a {
-            font-weight: 600;
+            font-weight: 400;
             font-size: 16px;
         }
 
@@ -1426,7 +1426,7 @@
             text-transform: uppercase;
             font-size: 16px;
             color: #1C2539;
-            font-weight: 700;
+            font-weight: 450;
         }
 
         &:last-child {
@@ -1930,7 +1930,7 @@
     .title {
         font-size: 80px;
         color: #fff;
-        font-weight: 700;
+        font-weight: 450;
         max-width: 666px;
         line-height: 85px;
         margin-top: 20px;
@@ -2097,7 +2097,7 @@
         p {
             color: #5D666F;
             font-size: 18px;
-            font-weight: 500;
+            // font-weight: 600;
             margin-bottom: 20px;
         }
 

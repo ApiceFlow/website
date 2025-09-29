@@ -126,7 +126,7 @@
 
             a {
                 color: #1C2539;
-                font-weight: 500;
+                font-weight: 600;
                 font-size: 16px;
                 transition: .3s;
 
@@ -152,7 +152,7 @@
         p.disc {
             margin-bottom: 0;
             color: #1C2539;
-            font-weight: 500;
+            font-weight: 600;
 
             @media #{$large-mobile} {
                 text-align: center;
@@ -181,7 +181,7 @@
                     a {
                         transition: .3s;
                         color: #1C2539;
-                        font-weight: 500;
+                        font-weight: 600;
                     }
                 }
             }
@@ -416,7 +416,7 @@
                     a {
                         .title {
                             color: #fff;
-                            font-weight: 500;
+                            font-weight: 600;
                             font-size: 17px;
                             line-height: 26px;
                             margin-bottom: 0;
@@ -585,7 +585,7 @@
                 .title {
                     font-size: 22px;
                     margin: 0;
-                    font-weight: 500;
+                    font-weight: 600;
                 }
             }
         }
@@ -811,7 +811,7 @@
                         a {
                             color: #1C2539;
                             font-size: 16px;
-                            font-weight: 600;
+                            font-weight: 400;
                             transition: .3s;
                             line-height: 22px;
 
@@ -1242,7 +1242,7 @@
                     a {
                         .title {
                             color: #fff;
-                            font-weight: 500;
+                            font-weight: 600;
                             font-size: 17px;
                             line-height: 26px;
                             margin-bottom: 0;
@@ -1460,7 +1460,7 @@
                 a {
                     color: #8B8F99;
                     font-size: 16px;
-                    font-weight: 500;
+                    font-weight: 600;
                     transition: .4s;
 
                     &:hover {

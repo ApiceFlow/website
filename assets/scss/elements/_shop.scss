@@ -22,7 +22,7 @@
         a {
             .title {
                 font-size: 24px;
-                font-weight: 500;
+                font-weight: 600;
             }
         }
 
@@ -34,7 +34,7 @@
             p {
                 margin: 0;
                 font-size: 20px;
-                font-weight: 700;
+                font-weight: 450;
                 color: var(--color-primary);
             }
 
@@ -111,7 +111,7 @@
     }
 
     .price bdi {
-        font-weight: 700;
+        font-weight: 450;
         letter-spacing: -1pt;
         color: var(--color-primary);
     }
@@ -125,7 +125,7 @@
 
     .stock.in-stock {
         color: #2eb740;
-        font-weight: 700;
+        font-weight: 450;
         margin-top: 10px;
         font-size: 18px;
     }
@@ -160,7 +160,7 @@
                 text-align: center;
                 max-width: 55px;
                 font-size: 16px;
-                font-weight: 700;
+                font-weight: 450;
                 color: #040404;
                 border-radius: 5px;
                 border: 1px solid var(--color-primary);
@@ -293,7 +293,7 @@
     .ms-single-product__content .product-name,
     .ms-woocommerce-cart-form-wrapper .product-name {
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .ms-single-product__content .ms-actions-inner,
@@ -341,7 +341,7 @@
     .ms-woocommerce-cart-form-wrapper .ms-cart-totals h3 {
         margin-bottom: 2rem;
         font-size: 24px;
-        font-weight: 700;
+        font-weight: 450;
         color: var(--color-title);
     }
 
@@ -368,7 +368,7 @@
     .ms-woocommerce-cart-form-wrapper .shop_table th {
         border-top: none;
         font-size: 16px;
-        font-weight: 800;
+        font-weight: 600;
         color: #000000;
         padding-left: 0;
         text-align: center;
@@ -452,7 +452,7 @@
     }
     .cart-bar .cart-header .cart-heading {
         font-size: 17px;
-        font-weight: 600;
+        font-weight: 400;
         color: #000000;
         font-family: var(--font-secondary);
     }
@@ -581,7 +581,7 @@
         text-align: center;
         max-width: 55px;
         font-size: 16px;
-        font-weight: 700;
+        font-weight: 450;
         color: #040404;
         border-radius: 0;
         border: 1px solid #f1f1f1;
@@ -608,7 +608,7 @@
 
     .cart-bar .product-detail .product-qnty, .cart-bar .product-detail .product-price {
         color: #404040;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 13px;
         font-family: roboto;
     }
@@ -629,7 +629,7 @@
         background: #F5F5F5;
         padding: 10px 15px;
         font-size: 12px;
-        font-weight: 500;
+        font-weight: 600;
         color: var(--color-primary);
         text-align: center;
     }
@@ -638,7 +638,7 @@
         margin-right: 7px;
     }
     .cart-bar .cart-bottom-area .spend-shipping .amount {
-        font-weight: 700;
+        font-weight: 450;
         color: #040404;
     }
     .cart-bar .cart-bottom-area .total-price {
@@ -697,7 +697,7 @@
         th {
             border-top: none;
             font-size: 16px;
-            font-weight: 800;
+            font-weight: 600;
             color: #000000;
             padding-left: 0;
             text-align: center;
@@ -742,7 +742,7 @@
 
     .product-name {
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 400;
         a {
             color: #000000;
             transition: all .3s;
@@ -935,7 +935,7 @@
         h3 {
             margin-bottom: 2rem;
             font-size: 24px;
-            font-weight: 700;
+            font-weight: 450;
         }
         .woocommerce-shipping-methods{
             padding-left: 0;
@@ -1039,7 +1039,7 @@
 .ms-woocommerce-checkout {
     h3 {
         font-size: 24px;
-        font-weight: 700;
+        font-weight: 450;
         margin-bottom: 2rem;
         margin-top: 25px;
     }
@@ -1301,7 +1301,7 @@
         h2 {
             margin: 2rem 0;
             // font-size: 24px;
-            font-weight: 700;
+            font-weight: 450;
         }
         thead, tfoot {
             text-align: left;
@@ -1314,7 +1314,7 @@
             overflow: hidden;
 
             thead > tr > th {
-                font-weight: 700;
+                font-weight: 450;
                 font-size: 24px;
                 border-bottom: solid 1px #e2e2e2;
             }
@@ -1340,7 +1340,7 @@
                 border-top: solid 1px #e2e2e2;
                 background-color: #f7f7f7;
                 tr:last-child {
-                    font-weight: 700;
+                    font-weight: 450;
                 }
                 th, td {
                     padding-bottom: 0;
@@ -1369,7 +1369,7 @@
         flex-wrap: wrap;
         .woocommerce-column__title {
             font-size: 24px;
-            font-weight: 700;
+            font-weight: 450;
             margin-bottom: 2rem;
         }
         .woocommerce-column--billing-address,
@@ -1486,7 +1486,7 @@
     line-height: 2;
     display: block;
     margin-bottom: 5px;
-    font-weight: 600;
+    font-weight: 400;
   }
  .full-grid .form-content-box .form-group select {
     color: #666666;
@@ -1545,7 +1545,7 @@
     margin-bottom: 20px;
   }
  .full-grid .payment-method .top-area .payment-co span {
-    font-weight: 600;
+    font-weight: 400;
     margin-right: 10px;
   }
  .full-grid .payment-method .top-area .p-msg {

@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet preload" as="style">
     <link rel="preload" as="image" href="assets/images/banner/21.webp" />
     <link rel="stylesheet preload" href="assets/css/style.css" as="style">
@@ -83,6 +83,136 @@
         .menu-btn.menu-dark {
             color: #000000;
         }
+
+        /* Center contact buttons on this page's contact sections
+           Stronger override: reset line-height and make the label and icon full-height flex children
+           This resists vendor/bootstrap rules (line-height, vertical-align) that can shift content. */
+        .contact-cta .btn,
+        .contact-cta .btn-contact,
+        .contact-cta .btn-schedule {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center;
+            gap: 0.5rem;
+            padding: 10px 16px;
+            width: auto;
+            line-height: 1 !important;
+            vertical-align: middle !important;
+            /* optional minimum height to keep consistent visual weight */
+            min-height: 38px;
+        }
+
+        .contact-cta .btn .btn-label,
+        .contact-cta .btn-contact .btn-label,
+        .contact-cta .btn-schedule .btn-label {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            line-height: 1 !important;
+        }
+
+        .contact-cta .btn i,
+        .contact-cta .btn .fa-regular,
+        .contact-cta .btn .fa-solid {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 100%;
+            line-height: 1 !important;
+        }
+
+        .section-colloborate.gradien-bg {
+            flex: 1;
+        }
+
+        @media screen and (max-width: 767px) {
+            .section-colloborate {
+                width: 100%;
+            }
+        }
+
+        .section-colloborate {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .gradien-bg {
+            background-image: linear-gradient(90deg, #5cc29329, #3477aa21);
+        }
+
+        @media screen and (max-width: 767px) {
+            .contentwrapper {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            .contentwrapper {
+                max-width: 100%;
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+        }
+
+        .contentwrapper {
+            z-index: 1;
+            max-width: 1440px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 5em;
+            padding-right: 5em;
+            position: relative;
+        }
+
+        @media screen and (max-width: 991px) {
+            .w-container {
+                max-width: 728px;
+            }
+        }
+
+        .w-container {
+            max-width: 940px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .logo-sign,
+            .logo-sign.horizontal-block {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            .logo-sign {
+                display: none;
+            }
+        }
+
+        .logo-sign {
+            z-index: -1;
+            pointer-events: none;
+            margin-top: 0;
+            margin-right: 20px;
+            position: absolute;
+            inset: 0% 0% auto auto;
+        }
+
+        img {
+            vertical-align: middle;
+            max-width: 100%;
+            display: inline-block;
+        }
+
+        img {
+            border: 0;
+        }
     </style>
 </head>
 
@@ -112,7 +242,7 @@
                                 </li>
 
                                 <li class="main-nav has-dropdown mega-menu menu-dark-on-hover">
-                                    <a href="services.html">SERVICES</a>
+                                    <a href="#">SERVICES</a>
                                     <div class="rts-mega-menu service-mega-menu-style">
                                         <div class="wrapper">
                                             <div class="container" style="padding-top: 30px; padding-bottom: 80px;">
@@ -138,7 +268,7 @@
                                                     <div class="col-lg-4">
                                                         <ul class="mega-menu-item parent-nav">
                                                             <li>
-                                                                <a href="service-details.html">
+                                                                <a href="web-development.html">
                                                                     <div class="single-service-menu">
                                                                         <div class="info">
                                                                             <h5 class="title"><span
@@ -149,7 +279,7 @@
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="service-details-2.html">
+                                                                <a href="mobile-development.html">
                                                                     <div class="single-service-menu">
                                                                         <div class="info">
                                                                             <h5 class="title"><span
@@ -160,7 +290,7 @@
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="service-details-3.html">
+                                                                <a href="blockchain.html">
                                                                     <div class="single-service-menu">
                                                                         <div class="info">
                                                                             <h5 class="title"><span
@@ -171,7 +301,7 @@
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="service-details-3.html">
+                                                                <a href="ai.html">
                                                                     <div class="single-service-menu">
                                                                         <div class="info">
                                                                             <h5 class="title"><span
@@ -182,7 +312,7 @@
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="service-details-4.html">
+                                                                <a href="design.html">
                                                                     <div class="single-service-menu">
                                                                         <div class="info">
                                                                             <h5 class="title"><span
@@ -199,7 +329,7 @@
                                                     <div class="col-lg-4">
                                                         <ul class="mega-menu-item parent-nav">
                                                             <li>
-                                                                <a href="service-details-4.html">
+                                                                <a href="devops.html">
                                                                     <div class="single-service-menu">
                                                                         <div class="info">
                                                                             <h5 class="title"><span
@@ -211,17 +341,19 @@
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="service-details-5.html">
+                                                                <a href="q&a.html">
                                                                     <div class="single-service-menu">
                                                                         <div class="info">
-                                                                            <h5 class="title"><span
+                                                                            <h5 class="title">
+                                                                                <span
                                                                                     style="font-size: 10px; vertical-align: bottom;">07</span>
-                                                                                QUALITY ENGINEERING & TESTING</h5>
+                                                                                QUALITY ENGINEERING & TESTING
+                                                                            </h5>
                                                                         </div>
                                                                     </div>
                                                                 </a>
                                                             <li>
-                                                                <a href="service-details-5.html">
+                                                                <a href="low-code&no-code.html">
                                                                     <div class="single-service-menu">
                                                                         <div class="info">
                                                                             <h5 class="title"><span
@@ -232,7 +364,7 @@
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="service-details-5.html">
+                                                                <a href="enterprise.html">
                                                                     <div class="single-service-menu">
                                                                         <div class="info">
                                                                             <h5 class="title"><span
@@ -561,7 +693,7 @@
                                         innovation.
                                     </p>
                                     <a href="contact.html" class="rts-btn btn-primary btn-white"
-                                        style="font-weight: 800;">LET'S TALK <i class="fa-regular fa-arrow-right"
+                                        style="font-weight: 600;">LET'S TALK <i class="fa-regular fa-arrow-right"
                                             aria-hidden="true" style="margin-left:8px;"></i>
                                     </a>
                             </div>
@@ -581,7 +713,8 @@
                 <div class="title-style-one center" style="padding-bottom: 30px;">
                     <!-- <span class="pre">Our Latest Services</span> -->
                     <h2 class="title rts-text-anime-style-1"
-                        style="color: #292929; font-size: 35px; font-weight: 900; line-height: 1.5;">Our Ultimate Set of
+                        style="color: #292929; font-size: 35px; font-weight: 900; line-height: 1.5; padding-top: 40px;">
+                        Our Ultimate Set of
                         Services for<br> Your Ideas Implementation
                     </h2>
                 </div>
@@ -608,10 +741,10 @@
                                 <li>E-commerce Platforms</li>
                                 <li>Progressive Web Apps</li>
                             </ul>
-                            <div class="service-action">
+                            <a class="service-action" href="web-development.html">
                                 <span class="see-more">See more</span>
                                 <i class="fa-regular fa-arrow-right action-arrow" aria-hidden="true"></i>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -625,15 +758,17 @@
                             </div>
                             <h4 class="service-title">Mobile Development</h4>
                             <ul class="service-list">
-                                <li>Native iOS / Android</li>
-                                <li>Cross-platform</li>
-                                <li>Mobile QA & App Store publishing</li>
-                                <li>Wearables & Companion Apps</li>
+                                <li>Native App</li>
+                                <li>Cross-platform App</li>
+                                <li>Hybrid App</li>
+                                <li>Progressive Web Apps (PWAs)</li>
+                                <li>Enterprise Mobile Solutions</li>
+                                <li>Mobile Game</li>
                             </ul>
-                            <div class="service-action">
+                            <a class="service-action" href="mobile-development.html">
                                 <span class="see-more">See more</span>
                                 <i class="fa-regular fa-arrow-right action-arrow" aria-hidden="true"></i>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -654,10 +789,10 @@
                                 <li>Data Labeling</li>
                                 <!-- <li>Explainability & Bias Audits</li> -->
                             </ul>
-                            <div class="service-action">
+                            <a class="service-action" href="ai.html">
                                 <span class="see-more">See more</span>
                                 <i class="fa-regular fa-arrow-right action-arrow" aria-hidden="true"></i>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -677,10 +812,10 @@
                                 <li>Tokenomics & Token Engineering</li>
                                 <li>DAO tooling</li>
                             </ul>
-                            <div class="service-action">
+                            <a class="service-action" href="blockchain.html">
                                 <span class="see-more">See more</span>
                                 <i class="fa-regular fa-arrow-right action-arrow" aria-hidden="true"></i>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <!-- Row 2: 4 cards -->
@@ -695,16 +830,18 @@
                             </div>
                             <h4 class="service-title">Cloud & DevOps</h4>
                             <ul class="service-list">
-                                <li>Cloud Architecture</li>
-                                <li>CI/CD pipelines, IaC (Terraform, Pulumi), Kubernetes</li>
-                                <li>Observability</li>
-                                <li>Cost optimization & autoscaling</li>
+                                <li>Continuous Integration</li>
+                                <li>Configurations</li>
+                                <li>Troubleshooting</li>
+                                <li>Disaster recovery planning (DRP)</li>
+                                <li>Monitoring</li>
+                                <li>Security</li>
                                 <!-- <li>NFT Marketplaces & Digital Collectibles</li> -->
                             </ul>
-                            <div class="service-action">
+                            <a class="service-action" href="devops.html">
                                 <span class="see-more">See more</span>
                                 <i class="fa-regular fa-arrow-right action-arrow" aria-hidden="true"></i>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -722,10 +859,10 @@
                                 <li>UX/UI Design</li>
                                 <li>Design Systems & Component Libraries</li>
                             </ul>
-                            <div class="service-action">
+                            <a class="service-action" href="design.html">
                                 <span class="see-more">See more</span>
                                 <i class="fa-regular fa-arrow-right action-arrow" aria-hidden="true"></i>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -739,14 +876,17 @@
                             </div>
                             <h4 class="service-title">Quality Engineering & Testing</h4>
                             <ul class="service-list">
-                                <li>Manual & Automated QA</li>
-                                <li>Performance Testing, Load Testing</li>
-                                <li>Security Testing (SAST, DAST), pentests (coordinated)</li>
+                                <li>Functional Testing</li>
+                                <li>Manual Testing</li>
+                                <li>Test Automation</li>
+                                <li>Performance Testing</li>
+                                <li>Regression Testing</li>
+                                <li>Security Testing</li>
                             </ul>
-                            <div class="service-action">
+                            <a class="service-action" href="q&a.html">
                                 <span class="see-more">See more</span>
                                 <i class="fa-regular fa-arrow-right action-arrow" aria-hidden="true"></i>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -763,10 +903,34 @@
                                 <li>Legacy migration, microservices extraction, system re-architecture</li>
                                 <li>ERP/CRM implementations & integrations</li>
                             </ul>
-                            <div class="service-action">
+                            <a class="service-action" href="enterprise.html">
                                 <span class="see-more">See more</span>
                                 <i class="fa-regular fa-arrow-right action-arrow" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="service-card bg-code9">
+                            <div class="circle-wrap" aria-hidden="true">
+                                <span class="circle c1"></span>
+                                <span class="circle c2"></span>
+                                <span class="circle c3"></span>
+                                <span class="circle c4"></span>
+                                <span class="circle c5"></span>
                             </div>
+                            <h4 class="service-title">Low-code / No-Code Development</h4>
+                            <ul class="service-list">
+                                <li>Custom App Development</li>
+                                <li>Process Automation</li>
+                                <li>Rapid Prototyping & MVPs</li>
+                                <li>Integration & Extension</li>
+                                <li>Website & E-commerce Builders</li>
+                                <li>Data Dashboards & Analytics Apps</li>
+                            </ul>
+                            <a class="service-action" href="low-code&no-code.html">
+                                <span class="see-more">See more</span>
+                                <i class="fa-regular fa-arrow-right action-arrow" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -774,10 +938,11 @@
         </div>
 
         <!-- Sneak Peek section start -->
-        <div class="sneak-peek-section" role="region" aria-label="Sneak Peek into our Journey">
+        <div class="sneak-peek-section" role="region" aria-label="Sneak Peek into our Journey"
+            style="padding: 100px 0;">
             <div class="container">
                 <div class="peek-header text-center"
-                    style="color: #188bce; font-size: 35px; font-weight: 900; line-height: 1.5; padding-bottom: 15px;">
+                    style="color: #188bce; font-size: 35px; font-weight: 900; line-height: 1.5; padding: 15px;">
                     <h2>Sneak Peek into our Innovative Journey</h2>
                 </div>
                 <div class="peek-list" style="padding-bottom: 40px;">
@@ -1514,12 +1679,55 @@
     </section>
     <!-- numbered features above rts about us area end -->
 
+    <div class="section-wrapper bg-dark">
+        <div class="content-center">
+            <div class="choose_section">
+                <div class="choose_text">
+                    <h2 class="h3-new allcaps text-white">
+                        WHY MANY CLIENTS
+                        <span class="span-green-light">CHOOSE</span>
+                        APICEFLOW?
+                    </h2>
+                </div>
+                <div class="choose_content">
+                    <div class="choose_content-item">
+                        <h3 class="h6-new white-color">Deep Business Insight</h3>
+                        <p class="bodynew text-white">
+                            We carry Big 4 DNA within us, which enables us to tackle even the most complex matters in
+                            record time and understand business needs down to the finest detail.
+                        </p>
+                    </div>
+                    <div class="choose_content-item">
+                        <h3 class="h6-new white-color">Experienced In-House Team</h3>
+                        <p class="bodynew text-white">
+                            23 professionals in software development, UI/UX design, and client experience ready to boost
+                            your innovations.
+                        </p>
+                    </div>
+                    <div class="choose_content-item">
+                        <h3 class="h6-new white-color">Cutting-Edge Talent Selection</h3>
+                        <p class="bodynew text-white">
+                            Own a unique automated employee selection system, which allows us to process about 200
+                            candidates every month and select abnormally talented people for the team
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/images/logo/ApiceFlow_Logo/logo-watermark.png" style="opacity: 0.2;" loading="lazy"
+                alt="Logo ApiceFlow" class="logo-sign z-index-1">
+        </div>
+    </div>
+
+
+
+
+
     <div class="rts-trusted-client rts-section-gapBottom" style="padding-top: 100px;">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="title-area-client-client text-center">
-                        <span style="color: #188bce; font-size: 16px; font-weight: 500; line-height: 1.5;">OUR
+                        <span style="color: #188bce; font-size: 16px; font-weight: 600; line-height: 1.5;">OUR
                             PARTNERS</span>
                         <p class="client-title"
                             style="padding-top: 20px; color: #188bce; font-size: 35px; font-weight: 900; line-height: 1.5;">
@@ -1743,7 +1951,7 @@
     </div>
     <!-- rts testimonials area end -->
 
-    <section class="tech-tabs-section" aria-label="Technology tabs">
+    <!-- <section class="tech-tabs-section" aria-label="Technology tabs">
         <div class="container">
             <div class="tech-tabs-wrapper" style="padding-top: 80px; padding-bottom: 50px;">
                 <div class="tech-tabs-header text-center" style="margin-bottom:18px;">
@@ -1795,8 +2003,241 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
+
+    <div class="section-collaborate gradien-bg">
+        <div class="contentwrapper w-container">
+            <img src="./assets/images/logo/ApiceFlow_Logo/logo-watermark.png" style="opacity: 0.3;" loading="lazy"
+                alt="Logo ApiceFlow" class="logo-sign">
+            <div class="coloborate-wrap">
+                <h2 class="n-title-block big center sem">Let's collaborate</h2>
+                <div class="more-info-coloborate">
+                    <div class="n-title-block small ceo">Have a project in mind?</div>
+                    <div class="n-collaborate-text new-st">Tell us everything about your project or product, we'll be
+                        gload to help</div>
+                    <a href="tel:+17132394774" class="n-collaborate-link n0-mar w-inline-block">
+                        <img src="./assets/images/icons_new/phone-call.svg" loading="lazy" alt="call icon"
+                            class="icon-form" style="padding-right: 5px;">
+                        +1 713 239 47 74
+                    </a>
+
+                    <a href="mailto:contact@apiceflow.com" class="n-collaborate-link n0-mar w-inline-block">
+                        <img src="./assets/images/icons_new/email.svg" loading="lazy" alt="email icon" class="icon-form"
+                            style="padding-right: 5px;">
+                        contact@apiceflow.com
+                    </a>
+                </div>
+                <div id="Contact-Form" data-scroll="mid" class="n-collaborate-form new-ster w-form">
+                    <form id="wf-form-Project-request" name="wf-form-Project-request" data-name="Project request"
+                        method="post" class="form-colloborate" data-wf-page-id="" data-wf-element-id=""
+                        data-turnstile-sitekey="" aria-label="Project request">
+                        <div class="w-layout-grid grid-2-form">
+                            <div id="" class="cell-form-item">
+                                <label for="name" id="" class="n-title-form-field padding-bottom-16px">Project
+                                    type</label>
+                                <div class="radio-wrapper">
+                                    <label class="w-checkbox n-check-box-wrap">
+                                        <div
+                                            class="w-checkbox-input w-checkbox-input--inputType-custom check-box w--redirected-checked">
+                                        </div>
+                                        <input type="checkbox" name="Website" id="Website" data-name="Website"
+                                            style="opacity: 0; position: absolute; z-index: -1" checked>
+                                        <span class="n-check-box w-form-label" for="Website">Website</span>
+                                    </label>
+                                    <label class="w-checkbox n-check-box-wrap">
+                                        <div class="w-checkbox-input w-checkbox-input--inputType-custom check-box">
+                                        </div>
+                                        <input type="checkbox" name="App" id="App" data-name="App"
+                                            style="opacity: 0; position: absolute; z-index: -1">
+                                        <span class="n-check-box w-form-label" for="App">App</span>
+                                    </label>
+                                    <label class="w-checkbox n-check-box-wrap">
+                                        <div class="w-checkbox-input w-checkbox-input--inputType-custom check-box">
+                                        </div>
+                                        <input type="checkbox" name="E-Commerce" id="E-Commerce" data-name="E-Commerce"
+                                            style="opacity: 0; position: absolute; z-index: -1">
+                                        <span class="n-check-box w-form-label" for="E-Commerce">E-commerce</span>
+                                    </label>
+                                    <label class="w-checkbox n-check-box-wrap">
+                                        <div class="w-checkbox-input w-checkbox-input--inputType-custom check-box">
+                                        </div>
+                                        <input type="checkbox" name="Landing-Page" id="Landing-Page"
+                                            data-name="Landing-Page"
+                                            style="opacity: 0; position: absolute; z-index: -1">
+                                        <span class="n-check-box w-form-label" for="Landing-Page">Landing Page</span>
+                                    </label>
+                                    <label class="w-checkbox n-check-box-wrap">
+                                        <div class="w-checkbox-input w-checkbox-input--inputType-custom check-box">
+                                        </div>
+                                        <input type="checkbox" name="Other" id="Other" data-name="Other"
+                                            style="opacity: 0; position: absolute; z-index: -1">
+                                        <span class="n-check-box w-form-label" for="Other">Other</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="" class="cell-form-item">
+                                <label for="name" class="n-title-form-field padding-bottom-16px">Budget</label>
+                                <div class="radio-wrapper">
+                                    <label for="name" class="n-title-form-field padding-bottom-16px">Budget</label>
+                                    <div class="radio-wrapper">
+                                        <label class="n-radio w-radio">
+                                            <div
+                                                class="w-form-formradioinput w-form-formradioinput--inputType-custom n-radio-btn w-radio-input">
+                                            </div>
+                                            <input type="radio" name="budget" id="10k--20k" data-name="budget" required
+                                                style="opacity:0;position:absolute;z-index:-1;" value="$10k-$20k">
+                                            <span class="n-radio-label w-form-label" for="10k--20k">$10k - $20k</span>
+                                        </label>
+                                        <label class="n-radio w-radio">
+                                            <div
+                                                class="w-form-formradioinput w-form-formradioinput--inputType-custom n-radio-btn w-radio-input">
+                                            </div>
+                                            <input type="radio" name="budget" id="20k--30k" data-name="budget" required
+                                                style="opacity:0;position:absolute;z-index:-1;" value="$20k-$30k">
+                                            <span class="n-radio-label w-form-label" for="20k--30k">$20k - $30k</span>
+                                        </label>
+                                        <label class="n-radio w-radio">
+                                            <div
+                                                class="w-form-formradioinput w-form-formradioinput--inputType-custom n-radio-btn w-radio-input">
+                                            </div>
+                                            <input type="radio" name="budget" id="30k--40k" data-name="budget" required
+                                                style="opacity:0;position:absolute;z-index:-1;" value="$30k-$40k">
+                                            <span class="n-radio-label w-form-label" for="30k--40k">$30k - $40k</span>
+                                        </label>
+                                        <label class="n-radio w-radio">
+                                            <div
+                                                class="w-form-formradioinput w-form-formradioinput--inputType-custom n-radio-btn w-radio-input">
+                                            </div>
+                                            <input type="radio" name="budget" id="50k" data-name="budget" required
+                                                style="opacity:0;position:absolute;z-index:-1;" value="$50k+">
+                                            <span class="n-radio-label w-form-label" for="50k">$50k+</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="" class="cell-form-item">
+                                <label for="task" class="n-title-form-field padding-bottom-16px">Task</label>
+                                <div class="wrapper-n-input-text">
+                                    <textarea placeholder="Pitch your project idea here" maxlength="5000"
+                                        id="task-field-f" name="Task" data-name="Task"
+                                        class="n-input-text text-area w-input"></textarea>
+                                </div>
+                            </div>
+                            <div class="cell-form-item hide-mobile">
+                                <div class="wrraper_attach-file">
+                                    <label for="task">Attach your file here:</label>
+                                    <div class="p-new _16 gree">Attach file</div>
+                                </div>
+                            </div>
+                            <div id="" class="cell-form-item">
+                                <label for="name" class="n-title-form-field padding-bottom-16px">Your contacts</label>
+                                <div class="wrapper-n-input-text">
+                                    <input class="n-input-text w-input" maxlength="256" name="Name" data-name="Name"
+                                        placeholder="Name" type="text" id="name-field-f" required>
+                                    <input class="n-input-text w-input" maxlength="256" name="Company-Website"
+                                        data-name="Company Website" placeholder="Company website" type="text"
+                                        id="Company-Website">
+                                </div>
+                            </div>
+                            <div id="" class="cell-form-item">
+                                <div class="wrapper-n-input-text">
+                                    <input class="n-input-text w-input" maxlength="256" name="Email" data-name="Email"
+                                        placeholder="Email" type="email" id="email-field-f" required>
+                                    <input class="n-input-text w-input" maxlength="256" name="Phone" data-name="Phone"
+                                        placeholder="Phone" type="tel" id="phone-field-f" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="" class="attach-btn">
+                            <div class="some-atach">
+                                <label class="w-checkbox checkbox-field">
+                                    <div class="w-checkbox-input w-checkbox-input--inputType-custom chekbox-squ"></div>
+                                    <input type="checkbox" name="I-agree-with-the-terms-of-service-of-ApiceFlow"
+                                        id="I-agree-with-the-terms-of-service-of-ApiceFlow"
+                                        data-name="I agree the terms of service of ApiceFlow"
+                                        style="opacity:0;position:absolute;z-index:-1">
+                                    <span class="checkbox-text-main w-form-label"
+                                        for="I-agree-with-the-terms-of-service-of-ApiceFlow">I agree with the Terms of
+                                        Service of ApiceFlow, Limited.</span>
+                                </label>
+                                <div class="p-new _12 reg wid _10-mob">
+                                    By submitting this form, you consent to the processing of your personal data
+                                    uploaded through the contact form above, in accordance with the terms of ApiceFlow,
+                                    Limited.'s
+                                    <a href="privacy.html" target="_blank" style="color:#188bce;">Privacy Policy</a>
+                                </div>
+                            </div>
+                            <div class="dbt-flx">
+                                <input type="submit" dta-wait="Please wait..." value="Send"
+                                    class="button-new--forma black form width-mob-100 w-button">
+                                <a href="https://calendly.com/adam-apiceflow/discovery-call" target="_blank"
+                                    class="button-new-st-forma black border form w-inline-block">
+                                    <div class="readmore-popup">Book a call</div>
+                                </a>
+                            </div>
+                        </div>
+                        <input type="hidden" name="utm_source" id="utm_utm_source">
+                        <input type="hidden" name="utm_medium" id="utm_utm_medium">
+                        <input type="hidden" name="utm_campaign" id="utm_utm_campaign">
+                        <input type="hidden" name="utm_term" id="utm_utm_term">
+                        <input type="hidden" name="utm_content" id="utm_utm_content">
+                        <input type="hidden" name="page_url" id="page_url" value="https://www.apiceflow.com/">
+                    </form>
+                    <div class="success-message w-form-done" tabindex="-1" role="region"
+                        aria-label="project request success">
+                        <div class="succes-wrap">
+                            <div class="h-succes">
+                                <h2 class="h2-h-succes">Thank you!</h2>
+                                <div class="desc-h-succes">Your submission has been received!</div>
+                            </div>
+                            <div class="wrap-info-succes">
+                                <h3 class="h3-h-succes">What's next?</h3>
+                                <div class="step-wrap-succes">
+                                    <div class="step-item-succes">
+                                        <div class="circle-number">
+                                            <div class="h-new _32 darck">1</div>
+                                        </div>
+                                        <div class="step-text-succes">
+                                            Our experts will analyse your requirements and contact you within 1-2
+                                            business days.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line-step">
+                                    <div class="some-line-step"></div>
+                                </div>
+                                <div class="step-item-succes">
+                                    <div class="circle-number">
+                                        <div class="h-new _32 darck">2</div>
+                                    </div>
+                                    <div class="step-text-succes">
+                                        Out team will collect all requirements for your project, and if needed, we will
+                                        sign an NDA to ensure the highest level of privacy.
+                                    </div>
+                                </div>
+                                <div class="line-step">
+                                    <div class="some-line-step"></div>
+                                </div>
+                                <div class="step-item-succes">
+                                    <div class="circle-number">
+                                        <div class="h-new _32 darck">3</div>
+                                    </div>
+                                    <div class="step-text-succes">
+                                        We will develop a comprehensive proposal and an action plan for your project
+                                        with estimates, timelines, CVs, etc.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-form-fail" tabindex="-1" role="region" aria-label="project request failure">
+                        <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="rts-footer-area pt--100 pb--100 pt_sm--50 pb_sm--40  footer-two footer-bg-two">
         <div class="container">
@@ -1810,34 +2251,21 @@
                         <div class="row">
                             <div class="wized-2-body col-xl-6">
                                 <ul>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Web
-                                            Development</a>
+                                    <li><a href="web-development.html">Web Development</a>
                                     </li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Mobile
-                                            Development</a></li>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>Blockchain & Web3</a></li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>AI /
-                                            Machine Learning</a></li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>UI /
-                                            UX Design Services</a></li>
+                                    <li><a href="mobile-development.html">Mobile Development</a></li>
+                                    <li><a href="blockchain.html">Blockchain & Web3</a></li>
+                                    <li><a href="ai.html">AI / Machine Learning</a></li>
+                                    <li><a href="design.html">UI / UX Design Services</a></li>
                                     <!-- <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Career</a></li> -->
                                 </ul>
                             </div>
                             <div class="wized-2-body col-xl-6">
                                 <ul>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Cloud
-                                            &
-                                            DevOps</a></li>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>Quality
-                                            Engineering & Testing</a></li>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>No-Code /
-                                            Low-Code Development</a></li>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>Enterprise
-                                            Systems & Modernization</a></li>
+                                    <li><a href="devops.html">Cloud & DevOps</a></li>
+                                    <li><a href="q&a.html">Quality Engineering & Testing</a></li>
+                                    <li><a href="low-code&no-code.html">No-Code / Low-Code Development</a></li>
+                                    <li><a href="enterprise.html">Enterprise Systems & Modernization</a></li>
                                     <!-- <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Career</a></li> -->
                                 </ul>
                             </div>
@@ -1853,41 +2281,27 @@
                         <div class="row">
                             <div class="wized-2-body col-xl-6">
                                 <ul>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>Fintech</a>
+                                    <li><a href="service-details.html">Fintech</a>
                                     </li>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>Healthcare</a></li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Retail
-                                            & eCommerce</a></li>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>Financial Services</a></li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Supply
-                                            Chain & Transportation</a></li>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>Web3-specific Industries</a>
+                                    <li><a href="service-details.html">Healthcare</a></li>
+                                    <li><a href="service-details.html">Retail & eCommerce</a></li>
+                                    <li><a href="service-details.html">Financial Services</a></li>
+                                    <li><a href="service-details.html">Supply Chain & transportation</a></li>
+                                    <li><a href="service-details.html">Web3-specific industries</a>
                                     </li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Media
-                                            & Entertainment</a></li>
+                                    <li><a href="service-details.html">Media & Entertainment</a></li>
                                 </ul>
                             </div>
                             <div class="wized-2-body col-xl-6">
                                 <ul>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Travel
-                                            & Hospitality</a>
+                                    <li><a href="service-details.html">Travel & Hospitality</a>
                                     </li>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>Education & EdTech</a></li>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>Telecommunications</a></li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Real
-                                            Estate</a></li>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>Gaming</a></li>
-                                    <li><a href="service-details.html"><i
-                                                class="fal fa-chevron-double-right"></i>Foodtech & Restaurants</a></li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Sports
-                                            & Fitness</a></li>
+                                    <li><a href="service-details.html">Education & EdTech</a></li>
+                                    <li><a href="service-details.html">Telecommunications</a></li>
+                                    <li><a href="service-details.html">Real Estate</a></li>
+                                    <li><a href="service-details.html">Gaming</a></li>
+                                    <li><a href="service-details.html">Foodtech & Restaurants</a></li>
+                                    <li><a href="service-details.html">Sports & Fitness</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1902,12 +2316,11 @@
                         </div>
                         <div class="wized-2-body">
                             <ul>
-                                <li><a href="index.html" style="color:#188bce;"><i class="fal fa-chevron-double-right"></i>Home</a>
-                                <li><a href="about.html"><i class="fal fa-chevron-double-right"></i>About</a>
+                                <li><a href="index.html" style="color:#188bce;">Home</a>
+                                <li><a href="about.html">About</a>
                                 </li>
-                                <li><a href="case-studies.html"><i class="fal fa-chevron-double-right"></i>Case
-                                        Studies</a></li>
-                                <li><a href="contact.html"><i class="fal fa-chevron-double-right"></i>Contact</a></li>
+                                <li><a href="case-studies.html">Case Studies</a></li>
+                                <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1938,7 +2351,8 @@
                             </div>
                             <div class="contact-info-1">
                                 <div class="disc">
-                                    <a href="https://www.google.com/maps/place/Glenealy+Tower,+1+Glenealy,+Central,+Hong+Kong/@22.2798136,114.152531,17z/data=!3m1!4b1!4m6!3m5!1s0x3404007acff3ffff:0xbafe3c4dfcb13abe!8m2!3d22.2798087!4d114.1551059!16s%2Fg%2F11xcfzb3gw?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Glenealy Tower, No.1 Glenealy, Central, Hong Kong <br>
+                                    <a href="https://www.google.com/maps/place/Glenealy+Tower,+1+Glenealy,+Central,+Hong+Kong/@22.2798136,114.152531,17z/data=!3m1!4b1!4m6!3m5!1s0x3404007acff3ffff:0xbafe3c4dfcb13abe!8m2!3d22.2798087!4d114.1551059!16s%2Fg%2F11xcfzb3gw?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+                                        target="_blank">Glenealy Tower, No.1 Glenealy, Central, Hong Kong <br>
                                     </a>
                                 </div>
                             </div>
@@ -1967,11 +2381,11 @@
                                     new Date().getFullYear()
                                 )
                             </script> All rights reserved.
-                            <b>ApiceFlow Pvt. Ltd.</b>
+                            <b>ApiceFlow LIMITED</b>
                         </p>
                         <div class="right">
                             <ul>
-                                <li><a href="privacy.html">Terms of Use</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
                                 <li><a href="terms.html">Terms of Use</a></li>
                             </ul>
                         </div>
@@ -2016,7 +2430,8 @@
                         <!-- single -->
                         <div class="single">
                             <i class="fas fa-map-marker-alt"></i>
-                            <a href="https://www.google.com/maps/place/Glenealy+Tower,+1+Glenealy,+Central,+Hong+Kong/@22.2798136,114.152531,17z/data=!3m1!4b1!4m6!3m5!1s0x3404007acff3ffff:0xbafe3c4dfcb13abe!8m2!3d22.2798087!4d114.1551059!16s%2Fg%2F11xcfzb3gw?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Glenealy Tower, No.1 Glenealy, Central, Hong Kong</a>
+                            <a href="https://www.google.com/maps/place/Glenealy+Tower,+1+Glenealy,+Central,+Hong+Kong/@22.2798136,114.152531,17z/data=!3m1!4b1!4m6!3m5!1s0x3404007acff3ffff:0xbafe3c4dfcb13abe!8m2!3d22.2798087!4d114.1551059!16s%2Fg%2F11xcfzb3gw?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank">Glenealy Tower, No.1 Glenealy, Central, Hong Kong</a>
                         </div>
                         <!-- single ENd -->
                     </div>
@@ -2025,7 +2440,8 @@
                         <a href="https://www.x.com/apiceflowglobal" aria-label="twitter" target="_blank">
                             <i class="fa-brands fa-twitter"></i>
                         </a>
-                        <a href="https://www.linkedin.com/company/apiceflow-global/" aria-label="linkedin" target="_blank">
+                        <a href="https://www.linkedin.com/company/apiceflow-global/" aria-label="linkedin"
+                            target="_blank">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
                         <a href="https://github.com/ApiceFlow" aria-label="github" target="_blank">
@@ -2049,7 +2465,7 @@
                     <li class="has-droupdown">
                         <a href="#" class="main" aria-expanded="false">Services</a>
                         <ul class="submenu mm-collapse" style="height: 0px;">
-                            <li><a href="service-details.html">Web Development</a>
+                            <li><a href="web-development.html">Web Development</a>
                             </li>
                             <li><a href="service-details-2.html">Web Application Development</a>
                             </li>
@@ -2094,7 +2510,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" class="main" aria-expanded="false">Case Studies</a>
+                        <a href="case-studies.html" class="main" aria-expanded="false">Case Studies</a>
                     </li>
                     <li>
                         <a href="contact.html" class="main" aria-expanded="false">Contact Us</a>
@@ -2110,7 +2526,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/company/apiceflow-global/" aria-label="linkedin" target="_blank">
+                        <a href="https://www.linkedin.com/company/apiceflow-global/" aria-label="linkedin"
+                            target="_blank">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
                     </li>

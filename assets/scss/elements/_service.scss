@@ -171,7 +171,7 @@ section.main-wrapper-sticky {
     .information {
         .title {
             font-size: 22px;
-            font-weight: 700;
+            font-weight: 450;
         }
 
         p.disc {
@@ -275,7 +275,7 @@ section.main-wrapper-sticky {
 
         .title {
             font-size: 22px;
-            font-weight: 700;
+            font-weight: 450;
             color: #1C2539;
             margin-bottom: 17px;
         }
@@ -287,7 +287,7 @@ section.main-wrapper-sticky {
 
         a.read-more {
             color: #5D666F;
-            font-weight: 700;
+            font-weight: 450;
             display: flex;
             align-items: center;
             gap: 7px;
@@ -343,7 +343,7 @@ section.main-wrapper-sticky {
     }
 
     .title {
-        font-weight: 700;
+        font-weight: 450;
         font-weight: 24px;
     }
 
@@ -432,7 +432,7 @@ section.main-wrapper-sticky {
         align-items: center;
         justify-content: center;
         border-radius: 10px;
-        font-weight: 700;
+        font-weight: 450;
         font-size: 30px;
         color: #20282D;
     }
@@ -506,7 +506,7 @@ section.main-wrapper-sticky .sticky-statement.narrow {
         margin: 0;
         font-size: 24px;
         color: #fff;
-        font-weight: 500;
+        font-weight: 600;
 
         @media #{$sm-layout} {
             font-size: 20px;
@@ -520,7 +520,7 @@ section.main-wrapper-sticky .sticky-statement.narrow {
     p {
         margin: 0;
         font-size: 24px;
-        font-weight: 500;
+        font-weight: 600;
         color: #fff;
 
         @media #{$sm-layout} {
@@ -532,7 +532,7 @@ section.main-wrapper-sticky .sticky-statement.narrow {
         }
 
         a {
-            font-weight: 600;
+            font-weight: 400;
             color: #fff;
         }
     }
@@ -579,7 +579,7 @@ section.main-wrapper-sticky .sticky-statement.narrow {
     .title {
         color: #fff;
         font-size: 43px;
-        font-weight: 700;
+        font-weight: 450;
         margin-bottom: 0;
 
         @media #{$mdsm-layout} {
@@ -792,7 +792,7 @@ br {
         left: 91px !important;
         letter-spacing: 3px;
         top: -100px;
-        font-weight: 800;
+        font-weight: 600;
         font-size: 131px;
         line-height: 198px;
         display: flex;
@@ -1105,7 +1105,7 @@ br {
                 padding: 15px 25px;
                 background: #283136;
                 color: #ffffff;
-                font-weight: 500;
+                font-weight: 600;
                 transition: .3s;
                 border-radius: 5px;
 
@@ -1170,7 +1170,7 @@ br {
             .title {
                 margin-bottom: 0;
                 font-size: 16px;
-                font-weight: 600;
+                font-weight: 400;
                 color: #1C2539;
                 line-height: 26px;
                 margin-top: 5px;
@@ -1266,7 +1266,7 @@ br {
             margin-bottom: 10px;
             color: #1C2539;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             transition: .3s;
 
             &:hover {
@@ -1308,7 +1308,7 @@ br {
 
     .title-area-hr-left {
         .pre {
-            font-weight: 600;
+            font-weight: 400;
             font-size: 16px;
             padding: 8px 20px;
             border: 1px solid #999999;
@@ -1577,7 +1577,7 @@ br {
     }
     .read-more{
         color: #5D666F;
-        font-weight: 600;
+        font-weight: 400;
         display: flex;
         align-items: center;
         gap: 4px;

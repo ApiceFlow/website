@@ -1,0 +1,2622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ApiceFlow – From intuitive web and mobile applications to cutting-edge AI systems and secure
+                                        blockchain platforms, we blend technology with vision to drive growth and
+                                        innovation.">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/ApiceFlow_Logo/fav-blue.png">
+    <title>Portfolio: ApiceFlow, Global Software Agency</title>
+    <link rel="stylesheet preload" href="assets/css/plugins/fontawesome.css" as="style">
+    <link rel="stylesheet preload" href="assets/css/plugins/swiper.css" as="style">
+    <link rel="stylesheet preload" href="assets/css/plugins/metismenu.css" as="style">
+    <link rel="stylesheet preload" href="assets/css/plugins/magnifying-popup.css" as="style">
+    <link rel="stylesheet preload" href="assets/css/plugins/odometer.css" as="style">
+    <link rel="stylesheet preload" href="assets/css/vendor/bootstrap.min.css" as="style">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet preload" as="style">
+    <link rel="preload" as="image" href="assets/images/banner/21.webp" />
+    <link rel="stylesheet preload" href="assets/css/style.css" as="style">
+    <style>
+        /* Filter animation: fade + slide */
+        .portfolio-grid>div {
+            transition: opacity 320ms ease, transform 320ms ease;
+            will-change: opacity, transform;
+        }
+
+        .portfolio-grid>div.is-hidden {
+            opacity: 0;
+            transform: translateY(8px) scale(0.99);
+            pointer-events: none;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .portfolio-grid>div.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Layout: show two portfolio items per row on desktop/tablet, single column on small screens */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px 20px;
+            align-items: start;
+        }
+
+        @media (max-width: 767.98px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+
+        /* No results placeholder */
+        .no-results {
+            text-align: center;
+            color: #666;
+            padding: 28px 16px;
+            font-size: 18px;
+            display: none;
+        }
+
+        /* Hero wrapper — force a viewport-fitting hero and hide overflow from paddings */
+        .index-seven-area.rts-section-gap.with-video {
+            position: relative;
+            height: 100vh;
+            /* fill viewport on desktop */
+            max-height: 100vh;
+            overflow: hidden;
+            /* prevent video from creating scroll */
+            padding-top: 0;
+            /* override section gap paddings */
+            padding-bottom: 0;
+        }
+
+        /* Smaller hero on narrow screens */
+        @media (max-width: 991.98px) {
+            .index-seven-area.rts-section-gap.with-video {
+                height: 65vh;
+                max-height: 65vh;
+            }
+        }
+
+        /* Video container covers the banner area */
+        .hero-bg-video {
+            position: absolute;
+            inset: 0;
+            /* top:0; right:0; bottom:0; left:0; */
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Make the video exactly match the hero box (no transform centering that can overflow) */
+        .hero-bg-video video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            max-height: 100vh;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+
+        /* Ensure banner content sits above the video */
+        .banner-seven-inner-content,
+        .banner-seven-inner-content * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Menu button colors: default white, toggle to black with .menu-dark */
+        .menu-btn {
+            color: #ffffff;
+        }
+
+        .menu-btn.menu-dark {
+            color: #000000;
+        }
+
+        /* Background images layering and hover crossfade */
+        .portfolio-card .bg,
+        .portfolio-card .bg.alt {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center center;
+            transition: opacity .5s ease, transform .6s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        /* Base image visible by default, alt image sits above but hidden */
+        .portfolio-card .bg {
+            z-index: 0;
+            opacity: 1;
+        }
+
+        .portfolio-card .bg.alt {
+            z-index: 1;
+            opacity: 0;
+            transform: scale(1.03);
+        }
+
+        /* On hover show alt image (slight zoom-in) */
+        .portfolio-card:hover .bg.alt,
+        .portfolio-card:focus-within .bg.alt {
+            opacity: 1;
+            transform: scale(1.0);
+        }
+
+        /* Ensure mask and controls sit above backgrounds */
+        .portfolio-card .mask {
+            z-index: 2;
+        }
+
+        /* Portfolio overlay: center CTA and reveal badges on hover (keep badge visuals unchanged) */
+        .portfolio-card {
+            position: relative;
+            overflow: hidden;
+            /* slightly lower than before for a tighter layout */
+            min-height: 380px; /* desktop/tablet default */
+            display: block;
+        }
+
+        .portfolio-card .mask {
+            position: absolute;
+            inset: 0;
+            /* positioning context for absolutely centered CTA */
+            display: block;
+            background: transparent;
+            transition: background-color .34s ease;
+            pointer-events: none;
+            /* avoid intercepting clicks until visible */
+        }
+
+        /* CTA and badges centered via grid; children are relatively positioned so they don't rely on percentage transforms */
+        .portfolio-card .mask .cta {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            /* start slightly above center */
+            transform: translateY(-60%);
+            opacity: 0;
+            transition: opacity .28s ease, transform .28s cubic-bezier(.2, .8, .2, 1);
+            pointer-events: none;
+            z-index: 3;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            text-align: center !important;
+            width: 100%;
+        }
+
+        .portfolio-card .mask .meta {
+            position: absolute;
+            left: 0;
+            right: 0;
+            /* reduce distance between CTA and badges */
+            top: calc(50% + 18px);
+            transform: translateY(0);
+            opacity: 0;
+            transition: opacity .26s ease, transform .26s cubic-bezier(.2, .8, .2, 1);
+            pointer-events: none;
+            z-index: 2;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            text-align: center !important;
+            width: 100%;
+        }
+
+        /* Reveal on hover or keyboard focus */
+        .portfolio-card:hover .mask,
+        .portfolio-card:focus-within .mask {
+            background: rgba(0, 0, 0, 0.6);
+            pointer-events: auto;
+        }
+
+        .portfolio-card:hover .mask .cta,
+        .portfolio-card:focus-within .mask .cta {
+            opacity: 1;
+            transform: translateY(-50%);
+            pointer-events: auto;
+        }
+
+        /* center the button element itself */
+        .portfolio-card .mask .cta .btn-view {
+            display: inline-block !important;
+            margin: 0 auto !important;
+            vertical-align: middle;
+        }
+
+        .portfolio-card:hover .mask .meta,
+        .portfolio-card:focus-within .mask .meta {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* Ensure badges sit visually below CTA with reasonable spacing */
+        .portfolio-card .mask .meta .badges {
+            display: flex;
+            gap: 8px;
+            /* margin-top: 6px; */
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portfolio-card .mask .meta .badge {
+            background: rgba(255,255,255,0.95);
+            color: #3e3e3ec9;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 1.52rem;
+            font-weight: 400;
+            box-shadow: 0 2px 6px rgba(16,24,40,0.06);
+        }
+
+        /* Button style: no background or border, colored text only, smooth animation */
+        .btn-view {
+            background: transparent !important;
+            border: none !important;
+            color: #21aeffef !important;
+            font-weight: 450;
+            /* desktop target size requested by user */
+            font-size: 20px;
+            line-height: 1;
+            padding: 8px 0;
+            cursor: pointer;
+            position: relative;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            /* transition: transform .28s cubic-bezier(.2, .8, .2, 1), color .22s ease, opacity .22s ease; */
+        }
+
+        /* subtle center-grow underline */
+        .btn-view::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -6px;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 0;
+            background: #0e75b0;
+            border-radius: 2px;
+            /* transition: width .36s cubic-bezier(.2, .8, .2, 1); */
+        }
+
+        .btn-view .arrow {
+            display: inline-block;
+            margin-left: 8px;
+            transition: transform .32s cubic-bezier(.2, .8, .2, 1), opacity .22s ease;
+        }
+
+        .btn-view:hover,
+        .btn-view:focus {
+            /* transform: translateY(-4px) scale(1.02); */
+            color: #8dd7ff !important;
+        }
+/* 
+        .btn-view:hover::after,
+        .btn-view:focus::after {
+            width: 56%;
+        } */
+
+        .btn-view:hover .arrow,
+        .btn-view:focus .arrow {
+            transform: translateX(6px);
+        }
+
+        /* Touch / small screens adjustments */
+        @media (max-width: 767.98px) {
+            .portfolio-card .mask {
+                padding: 12px;
+            }
+            .portfolio-card {
+                /* shorter cards on small screens for better fit */
+                min-height: 260px;
+            }
+
+            .btn-view {
+                /* keep button readable on small screens */
+                font-size: 1rem;
+                padding: 6px 0;
+            }
+
+            /* mobile: slightly lift CTA and badges closer to center to fit shorter cards */
+            .portfolio-card .mask .cta {
+                top: 48%;
+                transform: translate(-50%, -48%);
+                font-size: 1rem;
+            }
+
+            .portfolio-card .mask .meta {
+                top: calc(50% + 28px);
+            }
+        }
+
+        /* Caption shown below each slide */
+        .card-caption {
+            /* left-align captions and stack vertically */
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 14px 10px 0 10px;
+            color: #222;
+            width: 100%;
+        }
+
+        .card-caption .case-title {
+            margin: 0 0 8px 0;
+            font-size: 2.35rem; /* larger title */
+            font-weight: 600;
+            color: #111;
+            line-height: 1.15;
+        }
+
+        .card-caption .case-desc {
+            margin: 0;
+            font-size: 1.7rem; /* slightly larger description */
+            color: #444;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 767.98px) {
+            .card-caption .case-title { font-size: 1.12rem; }
+            .card-caption .case-desc { font-size: 0.98rem; }
+        }
+
+        /* Pagination styles (compact, centered) */
+        #portfolio-pagination {
+            gap: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 6px 0;
+        }
+
+        #portfolio-pagination .pg-btn {
+            display: inline-grid;
+            place-items: center;
+            width: 36px;
+            /* enforce square */
+            height: 36px;
+            padding: 0;
+            border-radius: 50%;
+            background: #fff;
+            color: #333;
+            box-shadow: 0 1px 6px rgba(16, 24, 40, 0.06);
+            border: 1px solid rgba(16, 24, 40, 0.06);
+            font-weight: 400;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+            line-height: 1;
+            /* ensure vertical centering */
+        }
+
+        #portfolio-pagination .pg-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(16, 24, 40, 0.08);
+        }
+
+        #portfolio-pagination .pg-btn.active {
+            background: #188bce;
+            color: #fff;
+            box-shadow: 0 6px 16px rgba(24, 139, 206, 0.12);
+            transform: translateY(-1px);
+        }
+
+        #portfolio-pagination .pg-arrow {
+            width: 36px;
+            height: 36px;
+            display: inline-grid;
+            place-items: center;
+            border-radius: 50%;
+        }
+
+        /* Single-digit numeric buttons remain perfect circles; wider pills for longer labels */
+        #portfolio-pagination .pg-btn[data-length="1"] {
+            width: 36px;
+            border-radius: 50%;
+        }
+
+        .case-desc{
+            font-weight: 400 !important;
+        }
+        #portfolio-pagination .pg-btn[data-length="2"] {
+            min-width: 60px;
+            width: auto;
+            padding: 0 8px;
+            border-radius: 30px;
+        }
+
+        #portfolio-pagination .pg-btn[data-length="3"] {
+            min-width: 72px;
+            width: auto;
+            padding: 0 10px;
+            border-radius: 36px;
+        }
+
+        /* compact ellipsis */
+        #portfolio-pagination .pg-ell {
+            padding: 0 6px;
+            color: #666;
+        }
+
+        /* Chip-style filters (modern) */
+        .filter-group--stacked {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .custom-multiselect {
+            position: relative;
+            font-family: inherit;
+        }
+
+        .custom-multiselect .multiselect-panel {
+            display: block;
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .filter-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .custom-multiselect .filter-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .custom-multiselect .filter-chips .filter-chip {
+            display: inline-flex !important;
+            width: auto !important;
+        }
+
+        .filter-chip {
+            background: rgba(255, 255, 255, 0.9);
+            color: #111;
+            border: 1px solid rgba(16, 24, 40, 0.06);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 400;
+            cursor: pointer;
+            display: inline-flex !important;
+            align-items: center;
+            gap: 8px;
+            transition: background .18s ease, transform .12s ease, box-shadow .12s ease;
+            user-select: none;
+            box-sizing: border-box;
+            white-space: nowrap;
+            flex: 0 1 auto !important;
+            min-width: 0 !important;
+        }
+
+        .filter-chip:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(16, 24, 40, 0.06);
+        }
+
+        .filter-chip .chip-close {
+            display: none;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .filter-chip.active {
+            background: #188bce;
+            color: #fff;
+            border-color: rgba(24, 139, 206, 0.14);
+        }
+
+        .filter-chip.active .chip-close {
+            display: inline-block;
+        }
+
+        /* Keep small clear X area visually distinct */
+        .filter-chip .chip-label {
+            display: inline-block;
+        }
+
+        .filter-chip .chip-close {
+            margin-left: 6px;
+        }
+
+        /* Search control: expand-left behavior */
+        .portfolio-search { position: relative; display: inline-flex; align-items:center; }
+        .portfolio-search .search-toggle {
+            width: 36px; height:36px; border-radius:50%; border:none; background: transparent; color: #188bce; display:inline-grid; place-items:center; cursor:pointer;
+            transition: transform .12s ease, box-shadow .12s ease, background .12s ease, color .12s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .portfolio-search .search-toggle:hover,
+        .portfolio-search .search-toggle:active {
+            background: #188bce; color: #fff; transform: scale(1.04);
+            box-shadow: 0 6px 18px rgba(24,139,206,0.16);
+        }
+        /* keyboard focus visible state */
+        .portfolio-search .search-toggle:focus-visible {
+            outline: 3px solid rgba(24,139,206,0.18);
+            outline-offset: 2px;
+        }
+        /* when search is open keep the colored background */
+        .portfolio-search.open .search-toggle {
+            background: #188bce; color: #fff;
+        }
+        .portfolio-search .search-box {
+            position: absolute; right: 44px; /* leave gap for the toggle */
+            width: 0; overflow: visible; display: flex; align-items:center; transition: width .28s cubic-bezier(.2,.9,.25,1), opacity .18s ease;
+            opacity: 0; pointer-events: none;
+        }
+        .portfolio-search.open .search-box { width: 260px; opacity: 1; pointer-events: auto; }
+        .portfolio-search .search-box input[type=search] {
+            width: 100%; border: none; outline: none; padding: 8px 6px; background: transparent; font-size:14px;
+            border-bottom: 2px solid rgba(16,24,40,0.08); transition: border-color .18s ease;
+        }
+        .portfolio-search .search-box input[type=search]:focus { border-bottom-color: #188bce; }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- header trasnparent area start -->
+    <header class="header-transparent header-seven header--sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-transparent-main-wrapper">
+                        <a href="index.html" class="logo">
+                            <img src="assets/images/logo/ApiceFlow_Logo/logo-light.png"
+                                style="width: 140px; height: 30px;" alt="transparent">
+                        </a>
+                        <div class="nav-area">
+                            <ul class="">
+                                <li class="main-nav">
+                                    <a href="index.html"></a>
+                                </li>
+                                <li class="main-nav">
+                                    <a href="index.html">HOME</a>
+                                </li>
+                                <li class="main-nav">
+                                    <a href="about.html">ABOUT</a>
+                                </li>
+
+                                <li class="main-nav has-dropdown mega-menu menu-dark-on-hover">
+                                    <a href="#">SERVICES</a>
+                                    <div class="rts-mega-menu service-mega-menu-style">
+                                        <div class="wrapper">
+                                            <div class="container" style="padding-top: 30px; padding-bottom: 80px;">
+                                                <div class="row g-5">
+                                                    <div class="col-lg-4">
+                                                        <div class="menu-thumb pl--20" style="padding:20px 20px;">
+                                                            <h4
+                                                                style="font-size:25px; font-weight:600; color:#188bce; margin-bottom:10px;">
+                                                                OUR SERVICES</h4>
+                                                            <p
+                                                                style="font-size:15px; color:#323232cd; line-height:1.5;">
+                                                                At ApiceFlow, we provide a wide range of IT services
+                                                                tailored to meet your business needs.<br>Our skilled
+                                                                professionals deliver innovative solutions across
+                                                                various industries, ensuring excellence in every
+                                                                project.</p>
+                                                            <a href="service.html" class="all-services-link"
+                                                                style="display:inline-block; margin-top:12px; font-weight:700; text-decoration:none;">ALL
+                                                                SERVICES<i class="fa-regular fa-arrow-right"
+                                                                    aria-hidden="true" style="margin-left:8px;"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <ul class="mega-menu-item parent-nav">
+                                                            <li>
+                                                                <a href="web-development.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">01</span>
+                                                                                WEB DEVELOPMENT</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="mobile-development.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">02</span>
+                                                                                MOBILE DEVELOPMENT</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="blockchain.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">03</span>
+                                                                                BLOCKCHAIN & WEB3</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="ai.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">04</span>
+                                                                                AI / MACHINE LEARNING</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="design.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">05</span>
+                                                                                UI / UX DESIGN SERVICES
+                                                                            </h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <ul class="mega-menu-item parent-nav">
+                                                            <li>
+                                                                <a href="devops.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">06</span>
+                                                                                CLOUD & DEVOPS
+                                                                            </h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="q&a.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="info">
+                                                                            <h5 class="title">
+                                                                                <span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">07</span>
+                                                                                QUALITY ENGINEERING & TESTING
+                                                                            </h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            <li>
+                                                                <a href="low-code&no-code.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">08</span>
+                                                                                NO-CODE/LOW-CODE DEVELOPMENT</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="enterprise.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">09</span>
+                                                                                ENTERPRISE SYSTEMS & MODERNIZATION</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="main-nav has-dropdown mega-menu menu-dark-on-hover">
+                                    <a href="industries.html">INDUSTRIES</a>
+                                    <div class="rts-mega-menu service-mega-menu-style">
+                                        <div class="wrapper">
+                                            <div class="container" style="padding-top: 30px; padding-bottom: 60px;">
+                                                <div class="row g-5" style="padding-top: 30px; padding-bottom: 30px;">
+                                                    <div class="col-lg-4">
+                                                        <div class="menu-thumb pl--20" style="padding:20px 20px;">
+                                                            <h4
+                                                                style="font-size:25px; font-weight:600; color:#188bce; padding-top: 20px; ">
+                                                                INDUSTRIES</h4>
+                                                            <p
+                                                                style="font-size:15px; color:#323232cd; line-height:1.5;">
+                                                                We guarantee you high-level, standard-compliant custom
+                                                                software tailored to your industry needs.</p>
+                                                            <a href="service.html" class="all-services-link"
+                                                                style="display:inline-block; margin-top:12px; font-weight:700; text-decoration:none;">ALL
+                                                                INDUSTRIES<i class="fa-regular fa-arrow-right"
+                                                                    aria-hidden="true" style="margin-left:8px;"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <ul class="mega-menu-item parent-nav">
+                                                            <li>
+                                                                <a href="service-details.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/credit-card.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">01</span>
+                                                                                FINTECH</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-2.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/cardiogram.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">02</span>
+                                                                                HEALTHCARE</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-3.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/grocery-store.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">03</span>
+                                                                                RETAIL & ECOMMERCE</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-3.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/invesment.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">04</span>
+                                                                                FINANCIAL SERVICES</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-3.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/supply-chain.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">05</span>
+                                                                                SUPPLY CHAIN, LOGISTICS & TRANSPORTATION
+                                                                            </h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-5.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/blockchain.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">06</span>
+                                                                                WEB3-SPECIFIC INDUSTRIES</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-5.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/film.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">07</span>
+                                                                                MEDIA, STREAMING & ENTERTAINMENT</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <ul class="mega-menu-item parent-nav">
+                                                            <li>
+                                                                <a href="service-details-4.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/plane.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">08</span>
+                                                                                TRAVEL, HOSPITALITY & TICKETING
+                                                                            </h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-5.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/mortarboard.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">09</span>
+                                                                                EDUCATION & EDTECH</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-5.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/signal-tower.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">10</span>
+                                                                                TELECOMMUNICATIONS / CONNECTIVITY</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-5.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/realestate.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">11</span>
+                                                                                REAL ESTATE & PROPTECH</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-5.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/games.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">12</span>
+                                                                                GAMING & INTERACTIVE ENTERTAINMENT</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-5.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/foodtech.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">13</span>
+                                                                                FOODTECH & RESTAURANTS</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="service-details-5.html">
+                                                                    <div class="single-service-menu">
+                                                                        <div class="icon">
+                                                                            <img src="assets/images/icons_new/sports.png"
+                                                                                alt="service">
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <h5 class="title"><span
+                                                                                    style="font-size: 10px; vertical-align: bottom;">14</span>
+                                                                                SPORTS & FITNESS</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="main-nav">
+                                    <a href="case-studies.html" style="color: #188bce;">CASE STUDIES</a>
+                                </li>
+                                <!-- <li class="main-nav">
+                                    <a href="#">CAREER</a>
+                                </li> -->
+                                <li class="main-nav">
+                                    <a href="contact.html">CONTACT</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="no-results" class="no-results">No results found. Try different filters.</div>
+
+
+                        <div class="loader-wrapper">
+                            <div class="loader">
+                            </div>
+                            <div class="loader-section section-left"></div>
+                            <div class="loader-section section-right"></div>
+                        </div>
+                        <div class="action-area">
+                            <a href="https://calendly.com/adam-apiceflow/discovery-call"
+                                class="rts-btn btn-primary btn-white" target="_blank" rel="noopener noreferrer">BOOK A
+                                MEETING</a>
+                            <button id="menu-btn" class="menu menu-btn ml--20 ml_sm--5" aria-label="Menu">
+                                <svg class="menu-icon" width="20" height="16" viewBox="0 0 20 16"
+                                    xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"
+                                    style="color:inherit;">
+                                    <rect y="14" width="10" height="2" fill="currentColor"></rect>
+                                    <rect y="7" width="20" height="2" fill="currentColor"></rect>
+                                    <rect width="10" height="2" fill="currentColor"></rect>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header trasnparent area end -->
+    <div id="menu-overlay" class="menu-overlay" aria-hidden="true"></div>
+
+    <div class="page-wrapper radious-none-button">
+        <div class="banner-about-wrapper">
+            <!-- index seven area start -->
+            <div class="hero-banner-image" style="background-image: url('assets/images/banner/portfolio.avif');">
+                <div class="hero-center-text" style="padding-top: 65px;">Case Studies
+                    <div class="page-description" style="max-width: 800px; padding: 30px 0px;">
+                        <p>At ApiceFlow, every project is a collaboration of unique visions, creative expertise, and
+                            functionality. See our portfolio of works to get a sense of our strategic thinking and
+                            commitment to user-centered design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-mission-wrapper" style="margin-left: auto; margin-right: auto;">
+            <div class="row" style="padding-top: 30px;">
+                <!-- <div class="col-xl-1"></div> -->
+                <div class="col-xl-7">
+                    <h3 style="font-weight: 900; font-size: 35px;">OUR <span
+                            style="font-weight: 900; color: #188bce; font-size: 35px;"> CASE STUDIES</span></h3>
+                </div>
+                <div class="col-xl-4">
+
+                </div>
+                <div class="col-xl-1" dir="ltr">
+                    <div class="portfolio-search" id="portfolio-search">
+                        <button class="search-toggle" id="portfolio-search-toggle" aria-label="Open search"><i
+                                class="fa fa-search"></i></button>
+                        <div class="search-box" aria-hidden="true"><input type="search" id="portfolio-search-input"
+                                placeholder="Search case studies" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="our-mission-wrapper" style="margin-left: auto; margin-right: auto;">
+            <!-- Portfolio / Case Studies section -->
+            <section class="portfolio-section rts-section-gap" aria-label="Portfolio">
+                <div class="container">
+                    <div class="portfolio-controls"
+                        style="display:flex; gap:12px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; margin-bottom:18px;">
+                        <div style="display:flex; flex-direction:column; gap:8px;">
+                            <label class="filter-label" style="font-weight:700; margin-bottom:6px;">Filter by: <b
+                                    style="font-weight:600; margin-bottom:6px; font-size: 15px;">INDUSTRY</b></label>
+                            <div class="filter-group filter-group--stacked">
+                                <!-- keep native select for progressive enhancement but hide it visually -->
+                                <select id="filter-industry" class="filter-select" aria-hidden="true"
+                                    style="position:absolute;left:-9999px;">
+                                    <option value="all">All Industries</option>
+                                    <option value="fintech">Fintech</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="retail">Retail & eCommerce</option>
+                                    <option value="financial">Financial Service</option>
+                                    <option value="supply">Supply Chain</option>
+                                    <option value="web3">Web3-specific</option>
+                                    <option value="media">Media & Entertainment</option>
+                                    <option value="travel">Travel & Hospitality</option>
+                                    <option value="education">Education</option>
+                                    <option value="telecom">Telecommunications</option>
+                                    <option value="realestate">Real Estate & Proptech</option>
+                                    <option value="gaming">Gaming</option>
+                                    <option value="foodtech">Foodtech & Restaurants</option>
+                                    <option value="sports">Sports & Fitness</option>
+                                </select>
+                                <div class="custom-multiselect" data-target="filter-industry" tabindex="0">
+                                    <div class="multiselect-panel" aria-hidden="true"></div>
+                                </div>
+                            </div>
+
+                            <label class="filter-label" style="font-weight:700; margin-bottom:6px;">Filter by: <b
+                                    style="font-weight:600; margin-bottom:6px; font-size: 15px;">SERVICE</b></label>
+                            <div class="filter-group filter-group--stacked">
+                                <select id="filter-service" class="filter-select" aria-hidden="true"
+                                    style="position:absolute;left:-9999px;">
+                                    <option value="all">All Services</option>
+                                    <option value="web">Web</option>
+                                    <option value="mobile">Mobile</option>
+                                    <option value="blockchain">Blockchain & Web3</option>
+                                    <option value="ai">AI/Machine Learning</option>
+                                    <option value="design">Design</option>
+                                    <option value="devops">Cloud & DevOps</option>
+                                    <option value="qa">Quality Engineering & Testing</option>
+                                    <option value="nocode">No-Code/Low-Code</option>
+                                    <option value="enterprise">Enterprise systems</option>
+                                </select>
+                                <div class="custom-multiselect" data-target="filter-service" tabindex="0">
+                                    <div class="multiselect-panel" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="min-width:220px; display:flex; flex-direction:column; gap:6px; align-items:flex-end;">
+                            <!-- hidden technology select (JS filter source) -->
+                            <select id="filter-technology" class="filter-select" aria-hidden="true"
+                                style="position:absolute;left:-9999px;">
+                                <option value="all">All Technologies</option>
+                                <option value="react">React</option>
+                                <option value="node">Node</option>
+                                <option value="aws">AWS</option>
+                            </select>
+                            <div class="custom-multiselect" data-target="filter-technology" tabindex="0"
+                                style="display:none;">
+                                <div class="multiselect-panel" aria-hidden="true"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="portfolio-grid" class="portfolio-grid" aria-live="polite">
+                        <!-- Static sample cards (11) so the UI is visible without JS -->
+                        <!-- Cards mirror the structure created by the JS renderer -->
+                        <!-- Use images found in assets/images/about/01.webp .. 11.webp -->
+
+                        <!-- Card 1 -->
+                        <div data-industry="retail" data-service="web design ai">
+                            <div class="portfolio-card" data-id="1">
+                                <div class="bg"
+                                    style="background-image:url('assets/images/portfolio/portfolio1/portfolio1-1.jpg')">
+                                </div>
+                                <div class="bg alt"
+                                    style="background-image:url('assets/images/portfolio/portfolio1/portfolio1-3.jpg')">
+                                </div>
+                                <div class="mask">
+                                    <div class="meta">
+                                        <div class="badges">
+                                            <div class="badge">Retail & eCommerce</div>
+                                            <div class="badge">NLP</div>
+                                            <div class="badge">UI/UX Design</div>
+                                            <div class="badge">Web Development</div>
+                                        </div>
+                                    </div>
+                                    <div class="cta"><a class="btn-view" href="portfolio1.html">View case study <span
+                                                class="arrow">→</span></a></div>
+                                </div>
+                            </div>
+                            <div class="card-caption">
+                                <h3 class="case-title"><a href="portfolio1.html" title="Reeact.io">Reeact.io</a></h3>
+                                <p class="case-desc">Business Management Tool</p>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div data-industry="healthcare" data-service="mobile design">
+                            <div class="portfolio-card" data-id="2">
+                                <div class="bg"
+                                    style="background-image:url('assets/images/portfolio/portfolio25/Genie1.avif')">
+                                </div>
+                                <div class="bg alt" style="background-image:url('assets/images/portfolio/portfolio25/Genie2.avif')"></div>
+                                <div class="mask">
+                                    <div class="meta">
+                                        <div class="badges">
+                                            <div class="badge">Healthcare</div>
+                                            <div class="badge">Mobile Development</div>
+                                        </div>
+                                    </div>
+                                    <div class="cta"><a class="btn-view" href="portfolio2.html">View case study <span
+                                                class="arrow">→</span></a></div>
+                                </div>
+                            </div>
+
+                            <div class="card-caption">
+                                <h3 class="case-title"><a href="portfolio2.html" title="Genie">Genie</a></h3>
+                                <p class="case-desc">DNA Analysis Tool</p>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div data-industry="gaming web3" data-service="blockchain web design">
+                            <div class="portfolio-card" data-id="3">
+                                <div class="bg"
+                                    style="background-image:url('assets/images/portfolio/portfolio4/portfolio4-2.jpg')">
+                                </div>
+                                <div class="bg alt" style="background-image:url('assets/images/portfolio/portfolio4/portfolio4-mini.jpg')"></div>
+                                <div class="mask">
+                                    <div class="meta">
+                                        <div class="badges">
+                                            <div class="badge">Gaming</div>
+                                            <div class="badge">UI / UX Design</div>
+                                            <div class="badge">Blockchain/Web3</div>
+                                            <div class="badge">Web Development</div>
+                                        </div>
+                                    </div>
+                                    <div class="cta"><a class="btn-view" href="#">View case study <span
+                                                class="arrow">→</span></a></div>
+                                </div>
+                            </div>
+
+                            <div class="card-caption">
+                                <h3 class="case-title"><a href="portfolio3.html" title="The Sandbox">The SandBox</a></h3>
+                                <p class="case-desc">Blockchain Gaming Platform</p>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div data-industry="healthcare" data-service="web design">
+                            <div class="portfolio-card" data-id="4">
+                                <div class="bg"
+                                    style="background-image:url('assets/images/portfolio/portfolio10/portfolio10-1.jpg')">
+                                </div>
+                                <div class="bg alt" style="background-image:url('assets/images/portfolio/portfolio10/portfolio10-2.jpg')"></div>
+                                <div class="mask">
+                                    <div class="meta">
+                                        <div class="badges">
+                                            <div class="badge">Healthcare</div>
+                                            <div class="badge">Web Development</div>
+                                            <div class="badge">UI / UX Design</div>
+                                        </div>
+                                    </div>
+                                    <div class="cta"><a class="btn-view" href="#">View case study <span
+                                                class="arrow">→</span></a></div>
+                                </div>
+                            </div>
+                            <div class="card-caption">
+                                <h3 class="case-title"><a href="#" title="MixCare">MixCare</a></h3>
+                                <p class="case-desc">Health & Social Digital Platform</p>
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div data-industry="education" data-service="design">
+                            <div class="portfolio-card" data-id="5">
+                                <div class="bg"
+                                    style="background-image:url('assets/images/service/web-development.jpg')">
+                                </div>
+                                <div class="bg alt" style="background-image:url('assets/images/about/05.webp')"></div>
+                                <div class="mask">
+                                    <div class="meta">
+                                        <div class="badges">
+                                            <div class="badge">react</div>
+                                            <div class="badge">web</div>
+                                        </div>
+                                    </div>
+                                    <div class="cta"><a class="btn-view" href="#">View case study <span
+                                                class="arrow">→</span></a></div>
+                                </div>
+                            </div>
+                            <div class="card-caption">
+                                <h3 class="case-title"><a href="#" title="Case Study 10">Case Study 10</a></h3>
+                                <p class="case-desc">A short description for case study 10.</p>
+                            </div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div data-industry="healthcare" data-service="mobile qa design">
+                            <div class="portfolio-card" data-id="6">
+                                <div class="bg"
+                                    style="background-image:url('assets/images/portfolio/portfolio8/portfolio8-3.jpg')">
+                                </div>
+                                <div class="bg alt" style="background-image:url('assets/images/portfolio/portfolio8/portfolio8-1.jpg')"></div>
+                                <div class="mask">
+                                    <div class="meta">
+                                        <div class="badges">
+                                            <div class="badge">Healthcare</div>
+                                            <div class="badge">Mobile Development</div>
+                                            <div class="badge">UI/UX Design</div>
+                                        </div>
+                                    </div>
+                                    <div class="cta"><a class="btn-view" href="#">View case study <span
+                                                class="arrow">→</span></a></div>
+                                </div>
+                            </div>
+                            <div class="card-caption">
+                                <h3 class="case-title"><a href="#" title="SG Santé">SG Santé</a></h3>
+                                <p class="case-desc">Healthcare & Insurance Service App</p>
+                            </div>
+                        </div>
+                        <!-- Card 7 -->
+                        <div data-industry="healthcare" data-service="web">
+                            <div class="portfolio-card" data-id="7">
+                                <div class="bg"
+                                    style="background-image:url('assets/images/service/web-development.jpg')">
+                                </div>
+                                <div class="bg alt" style="background-image:url('assets/images/about/07.webp')"></div>
+                                <div class="mask">
+                                    <div class="meta">
+                                        <div class="badges">
+                                            <div class="badge">react</div>
+                                            <div class="badge">aws</div>
+                                        </div>
+                                    </div>
+                                    <div class="cta"><a class="btn-view" href="#">View case study <span
+                                                class="arrow">→</span></a></div>
+                                </div>
+                            </div>
+                            <div class="card-caption">
+                                <h3 class="case-title"><a href="#" title="Case Study 4">Case Study 4</a></h3>
+                                <p class="case-desc">A short description for case study 4.</p>
+                            </div>
+                        </div>
+                        <!-- Card 8 -->
+                        <div data-industry="gaming" data-service="web">
+                            <div class="portfolio-card" data-id="8">
+                                <div class="bg"
+                                    style="background-image:url('assets/images/service/web-development.jpg')">
+                                </div>
+                                <div class="bg alt" style="background-image:url('assets/images/about/08.webp')"></div>
+                                <div class="mask">
+                                    <div class="meta">
+                                        <div class="badges">
+                                            <div class="badge">node</div>
+                                            <div class="badge">aws</div>
+                                        </div>
+                                    </div>
+                                    <div class="cta"><a class="btn-view" href="#">View case study <span
+                                                class="arrow">→</span></a></div>
+                                </div>
+                            </div>
+
+                            <div class="card-caption">
+                                <h3 class="case-title"><a href="#" title="Case Study 3">Case Study 3</a></h3>
+                                <p class="case-desc">A short description for case study 3.</p>
+                            </div>
+                        </div>
+                        <!-- Card 9 -->
+                        <div data-industry="media" data-service="web">
+                            <div class="portfolio-card" data-id="9">
+                                <div class="bg"
+                                    style="background-image:url('assets/images/service/web-development.jpg')">
+                                </div>
+                                <div class="bg alt" style="background-image:url('assets/images/about/09.webp')"></div>
+                                <div class="mask">
+                                    <div class="meta">
+                                        <div class="badges">
+                                            <div class="badge">react</div>
+                                            <div class="badge">design</div>
+                                        </div>
+                                    </div>
+                                    <div class="cta"><a class="btn-view" href="#">View case study <span
+                                                class="arrow">→</span></a></div>
+                                </div>
+                            </div>
+
+                            <div class="card-caption">
+                                <h3 class="case-title"><a href="#" title="Case Study 1">Case Study 1</a></h3>
+                                <p class="case-desc">A short description for case study 1.</p>
+                            </div>
+                        </div>
+                        <!-- Card 10 -->
+                        <div>
+                            <div class="portfolio-card" data-id="10">
+                                <div class="bg"
+                                    style="background-image:url('assets/images/service/web-development.jpg')">
+                                </div>
+                                <div class="bg alt" style="background-image:url('assets/images/about/10.webp')"></div>
+                                <div class="mask">
+                                    <div class="meta">
+                                        <div class="badges">
+                                            <div class="badge">aws</div>
+                                            <div class="badge">web</div>
+                                        </div>
+                                    </div>
+                                    <div class="cta"><a class="btn-view" href="#">View case study <span
+                                                class="arrow">→</span></a></div>
+                                </div>
+                            </div>
+
+                            <div class="card-caption">
+                                <h3 class="case-title"><a href="#" title="Case Study 2">Case Study 2</a></h3>
+                                <p class="case-desc">A short description for case study 2.</p>
+                            </div>
+                        </div>
+                        <!-- Card 11 -->
+                        <div>
+                            <div class="portfolio-card" data-id="11">
+                                <div class="bg"
+                                    style="background-image:url('assets/images/service/web-development.jpg')">
+                                </div>
+                                <div class="bg alt" style="background-image:url('assets/images/about/11.webp')"></div>
+                                <div class="mask">
+                                    <div class="meta">
+                                        <div class="badges">
+                                            <div class="badge">react</div>
+                                            <div class="badge">aws</div>
+                                        </div>
+                                    </div>
+                                    <div class="cta"><a class="btn-view" href="#">View case study <span
+                                                class="arrow">→</span></a></div>
+                                </div>
+                            </div>
+                            <div class="card-caption">
+                                <h3 class="case-title"><a href="#" title="Case Study 5">Case Study 5</a></h3>
+                                <p class="case-desc">A short description for case study 5.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-pagination" style="display:flex; justify-content:center; margin-top:18px;"
+                        id="portfolio-pagination"></div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+
+        <div class="rts-footer-area pt--100 pb--100 pt_sm--50 pb_sm--40  footer-two footer-bg-two">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
+                        <div class="footer-two-single-wized two">
+                            <div class="wized-title-area">
+                                <h5 class="wized-title">Our Services</h5>
+                                <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
+                            </div>
+                            <div class="row">
+                                <div class="wized-2-body col-xl-6">
+                                    <ul>
+                                        <li><a href="service-details.html"><i
+                                                    class="fal fa-chevron-double-right"></i>Web
+                                                Development</a>
+                                        </li>
+                                        <li><a href="service-details.html"><i
+                                                    class="fal fa-chevron-double-right"></i>Mobile
+                                                Development</a></li>
+                                        <li><a href="blockchain.html">Blockchain & Web3</a></li>
+                                        <li><a href="ai.html">AI
+                                                /
+                                                Machine Learning</a></li>
+                                        <li><a href="design.html">UI
+                                                /
+                                                UX Design Services</a></li>
+                                        <!-- <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Career</a></li> -->
+                                    </ul>
+                                </div>
+                                <div class="wized-2-body col-xl-6">
+                                    <ul>
+                                        <li><a href="devops.html">Cloud
+                                                &
+                                                DevOps</a></li>
+                                        <li><a href="q&a.html">Quality
+                                                Engineering & Testing</a></li>
+                                        <li><a href="low-code&no-code.html">No-Code /
+                                                Low-Code Development</a></li>
+                                        <li><a href="enterprise.html">Enterprise
+                                                Systems & Modernization</a></li>
+                                        <!-- <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Career</a></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
+                        <div class="footer-two-single-wized two">
+                            <div class="wized-title-area">
+                                <h5 class="wized-title">Industries</h5>
+                                <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
+                            </div>
+                            <div class="row">
+                                <div class="wized-2-body col-xl-6">
+                                    <ul>
+                                        <li><a href="service-details.html">Fintech</a>
+                                        </li>
+                                        <li><a href="service-details.html">Healthcare</a></li>
+                                        <li><a href="service-details.html">Retail & eCommerce</a></li>
+                                        <li><a href="service-details.html">Financial Services</a></li>
+                                        <li><a href="service-details.html">Supply Chain & Transportation</a></li>
+                                        <li><a href="service-details.html"><i
+                                                    class="fal fa-chevron-double-right"></i>Web3-specific Industries</a>
+                                        </li>
+                                        <li><a href="service-details.html">Media & Entertainment</a></li>
+                                    </ul>
+                                </div>
+                                <div class="wized-2-body col-xl-6">
+                                    <ul>
+                                        <li><a href="service-details.html">Travel & Hospitality</a>
+                                        </li>
+                                        <li><a href="service-details.html">Education & EdTech</a></li>
+                                        <li><a href="service-details.html">Telecommunications</a></li>
+                                        <li><a href="service-details.html">Real Estate</a></li>
+                                        <li><a href="service-details.html">Gaming</a></li>
+                                        <li><a href="service-details.html"><i
+                                                    class="fal fa-chevron-double-right"></i>Foodtech & Restaurants</a>
+                                        </li>
+                                        <li><a href="service-details.html">Sports & Fitness</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single wized -->
+                    <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
+                        <div class="footer-two-single-wized two">
+                            <div class="wized-title-area">
+                                <h5 class="wized-title">Others</h5>
+                                <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
+                            </div>
+                            <div class="wized-2-body">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html"><i
+                                                class="fal fa-chevron-double-right"></i>About</a>
+                                    </li>
+                                    <li><a href="case-studies.html" style="color:#188bce;">Case Studies</a></li>
+                                    <li><a href="contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--30 mt_md--30">
+                        <div class="footer-two-single-wized">
+                            <div class="wized-title-area">
+                                <h5 class="wized-title">Contact Us</h5>
+                                <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
+                            </div>
+                            <div class="wized-2-body">
+                                <div class="contact-info-1">
+                                    <!-- <div class="icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div> -->
+                                    <div class="disc">
+                                        <!-- <span>Call Us 24/7</span> -->
+                                        <a href="tel:+17132394774">+1 713 239 4774</a>
+                                    </div>
+                                </div>
+                                <div class="contact-info-1">
+                                    <!-- <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div> -->
+                                    <div class="disc">
+                                        <a href="mailto:contact@apiceflow.com">contact@apiceflow.com</a>
+                                    </div>
+                                </div>
+                                <div class="contact-info-1">
+                                    <div class="disc">
+                                        <a href="https://www.google.com/maps/place/Glenealy+Tower,+1+Glenealy,+Central,+Hong+Kong/@22.2798136,114.152531,17z/data=!3m1!4b1!4m6!3m5!1s0x3404007acff3ffff:0xbafe3c4dfcb13abe!8m2!3d22.2798087!4d114.1551059!16s%2Fg%2F11xcfzb3gw?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+                                            target="_blank">Glenealy Tower, No.1 Glenealy, Central, Hong Kong <br>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href="https://www.x.com/apiceflowglobal" target="_blank"><i
+                                        class="fa-brands fa-twitter" style="padding: 0px 10px"></i></a>
+                                <a href="https://www.linkedin.com/company/apiceflow-global/" target="_blank"><i
+                                        class="fa-brands fa-linkedin-in" style="padding: 0px 10px"></i></a>
+                                <a href="https://github.com/ApiceFlow" target="_blank"><i class="fa-brands fa-github"
+                                        style="padding: 0px 10px"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12"></div> -->
+                </div>
+            </div>
+        </div>
+        <div class="rts-copy-right-1 ptb--10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-h-2-wrapper">
+                            <p class="disc">
+                                ©
+                                <script>
+                                    document.write(
+                                        new Date().getFullYear()
+                                    )
+                                </script> All rights reserved.
+                                <b>ApiceFlow LIMITED</b>
+                            </p>
+                            <div class="right">
+                                <ul>
+                                    <li><a href="privacy.html">Privacy Policy</a></li>
+                                    <li><a href="terms.html">Terms of Use</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div id="side-bar" class="side-bar header-two">
+        <button class="close-icon-menu" title="Close menu"><i class="far fa-times"></i></button>
+        <!-- inner menu area desktop start -->
+        <div class="rts-sidebar-menu-desktop">
+            <a class="logo-1" href="index.html"><img class="logo" src="assets/images/logo/ApiceFlow_Logo/logo-dark.png"
+                    style="width: 150px; height: 32px;" alt="ApiceFlow_Logo"></a>
+            <div class="body d-none d-xl-block">
+                <div class="get-in-touch">
+                    <!-- title -->
+                    <div class="h6 title">Get In Touch</div>
+                    <!-- title End -->
+                    <div class="wrapper">
+                        <!-- single -->
+                        <div class="single">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+17132394774">+1 713 239 4774</a>
+                        </div>
+                        <!-- single ENd -->
+                        <!-- single -->
+                        <div class="single">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contact@apiceflow.com">contact@apiceflow.com</a>
+                        </div>
+                        <!-- single ENd -->
+                        <!-- single ENd -->
+                        <!-- single -->
+                        <div class="single">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://www.google.com/maps/place/Glenealy+Tower,+1+Glenealy,+Central,+Hong+Kong/@22.2798136,114.152531,17z/data=!3m1!4b1!4m6!3m5!1s0x3404007acff3ffff:0xbafe3c4dfcb13abe!8m2!3d22.2798087!4d114.1551059!16s%2Fg%2F11xcfzb3gw?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank">Glenealy Tower, No.1 Glenealy, Central, Hong Kong</a>
+                        </div>
+                        <!-- single ENd -->
+                    </div>
+                    <div class="social-wrapper-two menu">
+                        <!-- <a href="#" aria-label="Facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></a> -->
+                        <a href="https://www.x.com/apiceflowglobal" aria-label="twitter" target="_blank">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/apiceflow-global/" aria-label="linkedin"
+                            target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/ApiceFlow" aria-label="github" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area start -->
+        <div class="mobile-menu d-block d-xl-none">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+                    <li>
+                        <a href="index.html" class="main" aria-expanded="false">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="main" aria-expanded="false">About</a>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main" aria-expanded="false">Services</a>
+                        <ul class="submenu mm-collapse" style="height: 0px;">
+                            <li><a href="web-development.html">Web Development</a>
+                            </li>
+                            <li><a href="service-details-2.html">Web Application Development</a>
+                            </li>
+                            <li><a href="project.html">Mobile Development</a>
+                            </li>
+                            <li><a href="team.html">Blockchain & Web3</a>
+                            </li>
+                            <li><a href="team-details.html">AI / Machine Learning</a>
+                            </li>
+                            <li><a href="appoinment.html">Cloud & DevOps</a>
+                            <li><a href="appoinment.html">Quality Engineering & Testing</a>
+                            <li><a href="pricing.html">No-Code/Low-Code Development</a>
+                            </li>
+                            <li><a href="appoinment.html">Enterprise Systems & Modernization</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main" aria-expanded="false">Industries</a>
+                        <ul class="submenu mm-collapse" style="height: 0px;">
+                            <li><a class="mobile-menu-link" href="service.html">Fintech</a></li>
+                            <li><a class="mobile-menu-link" href="service-details.html">Healthcare</a></li>
+                            <li><a class="mobile-menu-link" href="service-details-2.html">Retail & eCommerce</a></li>
+                            <li><a class="mobile-menu-link" href="service-details-3.html">Financial Services</a></li>
+                            <li><a class="mobile-menu-link" href="service-details-3.html">Supply Chain, Logistics &
+                                    Transportation</a></li>
+                            <li><a class="mobile-menu-link" href="service-details-3.html">Web3-specific Industries</a>
+                            </li>
+                            <li><a class="mobile-menu-link" href="service-details-3.html">Media, Streaming &
+                                    Entertainment</a></li>
+                            <li><a class="mobile-menu-link" href="service-details-4.html">Travel & Hospitality</a></li>
+                            <li><a class="mobile-menu-link" href="service-details-5.html">Education & Edtech</a></li>
+                            <li><a class="mobile-menu-link" href="service-details-5.html">Telecommunications /
+                                    Connectivity</a></li>
+                            <li><a class="mobile-menu-link" href="service-details-3.html">Real Estate & Proptech</a>
+                            </li>
+                            <li><a class="mobile-menu-link" href="service-details-3.html">Gaming & Interactive
+                                    Entertainment</a></li>
+                            <li><a class="mobile-menu-link" href="service-details-3.html">Foodtech & Restaurants</a>
+                            </li>
+                            <li><a class="mobile-menu-link" href="service-details-5.html">Sports & Fitness</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="case-studies.html" class="main" aria-expanded="false">Case Studies</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="main" aria-expanded="false">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="social-wrapper-one">
+                <ul>
+                    <li>
+                        <a href="https://www.x.com/apiceflowglobal" aria-label="twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/apiceflow-global/" aria-label="linkedin"
+                            target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/ApiceFlow" aria-label="github" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- inner menu area desktop End -->
+
+
+    <!-- offcanvase search -->
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <div id="anywhere-home" class="">
+    </div>
+
+    <!-- rtl btn area start -->
+    <!-- <div class="rtl-ltr-switcher-btn">
+        <span class="rtl show">View RTL</span>
+        <span class="ltr">View LTR</span>
+    </div> -->
+    <!-- rtl btn area end -->
+
+    <!-- progress area start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+            </path>
+        </svg>
+    </div>
+
+    <style>
+        /* Overlay that covers the page content while megamenu is open */
+        #menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.78);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .18s ease, visibility .18s;
+            z-index: 50;
+            /* below header but above page content */
+            pointer-events: none;
+        }
+
+        /* Keep header above overlay so header items (logo, CTA, menu button) remain visible */
+        /* Removed empty `header.header-transparent` ruleset to avoid lint warnings. */
+
+        /* Ensure mega menus render above the overlay */
+        header.header-transparent .rts-mega-menu {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            z-index: 1010;
+            /* above overlay */
+            pointer-events: auto;
+        }
+
+        /* show overlay when header has active class */
+        header.header-transparent.menu-dark-active+#menu-overlay {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* --- Header background / link color while active --- */
+        header.header-transparent.menu-dark-active,
+        header.header-transparent.menu-dark-active .header-transparent-main-wrapper {
+            background-color: #20282d !important;
+            transition: background-color .18s ease;
+        }
+
+        /* change nav links and menu button to white for contrast, but do NOT force the CTA anchor */
+        header.header-transparent.menu-dark-active .nav-area a,
+        header.header-transparent.menu-dark-active .action-area .menu,
+        header.header-transparent.menu-dark-active .action-area button {
+            color: #ffffff !important;
+        }
+
+        /* preserve CTA (Book a Meeting) intended styling */
+        header.header-transparent.menu-dark-active .action-area a.rts-btn.btn-white {
+            color: unset !important;
+        }
+
+        /* Hero wrapper — force a viewport-fitting hero and hide overflow from paddings */
+        .index-seven-area.rts-section-gap.with-video {
+            position: relative;
+            height: 100vh;
+            /* fill viewport on desktop */
+            max-height: 100vh;
+            overflow: hidden;
+            /* prevent video from creating scroll */
+            padding-top: 0;
+            /* override section gap paddings */
+            padding-bottom: 0;
+        }
+
+        /* Hero wrapper — force a viewport-fitting hero and hide overflow from paddings */
+        .index-seven-area.rts-section-gap.with-video {
+            position: relative;
+            height: 100vh;
+            /* fill viewport on desktop */
+            max-height: 100vh;
+            overflow: hidden;
+            /* prevent video from creating scroll */
+            padding-top: 0;
+            /* override section gap paddings */
+            padding-bottom: 0;
+        }
+
+        /* Smaller hero on narrow screens */
+        @media (max-width: 991.98px) {
+            .index-seven-area.rts-section-gap.with-video {
+                height: 65vh;
+                max-height: 65vh;
+            }
+        }
+
+        /* Video container covers the banner area */
+        .hero-bg-video {
+            position: absolute;
+            inset: 0;
+            /* top:0; right:0; bottom:0; left:0; */
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Make the video exactly match the hero box (no transform centering that can overflow) */
+        .hero-bg-video video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            max-height: 100vh;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+
+        /* Ensure banner content sits above the video */
+        .banner-seven-inner-content,
+        .banner-seven-inner-content * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- Added: change header background when Services/Industries hovered --- */
+        /* JS will toggle .menu-dark-active on the header when hovering .menu-dark-on-hover items */
+        header.header-transparent.menu-dark-active,
+        header.header-transparent.menu-dark-active .header-transparent-main-wrapper {
+            background-color: #ffffff !important;
+            transition: background-color .18s ease;
+        }
+
+        /* make sure nav links remain readable when bg changes */
+        header.header-transparent.menu-dark-active .nav-area a,
+        /* header.header-transparent.menu-dark-active .action-area a, */
+        header.header-transparent.menu-dark-active .action-area button {
+            color: #000000 !important;
+        }
+    </style>
+    <script>
+        // Toggle a CSS class on the header when any menu item with .menu-dark-on-hover is hovered.
+        // This approach avoids needing :has() (limited browser support) and works on current browsers.
+        document.addEventListener('DOMContentLoaded', function () {
+            var header = document.querySelector('header.header-transparent');
+            if (!header) return;
+            var targets = document.querySelectorAll('.menu-dark-on-hover');
+            targets.forEach(function (el) {
+                el.addEventListener('mouseenter', function () {
+                    header.classList.add('menu-dark-active');
+                });
+                el.addEventListener('mouseleave', function () {
+                    header.classList.remove('menu-dark-active');
+                });
+                // also handle focus for keyboard users
+                el.addEventListener('focusin', function () {
+                    header.classList.add('menu-dark-active');
+                });
+                el.addEventListener('focusout', function () {
+                    header.classList.remove('menu-dark-active');
+                });
+            });
+        });
+    </script>
+    <script>
+        (function () {
+            // Simple pagination for portfolio-grid: show 9 items per page.
+            var perPage = 8;
+            function initPagination() {
+                var grid = document.getElementById('portfolio-grid');
+                var pagWrap = document.getElementById('portfolio-pagination');
+                if (!grid || !pagWrap) return;
+
+                // Build items: pair a .portfolio-card with its following .card-caption (they may be wrapped)
+                var rawChildren = Array.from(grid.children);
+                var items = [];
+                for (var i = 0; i < rawChildren.length; i++) {
+                    var el = rawChildren[i];
+                    // cards sometimes are wrapped in a parent <div> — find the portfolio-card inside
+                    var card = el.querySelector ? el.querySelector('.portfolio-card') : null;
+                    if (card) {
+                        var caption = el.querySelector('.card-caption');
+                        items.push({ cardEl: card, captionEl: caption, wrapper: el });
+                    }
+                }
+
+                var total = items.length;
+                var totalPages = Math.max(1, Math.ceil(total / perPage));
+                var current = 1;
+
+                function renderPage(page, opts) {
+                    var doScroll = !(opts && opts.scroll === false);
+                    current = Math.min(Math.max(1, page), totalPages);
+                    var start = (current - 1) * perPage;
+                    var end = start + perPage;
+                    items.forEach(function (it, idx) {
+                        if (idx >= start && idx < end) it.wrapper.style.display = '';
+                        else it.wrapper.style.display = 'none';
+                    });
+                    renderPagination();
+                    // scroll the grid into view for better UX only when requested
+                    if (doScroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                function createBtn(label, cls) {
+                    var b = document.createElement('button');
+                    b.type = 'button';
+                    b.className = 'pg-btn' + (cls ? ' ' + cls : '');
+                    b.textContent = label;
+                    // mark length for styling: digits only
+                    var len = String(label).trim().length;
+                    b.setAttribute('data-length', '' + len);
+                    return b;
+                }
+
+                function renderPagination() {
+                    pagWrap.innerHTML = '';
+                    // Prev
+                    var prev = createBtn('‹', 'pg-arrow');
+                    prev.disabled = current === 1;
+                    prev.addEventListener('click', function () { if (current > 1) renderPage(current - 1, { scroll: true }); });
+                    pagWrap.appendChild(prev);
+
+                    // Render page numbers with simple truncation if many pages
+                    var maxButtons = 7; // including first/last
+                    if (totalPages <= maxButtons) {
+                        for (var p = 1; p <= totalPages; p++) appendPageBtn(p);
+                    } else {
+                        appendPageBtn(1);
+                        if (current > 4) appendEllipsis();
+                        var start = Math.max(2, current - 2);
+                        var finish = Math.min(totalPages - 1, current + 2);
+                        for (var p = start; p <= finish; p++) appendPageBtn(p);
+                        if (current < totalPages - 3) appendEllipsis();
+                        appendPageBtn(totalPages);
+                    }
+
+                    // Next
+                    var next = createBtn('›', 'pg-arrow');
+                    next.disabled = current === totalPages;
+                    next.addEventListener('click', function () { if (current < totalPages) renderPage(current + 1, { scroll: true }); });
+                    pagWrap.appendChild(next);
+
+                    function appendPageBtn(p) {
+                        var b = createBtn(p);
+                        if (p === current) b.classList.add('active');
+                        b.addEventListener('click', function () { renderPage(p, { scroll: true }); });
+                        pagWrap.appendChild(b);
+                    }
+
+                    function appendEllipsis() {
+                        var s = document.createElement('span');
+                        s.className = 'pg-ell';
+                        s.textContent = '…';
+                        pagWrap.appendChild(s);
+                    }
+                }
+
+                // initial render
+                renderPage(1);
+
+                // expose a simple recalc method to allow filtering to recompute pages
+                window.__portfolioPagination = {
+                    recalc: function () {
+                        // rebuild the items array from currently visible wrappers
+                        var rawChildren = Array.from(grid.children).filter(function (el) { return el.style.display !== 'none'; });
+                        items = [];
+                        rawChildren.forEach(function (el) {
+                            var card = el.querySelector ? el.querySelector('.portfolio-card') : null;
+                            if (card) items.push({ cardEl: card, captionEl: el.querySelector('.card-caption'), wrapper: el });
+                        });
+                        total = items.length;
+                        totalPages = Math.max(1, Math.ceil(total / perPage));
+                        // reset to page 1 without scrolling (filter change)
+                        renderPage(1, { scroll: false });
+                    }
+                };
+
+                // respond to filter change event to recalc
+                document.addEventListener('filters:changed', function () { if (window.__portfolioPagination && window.__portfolioPagination.recalc) window.__portfolioPagination.recalc(); });
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPagination);
+            else initPagination();
+        })();
+    </script>
+    <script>
+        (function () {
+            // Custom multiselect initialization and multi-filter logic
+            function buildMultiselect(ms) {
+                var targetId = ms.getAttribute('data-target');
+                var select = document.getElementById(targetId);
+                if (!select) return;
+                var panel = ms.querySelector('.multiselect-panel');
+                panel.innerHTML = '';
+                // build options from select as chip buttons
+                var chipRow = document.createElement('div');
+                chipRow.className = 'filter-chips';
+                Array.from(select.options).forEach(function (opt) {
+                    var val = opt.value;
+                    var text = opt.textContent || opt.innerText || val;
+                    if (val === 'all') return; // skip 'all' in chips
+                    var chip = document.createElement('button');
+                    chip.type = 'button';
+                    chip.className = 'filter-chip';
+                    chip.setAttribute('data-value', val);
+                    chip.innerHTML = '<span class="chip-label">' + text + '</span>' + '<span class="chip-close">✕</span>';
+                    chip.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        chip.classList.toggle('active');
+                        applyFilters();
+                    });
+                    chipRow.appendChild(chip);
+                });
+                panel.appendChild(chipRow);
+
+                // toggle open/close; when opening, close other multiselects
+                var toggle = ms.querySelector('.multiselect-toggle');
+                function open() { ms.classList.add('open'); panel.setAttribute('aria-hidden', 'false'); }
+                function close() { ms.classList.remove('open'); panel.setAttribute('aria-hidden', 'true'); }
+                if (toggle) {
+                    toggle.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        var isOpen = ms.classList.contains('open');
+                        // close other open panels
+                        document.querySelectorAll('.custom-multiselect.open').forEach(function (other) { if (other !== ms) other.classList.remove('open'); });
+                        if (isOpen) close(); else open();
+                    });
+                    document.addEventListener('click', function () { close(); });
+                    ms.addEventListener('click', function (e) { e.stopPropagation(); });
+                }
+
+                // clicking chips already triggers applyFilters
+            }
+
+            function getSelectedValues(id) {
+                var ms = document.querySelector('.custom-multiselect[data-target="' + id + '"]');
+                if (!ms) return [];
+                var active = ms.querySelectorAll('.filter-chip.active');
+                return Array.from(active).map(function (c) { return c.getAttribute('data-value'); });
+            }
+
+            function applyFilters() {
+                var industrySel = getSelectedValues('filter-industry');
+                var techSel = getSelectedValues('filter-technology');
+                var serviceSel = getSelectedValues('filter-service');
+
+                var searchTerm = '';
+                var searchInput = document.getElementById('portfolio-search-input');
+                if (searchInput) searchTerm = (searchInput.value || '').trim().toLowerCase();
+
+                var wrappers = Array.from(document.querySelectorAll('#portfolio-grid > div'));
+                var visibleCount = 0;
+                wrappers.forEach(function (wrap) {
+                    var card = wrap.querySelector('.portfolio-card');
+                    if (!card) return;
+                    // gather badges text (lowercase keys)
+                    var badges = Array.from(card.querySelectorAll('.badge')).map(function (b) { return b.textContent.trim().toLowerCase(); });
+                    var dataIndustry = (wrap.getAttribute('data-industry') || '').toLowerCase();
+                    var dataService = (wrap.getAttribute('data-service') || '').toLowerCase();
+
+                    // helper: split a target string into simple tokens (split on non-word chars)
+                    function tokensOf(str) {
+                        if (!str) return [];
+                        return Array.from(new Set(String(str).toLowerCase().split(/[^a-z0-9#@\+]+/).filter(Boolean)));
+                    }
+
+                    function matchesSelection(list, targetString) {
+                        if (!list || !list.length) return true;
+                        var t = (targetString || '').toLowerCase();
+                        var tTokens = tokensOf(t);
+                        return list.some(function (v) {
+                            v = (v || '').toLowerCase();
+                            // match against badges text
+                            if (badges.indexOf(v) !== -1) return true;
+                            // exact match to the whole target string
+                            if (t === v) return true;
+                            // match any token in the target string
+                            if (tTokens.indexOf(v) !== -1) return true;
+                            return false;
+                        });
+                    }
+
+                    var industryMatch = matchesSelection(industrySel, dataIndustry);
+                    var serviceMatch = matchesSelection(serviceSel, dataService);
+                    var techMatch = techSel.length === 0 || techSel.some(function (v) {
+                        v = (v || '').toLowerCase();
+                        if (badges.indexOf(v) !== -1) return true;
+                        // also check if the tech token appears inside the industry or service tokens
+                        var indTokens = tokensOf(dataIndustry);
+                        var svcTokens = tokensOf(dataService);
+                        return indTokens.indexOf(v) !== -1 || svcTokens.indexOf(v) !== -1;
+                    });
+
+                    // search matching (title/description/badges)
+                    var title = (wrap.querySelector('.case-title') ? wrap.querySelector('.case-title').textContent : '') || '';
+                    var desc = (wrap.querySelector('.case-desc') ? wrap.querySelector('.case-desc').textContent : '') || '';
+                    title = title.toLowerCase();
+                    desc = desc.toLowerCase();
+                    var searchMatch = true;
+                    if (searchTerm) {
+                        // split into tokens and require each token to appear somewhere (title, desc or badges)
+                        var tokens = searchTerm.split(/\s+/).map(function (t) { return t.trim(); }).filter(function (t) { return t.length > 0; });
+                        if (tokens.length === 0) searchMatch = true;
+                        else {
+                            searchMatch = tokens.every(function (tok) {
+                                if (!tok) return true;
+                                if (title.indexOf(tok) !== -1) return true;
+                                if (desc.indexOf(tok) !== -1) return true;
+                                return badges.some(function (b) { return b.indexOf(tok) !== -1; });
+                            });
+                        }
+                    }
+
+                    var visible = industryMatch && techMatch && serviceMatch && searchMatch;
+
+                    if (visible) {
+                        wrap.classList.remove('is-hidden');
+                        wrap.classList.add('is-visible');
+                        setTimeout(function () { wrap.style.display = ''; }, 350);
+                        visibleCount++;
+                    } else {
+                        wrap.classList.remove('is-visible');
+                        wrap.classList.add('is-hidden');
+                        setTimeout(function () { wrap.style.display = 'none'; }, 320);
+                    }
+                });
+
+                var noResults = document.getElementById('no-results');
+                if (noResults) noResults.style.display = visibleCount ? 'none' : '';
+
+                // dispatch event in case pagination needs recalculation
+                document.dispatchEvent(new Event('filters:changed'));
+                if (window.__portfolioPagination && typeof window.__portfolioPagination.recalc === 'function') {
+                    window.__portfolioPagination.recalc();
+                }
+            }
+
+            // expose filter function so other UI (search control) can trigger it
+            window.__portfolioApplyFilters = applyFilters;
+
+            function initAllMultiselects() {
+                var alls = document.querySelectorAll('.custom-multiselect');
+                alls.forEach(function (ms) { buildMultiselect(ms); });
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAllMultiselects);
+            else initAllMultiselects();
+        })();
+    </script>
+            <script>
+                (function () {
+                    // Search toggle: expand-left, focus, close on outside/Escape, and debounced filter
+                    var root = document.getElementById('portfolio-search');
+                    if (!root) return;
+                    var toggle = document.getElementById('portfolio-search-toggle');
+                    var input = document.getElementById('portfolio-search-input');
+                    var panel = root.querySelector('.search-box');
+                    var openClass = 'open';
+
+                    function open() {
+                        root.classList.add(openClass);
+                        panel.setAttribute('aria-hidden', 'false');
+                        // focus after transition start
+                        window.setTimeout(function () { if (input) input.focus(); }, 120);
+                    }
+                    function close() {
+                        root.classList.remove(openClass);
+                        panel.setAttribute('aria-hidden', 'true');
+                    }
+
+                    if (toggle) {
+                        toggle.addEventListener('click', function (e) {
+                            e.stopPropagation();
+                            if (root.classList.contains(openClass)) close();
+                            else {
+                                // close other open multiselects/panels
+                                document.querySelectorAll('.custom-multiselect.open').forEach(function (m) { m.classList.remove('open'); });
+                                open();
+                            }
+                        });
+                    }
+
+                    // close when clicking outside
+                    document.addEventListener('click', function (e) {
+                        if (!root.contains(e.target)) close();
+                    });
+
+                    // close on Escape
+                    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+                    // debounce helper
+                    function debounce(fn, wait) {
+                        var t = null;
+                        return function () { var args = arguments; clearTimeout(t); t = setTimeout(function () { fn.apply(null, args); }, wait); };
+                    }
+
+                    var debouncedFilter = debounce(function () {
+                        if (window.__portfolioApplyFilters) window.__portfolioApplyFilters();
+                    }, 250);
+
+                    if (input) {
+                        input.addEventListener('input', function () { debouncedFilter(); });
+                        // Enter to trigger immediate filter
+                        input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (window.__portfolioApplyFilters) window.__portfolioApplyFilters(); } });
+                    }
+                })();
+            </script>
+    <!-- progress area end -->
+
+    <script defer src="assets/js/plugins/jquery.js"></script>
+
+    <script defer src="assets/js/plugins/odometer.js"></script>
+    <script defer src="assets/js/plugins/jquery-appear.js"></script>
+
+
+    <script defer src="assets/js/plugins/gsap.js"></script>
+    <script defer src="assets/js/plugins/split-text.js"></script>
+    <script defer src="assets/js/plugins/scroll-trigger.js"></script>
+    <script defer src="assets/js/plugins/smooth-scroll.js"></script>
+    <script defer src="assets/js/plugins/metismenu.js"></script>
+    <script defer src="assets/js/plugins/popup.js"></script>
+
+    <script defer src="assets/js/vendor/bootstrap.min.js"></script>
+    <script defer src="assets/js/plugins/swiper.js"></script>
+    <script defer src="assets/js/plugins/contact.form.js"></script>
+
+    <script defer src="assets/js/main.js"></script>
+    <script>
+        // Vision slider interaction: hover or focus on a minimized slide expands it
+        (function () {
+            var slider = document.querySelector('.vision-slider');
+            if (!slider) return;
+            var slides = Array.from(slider.querySelectorAll('.vision-slide'));
+
+            var overlayTimeout = null;
+
+            function setActive(index, force) {
+                // if the requested index is already active and not forced, do nothing
+                var current = slides.findIndex(s => s.classList.contains('active'));
+                if (current === index && !force) return;
+                // clear any pending overlay timeouts to avoid races
+                if (overlayTimeout) {
+                    clearTimeout(overlayTimeout);
+                    overlayTimeout = null;
+                }
+
+                // first remove active class so flex transition can start
+                slides.forEach(function (s, i) {
+                    s.classList.toggle('active', i === index);
+                    // remove any existing is-visible immediately so overlay can hide
+                    var ov = s.querySelector('.vision-overlay');
+                    if (ov) ov.classList.remove('is-visible');
+                });
+
+                // after the slide expansion completes, fade overlays in
+                // on mobile (stacked) layouts we use a much shorter delay for a snappy feel
+                var delay = (window.innerWidth < 768) ? 120 : 820;
+                overlayTimeout = setTimeout(function () {
+                    slides.forEach(function (s, i) {
+                        var ov = s.querySelector('.vision-overlay');
+                        if (!ov) return;
+                        if (i === index) ov.classList.add('is-visible');
+                        else ov.classList.remove('is-visible');
+                    });
+                    overlayTimeout = null;
+                }, delay);
+            }
+
+            // default first slide active (force so initial overlay is scheduled)
+            setActive(0, true);
+
+            slides.forEach(function (slide, idx) {
+                slide.addEventListener('mouseenter', function () { setActive(idx); });
+                slide.addEventListener('focusin', function () { setActive(idx); });
+                slide.querySelector('.vision-plus')?.addEventListener('click', function (e) { e.preventDefault(); setActive(idx); });
+            });
+
+            // keyboard accessibility: arrow keys to navigate
+            slider.addEventListener('keydown', function (e) {
+                var activeIndex = slides.findIndex(s => s.classList.contains('active'));
+                if (e.key === 'ArrowRight') setActive(Math.min(slides.length - 1, activeIndex + 1));
+                if (e.key === 'ArrowLeft') setActive(Math.max(0, activeIndex - 1));
+            });
+        })();
+    </script>
+    <script>
+        (function () {
+            var header = document.querySelector('header');
+            if (!header) return;
+            function updateMenuIcon() {
+                if (window.scrollY > 0) header.classList.add('menu-icon-dark');
+                else header.classList.remove('menu-icon-dark');
+            }
+            updateMenuIcon();
+            window.addEventListener('scroll', updateMenuIcon, { passive: true });
+        })();
+    </script>
+    <script>
+        // Tabs for tech-tabs-section
+        (function () {
+            var wrapper = document.querySelector('.tech-tabs-section');
+            if (!wrapper) return;
+            var buttons = wrapper.querySelectorAll('.tab-btn');
+            var panels = wrapper.querySelectorAll('.tab-panel');
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var target = btn.getAttribute('data-tab');
+                    // update buttons
+                    buttons.forEach(function (b) { b.classList.toggle('active', b === btn); });
+                    // fade panels
+                    panels.forEach(function (p) {
+                        if (p.id === target) {
+                            p.classList.add('active');
+                            p.style.opacity = 0;
+                            p.style.transition = 'opacity .32s ease';
+                            requestAnimationFrame(function () { p.style.opacity = 1; });
+                        } else {
+                            p.style.opacity = 0;
+                            p.classList.remove('active');
+                        }
+                    });
+                });
+                // scroll tab into view for small screens when focused or clicked
+                btn.addEventListener('focus', function () { btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); });
+                btn.addEventListener('click', function () { btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); });
+            });
+        })();
+    </script>
+    <script>
+        // Tech icons tooltip: show on mouseover, center above icon
+        (function () {
+            var tooltip = document.createElement('div');
+            tooltip.className = 'tech-tooltip';
+            document.body.appendChild(tooltip);
+
+            function showFor(img) {
+                var text = img.getAttribute('alt') || img.getAttribute('data-title') || '';
+                tooltip.textContent = text;
+                // place offscreen first so we can measure
+                tooltip.style.left = '-9999px';
+                tooltip.style.top = '-9999px';
+                tooltip.classList.add('show');
+
+                var rect = img.getBoundingClientRect();
+                var tooltipRect = tooltip.getBoundingClientRect();
+                // Defer measurement until next frame so styles/layout have applied
+                requestAnimationFrame(function () {
+                    var tooltipRect2 = tooltip.getBoundingClientRect();
+                    // align tooltip left edge with the icon's right edge
+                    var left2 = rect.right + window.scrollX;
+                    // vertically center the tooltip relative to the icon
+                    var top2 = rect.top + window.scrollY + (rect.height / 2) - (tooltipRect2.height / 2);
+
+                    // viewport clamping: ensure tooltip remains visible on small screens
+                    var maxRight = window.scrollX + document.documentElement.clientWidth - 8; // 8px padding
+                    if (left2 + tooltipRect2.width > maxRight) {
+                        left2 = Math.max(window.scrollX + 8, maxRight - tooltipRect2.width);
+                    }
+                    var minTop = window.scrollY + 8;
+                    var maxTop = window.scrollY + document.documentElement.clientHeight - tooltipRect2.height - 8;
+                    if (top2 < minTop) top2 = minTop;
+                    if (top2 > maxTop) top2 = maxTop;
+
+                    tooltip.style.left = left2 + 'px';
+                    tooltip.style.top = top2 + 'px';
+                });
+            }
+
+            function hide() {
+                tooltip.classList.remove('show');
+            }
+
+            // Attach events to icons (live on DOMContentLoaded)
+            function attach() {
+                var icons = document.querySelectorAll('.tech-tabs-section .icons-grid img');
+                icons.forEach(function (img) {
+                    img.addEventListener('mouseenter', function () { showFor(img); });
+                    img.addEventListener('mouseleave', hide);
+                    img.addEventListener('focus', function () { showFor(img); });
+                    img.addEventListener('blur', hide);
+                });
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', attach);
+            else attach();
+        })();
+    </script>
+    <script>
+        (function () {
+            // Smooth crossfade logo swap when nav items switch between light and dark
+            var headerWrapperSel = '.header-transparent-main-wrapper';
+            var logoAnchorSel = headerWrapperSel + ' a.logo';
+            var logoImgSel = logoAnchorSel + ' img';
+            var navItemSel = headerWrapperSel + ' .nav-area ul li a';
+            var darkLogo = 'assets/images/logo/ApiceFlow_Logo/logo-dark.png';
+            var fadeDuration = 420; // ms — feels smart and snappy
+
+            function getComputedNavColor() {
+                var el = document.querySelector(navItemSel);
+                if (!el) return null;
+                return window.getComputedStyle(el).color || null;
+            }
+
+            function colorIsDark(rgb) {
+                if (!rgb) return false;
+                if (rgb.indexOf('rgb') === 0) {
+                    var parts = rgb.replace(/rgba?\(|\s+|\)/g, '').split(',');
+                    var r = parseInt(parts[0], 10) || 0;
+                    var g = parseInt(parts[1], 10) || 0;
+                    var b = parseInt(parts[2], 10) || 0;
+                    return (r * 0.299 + g * 0.587 + b * 0.114) < 128; // luminance check
+                }
+                return rgb.toLowerCase().indexOf('black') !== -1;
+            }
+
+            function createOverlay(logoAnchor) {
+                // Create an absolute-positioned overlay image sitting on top of original logo
+                var wrapper = logoAnchor;
+                var baseImg = wrapper.querySelector('img');
+                if (!baseImg) return null;
+                var overlay = document.createElement('img');
+                overlay.src = darkLogo;
+                overlay.alt = baseImg.alt || '';
+                overlay.style.position = 'absolute';
+                overlay.style.top = '50%';
+                overlay.style.left = '50%';
+                overlay.style.transform = 'translate(-50%, -50%)';
+                overlay.style.pointerEvents = 'none';
+                overlay.style.transition = 'opacity ' + fadeDuration + 'ms cubic-bezier(.2,.9,.2,1)';
+                overlay.style.opacity = '0';
+                overlay.style.width = baseImg.width ? baseImg.width + 'px' : '100%';
+                overlay.style.height = baseImg.height ? baseImg.height + 'px' : 'auto';
+                overlay.className = 'logo-swap-overlay';
+
+                // Ensure the anchor is positioned so absolute overlay aligns
+                var prevPos = window.getComputedStyle(wrapper).position;
+                if (prevPos === 'static' || !prevPos) wrapper.style.position = 'relative';
+
+                wrapper.appendChild(overlay);
+                return overlay;
+            }
+
+            function initSwap() {
+                var logoAnchor = document.querySelector(logoAnchorSel);
+                if (!logoAnchor) return;
+                var baseImg = logoAnchor.querySelector('img');
+                if (!baseImg) return;
+                var overlay = createOverlay(logoAnchor);
+                var lightSrc = baseImg.getAttribute('src') || '';
+
+                var lastDark = null;
+
+                function apply(dark) {
+                    if (!overlay) return;
+                    if (dark) {
+                        overlay.style.opacity = '1';
+                    } else {
+                        overlay.style.opacity = '0';
+                    }
+                }
+
+                function check() {
+                    var c = getComputedNavColor();
+                    var dark = colorIsDark(c);
+                    if (dark === lastDark) return;
+                    lastDark = dark;
+                    apply(dark);
+                }
+
+                // Observe mutations on header wrapper to detect theme/class changes
+                var headWrap = document.querySelector(headerWrapperSel);
+                if (headWrap && window.MutationObserver) {
+                    var mo = new MutationObserver(function () { check(); });
+                    mo.observe(headWrap, { attributes: true, attributeFilter: ['class', 'style'] });
+                }
+
+                // Poll fallback for CSS transitions that don't trigger attributes changes
+                var lastColor = null;
+                setInterval(function () {
+                    var c = getComputedNavColor();
+                    if (c !== lastColor) {
+                        lastColor = c;
+                        check();
+                    }
+                }, Math.max(200, Math.floor(fadeDuration / 2)));
+
+                // Initial check
+                check();
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSwap);
+            else initSwap();
+        })();
+    </script>
+    <script>
+        (function () {
+            function getNavItemColor() {
+                var navItem = document.querySelector('.nav-area ul li a');
+                if (!navItem) return null;
+                return window.getComputedStyle(navItem).color || null;
+            }
+
+            function isColorDark(col) {
+                if (!col) return false;
+                // parse rgb(a)
+                var m = col.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+                if (!m) return false;
+                var r = parseInt(m[1], 10), g = parseInt(m[2], 10), b = parseInt(m[3], 10);
+                // luminance
+                var l = (0.2126 * r + 0.7152 * g + 0.0722 * b);
+                return l < 150; // threshold tuned for dark vs light
+            }
+
+            function applyMenuColor() {
+                var btn = document.getElementById('menu-btn');
+                if (!btn) return;
+                var col = getNavItemColor();
+                var dark = isColorDark(col);
+                if (dark) btn.classList.add('menu-dark');
+                else btn.classList.remove('menu-dark');
+            }
+
+            // Observe for changes inside nav-area
+            var navArea = document.querySelector('.nav-area');
+            if (navArea && window.MutationObserver) {
+                var mo = new MutationObserver(function () { applyMenuColor(); });
+                mo.observe(navArea, { attributes: true, childList: true, subtree: true, characterData: true });
+            }
+
+            // Poll fallback
+            setInterval(applyMenuColor, 300);
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyMenuColor);
+            else applyMenuColor();
+        })();
+    </script>
+</body>
+
+</html>
