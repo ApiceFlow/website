@@ -38973,7 +38973,7 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1;
   pointer-events: none;
   transition: opacity .28s ease;
@@ -41129,7 +41129,7 @@ body.page-portfolio2 .hero-banner-image .page-description {
 body.page-portfolio2 .hero-banner-image .page-description p {
   color: rgba(255, 255, 255, 0.95);
   /* Responsive description text; uses !important to override inline font-size on some pages */
-  font-size: clamp(14px, 1.8vw, 20px) !important;
+  font-size: clamp(14px, 1.8vw, 18px) !important;
   max-width: 68ch;
   margin: 0;
   line-height: 1.45;
@@ -41192,7 +41192,7 @@ body.page-portfolio2 .hero-banner-image .page-description p {
 .hero-badges .badge {
   display: inline-block;
   background: rgba(24, 139, 206, 0.12);
-  color: #188bce;
+  color: #86cff9;
   border-radius: 999px;
   padding: 6px 12px;
   font-weight: 450;
