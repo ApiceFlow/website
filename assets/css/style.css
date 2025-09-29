@@ -41090,7 +41090,7 @@ body.page-portfolio2 .hero-banner-image .hero-center-text {
   /* small gutter to match container */
   padding-right: 15px;
   /* Responsive heading size that doesn't overflow */
-  font-size: clamp(22px, 4.5vw, 44px);
+  font-size: clamp(22px, 4.5vw, 38px);
   line-height: 1.05;
   font-weight: 500;
   color: #fff;
