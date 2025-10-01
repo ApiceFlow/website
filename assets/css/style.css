@@ -8649,6 +8649,7 @@ header .nav-area ul li.main-nav:hover::after {
   color: var(--color-primary) !important;
 }
 
+/* MegaMenu animation section Montblanc511 */
 .rts-mega-menu {
   position: absolute;
   width: 100%;
@@ -8660,7 +8661,10 @@ header .nav-area ul li.main-nav:hover::after {
   opacity: 0;
   visibility: hidden;
   text-align: left;
-  transition: transform 1s cubic-bezier(.22, .9, .3, 1), opacity 1s ease, visibility 1s linear;
+  transition: transform 1s cubic-bezier(.22, .9, .3, 1), opacity 1s ease, visibility 0.8s linear;
+  /* transition: 
+    opacity 0.3s ease,
+    visibility 0.3s linear; */
   border-radius: 0 0 5px 5px !important;
   background-color: #ffffff;
   display: inline-block;
@@ -41874,4 +41878,433 @@ li {
   cursor: pointer;
   font-size: 16px;
   text-decoration: none;
+}
+
+/* Background images layering and hover crossfade */
+.portfolio-card .bg,
+.portfolio-card .bg.alt {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  transition: opacity .5s ease, transform .6s cubic-bezier(.2, .8, .2, 1);
+}
+
+/* Base image visible by default, alt image sits above but hidden */
+.portfolio-card .bg {
+  z-index: 0;
+  opacity: 1;
+}
+
+.portfolio-card .bg.alt {
+  z-index: 1;
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+/* On hover show alt image (slight zoom-in) */
+.portfolio-card:hover .bg.alt,
+.portfolio-card:focus-within .bg.alt {
+  opacity: 1;
+  transform: scale(1.0);
+}
+
+/* Ensure mask and controls sit above backgrounds */
+.portfolio-card .mask {
+  z-index: 2;
+}
+
+/* Portfolio overlay: center CTA and reveal badges on hover (keep badge visuals unchanged) */
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  /* slightly lower than before for a tighter layout */
+  min-height: 380px;
+  /* desktop/tablet default */
+  display: block;
+}
+
+.portfolio-card .mask {
+  position: absolute;
+  inset: 0;
+  /* positioning context for absolutely centered CTA */
+  display: block;
+  background: transparent;
+  transition: background-color .34s ease;
+  pointer-events: none;
+  /* avoid intercepting clicks until visible */
+}
+
+/* CTA and badges centered via grid; children are relatively positioned so they don't rely on percentage transforms */
+.portfolio-card .mask .cta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  /* start slightly above center */
+  transform: translateY(-60%);
+  opacity: 0;
+  transition: opacity .28s ease, transform .28s cubic-bezier(.2, .8, .2, 1);
+  pointer-events: none;
+  z-index: 3;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+.portfolio-card .mask .meta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* reduce distance between CTA and badges */
+  top: calc(50% + 18px);
+  transform: translateY(0);
+  opacity: 0;
+  transition: opacity .26s ease, transform .26s cubic-bezier(.2, .8, .2, 1);
+  pointer-events: none;
+  z-index: 2;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+/* Reveal on hover or keyboard focus */
+.portfolio-card:hover .mask,
+.portfolio-card:focus-within .mask {
+  background: rgba(0, 0, 0, 0.6);
+  pointer-events: auto;
+}
+
+.portfolio-card:hover .mask .cta,
+.portfolio-card:focus-within .mask .cta {
+  opacity: 1;
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+
+/* center the button element itself */
+.portfolio-card .mask .cta .btn-view {
+  display: inline-block !important;
+  margin: 0 auto !important;
+  vertical-align: middle;
+}
+
+.portfolio-card:hover .mask .meta,
+.portfolio-card:focus-within .mask .meta {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Ensure badges sit visually below CTA with reasonable spacing */
+.portfolio-card .mask .meta .badges {
+  display: flex;
+  gap: 8px;
+  /* margin-top: 6px; */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-card .mask .meta .badge {
+  background: rgba(255, 255, 255, 0.95);
+  color: #3e3e3ec9;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: clamp(0.9rem, 0.9vw + 0.6rem, 1.52rem);
+  font-weight: 400;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
+}
+
+/* Button style: no background or border, colored text only, smooth animation */
+.btn-view {
+  background: transparent !important;
+  border: none !important;
+  color: #21aeffef !important;
+  font-weight: 450;
+  /* desktop target size requested by user */
+  font-size: 20px;
+  line-height: 1;
+  padding: 8px 0;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  /* transition: transform .28s cubic-bezier(.2, .8, .2, 1), color .22s ease, opacity .22s ease; */
+}
+
+/* subtle center-grow underline */
+.btn-view::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background: #0e75b0;
+  border-radius: 2px;
+  /* transition: width .36s cubic-bezier(.2, .8, .2, 1); */
+}
+
+.btn-view .arrow {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform .32s cubic-bezier(.2, .8, .2, 1), opacity .22s ease;
+}
+
+.btn-view:hover,
+.btn-view:focus {
+  /* transform: translateY(-4px) scale(1.02); */
+  color: #8dd7ff !important;
+}
+
+/* 
+        .btn-view:hover::after,
+        .btn-view:focus::after {
+            width: 56%;
+        } */
+
+.btn-view:hover .arrow,
+.btn-view:focus .arrow {
+  transform: translateX(6px);
+}
+
+/* Touch / small screens adjustments */
+@media (max-width: 767.98px) {
+  .portfolio-card .mask {
+    padding: 12px;
+  }
+
+  .portfolio-card {
+    /* shorter cards on small screens for better fit */
+    min-height: 260px;
+  }
+
+  .btn-view {
+    /* keep button readable on small screens */
+    font-size: 1rem;
+    padding: 6px 0;
+  }
+
+  /* mobile: slightly lift CTA and badges closer to center to fit shorter cards */
+  .portfolio-card .mask .cta {
+    top: 48%;
+    transform: translate(-50%, -48%);
+    font-size: 1rem;
+  }
+
+  .portfolio-card .mask .meta {
+    top: calc(50% + 28px);
+  }
+}
+
+/* Caption shown below each slide */
+.card-caption {
+  /* left-align captions and stack vertically */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 14px 10px 0 10px;
+  color: #222;
+  width: 100%;
+}
+
+.card-caption .case-title {
+  margin: 0 0 8px 0;
+  font-size: 2.35rem;
+  /* larger title */
+  font-weight: 600;
+  color: #111;
+  line-height: 1.15;
+}
+
+.card-caption .case-desc {
+  margin: 0;
+  font-size: 1.7rem;
+  /* slightly larger description */
+  color: #444;
+  line-height: 1.4;
+}
+
+@media (max-width: 767.98px) {
+  .card-caption .case-title {
+    font-size: 1.12rem;
+  }
+
+  .card-caption .case-desc {
+    font-size: 0.98rem;
+  }
+}
+
+/* Hero wrapper — force a viewport-fitting hero and hide overflow from paddings */
+.index-seven-area.rts-section-gap.with-video {
+  position: relative;
+  height: 100vh;
+  /* fill viewport on desktop */
+  max-height: 100vh;
+  overflow: hidden;
+  /* prevent video from creating scroll */
+  padding-top: 0;
+  /* override section gap paddings */
+  padding-bottom: 0;
+}
+
+
+/* Smaller hero on narrow screens */
+@media (max-width: 991.98px) {
+  .index-seven-area.rts-section-gap.with-video {
+    height: 65vh;
+    max-height: 65vh;
+  }
+}
+
+.portfolio-grid>div {
+  transition: opacity 320ms ease, transform 320ms ease;
+  will-change: opacity, transform;
+}
+
+.portfolio-grid>div.is-hidden {
+  opacity: 0;
+  transform: translateY(8px) scale(0.99);
+  pointer-events: none;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.portfolio-grid>div.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Layout: show two portfolio items per row on desktop/tablet, single column on small screens */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 20px;
+  align-items: start;
+}
+
+@media (max-width: 767.98px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .h2_textbtn.spec-grid {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    display: flex;
+  }
+}
+
+.h2_textbtn.spec-grid {
+  grid-column-gap: 16px;
+  grid-row-gap: 0px;
+  grid-template-rows: auto;
+  grid-template-columns: 2fr .25fr;
+  grid-auto-columns: 1fr;
+  place-items: start stretch;
+  margin-bottom: 58px;
+  display: grid;
+}
+
+@media screen and (max-width: 767px) {
+  .h2_textbtn {
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.h2_textbtn {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.span-green {
+  color: #50b1a2;
+}
+
+.wrapper-u-anim-text {
+  width: 100%;
+  overflow: hidden;
+}
+
+.u-anim-text {
+  position: relative;
+}
+
+.u-link-text.absolute {
+  position: absolute;
+  top: 100%;
+}
+
+.u-link-text {
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.u-link-text {
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.u-link.u-link_green {
+  color: #50b1a2;
+  border-radius: 0;
+  min-height: 56px;
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.u-link {
+  z-index: 1;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  color: #fff;
+  white-space: nowrap;
+  background-color: #fff0;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  padding: 14.5px 24px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all .2s;
+  display: flex;
+  position: relative;
+}
+
+.arrow-btn-u-link {
+  justify-content: center;
+  align-items: center;
+  min-width: 16px;
+  max-width: 16px;
+  min-height: 17px;
+  max-height: 17px;
+  margin-left: 16px;
+  display: flex;
+}
+
+.span-green {
+    color: #50b1a2;
 }
