@@ -124,6 +124,314 @@
             height: 100%;
             line-height: 1 !important;
         }
+
+        .wrapper-btn-slider {
+            grid-column-gap: 40px;
+            grid-row-gap: 40px;
+            justify-content: flex-end;
+            align-items: center;
+            padding-top: 80px;
+            display: flex;
+            position: relative;
+        }
+
+        scrollbar-horizontal {
+            position: absolute;
+            left: var(--swiper-scrollbar-sides-offset, 1%);
+            bottom: var(--swiper-scrollbar-bottom, 4px);
+            top: var(--swiper-scrollbar-top, auto);
+            z-index: 50;
+            height: var(--swiper-scrollbar-size, 4px);
+            width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset, 1%));
+        }
+
+        .swiper-horizontal>.swiper-scrollbar,
+        .swiper-scrollbar.swiper-scrollbar-horizontal {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .swiper-horizontal>.swiper-scrollbar,
+        .swiper-scrollbar.swiper-scrollbar-horizontal {
+            position: absolute;
+            left: var(--swiper-scrollbar-sides-offset, 1%);
+            bottom: var(--swiper-scrollbar-bottom, 4px);
+            top: var(--swiper-scrollbar-top, auto);
+            z-index: 50;
+            height: var(--swiper-scrollbar-size, 4px);
+            width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset, 1%));
+        }
+
+        .healthtech-scrollbar {
+            height: 6px !important;
+            background: rgba(46, 48, 63, 0.06);
+            border-radius: 999px;
+            margin: 12px 0;
+        }
+
+        .swiper-scrollbar {
+            z-index: 1;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            flex: 1;
+            max-height: 2px;
+            position: relative;
+        }
+
+        .swiper-scrollbar {
+            border-radius: var(--swiper-scrollbar-border-radius, 10px);
+            position: relative;
+            touch-action: none;
+            background: var(--swiper-scrollbar-bg-color, rgba(0, 0, 0, .1));
+        }
+
+        .swiper-scrollbar {
+            border-radius: var(--swiper-scrollbar-border-radius, 10px);
+            position: relative;
+            touch-action: none;
+            background: var(--swiper-scrollbar-bg-color, rgba(0, 0, 0, .1));
+        }
+
+        .healthtech-scrollbar .swiper-scrollbar-drag {
+            background: #50B1A2;
+            border-radius: 999px;
+            height: 100% !important;
+            transition: transform .12s ease;
+        }
+
+        .swiper-scrollbar-drag {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            background: var(--swiper-scrollbar-drag-bg-color, rgba(0, 0, 0, .5));
+            border-radius: var(--swiper-scrollbar-border-radius, 10px);
+            left: 0;
+            top: 0;
+        }
+
+        .swiper-scrollbar-drag {
+            height: 4px;
+            background: #2E303F !important;
+        }
+
+        .swiper-scrollbar-drag {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            background: var(--swiper-scrollbar-drag-bg-color, rgba(0, 0, 0, .5));
+            border-radius: var(--swiper-scrollbar-border-radius, 10px);
+            left: 0;
+            top: 0;
+        }
+
+        @media (max-width: 767px) {
+            .wrapper-arrow {
+                gap: 8px;
+                margin-top: 6px;
+            }
+        }
+
+        .wrapper-arrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .wrapper-arrow {
+            grid-column-gap: 64px;
+            grid-row-gap: 64px;
+            color: #50b1a2;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            display: flex;
+            position: relative;
+        }
+
+        @media (max-width: 767px) {
+
+            .wrapper-arrow .swiper-button-prev1,
+            .wrapper-arrow .swiper-button-next1 {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* ensure wrapper scrollbar / controls don't shrink the slider width */
+            .wrapper-btn-slider {
+                padding-left: 12px;
+                padding-right: 12px;
+                box-sizing: border-box;
+            }
+
+            /* make each slide fill the swiper viewport */
+            .swiper.swiper-feed .swiper-wrapper,
+            .swiper.swiper-feed .swiper-slide {
+                width: 100% !important;
+                min-width: 340px;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                margin-right: 0 !important;
+                padding-left: 5px !important;
+                padding-right: 15px !important;
+            }
+
+            /* hide scrollbar on very small devices to avoid layout shifts */
+            .wrapper-btn-slider .healthtech-scrollbar {
+                display: none !important;
+            }
+
+            /* make navigation buttons overlay (so they don't push layout) */
+            .wrapper-arrow {
+                gap: 8px;
+                margin-top: 6px;
+            }
+
+            .wrapper-arrow .swiper-button-prev1,
+            .wrapper-arrow .swiper-button-next1 {
+                position: relative;
+                z-index: 30;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feedback-item {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .feedback-item-right {
+                display: none !important;
+                visibility: hidden !important;
+                height: 0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .feedback-item-left {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                padding-right: 0 !important;
+            }
+
+            /* Ensure CTA / bottom content stays visible and spaced correctly */
+            .wrapper-content-bottom {
+                margin-top: 16px;
+            }
+
+            /* Hide the scrollbar to avoid extra layout shifts on very small screens (optional) */
+            .healthtech-scrollbar {
+                display: none !important;
+            }
+        }
+
+        /* Mobile: force exactly 1 full slide per view and keep a visible gap */
+        @media (max-width: 480px) {
+
+            /* ensure wrapper doesn't add side padding that hides part of the slide */
+            .swiper.swiper-feed,
+            .swiper.swiper-feed .swiper-wrapper {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                overflow: visible;
+            }
+
+            /* make each slide take full viewport width and keep a consistent right gap */
+            .swiper.swiper-feed .swiper-slide {
+                flex: 0 0 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                margin-right: 12px !important;
+                /* visible gap between slides on mobile */
+            }
+
+            /* remove gap after last slide to avoid extra empty space */
+            .swiper.swiper-feed .swiper-slide:last-child {
+                margin-right: 0 !important;
+            }
+
+            /* hide native scrollbar that may shift layout */
+            .swiper.swiper-feed .healthtech-scrollbar,
+            .swiper.swiper-feed .swiper-scrollbar {
+                display: none !important;
+            }
+
+            /* ensure navigation controls don't push layout */
+            .wrapper-btn-slider,
+            .wrapper-arrow {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+        }
+
+        .wrapper-arrow .swiper-button-prev1,
+        .wrapper-arrow .swiper-button-next1 {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            position: relative;
+            transition: transform .08s ease, opacity .12s ease;
+        }
+
+        .wrapper-arrow .swiper-button-prev1::before {
+            /* background-image: url(data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 28'><path d='M2 2 L11 14 L2 26' stroke='%2350B1A2' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>); */
+            transform: scaleX(-1);
+        }
+
+        .wrapper-arrow .swiper-button-prev1::before,
+        .wrapper-arrow .swiper-button-next1::before {
+            content: "";
+            display: block;
+            width: 13px;
+            height: 28px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 13px 28px;
+        }
+
+        .wrapper-arrow .swiper-button-prev1[aria-disabled="true"],
+        .wrapper-arrow .swiper-button-next1[aria-disabled="true"] {
+            opacity: .28;
+            pointer-events: none;
+            cursor: default;
+        }
+
+        @media (max-width: 767px) {
+
+            .wrapper-arrow .swiper-button-prev1,
+            .wrapper-arrow .swiper-button-next1 {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        .wrapper-arrow .swiper-button-prev1,
+        .wrapper-arrow .swiper-button-next1 {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            position: relative;
+            transition: transform .08s ease, opacity .12s ease;
+        }
     </style>
 </head>
 
@@ -1148,11 +1456,11 @@
 
 
     <div class="section-wrapper rev-feedback">
-        <div class="contentwrapper">
+        <div class="contentwrapper" style="padding-bottom: 160px;">
             <div class="testimonials-wrapper">
-                <div class="h2_textbtn spec-grid">
+                <!-- <div class="h2_textbtn spec-grid">
                     <h2 class="h2-new">Testimonials</h2><a id="w-node-d8b14031-a2ff-9b1b-3454-a0387ad8820e-ebddf00d"
-                        href="/testimonials" class="u-link u-link_green w-inline-block">
+                        class="u-link u-link_green w-inline-block">
                         <div class="wrapper-u-anim-text">
                             <div class="u-anim-text">
                                 <div class="u-link-text absolute">
@@ -1176,6 +1484,16 @@
                             </div>
                         </div>
                     </a>
+                </div> -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title-style-five center">
+                            <span class="pre">Our testimonial</span>
+                            <h2 class="title"
+                                style="color: #0e0e0ea5; font-size: 35px; font-weight: 900; line-height: 1.5; padding-bottom: 15px;">
+                                What our Clients say about Us</h2>
+                        </div>
+                    </div>
                 </div>
                 <div class="swiper swiper-feed w-dyn-list swiper-initialized swiper-horizontal swiper-backface-hidden">
                     <div role="list" class="swiper-wrapper swiper-wrapper-feed w-dyn-items"
@@ -1185,12 +1503,10 @@
                             aria-label="1 / 4" style="width: 905px; margin-right: 16px;">
                             <div class="feedback-item">
                                 <div class="feedback-item-left">
-                                    <div class="wrapper-h-feedback-item"><img
-                                            src="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/6644c50de005a5f5968c5403_Bennet-Tong.avif"
-                                            loading="lazy" alt="" class="feedback-item-img">
+                                    <div class="wrapper-h-feedback-item">
                                         <div class="wrapper-h-feedback-item display-vertical">
                                             <div class="wrapper-h-feedback-item">
-                                                <div class="text-18px bold-600 text-montserrat">Bennett Tong</div><a
+                                                <div class="text-18px bold-600 text-montserrat">Stan Miller</div><a
                                                     title="Bennett Tong" href="#"
                                                     class="n-testimonials-review-social w-inline-block w-condition-invisible">
                                                     <div class="icon-linkedin w-embed"><svg width="17" height="17"
@@ -1203,9 +1519,9 @@
                                                 </a>
                                             </div>
                                             <div class="wrapper-h-feedback-item gap-2px">
-                                                <div class="text-10">Product Manager</div>
+                                                <div class="text-10">CEO</div>
                                                 <div class="text-10">at</div><a title="Locad" href="https://golocad.com"
-                                                    target="_blank" class="text-12 bold-600">Locad</a>
+                                                    target="_blank" class="text-12 bold-600">MPC, llc</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1213,21 +1529,29 @@
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">PROJECT</div>
-                                                <div class="p-new _16 sem _16-m">Building new shipping aggregator
-                                                    product</div>
+                                                <div class="p-new _16 sem _16-m">Building Online Reputation Management
+                                                    Platform
+                                                    Product</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-20px bold-600">LOCAD - Logistic Platform for Streamlined Ecommerce
-                                        Supply Chains</div>
-                                    <div class="text-16px">Alexandra has been doing UX design for Locad for the past six
-                                        months, and we have been delighted with her work. Her designs have made a severe
-                                        impact on the usability of our product. She has been responsive to our requests
-                                        and responsible for delivering results. We are excited to continue growing our
-                                        business with the help of Alexandra and Codebridge.</div>
+                                    <div class="text-20px bold-600">Reeact.io - Building Online Reputation Management
+                                        Product</div>
+                                    <div class="text-16px">“I’m happy to recommend ApiceFlow. We asked them to design a
+                                        robust moderation and takedown orchestration platform, and they delivered beyond
+                                        expectations. Their team paired a resilient crawling/ingestion stack with an
+                                        evidence-first appeals workflow, and the hybrid AI + human review they
+                                        implemented materially improved our removal outcomes.
+
+                                        What stood out most was their AI capability — the models and engineering were
+                                        clearly led by people who know the field, not just surface-level ML. They also
+                                        built GDPR-compliant audit trails and easy integration points for our legal
+                                        partners, which reduced case turnaround time. Communication was proactive
+                                        throughout, and the post-launch iteration made the system even more reliable.
+                                        Solid team, highly skilled — especially on AI.”</div>
                                     <div class="wrapper-content-bottom"><a
                                             title="LOCAD - Logistic Platform for Streamlined Ecommerce Supply Chains"
-                                            href="/projects/locad"
+                                            href="portfolio32.html"
                                             class="u-link u-link_green min-height-auto w-inline-block">
                                             <div class="wrapper-u-anim-text">
                                                 <div class="u-anim-text">
@@ -1259,18 +1583,18 @@
                                     <div class="country">
                                         <div class="text-16-silver-grey">COUNTRY</div>
                                         <div class="some-country"><img loading="lazy"
-                                                src="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/664705893aca171d475f438f_singapore.avif"
+                                                src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
                                                 alt="" sizes="100vw"
-                                                srcset="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/664705893aca171d475f438f_singapore-p-500.avif 500w, https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/664705893aca171d475f438f_singapore-p-800.avif 800w, https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/664705893aca171d475f438f_singapore.avif 2500w"
+                                                srcset="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg 500w, https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg 800w, https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg 2500w"
                                                 class="flag-country">
-                                            <div fs-cmsfilter-field="country" class="text-project-testimonial">Singapore
+                                            <div fs-cmsfilter-field="country" class="text-project-testimonial">Spain
                                             </div>
                                         </div>
                                     </div>
                                     <div class="item-rev-pop">
                                         <div class="project">
                                             <div class="p-new _16 mon gre">PROJECT</div>
-                                            <div class="p-new _16 sem _16-m">Building new shipping aggregator product
+                                            <div class="p-new _16 sem _16-m">Building SaaS Product
                                             </div>
                                         </div>
                                     </div>
@@ -1278,30 +1602,30 @@
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">TEAM SIze</div>
-                                                <div class="p-new _16 sem _16-m">1</div>
+                                                <div class="p-new _16 sem _16-m">5</div>
                                             </div>
                                         </div>
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">DURATION</div>
-                                                <div class="p-new _16 sem _16-m">7 months +</div>
+                                                <div class="p-new _16 sem _16-m">5 months</div>
                                             </div>
                                         </div>
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">BUDGET</div>
-                                                <div class="p-new _16 sem _16-m">$20,000+</div>
+                                                <div class="p-new _16 sem _16-m">$50,000+</div>
                                                 <div class="hide">
-                                                    <div fs-cmsfilter-field="budget" class="p-new _16 sem _16-m">$20k -
-                                                        $30k</div>
+                                                    <div fs-cmsfilter-field="budget" class="p-new _16 sem _16-m">$50k -
+                                                        $60k</div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">INDUSTRY</div>
-                                                <div fs-cmsfilter-field="industry" class="p-new _16 sem _16-m">Logistics
-                                                    Network</div>
+                                                <div fs-cmsfilter-field="industry" class="p-new _16 sem _16-m">SaaS
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="item-rev-pop w-condition-invisible">
@@ -1318,12 +1642,10 @@
                             aria-label="2 / 4" style="width: 905px; margin-right: 16px;">
                             <div class="feedback-item">
                                 <div class="feedback-item-left">
-                                    <div class="wrapper-h-feedback-item"><img
-                                            src="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/62d55bee2fc198510bd17b57_1519902880940.avif"
-                                            loading="lazy" alt="" class="feedback-item-img">
+                                    <div class="wrapper-h-feedback-item">
                                         <div class="wrapper-h-feedback-item display-vertical">
                                             <div class="wrapper-h-feedback-item">
-                                                <div class="text-18px bold-600 text-montserrat">Arjan van Helden</div><a
+                                                <div class="text-18px bold-600 text-montserrat">Rosa Garrido</div><a
                                                     title="Arjan van Helden" href="#"
                                                     class="n-testimonials-review-social w-inline-block w-condition-invisible">
                                                     <div class="icon-linkedin w-embed"><svg width="17" height="17"
@@ -1336,9 +1658,9 @@
                                                 </a>
                                             </div>
                                             <div class="wrapper-h-feedback-item gap-2px">
-                                                <div class="text-10">UX/UI Design Team Lead</div>
+                                                <div class="text-10">Pension Manager</div>
                                                 <div class="text-10">at</div><a title="vidaXL" href="#"
-                                                    class="text-12 bold-600">vidaXL</a>
+                                                    class="text-12 bold-600">SG Santé</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1346,18 +1668,23 @@
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">PROJECT</div>
-                                                <div class="p-new _16 sem _16-m">Ideation, research, concept creation
-                                                    and production work</div>
+                                                <div class="p-new _16 sem _16-m">Building Health Benefits Mobile App
+                                                    Platform</div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="text-20px bold-600">SG Santé - Health Benefits Mobile App Platform</div>
                                     <div class="text-20px bold-600 w-dyn-bind-empty"></div>
-                                    <div class="text-16px">For our CRO program, we were looking for a UX/UI Designer to
-                                        help generate A/B test ideas and design them. Vlad is a to-the-point,
-                                        fast-to-deliver designer with a good understanding of user needs. Vlad has been
-                                        creating dozens of design briefs, and we have seen 1-liner ideas grow into fully
-                                        interactive prototypes and test variations.</div>
-                                    <div class="wrapper-content-bottom"><a title="" href="#"
+                                    <div class="text-16px">"When SG Santé chose ApiceFlow we needed a secure,
+                                        member-facing mobile experience that actually reduced operational load. The team
+                                        delivered a native app with secure single sign-on, encrypted offline storage for
+                                        tiers-payant cards, and an efficient OCR-based document intake pipeline that
+                                        sped up hospital-coverage decisions. They provided thorough documentation, met
+                                        milestones, and their post-launch support was pragmatic — quickly resolving edge
+                                        cases so the service stabilized. Tangible business outcomes followed: lower
+                                        call-center volume and improved member satisfaction with our digital channel.
+                                        They were technical, responsive and clearly understand healthcare needs."</div>
+                                    <div class="wrapper-content-bottom"><a title="" href="portfolio21.html"
                                             class="u-link u-link_green min-height-auto w-inline-block">
                                             <div class="wrapper-u-anim-text">
                                                 <div class="u-anim-text">
@@ -1389,41 +1716,40 @@
                                     <div class="country">
                                         <div class="text-16-silver-grey">COUNTRY</div>
                                         <div class="some-country"><img loading="lazy"
-                                                src="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/62e3fa206c8bce0390dee39f_netherlands.avif"
+                                                src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
                                                 alt="" sizes="100vw"
-                                                srcset="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/62e3fa206c8bce0390dee39f_netherlands-p-500.avif 500w, https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/62e3fa206c8bce0390dee39f_netherlands.avif 2500w"
+                                                srcset="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg 500w, https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg 2500w"
                                                 class="flag-country">
                                             <div fs-cmsfilter-field="country" class="text-project-testimonial">
-                                                Netherlands</div>
+                                                France</div>
                                         </div>
                                     </div>
                                     <div class="item-rev-pop">
                                         <div class="project">
                                             <div class="p-new _16 mon gre">PROJECT</div>
-                                            <div class="p-new _16 sem _16-m">Ideation, research, concept creation and
-                                                production work</div>
+                                            <div class="p-new _16 sem _16-m">Building Health Benefits Mobile App</div>
                                         </div>
                                     </div>
                                     <div class="wrapper-item-rev-pop">
                                         <div class="item-rev-pop">
                                             <div class="project">
-                                                <div class="p-new _16 mon gre">TEAM SIze</div>
-                                                <div class="p-new _16 sem _16-m">10+</div>
+                                                <div class="p-new _16 mon gre">TEAM Size</div>
+                                                <div class="p-new _16 sem _16-m">5</div>
                                             </div>
                                         </div>
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">DURATION</div>
-                                                <div class="p-new _16 sem _16-m">5months and continuing</div>
+                                                <div class="p-new _16 sem _16-m">4 months</div>
                                             </div>
                                         </div>
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">BUDGET</div>
-                                                <div class="p-new _16 sem _16-m">$7,000+</div>
+                                                <div class="p-new _16 sem _16-m">$90,000+</div>
                                                 <div class="hide">
-                                                    <div fs-cmsfilter-field="budget" class="p-new _16 sem _16-m">$10k -
-                                                        $20k</div>
+                                                    <div fs-cmsfilter-field="budget" class="p-new _16 sem _16-m">$90k -
+                                                        $100k</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1431,7 +1757,7 @@
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">INDUSTRY</div>
                                                 <div fs-cmsfilter-field="industry" class="p-new _16 sem _16-m">
-                                                    E-commerce</div>
+                                                    HealthTech & Insurance</div>
                                             </div>
                                         </div>
                                         <div class="item-rev-pop w-condition-invisible">
@@ -1448,12 +1774,14 @@
                             style="width: 905px; margin-right: 16px;">
                             <div class="feedback-item">
                                 <div class="feedback-item-left">
-                                    <div class="wrapper-h-feedback-item"><img
+                                    <div class="wrapper-h-feedback-item">
+                                        <!-- <img
                                             src="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/66c316ff217307dee7c9c42d_senka%201.avif"
-                                            loading="lazy" alt="" class="feedback-item-img">
+                                            loading="lazy" alt="" class="feedback-item-img"> -->
                                         <div class="wrapper-h-feedback-item display-vertical">
                                             <div class="wrapper-h-feedback-item">
-                                                <div class="text-18px bold-600 text-montserrat">Senka Drobac</div><a
+                                                <div class="text-18px bold-600 text-montserrat">Priyam Patel</div>
+                                                <!-- <a
                                                     title="Senka Drobac"
                                                     href="https://www.linkedin.com/in/senka-drobac/?originalSubdomain=fi"
                                                     target="_blank" class="n-testimonials-review-social w-inline-block">
@@ -1464,13 +1792,12 @@
                                                                 d="M14.8122 0.5H1.27374C0.947318 0.5 0.634267 0.62967 0.403453 0.860484C0.172639 1.0913 0.0429688 1.40435 0.0429688 1.73077V15.2692C0.0429688 15.5957 0.172639 15.9087 0.403453 16.1395C0.634267 16.3703 0.947318 16.5 1.27374 16.5H14.8122C15.1386 16.5 15.4517 16.3703 15.6825 16.1395C15.9133 15.9087 16.043 15.5957 16.043 15.2692V1.73077C16.043 1.40435 15.9133 1.0913 15.6825 0.860484C15.4517 0.62967 15.1386 0.5 14.8122 0.5ZM5.58143 12.1923C5.58143 12.3555 5.5166 12.512 5.40119 12.6275C5.28578 12.7429 5.12926 12.8077 4.96605 12.8077C4.80284 12.8077 4.64631 12.7429 4.5309 12.6275C4.4155 12.512 4.35066 12.3555 4.35066 12.1923V7.26923C4.35066 7.10602 4.4155 6.9495 4.5309 6.83409C4.64631 6.71868 4.80284 6.65385 4.96605 6.65385C5.12926 6.65385 5.28578 6.71868 5.40119 6.83409C5.5166 6.9495 5.58143 7.10602 5.58143 7.26923V12.1923ZM4.96605 6.03846C4.78348 6.03846 4.60501 5.98432 4.45321 5.8829C4.30141 5.78147 4.1831 5.6373 4.11323 5.46863C4.04337 5.29996 4.02509 5.11436 4.06071 4.9353C4.09632 4.75624 4.18424 4.59177 4.31333 4.46267C4.44243 4.33358 4.6069 4.24566 4.78596 4.21004C4.96502 4.17443 5.15062 4.19271 5.31929 4.26257C5.48796 4.33244 5.63213 4.45075 5.73356 4.60255C5.83499 4.75435 5.88912 4.93282 5.88912 5.11538C5.88912 5.3602 5.79187 5.59499 5.61876 5.7681C5.44565 5.94121 5.21086 6.03846 4.96605 6.03846ZM12.3507 12.1923C12.3507 12.3555 12.2858 12.512 12.1704 12.6275C12.055 12.7429 11.8985 12.8077 11.7353 12.8077C11.5721 12.8077 11.4155 12.7429 11.3001 12.6275C11.1847 12.512 11.1199 12.3555 11.1199 12.1923V9.42308C11.1199 9.01505 10.9578 8.62374 10.6693 8.33522C10.3808 8.0467 9.98946 7.88462 9.58143 7.88462C9.17341 7.88462 8.78209 8.0467 8.49357 8.33522C8.20506 8.62374 8.04297 9.01505 8.04297 9.42308V12.1923C8.04297 12.3555 7.97813 12.512 7.86273 12.6275C7.74732 12.7429 7.59079 12.8077 7.42758 12.8077C7.26437 12.8077 7.10785 12.7429 6.99244 12.6275C6.87703 12.512 6.8122 12.3555 6.8122 12.1923V7.26923C6.81296 7.1185 6.86902 6.97328 6.96975 6.86114C7.07047 6.749 7.20885 6.67772 7.35864 6.66084C7.50843 6.64395 7.6592 6.68263 7.78237 6.76953C7.90553 6.85644 7.99251 6.98553 8.02682 7.13231C8.44311 6.8499 8.92847 6.68623 9.43077 6.65886C9.93308 6.63149 10.4333 6.74147 10.8779 6.97697C11.3224 7.21247 11.6943 7.56461 11.9538 7.99557C12.2133 8.42653 12.3505 8.92003 12.3507 9.42308V12.1923Z"
                                                                 fill="currentcolor"></path>
                                                         </svg></div>
-                                                </a>
+                                                </a> -->
                                             </div>
                                             <div class="wrapper-h-feedback-item gap-2px">
-                                                <div class="text-10">CEO</div>
-                                                <div class="text-10">at</div><a title="Kieli Experts Oy"
-                                                    href="https://www.kieli.net/" target="_blank"
-                                                    class="text-12 bold-600">Kieli Experts Oy</a>
+                                                <div class="text-10">Co-Founder</div>
+                                                <div class="text-10">at</div><a title="vidaXL" href="#"
+                                                    class="text-12 bold-600">Bryant Dental</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1478,17 +1805,24 @@
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">PROJECT</div>
-                                                <div class="p-new _16 sem _16-m">Website redesign</div>
+                                                <div class="p-new _16 sem _16-m">Building Dental optics e-commerce &
+                                                    tools</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-20px bold-600">Kieli - AI Language Learning App</div>
-                                    <div class="text-16px">We are delighted with the website redesign that Ignat made
-                                        for us. He showed lots of creativity, and a professional approach made the whole
-                                        process easy and efficient. We are looking forward to cooperating with Ignat
-                                        again in future projects!</div>
+                                    <div class="text-20px bold-600">Bryant Dental - Dental optics e-commerce & tools
+                                    </div>
+                                    <div class="text-16px">"We brought ApiceFlow in for pragmatic modernization, not a
+                                        full rewrite—and they nailed it. They rolled out richer, media-first product
+                                        pages, a regionally routed demo/concierge flow that connects buyers to the right
+                                        reps, and a headless commerce integration that smoothed our international
+                                        checkout. They also optimized our media pipeline and integrated everything with
+                                        our CRM, which made follow-up and warranty workflows much more efficient.
+                                        Communication was clear, milestones were met, and post-launch support removed
+                                        the last friction points. Tangible result: fewer manual processes and a better
+                                        buying experience for our clinical customers."</div>
                                     <div class="wrapper-content-bottom"><a title="Kieli - AI Language Learning App"
-                                            href="/projects/kieli"
+                                            href="portfolio9.html"
                                             class="u-link u-link_green min-height-auto w-inline-block">
                                             <div class="wrapper-u-anim-text">
                                                 <div class="u-anim-text">
@@ -1520,37 +1854,39 @@
                                     <div class="country">
                                         <div class="text-16-silver-grey">COUNTRY</div>
                                         <div class="some-country"><img loading="lazy"
-                                                src="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/62e3f92f8c6e38378ac30ded_finland.avif"
+                                                src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
                                                 alt="" sizes="100vw"
-                                                srcset="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/62e3f92f8c6e38378ac30ded_finland-p-500.png 500w, https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/62e3f92f8c6e38378ac30ded_finland-p-800.png 800w, https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/62e3f92f8c6e38378ac30ded_finland.avif 2500w"
+                                                srcset="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg 500w, https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg 2500w"
                                                 class="flag-country">
-                                            <div fs-cmsfilter-field="country" class="text-project-testimonial">Finland
+                                            <div fs-cmsfilter-field="country" class="text-project-testimonial">United
+                                                Kingdom
                                             </div>
                                         </div>
                                     </div>
                                     <div class="item-rev-pop">
                                         <div class="project">
                                             <div class="p-new _16 mon gre">PROJECT</div>
-                                            <div class="p-new _16 sem _16-m">Website redesign</div>
+                                            <div class="p-new _16 sem _16-m">Building Dental optics e-commerce & tools
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="wrapper-item-rev-pop">
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">TEAM SIze</div>
-                                                <div class="p-new _16 sem _16-m">2</div>
+                                                <div class="p-new _16 sem _16-m">6</div>
                                             </div>
                                         </div>
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">DURATION</div>
-                                                <div class="p-new _16 sem _16-m">2 months</div>
+                                                <div class="p-new _16 sem _16-m">5 months</div>
                                             </div>
                                         </div>
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">BUDGET</div>
-                                                <div class="p-new _16 sem _16-m">$3,000</div>
+                                                <div class="p-new _16 sem _16-m">$80,000</div>
                                                 <div class="hide">
                                                     <div fs-cmsfilter-field="budget"
                                                         class="p-new _16 sem _16-m w-dyn-bind-empty"></div>
@@ -1560,7 +1896,8 @@
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">INDUSTRY</div>
-                                                <div fs-cmsfilter-field="industry" class="p-new _16 sem _16-m">EdTech
+                                                <div fs-cmsfilter-field="industry" class="p-new _16 sem _16-m">
+                                                    HealthTech
                                                 </div>
                                             </div>
                                         </div>
@@ -1574,18 +1911,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div role="group" class="swiper-slide swiper-slide-feed w-dyn-item" aria-label="4 / 4"
+                        <div role="group" class="swiper-slide swiper-slide-feed w-dyn-item" aria-label="3 / 4"
                             style="width: 905px; margin-right: 16px;">
                             <div class="feedback-item">
                                 <div class="feedback-item-left">
-                                    <div class="wrapper-h-feedback-item"><img
-                                            src="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/6644c3c2fc311c77dc26223b_Jacob-Lund.avif"
-                                            loading="lazy" alt="" class="feedback-item-img">
+                                    <div class="wrapper-h-feedback-item">
+                                        <!-- <img
+                                            src="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/66c316ff217307dee7c9c42d_senka%201.avif"
+                                            loading="lazy" alt="" class="feedback-item-img"> -->
                                         <div class="wrapper-h-feedback-item display-vertical">
                                             <div class="wrapper-h-feedback-item">
-                                                <div class="text-18px bold-600 text-montserrat">Jacob Lund</div><a
-                                                    title="Jacob Lund" href="#"
-                                                    class="n-testimonials-review-social w-inline-block w-condition-invisible">
+                                                <div class="text-18px bold-600 text-montserrat">Calvin Hsieh</div>
+                                                <!-- <a
+                                                    title="Senka Drobac"
+                                                    href="https://www.linkedin.com/in/senka-drobac/?originalSubdomain=fi"
+                                                    target="_blank" class="n-testimonials-review-social w-inline-block">
                                                     <div class="icon-linkedin w-embed"><svg width="17" height="17"
                                                             viewBox="0 0 17 17" fill="none"
                                                             xmlns="http://www.w3.org/2000/svg">
@@ -1593,12 +1933,12 @@
                                                                 d="M14.8122 0.5H1.27374C0.947318 0.5 0.634267 0.62967 0.403453 0.860484C0.172639 1.0913 0.0429688 1.40435 0.0429688 1.73077V15.2692C0.0429688 15.5957 0.172639 15.9087 0.403453 16.1395C0.634267 16.3703 0.947318 16.5 1.27374 16.5H14.8122C15.1386 16.5 15.4517 16.3703 15.6825 16.1395C15.9133 15.9087 16.043 15.5957 16.043 15.2692V1.73077C16.043 1.40435 15.9133 1.0913 15.6825 0.860484C15.4517 0.62967 15.1386 0.5 14.8122 0.5ZM5.58143 12.1923C5.58143 12.3555 5.5166 12.512 5.40119 12.6275C5.28578 12.7429 5.12926 12.8077 4.96605 12.8077C4.80284 12.8077 4.64631 12.7429 4.5309 12.6275C4.4155 12.512 4.35066 12.3555 4.35066 12.1923V7.26923C4.35066 7.10602 4.4155 6.9495 4.5309 6.83409C4.64631 6.71868 4.80284 6.65385 4.96605 6.65385C5.12926 6.65385 5.28578 6.71868 5.40119 6.83409C5.5166 6.9495 5.58143 7.10602 5.58143 7.26923V12.1923ZM4.96605 6.03846C4.78348 6.03846 4.60501 5.98432 4.45321 5.8829C4.30141 5.78147 4.1831 5.6373 4.11323 5.46863C4.04337 5.29996 4.02509 5.11436 4.06071 4.9353C4.09632 4.75624 4.18424 4.59177 4.31333 4.46267C4.44243 4.33358 4.6069 4.24566 4.78596 4.21004C4.96502 4.17443 5.15062 4.19271 5.31929 4.26257C5.48796 4.33244 5.63213 4.45075 5.73356 4.60255C5.83499 4.75435 5.88912 4.93282 5.88912 5.11538C5.88912 5.3602 5.79187 5.59499 5.61876 5.7681C5.44565 5.94121 5.21086 6.03846 4.96605 6.03846ZM12.3507 12.1923C12.3507 12.3555 12.2858 12.512 12.1704 12.6275C12.055 12.7429 11.8985 12.8077 11.7353 12.8077C11.5721 12.8077 11.4155 12.7429 11.3001 12.6275C11.1847 12.512 11.1199 12.3555 11.1199 12.1923V9.42308C11.1199 9.01505 10.9578 8.62374 10.6693 8.33522C10.3808 8.0467 9.98946 7.88462 9.58143 7.88462C9.17341 7.88462 8.78209 8.0467 8.49357 8.33522C8.20506 8.62374 8.04297 9.01505 8.04297 9.42308V12.1923C8.04297 12.3555 7.97813 12.512 7.86273 12.6275C7.74732 12.7429 7.59079 12.8077 7.42758 12.8077C7.26437 12.8077 7.10785 12.7429 6.99244 12.6275C6.87703 12.512 6.8122 12.3555 6.8122 12.1923V7.26923C6.81296 7.1185 6.86902 6.97328 6.96975 6.86114C7.07047 6.749 7.20885 6.67772 7.35864 6.66084C7.50843 6.64395 7.6592 6.68263 7.78237 6.76953C7.90553 6.85644 7.99251 6.98553 8.02682 7.13231C8.44311 6.8499 8.92847 6.68623 9.43077 6.65886C9.93308 6.63149 10.4333 6.74147 10.8779 6.97697C11.3224 7.21247 11.6943 7.56461 11.9538 7.99557C12.2133 8.42653 12.3505 8.92003 12.3507 9.42308V12.1923Z"
                                                                 fill="currentcolor"></path>
                                                         </svg></div>
-                                                </a>
+                                                </a> -->
                                             </div>
                                             <div class="wrapper-h-feedback-item gap-2px">
-                                                <div class="text-10">COO</div>
-                                                <div class="text-10">at</div><a title="Rentola" href="#"
-                                                    class="text-12 bold-600">Rentola</a>
+                                                <div class="text-10">CTO</div>
+                                                <div class="text-10">at</div><a title="vidaXL" href="#"
+                                                    class="text-12 bold-600">StormX</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1606,21 +1946,25 @@
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">PROJECT</div>
-                                                <div class="p-new _16 sem _16-m">Website redesign</div>
+                                                <div class="p-new _16 sem _16-m">Building Crypto Cashback & Rewards
+                                                    Platform</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-20px bold-600 w-dyn-bind-empty"></div>
-                                    <div class="text-16px">We have been working with Codebridge for two months and, so
-                                        far, have been happy with the process and results. More specifically, we have
-                                        worked with one of their UX designers (Denys), who has made a beautiful design
-                                        for us. He accepts all tasks and does them amazingly. He is good at giving
-                                        updates every day with what he did today and the plan for tomorrow. And then we
-                                        have three meetings weekly where he shows me that. In addition, you also get a
-                                        PM on the side, attending meetings, which helps to ensure everything goes well
-                                        around the collaboration. Thank you so far, and we look forward to more
-                                        cooperation.</div>
-                                    <div class="wrapper-content-bottom"><a title="" href="#"
+                                    <div class="text-20px bold-600">StormX - Crypto Cashback & Rewards Platform
+                                    </div>
+                                    <div class="text-16px">"When we started this project we had three urgent problems:
+                                        flaky merchant integrations, reconciliation that required constant manual work,
+                                        and a membership engine whose boost math moved with token prices. ApiceFlow
+                                        delivered practical engineering, not theory — building a resilient
+                                        partner-adapter layer, tightening fraud controls, and creating a token-aware
+                                        membership service so boosts behave predictably. They stayed outcome-focused,
+                                        documented changes for ops and finance, and communicated clearly throughout.
+                                        Post-launch support cut reconciliation errors and payout disputes. The result:
+                                        lower operational overhead, fewer escalations, and stronger user trust — I’d
+                                        recommend them without hesitation."</div>
+                                    <div class="wrapper-content-bottom"><a
+                                            title="StormX - Crypto Cashback & Rewards Platform" href="portfolio16.html"
                                             class="u-link u-link_green min-height-auto w-inline-block">
                                             <div class="wrapper-u-anim-text">
                                                 <div class="u-anim-text">
@@ -1652,37 +1996,40 @@
                                     <div class="country">
                                         <div class="text-16-silver-grey">COUNTRY</div>
                                         <div class="some-country"><img loading="lazy"
-                                                src="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/6647063ec573c941e5292d8a_denmark.avif"
+                                                src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
                                                 alt="" sizes="100vw"
-                                                srcset="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/6647063ec573c941e5292d8a_denmark-p-500.avif 500w, https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/6647063ec573c941e5292d8a_denmark-p-800.avif 800w, https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/6647063ec573c941e5292d8a_denmark-p-1080.avif 1080w, https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/6647063ec573c941e5292d8a_denmark.avif 2500w"
+                                                srcset="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg 500w, https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg 2500w"
                                                 class="flag-country">
-                                            <div fs-cmsfilter-field="country" class="text-project-testimonial">Denmark
+                                            <div fs-cmsfilter-field="country" class="text-project-testimonial">United
+                                                States
                                             </div>
                                         </div>
                                     </div>
                                     <div class="item-rev-pop">
                                         <div class="project">
                                             <div class="p-new _16 mon gre">PROJECT</div>
-                                            <div class="p-new _16 sem _16-m">Website redesign</div>
+                                            <div class="p-new _16 sem _16-m">Building Crypto Cashback & Rewards
+                                                Platform
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="wrapper-item-rev-pop">
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">TEAM SIze</div>
-                                                <div class="p-new _16 sem _16-m">1</div>
+                                                <div class="p-new _16 sem _16-m">9</div>
                                             </div>
                                         </div>
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">DURATION</div>
-                                                <div class="p-new _16 sem _16-m">2 months and continuing </div>
+                                                <div class="p-new _16 sem _16-m">4 months</div>
                                             </div>
                                         </div>
-                                        <div class="item-rev-pop w-condition-invisible">
+                                        <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">BUDGET</div>
-                                                <div class="p-new _16 sem _16-m w-dyn-bind-empty"></div>
+                                                <div class="p-new _16 sem _16-m">$100,000+</div>
                                                 <div class="hide">
                                                     <div fs-cmsfilter-field="budget"
                                                         class="p-new _16 sem _16-m w-dyn-bind-empty"></div>
@@ -1692,8 +2039,9 @@
                                         <div class="item-rev-pop">
                                             <div class="project">
                                                 <div class="p-new _16 mon gre">INDUSTRY</div>
-                                                <div fs-cmsfilter-field="industry" class="p-new _16 sem _16-m">Lodging,
-                                                    Hospitality</div>
+                                                <div fs-cmsfilter-field="industry" class="p-new _16 sem _16-m">
+                                                    Fintech & Crypto
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="item-rev-pop w-condition-invisible">
@@ -1705,234 +2053,221 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                </div>
-                <div class="wrapper-btn-slider">
-                    <div class="swiper-scrollbar swiper-scrollbar-feed swiper-scrollbar-horizontal">
-                        <div class="swiper-scrollbar-drag"
-                            style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms; width: 191.215px;">
-                        </div>
+
+                        </div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                     </div>
-                    <div class="wrapper-arrow"><a href="#"
-                            class="swiper-button-prev swiper-button-prev-feed w-inline-block swiper-button-disabled"
-                            tabindex="-1" role="button" aria-label="Previous slide"
-                            aria-controls="swiper-wrapper-7dfffac4b867b691" aria-disabled="true"></a><a href="#"
-                            class="swiper-button-next swiper-button-next-feed w-inline-block" tabindex="0" role="button"
-                            aria-label="Next slide" aria-controls="swiper-wrapper-7dfffac4b867b691"
-                            aria-disabled="false"></a></div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <!-- rts testimonials area start -->
-    <div class="rts-testimonials-area-wrapper rts-section-gap bg_testimonials-6 bg_image" style="background:#fff;"
-        role="region" aria-label="Testimonials">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-style-five center">
-                        <span class="pre">Our testimonial</span>
-                        <h2 class="title"
-                            style="color: #0e0e0ea5; font-size: 35px; font-weight: 900; line-height: 1.5; padding-bottom: 15px;">
-                            What our Clients say about Us</h2>
+    <!-- <div class="rts-testimonials-area-wrapper rts-section-gap bg_testimonials-6 bg_image" style="background:#fff;"
+            role="region" aria-label="Testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title-style-five center">
+                            <span class="pre">Our testimonial</span>
+                            <h2 class="title"
+                                style="color: #0e0e0ea5; font-size: 35px; font-weight: 900; line-height: 1.5; padding-bottom: 15px;">
+                                What our Clients say about Us</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-12">
-                    <div class="testimonails-main-wraqpper-6">
-                        <div class="swiper mySwiper-testimoanils-6" dir="ltr">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="single-testimonials-6">
-                                        <div class="top">
-                                            <h5 class="title">Great Business Solution</h5>
-                                            <p class="disc">
-                                                “ApiceFlow’s IT consulting services exceeded our expectations. Their
-                                                team provided
-                                                strategic insights and hands-on support, helping us streamline
-                                                operations, enhance
-                                                security, and achieve our business goals efficiently.”
-                                            </p>
-                                        </div>
-                                        <div class="botton-content">
-                                            <div class="avatar-area">
-                                                <div class="inner">
-                                                    <h5 class="title">Miller S.</h5>
-                                                    <p>CEO, <span>Miller Projects Consulting, LLC.</span></p>
-                                                </div>
+                <div class="row g-5">
+                    <div class="col-lg-12">
+                        <div class="testimonails-main-wraqpper-6">
+                            <div class="swiper mySwiper-testimoanils-6" dir="ltr">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="single-testimonials-6">
+                                            <div class="top">
+                                                <h5 class="title">Great Business Solution</h5>
+                                                <p class="disc">
+                                                    “ApiceFlow’s IT consulting services exceeded our expectations. Their
+                                                    team provided
+                                                    strategic insights and hands-on support, helping us streamline
+                                                    operations, enhance
+                                                    security, and achieve our business goals efficiently.”
+                                                </p>
                                             </div>
-                                            <div class="stars-area">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                            <div class="botton-content">
+                                                <div class="avatar-area">
+                                                    <div class="inner">
+                                                        <h5 class="title">Miller S.</h5>
+                                                        <p>CEO, <span>Miller Projects Consulting, LLC.</span></p>
+                                                    </div>
+                                                </div>
+                                                <div class="stars-area">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="single-testimonials-6">
-                                        <div class="top">
-                                            <h5 class="title">Best Marketing Solution</h5>
-                                            <p class="disc">
-                                                “We partnered with ApiceFlow for a blockchain project. Their knowledge
-                                                and
-                                                professionalism ensured smooth deployment. They improved our
-                                                transparency, security
-                                                and efficiency. They are trusted partner for innovative technology.”
-                                            </p>
-                                        </div>
-                                        <div class="botton-content">
-                                            <div class="avatar-area">
-                                                <div class="inner">
-                                                    <h5 class="title">Sandra M.</h5>
-                                                    <p>Director, <span>Catalyst Agency</span></p>
-                                                </div>
+                                    <div class="swiper-slide">
+                                        <div class="single-testimonials-6">
+                                            <div class="top">
+                                                <h5 class="title">Best Marketing Solution</h5>
+                                                <p class="disc">
+                                                    “We partnered with ApiceFlow for a blockchain project. Their
+                                                    knowledge
+                                                    and
+                                                    professionalism ensured smooth deployment. They improved our
+                                                    transparency, security
+                                                    and efficiency. They are trusted partner for innovative technology.”
+                                                </p>
                                             </div>
-                                            <div class="stars-area">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                            <div class="botton-content">
+                                                <div class="avatar-area">
+                                                    <div class="inner">
+                                                        <h5 class="title">Sandra M.</h5>
+                                                        <p>Director, <span>Catalyst Agency</span></p>
+                                                    </div>
+                                                </div>
+                                                <div class="stars-area">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="single-testimonials-6">
-                                        <div class="top">
-                                            <h5 class="title">Great Business Solution</h5>
-                                            <p class="disc">
-                                                “The team at ApiceFlow isn't just a vendor, they're a true partner.
-                                                Their support is
-                                                proactive, responsive, and always focused on helping us succeed. They're
-                                                always
-                                                available to answer our questions and provide guidance.”
-                                            </p>
-                                        </div>
-                                        <div class="botton-content">
-                                            <div class="avatar-area">
-                                                <div class="inner">
-                                                    <h5 class="title">Camille R.</h5>
-                                                    <p>Project Manager, <span>Catalyst Agency</span></p>
-                                                </div>
+                                    <div class="swiper-slide">
+                                        <div class="single-testimonials-6">
+                                            <div class="top">
+                                                <h5 class="title">Great Business Solution</h5>
+                                                <p class="disc">
+                                                    “The team at ApiceFlow isn't just a vendor, they're a true partner.
+                                                    Their support is
+                                                    proactive, responsive, and always focused on helping us succeed.
+                                                    They're
+                                                    always
+                                                    available to answer our questions and provide guidance.”
+                                                </p>
                                             </div>
-                                            <div class="stars-area">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                            <div class="botton-content">
+                                                <div class="avatar-area">
+                                                    <div class="inner">
+                                                        <h5 class="title">Camille R.</h5>
+                                                        <p>Project Manager, <span>Catalyst Agency</span></p>
+                                                    </div>
+                                                </div>
+                                                <div class="stars-area">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="single-testimonials-6">
-                                        <div class="top">
-                                            <h5 class="title">Great Business Solution</h5>
-                                            <p class="disc">
-                                                “ApiceFlow developed our web and mobile apps with outstanding attention
-                                                to detail. The
-                                                apps have boosted our customer engagement. Their team is responsive,
-                                                creative, and
-                                                always delivers on time and within budget.”
-                                            </p>
-                                        </div>
-                                        <div class="botton-content">
-                                            <div class="avatar-area">
-                                                <div class="inner">
-                                                    <h5 class="title">Camille R.</h5>
-                                                    <p>Project Manager, <span>Catalyst Agency</span></p>
-                                                </div>
+                                    <div class="swiper-slide">
+                                        <div class="single-testimonials-6">
+                                            <div class="top">
+                                                <h5 class="title">Great Business Solution</h5>
+                                                <p class="disc">
+                                                    “ApiceFlow developed our web and mobile apps with outstanding
+                                                    attention
+                                                    to detail. The
+                                                    apps have boosted our customer engagement. Their team is responsive,
+                                                    creative, and
+                                                    always delivers on time and within budget.”
+                                                </p>
                                             </div>
-                                            <div class="stars-area">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                            <div class="botton-content">
+                                                <div class="avatar-area">
+                                                    <div class="inner">
+                                                        <h5 class="title">Camille R.</h5>
+                                                        <p>Project Manager, <span>Catalyst Agency</span></p>
+                                                    </div>
+                                                </div>
+                                                <div class="stars-area">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="single-testimonials-6">
-                                        <div class="top">
-                                            <h5 class="title">Great Business Solution</h5>
-                                            <p class="disc">
-                                                “ApiceFlow's IT solution has allowed us to enhance our customer
-                                                experience by
-                                                providing real-time insights into customer behavior and preferences.
-                                                We're now able
-                                                to personalize our services and offer more targeted support.”
-                                            </p>
-                                        </div>
-                                        <div class="botton-content">
-                                            <div class="avatar-area">
-                                                <div class="inner">
-                                                    <h5 class="title">Camille R.</h5>
-                                                    <p>Project Manager, <span>Catalyst Agency</span></p>
-                                                </div>
+                                    <div class="swiper-slide">
+                                        <div class="single-testimonials-6">
+                                            <div class="top">
+                                                <h5 class="title">Great Business Solution</h5>
+                                                <p class="disc">
+                                                    “ApiceFlow's IT solution has allowed us to enhance our customer
+                                                    experience by
+                                                    providing real-time insights into customer behavior and preferences.
+                                                    We're now able
+                                                    to personalize our services and offer more targeted support.”
+                                                </p>
                                             </div>
-                                            <div class="stars-area">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                            <div class="botton-content">
+                                                <div class="avatar-area">
+                                                    <div class="inner">
+                                                        <h5 class="title">Camille R.</h5>
+                                                        <p>Project Manager, <span>Catalyst Agency</span></p>
+                                                    </div>
+                                                </div>
+                                                <div class="stars-area">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="swiper-pagination"></div> -->
                         </div>
-                    </div>
-                    <div class="row mt--65">
-                        <div class="col-lg-12">
-                            <div class="client-three-wrapper">
-                                <div class="single">
-                                    <img src="assets/images/brand/01.png" alt="Business_client">
-                                </div>
-                                <div class="single">
-                                    <img src="assets/images/brand/02.png" alt="Business_client">
-                                </div>
-                                <div class="single">
-                                    <img src="assets/images/brand/03.png" alt="Business_client">
-                                </div>
-                                <div class="single">
-                                    <img src="assets/images/brand/04.png" alt="Business_client">
-                                </div>
-                                <div class="single">
-                                    <img src="assets/images/brand/05.png" alt="Business_client">
-                                </div>
-                                <!-- Full-screen 4-split slider inserted at requested location -->
-                                <div class="single">
-                                    <img src="assets/images/brand/06.png" alt="Business_client">
-                                </div>
-                                <div class="single">
-                                    <img src="assets/images/brand/07.png" alt="Business_client">
-                                </div>
-                                <div class="single">
-                                    <img src="assets/images/brand/08.png" alt="Business_client">
-                                </div>
-                                <div class="single">
-                                    <img src="assets/images/brand/09.png" alt="Business_client">
+                        <div class="row mt--65">
+                            <div class="col-lg-12">
+                                <div class="client-three-wrapper">
+                                    <div class="single">
+                                        <img src="assets/images/brand/01.png" alt="Business_client">
+                                    </div>
+                                    <div class="single">
+                                        <img src="assets/images/brand/02.png" alt="Business_client">
+                                    </div>
+                                    <div class="single">
+                                        <img src="assets/images/brand/03.png" alt="Business_client">
+                                    </div>
+                                    <div class="single">
+                                        <img src="assets/images/brand/04.png" alt="Business_client">
+                                    </div>
+                                    <div class="single">
+                                        <img src="assets/images/brand/05.png" alt="Business_client">
+                                    </div>
+                                    <div class="single">
+                                        <img src="assets/images/brand/06.png" alt="Business_client">
+                                    </div>
+                                    <div class="single">
+                                        <img src="assets/images/brand/07.png" alt="Business_client">
+                                    </div>
+                                    <div class="single">
+                                        <img src="assets/images/brand/08.png" alt="Business_client">
+                                    </div>
+                                    <div class="single">
+                                        <img src="assets/images/brand/09.png" alt="Business_client">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> -->
     <!-- rts testimonials area end -->
 
 
@@ -2896,6 +3231,110 @@
             setInterval(applyMenuColor, 300);
             if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyMenuColor);
             else applyMenuColor();
+        })();
+    </script>
+    <script>
+        (function () {
+            // Ensure the testimonial/feedback slider (the .swiper-feed instance) ALWAYS shows 1 full slide.
+            function initSinglePerViewFeed() {
+                if (typeof Swiper === 'undefined') return;
+                var container = document.querySelector('.swiper.swiper-feed');
+                if (!container) return;
+
+                // If Swiper already attached to this element, destroy for clean re-init
+                try {
+                    if (container.swiper && typeof container.swiper.destroy === 'function') {
+                        container.swiper.destroy(true, true);
+                    }
+                } catch (e) { /* ignore */ }
+
+                // Remove inline widths/margins that come from previous inits or server markup
+                Array.from(container.querySelectorAll('.swiper-slide')).forEach(function (s) {
+                    try {
+                        s.style.width = '';
+                        s.style.maxWidth = '';
+                        s.style.marginRight = '';
+                        s.style.boxSizing = '';
+                    } catch (e) { }
+                });
+
+                // Initialize Swiper with strict single-slide layout (responsive)
+                var feedSwiper = new Swiper(container, {
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                    centeredSlides: false,
+                    loop: false,
+                    watchOverflow: true,
+                    observer: true,
+                    observeParents: true,
+                    // preserve existing pagination if present
+                    pagination: {
+                        el: container.querySelector('.swiper-pagination') || undefined,
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: container.parentElement?.querySelector('.healthtech-next') || container.querySelector('.swiper-button-next'),
+                        prevEl: container.parentElement?.querySelector('.healthtech-prev') || container.querySelector('.swiper-button-prev')
+                    },
+                    breakpoints: {
+                        // always 1 slide per view at all sizes
+                        0: { slidesPerView: 1, spaceBetween: 12 },
+                        480: { slidesPerView: 1, spaceBetween: 12 },
+                        768: { slidesPerView: 1, spaceBetween: 16 },
+                        992: { slidesPerView: 1, spaceBetween: 20 }
+                    },
+                    on: {
+                        init: function () {
+                            // enforce slide sizing on init (important on mobile)
+                            try {
+                                Array.from(this.slides).forEach(function (s) {
+                                    s.style.width = '100%';
+                                    s.style.maxWidth = '100%';
+                                    s.style.marginRight = '0';
+                                    s.style.boxSizing = 'border-box';
+                                });
+                            } catch (e) { }
+                            // small delayed update to let layout settle
+                            var self = this;
+                            setTimeout(function () { try { self.update(); } catch (e) { } }, 50);
+                        },
+                        resize: function () {
+                            // keep slides full-width on resize
+                            try {
+                                Array.from(this.slides).forEach(function (s) {
+                                    s.style.width = '100%';
+                                    s.style.maxWidth = '100%';
+                                    s.style.marginRight = '0';
+                                    s.style.boxSizing = 'border-box';
+                                });
+                                this.update();
+                            } catch (e) { }
+                        }
+                    }
+                });
+
+                // Make navigation buttons always call API (reliable)
+                var prevBtn = container.parentElement?.querySelector('.healthtech-prev, .swiper-button-prev1');
+                var nextBtn = container.parentElement?.querySelector('.healthtech-next, .swiper-button-next1');
+                [prevBtn, nextBtn].forEach(function (btn) {
+                    if (!btn) return;
+                    btn.addEventListener('click', function (ev) {
+                        ev.preventDefault();
+                        if (btn === prevBtn) feedSwiper.slidePrev();
+                        else feedSwiper.slideNext();
+                    });
+                });
+            }
+
+            // Wait for DOM + Swiper plugin
+            function ready(attempts) {
+                attempts = attempts || 0;
+                if (document.readyState !== 'loading' && typeof Swiper !== 'undefined') initSinglePerViewFeed();
+                else if (attempts < 30) setTimeout(function () { ready(attempts + 1); }, 120);
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { ready(0); });
+            else ready(0);
         })();
     </script>
 </body>

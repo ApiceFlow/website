@@ -24,2349 +24,9 @@
     <link rel="preload" as="image" href="assets/images/banner/21.webp" />
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* Hero wrapper — force a viewport-fitting hero and hide overflow from paddings */
-        .index-seven-area.rts-section-gap.with-video {
-            position: relative;
-            height: 100vh;
-            /* fill viewport on desktop */
-            max-height: 100vh;
-            overflow: hidden;
-            /* prevent video from creating scroll */
-            padding-top: 0;
-            /* override section gap paddings */
-            padding-bottom: 0;
-        }
+    </style>
+    <style>
 
-        /* Smaller hero on narrow screens */
-        @media (max-width: 991.98px) {
-            .index-seven-area.rts-section-gap.with-video {
-                height: 65vh;
-                max-height: 65vh;
-            }
-        }
-
-        /* Video container covers the banner area */
-        .hero-bg-video {
-            position: absolute;
-            inset: 0;
-            /* top:0; right:0; bottom:0; left:0; */
-            overflow: hidden;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Make the video exactly match the hero box (no transform centering that can overflow) */
-        .hero-bg-video video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            max-height: 100vh;
-            object-fit: cover;
-            object-position: center center;
-            display: block;
-        }
-
-        /* Ensure banner content sits above the video */
-        .banner-seven-inner-content,
-        .banner-seven-inner-content * {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Menu button colors: default white, toggle to black with .menu-dark */
-        .menu-btn {
-            color: #ffffff;
-        }
-
-        .menu-btn.menu-dark {
-            color: #000000;
-        }
-
-        /* Center contact buttons on this page's contact sections
-           Stronger override: reset line-height and make the label and icon full-height flex children
-           This resists vendor/bootstrap rules (line-height, vertical-align) that can shift content. */
-        .contact-cta .btn,
-        .contact-cta .btn-contact,
-        .contact-cta .btn-schedule {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            text-align: center;
-            gap: 0.5rem;
-            padding: 10px 16px;
-            width: auto;
-            line-height: 1 !important;
-            vertical-align: middle !important;
-            /* optional minimum height to keep consistent visual weight */
-            min-height: 38px;
-        }
-
-        .contact-cta .btn .btn-label,
-        .contact-cta .btn-contact .btn-label,
-        .contact-cta .btn-schedule .btn-label {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            line-height: 1 !important;
-        }
-
-        .contact-cta .btn i,
-        .contact-cta .btn .fa-regular,
-        .contact-cta .btn .fa-solid {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            height: 100%;
-            line-height: 1 !important;
-        }
-
-        .section-collaborate.gradien-bg {
-            flex: 1;
-        }
-
-        @media screen and (max-width: 767px) {
-            .section-colloborate {
-                width: 100%;
-            }
-        }
-
-        .section-colloborate {
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-
-        .gradien-bg {
-            background-image: linear-gradient(90deg, #5cc29329, #3477aa21);
-        }
-
-        @media screen and (max-width: 767px) {
-            .contentwrapper {
-                padding-left: 1em;
-                padding-right: 1em;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .contentwrapper {
-                max-width: 100%;
-                padding-left: 2em;
-                padding-right: 2em;
-            }
-        }
-
-        .contentwrapper {
-            z-index: 1;
-            max-width: 1440px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 5em;
-            padding-right: 5em;
-            position: relative;
-        }
-
-        @media screen and (max-width: 991px) {
-            .w-container {
-                max-width: 728px;
-            }
-        }
-
-        .w-container {
-            max-width: 940px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media screen and (max-width: 767px) {
-
-            .logo-sign,
-            .logo-sign.horizontal-block {
-                display: none;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .logo-sign {
-                display: none;
-            }
-        }
-
-        .logo-sign {
-            z-index: -1;
-            pointer-events: none;
-            margin-top: 0;
-            margin-right: 20px;
-            position: absolute;
-            inset: 0% 0% auto auto;
-        }
-
-        img {
-            vertical-align: middle;
-            max-width: 100%;
-            display: inline-block;
-        }
-
-        img {
-            border: 0;
-        }
-
-
-        .bg-dark {
-            background-color: #091924;
-        }
-
-        @media screen and (max-width: 767px) {
-            .content-center {
-                min-height: 75px;
-            }
-        }
-
-        .content-center {
-            justify-content: center;
-            align-items: center;
-            max-width: 100vw;
-            display: flex;
-            position: relative;
-        }
-
-
-        @media screen and (max-width: 767px) {
-            .choose_section {
-                padding-left: 1em;
-                padding-right: 1em;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .choose_section {
-                grid-column-gap: 72px;
-                grid-row-gap: 72px;
-                flex-flow: column;
-                max-width: 100%;
-                margin-top: 5em;
-                margin-bottom: 5em;
-                padding-left: 2em;
-                padding-right: 2em;
-            }
-        }
-
-        .choose_section {
-            grid-column-gap: 56px;
-            grid-row-gap: 56px;
-            flex-flow: column;
-            grid-template-rows: auto;
-            grid-template-columns: 1fr 1fr;
-            grid-auto-columns: 1fr;
-            justify-content: flex-start;
-            align-items: flex-start;
-            width: 100%;
-            max-width: 1440px;
-            margin-top: 10em;
-            margin-bottom: 10em;
-            padding-left: 80px;
-            padding-right: 80px;
-            display: flex;
-            position: relative;
-        }
-
-        @media screen and (max-width: 991px) {
-            .choose_text {
-                max-width: none;
-                margin-bottom: 0;
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-
-        .choose_text {
-            grid-column-gap: 1.5em;
-            grid-row-gap: 1.5em;
-            flex-flow: column;
-            max-width: 47%;
-            margin-bottom: 64px;
-            display: flex;
-            position: relative;
-            top: 0;
-        }
-
-        @media screen and (max-width: 767px) {
-            .h3-new {
-                font-size: 28px;
-            }
-        }
-
-        .text-white {
-            color: #fff;
-        }
-
-        .allcaps {
-            text-transform: uppercase;
-        }
-
-        .span-green-light {
-            color: #6ee7d4;
-        }
-
-        @media screen and (max-width: 767px) {
-            .choose_content {
-                grid-template-columns: 1fr 1fr;
-                display: flex;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .choose_content {
-                grid-column-gap: 56px;
-                grid-row-gap: 56px;
-                flex-flow: column;
-                grid-template-rows: auto;
-                grid-template-columns: 1fr 1fr;
-                grid-auto-columns: 1fr;
-                display: grid;
-                overflow: auto;
-            }
-        }
-
-        .choose_content {
-            grid-column-gap: 80px;
-            grid-row-gap: 80px;
-            flex-flow: row;
-            grid-template-rows: auto;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-auto-columns: 1fr;
-            width: 100%;
-            display: grid;
-        }
-
-        @media screen and (max-width: 479px) {
-            .choose_content-item {
-                min-width: auto;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .choose_content-item {
-                grid-column-gap: 16px;
-                grid-row-gap: 16px;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .choose_content-item {
-                min-width: 300px;
-                padding-left: 16px;
-            }
-        }
-
-        .choose_content-item {
-            grid-column-gap: 24px;
-            grid-row-gap: 24px;
-            border-left: 4px solid var(--green-light);
-            flex-flow: column;
-            padding-left: 24px;
-            display: flex;
-        }
-
-        .h6-new.white-color {
-            color: #fcfcfc;
-            text-transform: none;
-        }
-
-        @media screen and (max-width: 767px) {
-            .h6-new {
-                font-size: 20px;
-            }
-        }
-
-        .h6-new {
-            color: #2e303f;
-            text-transform: none;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-family: Montserrat, sans-serif;
-            font-size: 24px;
-            font-weight: 600;
-            line-height: 120%;
-        }
-
-        @media screen and (max-width: 479px) {
-            .bodynew {
-                letter-spacing: .1px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .bodynew {
-                font-size: 16px;
-            }
-        }
-
-        .text-white {
-            color: #fff;
-        }
-
-        @media screen and (max-width: 991px) {
-            .logo-sign.z-index-1 {
-                display: block;
-                top: 9%;
-                right: -150px;
-            }
-        }
-
-        .logo-sign.z-index-1 {
-            z-index: 1;
-        }
-
-        @media screen and (max-width: 767px) {
-
-            .logo-sign,
-            .logo-sign.horizontal-block {
-                display: none;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .logo-sign {
-                display: none;
-            }
-        }
-
-        .logo-sign {
-            z-index: -1;
-            pointer-events: none;
-            margin-top: 0;
-            margin-right: 20px;
-            position: absolute;
-            inset: 0% 0% auto auto;
-        }
-
-
-
-        @media screen and (max-width: 991px) {
-            .choose_content-item {
-                min-width: 300px;
-                padding-left: 16px;
-            }
-        }
-
-        .choose_content-item {
-            grid-column-gap: 24px;
-            grid-row-gap: 24px;
-            border-left: 4px solid #6ee7d4;
-            flex-flow: column;
-            padding-left: 24px;
-            display: flex;
-        }
-
-
-        .section-collaborate.gradien-bg {
-            flex: 1;
-        }
-
-        @media screen and (max-width: 767px) {
-            .section-colloborate {
-                width: 100%;
-            }
-        }
-
-        .section-colloborate {
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-
-        @media screen and (max-width: 767px) {
-            .contentwrapper {
-                padding-left: 1em;
-                padding-right: 1em;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .contentwrapper {
-                max-width: 100%;
-                padding-left: 2em;
-                padding-right: 2em;
-            }
-        }
-
-        .contentwrapper {
-            z-index: 1;
-            max-width: 1440px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 5em;
-            padding-right: 5em;
-            position: relative;
-        }
-
-        @media screen and (max-width: 479px) {
-            .w-container {
-                max-width: none;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .w-container {
-                max-width: 728px;
-            }
-        }
-
-        .w-container {
-            max-width: 940px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .w-container:before,
-        .w-container:after {
-            content: " ";
-            grid-area: 1 / 1 / 2 / 2;
-            display: table;
-        }
-
-        @media screen and (max-width: 767px) {
-
-            .logo-sign,
-            .logo-sign.horizontal-block {
-                display: none;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .logo-sign {
-                display: none;
-            }
-        }
-
-        .logo-sign {
-            z-index: -1;
-            pointer-events: none;
-            margin-top: 0;
-            margin-right: 20px;
-            position: absolute;
-            inset: 0% 0% auto auto;
-        }
-
-        @media screen and (max-width: 479px) {
-            .coloborate-wrap {
-                grid-column-gap: 24px;
-                grid-row-gap: 24px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .coloborate-wrap {
-                grid-column-gap: 34px;
-                grid-row-gap: 34px;
-                justify-content: flex-start;
-                align-items: flex-start;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .coloborate-wrap {
-                grid-column-gap: 32px;
-                grid-row-gap: 32px;
-            }
-        }
-
-        .coloborate-wrap {
-            z-index: 1;
-            grid-column-gap: 64px;
-            grid-row-gap: 64px;
-            flex-flow: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            display: flex;
-            position: relative;
-        }
-
-        @media screen and (max-width: 479px) {
-            .n-title-block.big.center.sem {
-                margin-bottom: 0;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-title-block.big.center.sem {
-                text-align: left;
-                font-size: 32px;
-                line-height: 110%;
-            }
-        }
-
-        .n-title-block.big.center.sem {
-            color: #2e303f;
-            font-size: 54px;
-            font-weight: 600;
-        }
-
-        @media screen and (max-width: 479px) {
-            .n-title-block.big.center {
-                font-size: 30px;
-            }
-        }
-
-        @media screen and (max-width: 479px) {
-            .n-title-block.big {
-                font-size: 38px;
-            }
-        }
-
-        @media screen and (max-width: 479px) {
-            .n-title-block.center {
-                margin-bottom: 30px;
-                font-size: 20px;
-                line-height: 130%;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-title-block.center {
-                font-size: 34px;
-            }
-        }
-
-        .n-title-block.big {
-            margin-bottom: 0;
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 120%;
-        }
-
-        .n-title-block.center {
-            text-align: center;
-            font-weight: 700;
-            line-height: 110%;
-        }
-
-        @media screen and (max-width: 479px) {
-            .n-title-block {
-                font-size: 28px;
-            }
-        }
-
-        .n-title-block {
-            text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 48px;
-            font-family: Montserrat, sans-serif;
-            font-size: 39px;
-            font-weight: 600;
-        }
-
-        @media screen and (max-width: 767px) {
-            .more-info-coloborate {
-                grid-column-gap: 8px;
-                grid-row-gap: 8px;
-                justify-content: flex-start;
-                align-items: flex-start;
-            }
-        }
-
-        .more-info-coloborate {
-            grid-column-gap: 24px;
-            grid-row-gap: 24px;
-            flex-flow: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            font-family: Montserrat, sans-serif;
-            display: flex;
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-title-block.small.ceo {
-                font-size: 18px;
-            }
-        }
-
-        .n-title-block.small.ceo {
-            color: #2e303f;
-            font-weight: 600;
-        }
-
-        @media screen and (max-width: 479px) {
-            .n-title-block.small {
-                font-size: 16px;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .n-title-block.small {
-                text-align: center;
-            }
-        }
-
-        .n-title-block.small {
-            color: var(--dark);
-            text-transform: none;
-            margin-bottom: 0;
-            font-size: 24px;
-            font-weight: 600;
-            line-height: 120%;
-            text-decoration: none;
-        }
-
-        @media screen and (max-width: 479px) {
-            .n-title-block {
-                font-size: 28px;
-            }
-        }
-
-        .n-title-block {
-            text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 48px;
-            font-family: Montserrat, sans-serif;
-            font-size: 39px;
-            font-weight: 600;
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-collaborate-text.new-st {
-                font-size: 16px;
-                line-height: 150%;
-            }
-        }
-
-        .n-collaborate-text.new-st {
-            color: #2e303f;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-size: 18px;
-            line-height: 120%;
-        }
-
-        @media screen and (max-width: 479px) {
-            .n-collaborate-text {
-                margin-bottom: 20px;
-                font-size: 14px;
-            }
-        }
-
-        .n-collaborate-text {
-            color: #0009;
-            margin-top: 10px;
-            margin-bottom: 45px;
-            font-size: 20px;
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-collaborate-link.n0-mar {
-                font-size: 14px;
-            }
-        }
-
-        .n-collaborate-link.n0-mar {
-            grid-column-gap: 8px;
-            color: #2e303f;
-            margin-top: 0;
-            font-size: 18px;
-            line-height: 120%;
-        }
-
-        @media screen and (max-width: 479px) {
-            .n-collaborate-link {
-                margin-top: 10px;
-                font-size: 16px;
-            }
-        }
-
-        .n-collaborate-link {
-            grid-column-gap: 14px;
-            color: #000;
-            justify-content: flex-start;
-            align-items: center;
-            margin-top: 20px;
-            font-size: 20px;
-            text-decoration: none;
-            display: flex;
-        }
-
-        .w-inline-block {
-            max-width: 100%;
-            display: inline-block;
-        }
-
-        @media screen and (max-width: 479px) {
-            .icon-form {
-                height: 24px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .icon-form {
-                width: 24px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-collaborate-form.new-ster {
-                flex-flow: column;
-                padding: 24px 16px;
-                display: block;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .n-collaborate-form.new-ster {
-                padding-left: 60px;
-                padding-right: 60px;
-            }
-        }
-
-        .n-collaborate-form.new-ster {
-            box-shadow: none;
-            flex-flow: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            width: 100%;
-            margin-top: 0;
-            margin-bottom: 0;
-            padding-left: 80px;
-            padding-right: 80px;
-            display: flex;
-        }
-
-        @media screen and (max-width: 479px) {
-            .n-collaborate-form {
-                padding: 20px;
-            }
-        }
-
-        .n-collaborate-form {
-            background-color: #fff;
-            margin-top: 47px;
-            margin-bottom: -120px;
-            padding: 60px;
-            box-shadow: 0 0 14px 3px #00000014;
-        }
-
-        .w-form {
-            margin: 0 0 15px;
-        }
-
-
-        .form-colloborate {
-            grid-column-gap: 24px;
-            grid-row-gap: 24px;
-            flex-flow: column;
-            display: flex;
-        }
-
-        @media screen and (max-width: 767px) {
-            .grid-2-form {
-                grid-column-gap: 24px;
-                grid-row-gap: 24px;
-                flex-flow: column;
-                display: flex;
-            }
-        }
-
-        .grid-2-form {
-            grid-column-gap: 60px;
-            grid-row-gap: 56px;
-        }
-
-        .w-layout-grid {
-            grid-row-gap: 16px;
-            grid-column-gap: 16px;
-            grid-template-rows: auto auto;
-            grid-template-columns: 1fr 1fr;
-            grid-auto-columns: 1fr;
-            display: grid;
-        }
-
-        @media screen and (max-width: 991px) {
-            .cell-form-item {
-                width: 100%;
-            }
-        }
-
-        .cell-form-item {
-            flex-flow: column;
-            justify-content: flex-end;
-            align-items: flex-start;
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-title-form-field.padding-bottom-16px {
-                margin-bottom: 16px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-title-form-field {
-                margin-bottom: 0;
-                font-size: 14px;
-            }
-        }
-
-        .n-title-form-field {
-            margin-bottom: 16px;
-            font-family: Montserrat, sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 120%;
-        }
-
-        label {
-            margin-bottom: 5px;
-            font-weight: 700;
-            display: block;
-        }
-
-        @media screen and (max-width: 479px) {
-            .radio-wrapper {
-                grid-column-gap: 10px;
-                grid-row-gap: 10px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .radio-wrapper {
-                grid-column-gap: 8px;
-                grid-row-gap: 8px;
-                flex-flow: wrap;
-            }
-        }
-
-        .radio-wrapper {
-            grid-column-gap: 17px;
-            grid-row-gap: 17px;
-            flex-flow: wrap;
-            display: flex;
-        }
-
-        @media screen and (max-width: 479px) {
-
-            .n-check-box,
-            .n-check-box-wrap {
-                font-size: 12px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-check-box-wrap {
-                justify-content: center;
-                align-items: center;
-                padding: 13px 16px;
-                display: flex;
-            }
-        }
-
-        .n-check-box-wrap {
-            border: 1px none var(--n-green);
-            color: #2e303f;
-            white-space: nowrap;
-            cursor: pointer;
-            background-color: #f8f8f8;
-            border-radius: 30px;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 0;
-            padding: 12px 24px;
-            font-family: Montserrat, sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-            transition: background-color .2s, border-color .2s;
-            display: flex;
-            position: relative;
-        }
-
-        .w-checkbox {
-            margin-bottom: 5px;
-            padding-left: 20px;
-            display: block;
-        }
-
-        .check-box.w--redirected-checked {
-            background-color: #d9f1e8;
-            background-image: none;
-        }
-
-        .w-checkbox-input--inputType-custom.w--redirected-checked {
-            background-color: #3898ec;
-            background-image: url(https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg);
-            background-position: 50%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-color: #3898ec;
-        }
-
-        .check-box {
-            border-style: none;
-            border-width: 1px;
-            border-radius: 30px;
-            width: 100%;
-            height: 100%;
-            margin-top: 0;
-            margin-left: 0;
-            display: block;
-            position: absolute;
-            inset: 0%;
-        }
-
-        .w-checkbox-input--inputType-custom {
-            border: 1px solid #ccc;
-            border-radius: 2px;
-            width: 12px;
-            height: 12px;
-        }
-
-        .w-checkbox-input {
-            float: left;
-            margin: 4px 0 0 -20px;
-            line-height: normal;
-        }
-
-        input[type=checkbox],
-        input[type=radio] {
-            box-sizing: border-box;
-            padding: 0;
-        }
-
-        input {
-            line-height: normal;
-        }
-
-        /* 
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0;
-} */
-
-        @media screen and (max-width: 479px) {
-
-            .n-check-box,
-            .n-check-box-wrap {
-                font-size: 12px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-check-box {
-                justify-content: center;
-                align-items: center;
-                font-size: 12px;
-                line-height: 120%;
-                display: flex;
-            }
-        }
-
-        .n-check-box {
-            border: 1px none var(--n-green);
-            white-space: nowrap;
-            background-color: #f8f8f800;
-            border-radius: 30px;
-            margin-bottom: 0;
-            font-family: Montserrat, sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-            display: block;
-            position: relative;
-        }
-
-        .w-form-label {
-            cursor: pointer;
-            margin-bottom: 0;
-            font-weight: 400;
-            display: inline-block;
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-title-form-field.padding-bottom-16px {
-                margin-bottom: 16px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-title-form-field {
-                margin-bottom: 0;
-                font-size: 14px;
-            }
-        }
-
-        .n-title-form-field {
-            margin-bottom: 16px;
-            font-family: Montserrat, sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 120%;
-        }
-
-        @media screen and (max-width: 479px) {
-            .radio-wrapper {
-                grid-column-gap: 10px;
-                grid-row-gap: 10px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .radio-wrapper {
-                grid-column-gap: 8px;
-                grid-row-gap: 8px;
-                flex-flow: wrap;
-            }
-        }
-
-        .radio-wrapper {
-            grid-column-gap: 17px;
-            grid-row-gap: 17px;
-            flex-flow: wrap;
-            display: flex;
-        }
-
-        .n-radio {
-            cursor: pointer;
-            background-color: #f8f8f8;
-            border-radius: 30px;
-            margin-bottom: 0;
-            padding-left: 0;
-            display: flex;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .w-radio {
-            margin-bottom: 5px;
-            padding: 12px 20px;
-            display: block;
-        }
-
-        .w-radio:before,
-        .w-radio:after {
-            content: " ";
-            grid-area: 1 / 1 / 2 / 2;
-            display: table;
-        }
-
-        .n-radio-btn {
-            border-style: none;
-            border-radius: 30px;
-            order: -1;
-            width: 100%;
-            height: 100%;
-            margin-top: 0;
-            margin-left: 0;
-            transition: all .2s;
-            display: block;
-            position: absolute;
-            inset: 0%;
-        }
-
-        .w-form-formradioinput--inputType-custom {
-            border: 1px solid #ccc;
-            border-radius: 50%;
-            width: 12px;
-            height: 12px;
-        }
-
-        .w-radio-input {
-            float: left;
-            margin: 3px 0 0 -20px;
-            line-height: normal;
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-title-form-field.padding-bottom-16px {
-                margin-bottom: 16px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-title-form-field {
-                margin-bottom: 0;
-                font-size: 14px;
-            }
-        }
-
-        .n-title-form-field {
-            margin-bottom: 16px;
-            font-family: Montserrat, sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 120%;
-        }
-
-        @media screen and (max-width: 479px) {
-            .wrapper-n-input-text {
-                border-radius: 0;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .wrapper-n-input-text {
-                border-radius: 0;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .wrapper-n-input-text {
-                grid-column-gap: 24px;
-                grid-row-gap: 24px;
-                border-radius: 0;
-            }
-        }
-
-        .wrapper-n-input-text {
-            grid-column-gap: 32px;
-            grid-row-gap: 32px;
-            border-radius: 0;
-            flex-flow: column;
-            display: flex;
-        }
-
-        .n-input-text.text-area {
-            min-width: 200px;
-            max-width: 530px;
-            min-height: 32px;
-            max-height: 530px;
-        }
-
-
-        @media screen and (max-width: 479px) {
-            .n-input-text {
-                border-radius: 0;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-input-text {
-                border-radius: 0;
-                font-size: 14px;
-                line-height: 120%;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .n-input-text {
-                border-radius: 0;
-            }
-        }
-
-        .n-input-text {
-            outline-offset: 0px;
-            color: #242424;
-            letter-spacing: .1px;
-            background-color: #fff0;
-            border: 1px #000;
-            border-bottom: 1px solid #b1b1b1;
-            border-radius: 0;
-            outline: 3px #333;
-            margin-bottom: 0;
-            padding: 8px 0;
-            font-family: Montserrat, sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-        }
-
-        .w-input,
-        .w-select {
-            color: #8a8a8a;
-            vertical-align: middle;
-            background-color: #fff;
-            /* border: 1px solid #ccc; */
-            width: 100%;
-            height: 38px;
-            margin-bottom: 10px;
-            padding: 8px 12px;
-            font-size: 14px;
-            line-height: 1.42857;
-            display: block;
-        }
-
-        textarea {
-            overflow: auto;
-        }
-
-        @media screen and (max-width: 767px) {
-            .cell-form-item.hide-mobile {
-                display: none;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .hide-mobile {
-                display: none;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .cell-form-item {
-                width: 100%;
-            }
-        }
-
-        .cell-form-item {
-            flex-flow: column;
-            justify-content: flex-end;
-            align-items: flex-start;
-        }
-
-        .wrraper_attach-file {
-            justify-content: center;
-            align-items: center;
-            display: none;
-        }
-
-        .p-new._16.gree {
-            color: #50b1a2;
-            font-family: Montserrat, sans-serif;
-            font-weight: 500;
-            line-height: 120%;
-        }
-
-        @media screen and (max-width: 767px) {
-            .p-new._16 {
-                font-size: 14px;
-            }
-        }
-
-        .p-new._16 {
-            color: #fffc;
-            text-transform: uppercase;
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 120%;
-        }
-
-        .p-new._16 {
-            color: #2e303f;
-            letter-spacing: .1px;
-            line-height: 150%;
-        }
-
-        .p-new {
-            color: #fff;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-family: Montserrat, sans-serif;
-            font-size: 16px;
-            line-height: 24px;
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-title-form-field.padding-bottom-16px {
-                margin-bottom: 16px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-title-form-field {
-                margin-bottom: 0;
-                font-size: 14px;
-            }
-        }
-
-        .n-title-form-field {
-            margin-bottom: 16px;
-            font-family: Montserrat, sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 120%;
-        }
-
-        @media screen and (max-width: 479px) {
-            .wrapper-n-input-text {
-                border-radius: 0;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .wrapper-n-input-text {
-                border-radius: 0;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .wrapper-n-input-text {
-                grid-column-gap: 24px;
-                grid-row-gap: 24px;
-                border-radius: 0;
-            }
-        }
-
-        .wrapper-n-input-text {
-            grid-column-gap: 32px;
-            grid-row-gap: 32px;
-            border-radius: 0;
-            flex-flow: column;
-            display: flex;
-        }
-
-        @media screen and (max-width: 479px) {
-            .atach-btn {
-                grid-row-gap: 16px;
-                flex-flow: wrap;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-
-        .atach-btn {
-            grid-column-gap: 24px;
-            grid-row-gap: 24px;
-            flex-flow: column;
-            justify-content: flex-start;
-            align-items: center;
-            width: 100%;
-            display: flex;
-        }
-
-        @media screen and (max-width: 479px) {
-            .some-atach {
-                grid-column-gap: 8px;
-                grid-row-gap: 8px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .some-atach {
-                justify-content: center;
-                align-items: flex-start;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .some-atach {
-                grid-column-gap: 16px;
-                grid-row-gap: 16px;
-            }
-        }
-
-        .some-atach {
-            grid-column-gap: 15px;
-            grid-row-gap: 15px;
-            flex-flow: column;
-            justify-content: flex-start;
-            align-items: center;
-            display: flex;
-        }
-
-        @media screen and (max-width: 767px) {
-            .checkbox-field {
-                grid-column-gap: 0px;
-                grid-row-gap: 0px;
-                flex-flow: row;
-                justify-content: space-around;
-                align-items: center;
-                width: 100%;
-                display: flex;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .checkbox-field {
-                justify-content: center;
-                align-items: center;
-                display: flex;
-            }
-        }
-
-        .checkbox-field {
-            grid-column-gap: 16px;
-            grid-row-gap: 16px;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 0;
-            padding-left: 0;
-            font-family: Montserrat, sans-serif;
-            font-weight: 400;
-            display: flex;
-        }
-
-        .w-checkbox {
-            margin-bottom: 5px;
-            padding-left: 20px;
-            display: block;
-        }
-
-        @media screen and (max-width: 767px) {
-            .chekbox-squ {
-                margin-right: 5px;
-            }
-        }
-
-        .chekbox-squ {
-            border-color: #50b1a2;
-            width: 20px;
-            min-width: 20px;
-            height: 20px;
-            min-height: 20px;
-            margin-top: 0;
-            margin-left: 0;
-        }
-
-        .w-checkbox-input--inputType-custom {
-            border: 1px solid #ccc;
-            border-radius: 2px;
-            width: 12px;
-            height: 12px;
-        }
-
-        .w-checkbox-input {
-            float: left;
-            margin: 4px 0 0 -20px;
-            line-height: normal;
-        }
-
-        @media screen and (max-width: 479px) {
-            .checkbox-text-main {
-                line-height: 120%;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .checkbox-text-main {
-                white-space: normal;
-                font-size: 12px;
-            }
-        }
-
-        .checkbox-text-main {
-            margin-bottom: 0;
-            padding-left: 10px;
-            font-family: Montserrat, sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 120%;
-        }
-
-        .w-form-label {
-            cursor: pointer;
-            margin-bottom: 0;
-            font-weight: 400;
-            display: inline-block;
-        }
-
-        @media screen and (max-width: 767px) {
-            .p-new._12.reg.wid._10-mob {
-                font-size: 10px;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .p-new._12.reg.wid {
-                text-align: left;
-                max-width: 100%;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .p-new._12.reg.wid {
-                max-width: 100%;
-            }
-        }
-
-        .p-new._12.reg.wid {
-            text-align: center;
-            max-width: 70%;
-        }
-
-        .p-new._12.reg {
-            color: #2e303f;
-            letter-spacing: 0;
-            text-transform: none;
-            font-weight: 400;
-        }
-
-        .p-new._12 {
-            color: #6b6b6b;
-            letter-spacing: .5px;
-            text-transform: uppercase;
-            font-family: Montserrat, sans-serif;
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 120%;
-        }
-
-        .p-new {
-            color: #fff;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-family: Montserrat, sans-serif;
-            font-size: 16px;
-            line-height: 24px;
-        }
-
-        @media screen and (max-width: 767px) {
-            .dbt-flx {
-                flex-flow: column;
-                justify-content: flex-start;
-                align-items: center;
-                width: 100%;
-            }
-        }
-
-        .dbt-flx {
-            grid-column-gap: 16px;
-            grid-row-gap: 16px;
-            display: flex;
-        }
-
-        @media screen and (max-width: 767px) {
-
-            .button-new--forma.black.form.width-mob-100,
-            .button-new-st-forma.black.form {
-                width: 100%;
-            }
-        }
-
-        .button-new--forma.black.form {
-            margin-left: auto;
-            margin-right: auto;
-            transition: all .2s;
-        }
-
-        @media screen and (max-width: 479px) {
-
-            .button-new--forma,
-            .button-new--forma.black {
-                width: 100%;
-            }
-        }
-
-        .button-new--forma.black {
-            color: #fff;
-            background-color: #2e303f;
-            width: 288px;
-            height: 56px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 16px;
-            transition: opacity .2s;
-        }
-
-        input.w-button {
-            -webkit-appearance: button;
-        }
-
-        @media screen and (max-width: 767px) {
-            .form {
-                grid-template-rows: 1.1rem minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr);
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .button-new--forma {
-            grid-column-gap: 1em;
-            grid-row-gap: 1em;
-            color: #2e303f;
-            background-color: #fff;
-            border-radius: 100px;
-            justify-content: center;
-            align-items: center;
-            width: 18em;
-            height: 3.5em;
-            font-family: Montserrat, sans-serif;
-            font-size: 1em;
-            font-weight: 500;
-            line-height: 120%;
-            text-decoration: none;
-            display: flex;
-        }
-
-        .form {
-            grid-column-gap: 16px;
-            grid-row-gap: 16px;
-            grid-template-rows: minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr);
-            grid-template-columns: 1fr 1fr;
-            grid-auto-columns: 1fr;
-            width: 100%;
-            max-width: 540px;
-            display: block;
-        }
-
-        .w-button {
-            color: #fff;
-            line-height: inherit;
-            cursor: pointer;
-            background-color: #3898ec;
-            border: 0;
-            border-radius: 0;
-            padding: 9px 15px;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .button-new-st-forma.black.border.form {
-            color: #000;
-            transition: all .2s;
-        }
-
-        @media screen and (max-width: 767px) {
-
-            .button-new--forma.black.form.width-mob-100,
-            .button-new-st-forma.black.form {
-                width: 100%;
-            }
-        }
-
-        .button-new-st-forma.black.border {
-            background-color: #2e303f00;
-            border: 2px solid #2e303f;
-        }
-
-        .button-new-st-forma.black {
-            color: #fff;
-            background-color: #2e303f;
-            width: 288px;
-            height: 56px;
-            font-size: 16px;
-        }
-
-        @media screen and (max-width: 767px) {
-            .form {
-                grid-template-rows: 1.1rem minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr);
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .button-new-st-forma {
-            grid-column-gap: 1em;
-            grid-row-gap: 1em;
-            color: #2e303f;
-            background-color: #fff;
-            border-radius: 100px;
-            justify-content: center;
-            align-items: center;
-            width: 18em;
-            height: 3.5em;
-            font-family: Montserrat, sans-serif;
-            font-size: 1em;
-            font-weight: 500;
-            line-height: 120%;
-            text-decoration: none;
-            display: flex;
-        }
-
-        .form {
-            grid-column-gap: 16px;
-            grid-row-gap: 16px;
-            grid-template-rows: minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr);
-            grid-template-columns: 1fr 1fr;
-            grid-auto-columns: 1fr;
-            width: 100%;
-            max-width: 540px;
-            display: block;
-        }
-
-        .w-inline-block {
-            max-width: 100%;
-            display: inline-block;
-        }
-
-        .readmore-popup {
-            cursor: pointer;
-            font-size: 16px;
-            text-decoration: none;
-        }
-
-        @media screen and (max-width: 767px) {
-            .success-message {
-                padding: 0;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .success-message {
-                min-width: auto;
-            }
-        }
-
-        .success-message {
-            color: var(--dark);
-            background-color: #ddd0;
-            min-width: 1120px;
-        }
-
-        .w-form-done {
-            text-align: center;
-            background-color: #ddd;
-            padding: 20px;
-            display: none;
-        }
-
-        @media screen and (max-width: 767px) {
-            .succes-wrap {
-                grid-column-gap: 40px;
-                grid-row-gap: 40px;
-            }
-        }
-
-        .succes-wrap {
-            grid-column-gap: 64px;
-            grid-row-gap: 64px;
-            flex-flow: column;
-            display: flex;
-        }
-
-        @media screen and (max-width: 767px) {
-            .h-succes {
-                grid-column-gap: 16px;
-                grid-row-gap: 16px;
-            }
-        }
-
-        .h-succes {
-            grid-column-gap: 24px;
-            grid-row-gap: 24px;
-            flex-flow: column;
-            justify-content: flex-start;
-            align-items: center;
-            display: flex;
-        }
-
-        @media screen and (max-width: 767px) {
-            .h2-h-succes {
-                font-size: 28px;
-            }
-        }
-
-        .h2-h-succes {
-            text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-family: Montserrat, sans-serif;
-            font-size: 44px;
-            font-weight: 600;
-        }
-
-        @media screen and (max-width: 767px) {
-            .desc-h-succes {
-                font-size: 16px;
-            }
-        }
-
-        .desc-h-succes {
-            font-size: 18px;
-        }
-
-        .wrap-info-succes {
-            grid-column-gap: 40px;
-            grid-row-gap: 40px;
-            flex-flow: column;
-            justify-content: flex-start;
-            align-items: center;
-            display: flex;
-        }
-
-        @media screen and (max-width: 767px) {
-            .h3-h-succes {
-                font-size: 20px;
-            }
-        }
-
-        .h3-h-succes {
-            margin-top: 0;
-            margin-bottom: 0;
-            font-family: Montserrat, sans-serif;
-            font-size: 28px;
-            font-weight: 600;
-            line-height: 120%;
-        }
-
-        .step-wrap-succes {
-            flex-flow: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            max-width: 700px;
-            display: flex;
-        }
-
-        .step-item-succes {
-            grid-column-gap: 24px;
-            grid-row-gap: 24px;
-            text-align: left;
-            justify-content: flex-start;
-            align-items: center;
-            display: flex;
-        }
-
-        @media screen and (max-width: 767px) {
-            .circle-number {
-                width: 40px;
-                height: 40px;
-            }
-        }
-
-        .circle-number {
-            background-image: linear-gradient(135deg, #5cc2934f, #3477aa36);
-            border-radius: 100%;
-            flex: none;
-            justify-content: center;
-            align-items: center;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            overflow: hidden;
-        }
-
-        @media screen and (max-width: 767px) {
-            .h-new._32.darck {
-                font-size: 20px;
-            }
-        }
-
-        .h-new._32.darck {
-            color: #2e303f;
-        }
-
-        .h-new._32 {
-            z-index: 4;
-            color: #fff;
-            font-size: 32px;
-            font-weight: 600;
-            position: relative;
-        }
-
-        .h-new {
-            margin-top: 0;
-            margin-bottom: 0;
-            font-family: Montserrat, sans-serif;
-            line-height: 120%;
-        }
-
-        @media screen and (max-width: 767px) {
-            .step-text-succes {
-                font-size: 14px;
-            }
-        }
-
-        .step-text-succes {
-            font-family: Open Sans, sans-serif;
-            font-size: 18px;
-        }
-
-        @media screen and (max-width: 767px) {
-            .line-step {
-                min-width: 40px;
-                max-width: 40px;
-            }
-        }
-
-        .line-step {
-            justify-content: center;
-            align-items: flex-start;
-            min-width: 80px;
-            max-width: 80px;
-            display: flex;
-        }
-
-        @media screen and (max-width: 767px) {
-            .h-new._32.darck {
-                font-size: 20px;
-            }
-        }
-
-        .h-new._32.darck {
-            color: #2e303f;
-        }
-
-        .h-new._32 {
-            z-index: 4;
-            color: #fff;
-            font-size: 32px;
-            font-weight: 600;
-            position: relative;
-        }
-
-        @media screen and (max-width: 767px) {
-            .step-text-succes {
-                font-size: 14px;
-            }
-        }
-
-        .step-text-succes {
-            font-family: Open Sans, sans-serif;
-            font-size: 18px;
-        }
-
-        .w-form-fail {
-            background-color: #ffdede;
-            margin-top: 10px;
-            padding: 10px;
-            display: none;
-        }
-
-        .w-container:after {
-            clear: both;
-        }
-
-        .n-input-text.text-area {
-            min-width: 200px;
-            max-width: 530px;
-            min-height: 32px;
-            max-height: 530px;
-        }
-
-        .n-input-text:focus {
-            border-bottom-color: #50b1a2;
-        }
-
-        .w-input:focus,
-        .w-select:focus {
-            border-color: #3898ec;
-            outline: 0;
-        }
-
-        textarea.w-input,
-        textarea.w-select {
-            height: auto;
-        }
-
-        @media screen and (max-width: 479px) {
-            .n-input-text {
-                border-radius: 0;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .n-input-text {
-                border-radius: 0;
-                font-size: 14px;
-                line-height: 120%;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .n-input-text {
-                border-radius: 0;
-            }
-        }
-
-        .n-input-text {
-            outline-offset: 0px;
-            color: #5d5d5db1;
-            letter-spacing: .1px;
-            background-color: #fff0;
-            border: 1px #000;
-            border-bottom: 1px solid #b1b1b1;
-            border-radius: 0;
-            outline: 3px #333;
-            margin-bottom: 0;
-            padding: 8px 0;
-            font-family: Montserrat, sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-        }
-
-        textarea {
-            overflow: auto;
-        }
-
-        button,
-        input,
-        optgroup,
-        select,
-        textarea {
-            color: inherit;
-            font: inherit;
-            margin: 0;
-        }
-
-        textarea {
-            text-rendering: auto;
-            color: fieldtext;
-            letter-spacing: normal;
-            word-spacing: normal;
-            line-height: normal;
-            text-transform: none;
-            text-indent: 0px;
-            text-shadow: none;
-            display: inline-block;
-            text-align: start;
-            appearance: auto;
-            -webkit-rtl-ordering: logical;
-            resize: -internal-textarea-auto;
-            cursor: text;
-            overflow-wrap: break-word;
-            background-color: field;
-            column-count: initial !important;
-            margin: 0em 0em 0em 0em;
-            border-width: 1px;
-            border-style: solid;
-            border-color: light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-            border-image: initial;
-            padding: 2px;
-            white-space: pre-wrap;
-        }
-
-        .n-radio-btn.w--redirected-checked {
-            border: 4px none #d9f1e8;
-            background-color: #d9f1e8;
-            border-radius: 0%;
-            order: -1;
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: absolute;
-            inset: 0%;
-        }
-
-        .w-form-formradioinput--inputType-custom.w--redirected-checked {
-            border-width: 4px;
-            border-color: #3898ec;
-        }
-
-        .n-radio-btn {
-            border-style: none;
-            border-radius: 30px;
-            order: -1;
-            width: 100%;
-            height: 100%;
-            margin-top: 0;
-            margin-left: 0;
-            transition: all .2s;
-            display: block;
-            position: absolute;
-            inset: 0%;
-        }
-
-        .w-form-formradioinput--inputType-custom {
-            border: 1px solid #ccc;
-            border-radius: 50%;
-            width: 12px;
-            height: 12px;
-        }
-
-        .w-radio-input {
-            float: left;
-            margin: 3px 0 0 -20px;
-            line-height: normal;
-        }
-
-        .check-box.w--redirected-checked {
-            background-color: #d9f1e8;
-            background-image: none;
-        }
-
-        .w-checkbox-input--inputType-custom.w--redirected-checked {
-            background-position: 50%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-color: #3898ec;
-        }
-
-        .check-box {
-            border-style: none;
-            border-width: 1px;
-            border-radius: 30px;
-            width: 100%;
-            height: 100%;
-            margin-top: 0;
-            margin-left: 0;
-            display: block;
-            position: absolute;
-            inset: 0%;
-        }
-
-        .w-checkbox-input--inputType-custom {
-            border: 1px solid #ccc;
-            border-radius: 2px;
-            width: 12px;
-            height: 12px;
-        }
-
-        .w-checkbox-input {
-            float: left;
-            margin: 4px 0 0 -20px;
-            line-height: normal;
-        }
-
-        @media screen and (max-width: 479px) {
-
-            .n-check-box,
-            .n-check-box-wrap {
-                font-size: 12px;
-            }
-        }
-
-        .n-check-box-wrap {
-            border: 1px none var(--n-green);
-            color: #2e303f;
-            white-space: nowrap;
-            cursor: pointer;
-            background-color: #f8f8f8;
-            border-radius: 30px;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 0;
-            padding: 12px 24px;
-            font-family: Montserrat, sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-            transition: background-color .2s, border-color .2s;
-            display: flex;
-            position: relative;
-        }
-
-        @media screen and (max-width: 479px) {
-
-            .n-check-box,
-            .n-check-box-wrap {
-                font-size: 12px;
-            }
-        }
-
-        .w-checkbox:before {
-            content: " ";
-            grid-area: 1 / 1 / 2 / 2;
-            display: table;
-        }
-
-        .section-colloborate.gradien-bg {
-            flex: 1;
-        }
-
-        @media screen and (max-width: 767px) {
-            .section-colloborate {
-                width: 100%;
-            }
-        }
-
-        .section-colloborate {
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-
-        .gradien-bg {
-            background-image: linear-gradient(90deg, #5cc29329, #3477aa21);
-        }
-
-        @media screen and (max-width: 767px) {
-            .contentwrapper {
-                padding-left: 1em;
-                padding-right: 1em;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .contentwrapper {
-                max-width: 100%;
-                padding-left: 2em;
-                padding-right: 2em;
-            }
-        }
-
-        .contentwrapper {
-            z-index: 1;
-            max-width: 1440px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 5em;
-            padding-right: 5em;
-            position: relative;
-        }
-
-        @media screen and (max-width: 479px) {
-            .w-container {
-                max-width: none;
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            .w-container {
-                max-width: 728px;
-            }
-        }
-
-        .w-container {
-            /* max-width: 940px; */
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .w-container:before,
-        .w-container:after {
-            content: " ";
-            grid-area: 1 / 1 / 2 / 2;
-            display: table;
-        }
-
-        textarea.w-input,
-        textarea.w-select {
-            height: auto;
-        }
-
-        .section-colloborate.gradien-bg {
-            flex: 1;
-        }
-
-        @media screen and (max-width: 767px) {
-            .section-colloborate {
-                width: 100%;
-            }
-        }
-
-        .section-collaborate {
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-
-        /* INDEX-ONLY: ensure form controls inside the collaborate section render consistently
-           This is intentionally scoped to .section-collaborate so it doesn't affect other pages. */
-        .section-collaborate .w-checkbox-input--inputType-custom,
-        .section-collaborate .w-form-formradioinput--inputType-custom {
-            border: 1px solid #ccc;
-            background-color: #fff;
-            width: 18px;
-            height: 18px;
-            min-width: 18px;
-            min-height: 18px;
-            border-radius: 4px;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 60%;
-            box-sizing: border-box;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .section-collaborate .chekbox-squ {
-            width: 18px;
-            height: 18px;
-            min-width: 18px;
-            min-height: 18px;
-            margin-top: 0;
-            margin-left: 0;
-            margin-right: 8px;
-            display: inline-block;
-            vertical-align: middle;
-            border: 1px solid #cfcfcf;
-            background-color: transparent;
-            border-radius: 4px;
-        }
-
-        .section-collaborate .w-checkbox-input--inputType-custom.w--redirected-checked,
-        .section-collaborate .w-form-formradioinput--inputType-custom.w--redirected-checked {
-            background-color: #3898ec;
-            border-color: #3898ec;
-            background-image: url("https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 60%;
-        }
-
-        /* ensure label text aligns vertically with the fake control */
-        .section-collaborate .w-form-label,
-        .section-collaborate .n-check-box,
-        .section-collaborate .checkbox-text-main {
-            vertical-align: middle;
-            display: inline-block;
-        }
-
-        
     </style>
 </head>
 
@@ -2838,13 +498,12 @@ textarea {
                                     <img src="assets/images/banner/icon/01.svg" alt="banner">
                                     Business Success Starts Here
                                 </span> -->
-                                <h4 class="title">Your Vision, <br>
-                                    <span>Our Code</span>
+                                <h4 class="title">Where Top Tech <br>
+                                    <span>Flows Freely</span>
                                     </h5>
                                     <p class="disc">
-                                        From intuitive web and mobile applications to cutting-edge AI systems and secure
-                                        blockchain platforms, we blend technology with vision to drive growth and
-                                        innovation.
+                                        Creating an environment where innovation, cutting-edge technology, and seamless
+                                        solutions move effortlessly to empower businesses and inspire progress.
                                     </p>
                                     <a href="contact.html" class="rts-btn btn-primary btn-white"
                                         style="font-weight: 600;">LET'S TALK <i class="fa-regular fa-arrow-right"
@@ -2864,12 +523,12 @@ textarea {
 
         <div class="rts-services-grid rts-section-gap">
             <div class="col-lg-12">
-                <div class="title-style-one center" style="padding-bottom: 30px;">
+                <div class="title-style-one center" style="padding: 0px 30px 30px 30px;">
                     <!-- <span class="pre">Our Latest Services</span> -->
                     <h2 class="title rts-text-anime-style-1"
                         style="color: #292929; font-size: 35px; font-weight: 900; line-height: 1.5; padding-top: 40px;">
                         Our Ultimate Set of
-                        Services for<br> Your Ideas Implementation
+                        Services for <br> Your Ideas Implementation
                     </h2>
                 </div>
             </div>
@@ -3453,7 +1112,7 @@ textarea {
 
                     // Autoplay (5s delay). Pauses on hover over the slider section.
                     var autoPlay = true;
-                    var autoDelayMs = 2500; // 2.5s autoplay as requested
+                    var autoDelayMs = 3600; // 2.5s autoplay as requested
                     var autoTimer = null;
                     function startAuto() {
                         if (!autoPlay) return;
@@ -3887,7 +1546,7 @@ textarea {
                         <span style="color: #40d6be; font-size: 16px; font-weight: 600; line-height: 1.5;">OUR
                             PARTNERS</span>
                         <p class="client-title"
-                            style="padding-top: 20px; color: #40d6be; font-size: 35px; font-weight: 900; line-height: 1.5;">
+                            style="padding-top: 20px; color: #40d6be; font-size: clamp(22px, 6.5vw, 35px) !important; font-weight: 900; line-height: 1.5;">
                             We impact the world in partnership with</p>
                     </div>
                 </div>
@@ -3932,180 +1591,612 @@ textarea {
 
 
     <!-- rts testimonials area start -->
-    <div class="rts-testimonials-area-wrapper rts-section-gap bg_testimonials-6 bg_image" style="background:#fff;"
-        role="region" aria-label="Testimonials">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-style-five center">
-                        <span class="pre">Our testimonial</span>
-                        <h2 class="title"
-                            style="color: #0e0e0ea5; font-size: 35px; font-weight: 900; line-height: 1.5; padding-bottom: 15px;">
-                            What our Clients say about Us</h2>
+    <div class="section-wrapper rev-feedback">
+        <div class="contentwrapper" style="padding-bottom: 60px;">
+            <div class="testimonials-wrapper">
+                <!-- <div class="h2_textbtn spec-grid">
+                    <h2 class="h2-new">Testimonials</h2><a id="w-node-d8b14031-a2ff-9b1b-3454-a0387ad8820e-ebddf00d"
+                        class="u-link u-link_green w-inline-block">
+                        <div class="wrapper-u-anim-text">
+                            <div class="u-anim-text">
+                                <div class="u-link-text absolute">
+                                    <div class="text-btn-u-link">See all</div>
+                                    <div class="arrow-btn-u-link w-embed"><svg width="18" height="16"
+                                            viewBox="0 0 18 16" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z"
+                                                fill="currentcolor"></path>
+                                        </svg></div>
+                                </div>
+                                <div class="u-link-text">
+                                    <div class="text-btn-u-link">See all</div>
+                                    <div class="arrow-btn-u-link w-embed"><svg width="18" height="16"
+                                            viewBox="0 0 18 16" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z"
+                                                fill="currentcolor"></path>
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div> -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title-style-five center">
+                            <span class="pre">Our testimonial</span>
+                            <h2 class="title"
+                                style="color: #0e0e0ea5; font-size: 35px; font-weight: 900; line-height: 1.5; padding-bottom: 15px;">
+                                What our Clients say about Us</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-6">
+                <div class="swiper swiper-feed w-dyn-list swiper-initialized swiper-horizontal swiper-backface-hidden">
+                    <div role="list" class="swiper-wrapper swiper-wrapper-feed w-dyn-items"
+                        id="swiper-wrapper-7dfffac4b867b691" aria-live="polite"
+                        style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); transition-delay: 0ms;">
+                        <div role="group" class="swiper-slide swiper-slide-feed w-dyn-item swiper-slide-active"
+                            aria-label="1 / 4" style="width: 905px; margin-right: 16px;">
+                            <div class="feedback-item">
+                                <div class="feedback-item-left">
+                                    <div class="wrapper-h-feedback-item">
+                                        <div class="wrapper-h-feedback-item display-vertical">
+                                            <div class="wrapper-h-feedback-item">
+                                                <div class="text-18px bold-600 text-montserrat">Stan Miller</div><a
+                                                    title="Bennett Tong" href="#"
+                                                    class="n-testimonials-review-social w-inline-block w-condition-invisible">
+                                                    <div class="icon-linkedin w-embed"><svg width="17" height="17"
+                                                            viewBox="0 0 17 17" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M14.8122 0.5H1.27374C0.947318 0.5 0.634267 0.62967 0.403453 0.860484C0.172639 1.0913 0.0429688 1.40435 0.0429688 1.73077V15.2692C0.0429688 15.5957 0.172639 15.9087 0.403453 16.1395C0.634267 16.3703 0.947318 16.5 1.27374 16.5H14.8122C15.1386 16.5 15.4517 16.3703 15.6825 16.1395C15.9133 15.9087 16.043 15.5957 16.043 15.2692V1.73077C16.043 1.40435 15.9133 1.0913 15.6825 0.860484C15.4517 0.62967 15.1386 0.5 14.8122 0.5ZM5.58143 12.1923C5.58143 12.3555 5.5166 12.512 5.40119 12.6275C5.28578 12.7429 5.12926 12.8077 4.96605 12.8077C4.80284 12.8077 4.64631 12.7429 4.5309 12.6275C4.4155 12.512 4.35066 12.3555 4.35066 12.1923V7.26923C4.35066 7.10602 4.4155 6.9495 4.5309 6.83409C4.64631 6.71868 4.80284 6.65385 4.96605 6.65385C5.12926 6.65385 5.28578 6.71868 5.40119 6.83409C5.5166 6.9495 5.58143 7.10602 5.58143 7.26923V12.1923ZM4.96605 6.03846C4.78348 6.03846 4.60501 5.98432 4.45321 5.8829C4.30141 5.78147 4.1831 5.6373 4.11323 5.46863C4.04337 5.29996 4.02509 5.11436 4.06071 4.9353C4.09632 4.75624 4.18424 4.59177 4.31333 4.46267C4.44243 4.33358 4.6069 4.24566 4.78596 4.21004C4.96502 4.17443 5.15062 4.19271 5.31929 4.26257C5.48796 4.33244 5.63213 4.45075 5.73356 4.60255C5.83499 4.75435 5.88912 4.93282 5.88912 5.11538C5.88912 5.3602 5.79187 5.59499 5.61876 5.7681C5.44565 5.94121 5.21086 6.03846 4.96605 6.03846ZM12.3507 12.1923C12.3507 12.3555 12.2858 12.512 12.1704 12.6275C12.055 12.7429 11.8985 12.8077 11.7353 12.8077C11.5721 12.8077 11.4155 12.7429 11.3001 12.6275C11.1847 12.512 11.1199 12.3555 11.1199 12.1923V9.42308C11.1199 9.01505 10.9578 8.62374 10.6693 8.33522C10.3808 8.0467 9.98946 7.88462 9.58143 7.88462C9.17341 7.88462 8.78209 8.0467 8.49357 8.33522C8.20506 8.62374 8.04297 9.01505 8.04297 9.42308V12.1923C8.04297 12.3555 7.97813 12.512 7.86273 12.6275C7.74732 12.7429 7.59079 12.8077 7.42758 12.8077C7.26437 12.8077 7.10785 12.7429 6.99244 12.6275C6.87703 12.512 6.8122 12.3555 6.8122 12.1923V7.26923C6.81296 7.1185 6.86902 6.97328 6.96975 6.86114C7.07047 6.749 7.20885 6.67772 7.35864 6.66084C7.50843 6.64395 7.6592 6.68263 7.78237 6.76953C7.90553 6.85644 7.99251 6.98553 8.02682 7.13231C8.44311 6.8499 8.92847 6.68623 9.43077 6.65886C9.93308 6.63149 10.4333 6.74147 10.8779 6.97697C11.3224 7.21247 11.6943 7.56461 11.9538 7.99557C12.2133 8.42653 12.3505 8.92003 12.3507 9.42308V12.1923Z"
+                                                                fill="currentcolor"></path>
+                                                        </svg></div>
+                                                </a>
+                                            </div>
+                                            <div class="wrapper-h-feedback-item gap-2px">
+                                                <div class="text-10">CEO</div>
+                                                <div class="text-10">at</div><a title="Locad" href="https://golocad.com"
+                                                    target="_blank" class="text-12 bold-600">MPC, llc</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mobile-view">
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">PROJECT</div>
+                                                <div class="p-new _16 sem _16-m">Building Online Reputation Management
+                                                    Platform
+                                                    Product</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-20px bold-600">Reeact.io - Building Online Reputation Management
+                                        Product</div>
+                                    <div class="text-16px">“I’m happy to recommend ApiceFlow. We asked them to design a
+                                        robust moderation and takedown orchestration platform, and they delivered beyond
+                                        expectations. Their team paired a resilient crawling/ingestion stack with an
+                                        evidence-first appeals workflow, and the hybrid AI + human review they
+                                        implemented materially improved our removal outcomes.
 
-                </div>
-                <div class="col-lg-12">
-                    <div class="testimonails-main-wraqpper-6">
-                        <div class="swiper mySwiper-testimoanils-6" dir="ltr">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="single-testimonials-6">
-                                        <div class="top">
-                                            <h5 class="title">Great Business Solution</h5>
-                                            <p class="disc">
-                                                “ApiceFlow’s IT consulting services exceeded our expectations. Their
-                                                team provided
-                                                strategic insights and hands-on support, helping us streamline
-                                                operations, enhance
-                                                security, and achieve our business goals efficiently.”
-                                            </p>
-                                        </div>
-                                        <div class="botton-content">
-                                            <div class="avatar-area">
-                                                <div class="inner">
-                                                    <h5 class="title">Miller S.</h5>
-                                                    <p>CEO, <span>Miller Projects Consulting, LLC.</span></p>
+                                        What stood out most was their AI capability — the models and engineering were
+                                        clearly led by people who know the field, not just surface-level ML. They also
+                                        built GDPR-compliant audit trails and easy integration points for our legal
+                                        partners, which reduced case turnaround time. Communication was proactive
+                                        throughout, and the post-launch iteration made the system even more reliable.
+                                        Solid team, highly skilled — especially on AI.”</div>
+                                    <div class="wrapper-content-bottom"><a
+                                            title="LOCAD - Logistic Platform for Streamlined Ecommerce Supply Chains"
+                                            href="portfolio32.html"
+                                            class="u-link u-link_green min-height-auto w-inline-block">
+                                            <div class="wrapper-u-anim-text">
+                                                <div class="u-anim-text">
+                                                    <div class="u-link-text absolute">
+                                                        <div class="text-btn-u-link">View case</div>
+                                                        <div class="arrow-btn-u-link w-embed"><svg width="18"
+                                                                height="16" viewBox="0 0 18 16" fill="currentcolor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z"
+                                                                    fill="currentcolor"></path>
+                                                            </svg></div>
+                                                    </div>
+                                                    <div class="u-link-text">
+                                                        <div class="text-btn-u-link">View case</div>
+                                                        <div class="arrow-btn-u-link w-embed"><svg width="18"
+                                                                height="16" viewBox="0 0 18 16" fill="currentcolor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z"
+                                                                    fill="currentcolor"></path>
+                                                            </svg></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="stars-area">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                        </a></div>
+                                </div>
+                                <div class="feedback-item-right">
+                                    <div class="country">
+                                        <div class="text-16-silver-grey">COUNTRY</div>
+                                        <div class="some-country"><img loading="lazy"
+                                                src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
+                                                alt="" sizes="100vw"
+                                                srcset="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg 500w, https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg 800w, https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg 2500w"
+                                                class="flag-country">
+                                            <div fs-cmsfilter-field="country" class="text-project-testimonial">Spain
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="single-testimonials-6">
-                                        <div class="top">
-                                            <h5 class="title">Best Marketing Solution</h5>
-                                            <p class="disc">
-                                                “We partnered with ApiceFlow for a blockchain project. Their knowledge
-                                                and
-                                                professionalism ensured smooth deployment. They improved our
-                                                transparency, security
-                                                and efficiency. They are trusted partner for innovative technology.”
-                                            </p>
-                                        </div>
-                                        <div class="botton-content">
-                                            <div class="avatar-area">
-                                                <div class="inner">
-                                                    <h5 class="title">Sandra M.</h5>
-                                                    <p>Director, <span>Catalyst Agency</span></p>
-                                                </div>
-                                            </div>
-                                            <div class="stars-area">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                    <div class="item-rev-pop">
+                                        <div class="project">
+                                            <div class="p-new _16 mon gre">PROJECT</div>
+                                            <div class="p-new _16 sem _16-m">Building SaaS Product
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="single-testimonials-6">
-                                        <div class="top">
-                                            <h5 class="title">Great Business Solution</h5>
-                                            <p class="disc">
-                                                “The team at ApiceFlow isn't just a vendor, they're a true partner.
-                                                Their support is
-                                                proactive, responsive, and always focused on helping us succeed. They're
-                                                always
-                                                available to answer our questions and provide guidance.”
-                                            </p>
+                                    <div class="wrapper-item-rev-pop">
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">TEAM SIze</div>
+                                                <div class="p-new _16 sem _16-m">5</div>
+                                            </div>
                                         </div>
-                                        <div class="botton-content">
-                                            <div class="avatar-area">
-                                                <div class="inner">
-                                                    <h5 class="title">Camille R.</h5>
-                                                    <p>Project Manager, <span>Catalyst Agency</span></p>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">DURATION</div>
+                                                <div class="p-new _16 sem _16-m">5 months</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">BUDGET</div>
+                                                <div class="p-new _16 sem _16-m">$50,000+</div>
+                                                <div class="hide">
+                                                    <div fs-cmsfilter-field="budget" class="p-new _16 sem _16-m">$50k -
+                                                        $60k</div>
                                                 </div>
                                             </div>
-                                            <div class="stars-area">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="single-testimonials-6">
-                                        <div class="top">
-                                            <h5 class="title">Great Business Solution</h5>
-                                            <p class="disc">
-                                                “ApiceFlow developed our web and mobile apps with outstanding attention
-                                                to detail. The
-                                                apps have boosted our customer engagement. Their team is responsive,
-                                                creative, and
-                                                always delivers on time and within budget.”
-                                            </p>
-                                        </div>
-                                        <div class="botton-content">
-                                            <div class="avatar-area">
-                                                <div class="inner">
-                                                    <h5 class="title">Camille R.</h5>
-                                                    <p>Project Manager, <span>Catalyst Agency</span></p>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">INDUSTRY</div>
+                                                <div fs-cmsfilter-field="industry" class="p-new _16 sem _16-m">SaaS
                                                 </div>
                                             </div>
-                                            <div class="stars-area">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="single-testimonials-6">
-                                        <div class="top">
-                                            <h5 class="title">Great Business Solution</h5>
-                                            <p class="disc">
-                                                “ApiceFlow's IT solution has allowed us to enhance our customer
-                                                experience by
-                                                providing real-time insights into customer behavior and preferences.
-                                                We're now able
-                                                to personalize our services and offer more targeted support.”
-                                            </p>
-                                        </div>
-                                        <div class="botton-content">
-                                            <div class="avatar-area">
-                                                <div class="inner">
-                                                    <h5 class="title">Camille R.</h5>
-                                                    <p>Project Manager, <span>Catalyst Agency</span></p>
-                                                </div>
-                                            </div>
-                                            <div class="stars-area">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                        <div class="item-rev-pop w-condition-invisible">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">TECHNOLOGIES</div>
+                                                <div class="p-new _16 sem _16-m w-dyn-bind-empty"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="swiper-pagination"></div> -->
                         </div>
+                        <div role="group" class="swiper-slide swiper-slide-feed w-dyn-item swiper-slide-next"
+                            aria-label="2 / 4" style="width: 905px; margin-right: 16px;">
+                            <div class="feedback-item">
+                                <div class="feedback-item-left">
+                                    <div class="wrapper-h-feedback-item">
+                                        <div class="wrapper-h-feedback-item display-vertical">
+                                            <div class="wrapper-h-feedback-item">
+                                                <div class="text-18px bold-600 text-montserrat">Rosa Garrido</div><a
+                                                    title="Arjan van Helden" href="#"
+                                                    class="n-testimonials-review-social w-inline-block w-condition-invisible">
+                                                    <div class="icon-linkedin w-embed"><svg width="17" height="17"
+                                                            viewBox="0 0 17 17" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M14.8122 0.5H1.27374C0.947318 0.5 0.634267 0.62967 0.403453 0.860484C0.172639 1.0913 0.0429688 1.40435 0.0429688 1.73077V15.2692C0.0429688 15.5957 0.172639 15.9087 0.403453 16.1395C0.634267 16.3703 0.947318 16.5 1.27374 16.5H14.8122C15.1386 16.5 15.4517 16.3703 15.6825 16.1395C15.9133 15.9087 16.043 15.5957 16.043 15.2692V1.73077C16.043 1.40435 15.9133 1.0913 15.6825 0.860484C15.4517 0.62967 15.1386 0.5 14.8122 0.5ZM5.58143 12.1923C5.58143 12.3555 5.5166 12.512 5.40119 12.6275C5.28578 12.7429 5.12926 12.8077 4.96605 12.8077C4.80284 12.8077 4.64631 12.7429 4.5309 12.6275C4.4155 12.512 4.35066 12.3555 4.35066 12.1923V7.26923C4.35066 7.10602 4.4155 6.9495 4.5309 6.83409C4.64631 6.71868 4.80284 6.65385 4.96605 6.65385C5.12926 6.65385 5.28578 6.71868 5.40119 6.83409C5.5166 6.9495 5.58143 7.10602 5.58143 7.26923V12.1923ZM4.96605 6.03846C4.78348 6.03846 4.60501 5.98432 4.45321 5.8829C4.30141 5.78147 4.1831 5.6373 4.11323 5.46863C4.04337 5.29996 4.02509 5.11436 4.06071 4.9353C4.09632 4.75624 4.18424 4.59177 4.31333 4.46267C4.44243 4.33358 4.6069 4.24566 4.78596 4.21004C4.96502 4.17443 5.15062 4.19271 5.31929 4.26257C5.48796 4.33244 5.63213 4.45075 5.73356 4.60255C5.83499 4.75435 5.88912 4.93282 5.88912 5.11538C5.88912 5.3602 5.79187 5.59499 5.61876 5.7681C5.44565 5.94121 5.21086 6.03846 4.96605 6.03846ZM12.3507 12.1923C12.3507 12.3555 12.2858 12.512 12.1704 12.6275C12.055 12.7429 11.8985 12.8077 11.7353 12.8077C11.5721 12.8077 11.4155 12.7429 11.3001 12.6275C11.1847 12.512 11.1199 12.3555 11.1199 12.1923V9.42308C11.1199 9.01505 10.9578 8.62374 10.6693 8.33522C10.3808 8.0467 9.98946 7.88462 9.58143 7.88462C9.17341 7.88462 8.78209 8.0467 8.49357 8.33522C8.20506 8.62374 8.04297 9.01505 8.04297 9.42308V12.1923C8.04297 12.3555 7.97813 12.512 7.86273 12.6275C7.74732 12.7429 7.59079 12.8077 7.42758 12.8077C7.26437 12.8077 7.10785 12.7429 6.99244 12.6275C6.87703 12.512 6.8122 12.3555 6.8122 12.1923V7.26923C6.81296 7.1185 6.86902 6.97328 6.96975 6.86114C7.07047 6.749 7.20885 6.67772 7.35864 6.66084C7.50843 6.64395 7.6592 6.68263 7.78237 6.76953C7.90553 6.85644 7.99251 6.98553 8.02682 7.13231C8.44311 6.8499 8.92847 6.68623 9.43077 6.65886C9.93308 6.63149 10.4333 6.74147 10.8779 6.97697C11.3224 7.21247 11.6943 7.56461 11.9538 7.99557C12.2133 8.42653 12.3505 8.92003 12.3507 9.42308V12.1923Z"
+                                                                fill="currentcolor"></path>
+                                                        </svg></div>
+                                                </a>
+                                            </div>
+                                            <div class="wrapper-h-feedback-item gap-2px">
+                                                <div class="text-10">Pension Manager</div>
+                                                <div class="text-10">at</div><a title="vidaXL" href="#"
+                                                    class="text-12 bold-600">SG Santé</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mobile-view">
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">PROJECT</div>
+                                                <div class="p-new _16 sem _16-m">Building Health Benefits Mobile App
+                                                    Platform</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-20px bold-600">SG Santé - Health Benefits Mobile App Platform</div>
+                                    <div class="text-20px bold-600 w-dyn-bind-empty"></div>
+                                    <div class="text-16px">"When SG Santé chose ApiceFlow we needed a secure,
+                                        member-facing mobile experience that actually reduced operational load. The team
+                                        delivered a native app with secure single sign-on, encrypted offline storage for
+                                        tiers-payant cards, and an efficient OCR-based document intake pipeline that
+                                        sped up hospital-coverage decisions. They provided thorough documentation, met
+                                        milestones, and their post-launch support was pragmatic — quickly resolving edge
+                                        cases so the service stabilized. Tangible business outcomes followed: lower
+                                        call-center volume and improved member satisfaction with our digital channel.
+                                        They were technical, responsive and clearly understand healthcare needs."</div>
+                                    <div class="wrapper-content-bottom"><a title="" href="portfolio21.html"
+                                            class="u-link u-link_green min-height-auto w-inline-block">
+                                            <div class="wrapper-u-anim-text">
+                                                <div class="u-anim-text">
+                                                    <div class="u-link-text absolute">
+                                                        <div class="text-btn-u-link">View case</div>
+                                                        <div class="arrow-btn-u-link w-embed"><svg width="18"
+                                                                height="16" viewBox="0 0 18 16" fill="currentcolor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z"
+                                                                    fill="currentcolor"></path>
+                                                            </svg></div>
+                                                    </div>
+                                                    <div class="u-link-text">
+                                                        <div class="text-btn-u-link">View case</div>
+                                                        <div class="arrow-btn-u-link w-embed"><svg width="18"
+                                                                height="16" viewBox="0 0 18 16" fill="currentcolor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z"
+                                                                    fill="currentcolor"></path>
+                                                            </svg></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a></div>
+                                </div>
+                                <div class="feedback-item-right">
+                                    <div class="country">
+                                        <div class="text-16-silver-grey">COUNTRY</div>
+                                        <div class="some-country"><img loading="lazy"
+                                                src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
+                                                alt="" sizes="100vw"
+                                                srcset="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg 500w, https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg 2500w"
+                                                class="flag-country">
+                                            <div fs-cmsfilter-field="country" class="text-project-testimonial">
+                                                France</div>
+                                        </div>
+                                    </div>
+                                    <div class="item-rev-pop">
+                                        <div class="project">
+                                            <div class="p-new _16 mon gre">PROJECT</div>
+                                            <div class="p-new _16 sem _16-m">Building Health Benefits Mobile App</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrapper-item-rev-pop">
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">TEAM Size</div>
+                                                <div class="p-new _16 sem _16-m">5</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">DURATION</div>
+                                                <div class="p-new _16 sem _16-m">4 months</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">BUDGET</div>
+                                                <div class="p-new _16 sem _16-m">$90,000+</div>
+                                                <div class="hide">
+                                                    <div fs-cmsfilter-field="budget" class="p-new _16 sem _16-m">$90k -
+                                                        $100k</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">INDUSTRY</div>
+                                                <div fs-cmsfilter-field="industry" class="p-new _16 sem _16-m">
+                                                    HealthTech & Insurance</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop w-condition-invisible">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">TECHNOLOGIES</div>
+                                                <div class="p-new _16 sem _16-m w-dyn-bind-empty"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="group" class="swiper-slide swiper-slide-feed w-dyn-item" aria-label="3 / 4"
+                            style="width: 905px; margin-right: 16px;">
+                            <div class="feedback-item">
+                                <div class="feedback-item-left">
+                                    <div class="wrapper-h-feedback-item">
+                                        <!-- <img
+                                            src="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/66c316ff217307dee7c9c42d_senka%201.avif"
+                                            loading="lazy" alt="" class="feedback-item-img"> -->
+                                        <div class="wrapper-h-feedback-item display-vertical">
+                                            <div class="wrapper-h-feedback-item">
+                                                <div class="text-18px bold-600 text-montserrat">Priyam Patel</div>
+                                                <!-- <a
+                                                    title="Senka Drobac"
+                                                    href="https://www.linkedin.com/in/senka-drobac/?originalSubdomain=fi"
+                                                    target="_blank" class="n-testimonials-review-social w-inline-block">
+                                                    <div class="icon-linkedin w-embed"><svg width="17" height="17"
+                                                            viewBox="0 0 17 17" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M14.8122 0.5H1.27374C0.947318 0.5 0.634267 0.62967 0.403453 0.860484C0.172639 1.0913 0.0429688 1.40435 0.0429688 1.73077V15.2692C0.0429688 15.5957 0.172639 15.9087 0.403453 16.1395C0.634267 16.3703 0.947318 16.5 1.27374 16.5H14.8122C15.1386 16.5 15.4517 16.3703 15.6825 16.1395C15.9133 15.9087 16.043 15.5957 16.043 15.2692V1.73077C16.043 1.40435 15.9133 1.0913 15.6825 0.860484C15.4517 0.62967 15.1386 0.5 14.8122 0.5ZM5.58143 12.1923C5.58143 12.3555 5.5166 12.512 5.40119 12.6275C5.28578 12.7429 5.12926 12.8077 4.96605 12.8077C4.80284 12.8077 4.64631 12.7429 4.5309 12.6275C4.4155 12.512 4.35066 12.3555 4.35066 12.1923V7.26923C4.35066 7.10602 4.4155 6.9495 4.5309 6.83409C4.64631 6.71868 4.80284 6.65385 4.96605 6.65385C5.12926 6.65385 5.28578 6.71868 5.40119 6.83409C5.5166 6.9495 5.58143 7.10602 5.58143 7.26923V12.1923ZM4.96605 6.03846C4.78348 6.03846 4.60501 5.98432 4.45321 5.8829C4.30141 5.78147 4.1831 5.6373 4.11323 5.46863C4.04337 5.29996 4.02509 5.11436 4.06071 4.9353C4.09632 4.75624 4.18424 4.59177 4.31333 4.46267C4.44243 4.33358 4.6069 4.24566 4.78596 4.21004C4.96502 4.17443 5.15062 4.19271 5.31929 4.26257C5.48796 4.33244 5.63213 4.45075 5.73356 4.60255C5.83499 4.75435 5.88912 4.93282 5.88912 5.11538C5.88912 5.3602 5.79187 5.59499 5.61876 5.7681C5.44565 5.94121 5.21086 6.03846 4.96605 6.03846ZM12.3507 12.1923C12.3507 12.3555 12.2858 12.512 12.1704 12.6275C12.055 12.7429 11.8985 12.8077 11.7353 12.8077C11.5721 12.8077 11.4155 12.7429 11.3001 12.6275C11.1847 12.512 11.1199 12.3555 11.1199 12.1923V9.42308C11.1199 9.01505 10.9578 8.62374 10.6693 8.33522C10.3808 8.0467 9.98946 7.88462 9.58143 7.88462C9.17341 7.88462 8.78209 8.0467 8.49357 8.33522C8.20506 8.62374 8.04297 9.01505 8.04297 9.42308V12.1923C8.04297 12.3555 7.97813 12.512 7.86273 12.6275C7.74732 12.7429 7.59079 12.8077 7.42758 12.8077C7.26437 12.8077 7.10785 12.7429 6.99244 12.6275C6.87703 12.512 6.8122 12.3555 6.8122 12.1923V7.26923C6.81296 7.1185 6.86902 6.97328 6.96975 6.86114C7.07047 6.749 7.20885 6.67772 7.35864 6.66084C7.50843 6.64395 7.6592 6.68263 7.78237 6.76953C7.90553 6.85644 7.99251 6.98553 8.02682 7.13231C8.44311 6.8499 8.92847 6.68623 9.43077 6.65886C9.93308 6.63149 10.4333 6.74147 10.8779 6.97697C11.3224 7.21247 11.6943 7.56461 11.9538 7.99557C12.2133 8.42653 12.3505 8.92003 12.3507 9.42308V12.1923Z"
+                                                                fill="currentcolor"></path>
+                                                        </svg></div>
+                                                </a> -->
+                                            </div>
+                                            <div class="wrapper-h-feedback-item gap-2px">
+                                                <div class="text-10">Co-Founder</div>
+                                                <div class="text-10">at</div><a title="vidaXL" href="#"
+                                                    class="text-12 bold-600">Bryant Dental</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mobile-view">
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">PROJECT</div>
+                                                <div class="p-new _16 sem _16-m">Building Dental optics e-commerce &
+                                                    tools</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-20px bold-600">Bryant Dental - Dental optics e-commerce & tools
+                                    </div>
+                                    <div class="text-16px">"We brought ApiceFlow in for pragmatic modernization, not a
+                                        full rewrite—and they nailed it. They rolled out richer, media-first product
+                                        pages, a regionally routed demo/concierge flow that connects buyers to the right
+                                        reps, and a headless commerce integration that smoothed our international
+                                        checkout. They also optimized our media pipeline and integrated everything with
+                                        our CRM, which made follow-up and warranty workflows much more efficient.
+                                        Communication was clear, milestones were met, and post-launch support removed
+                                        the last friction points. Tangible result: fewer manual processes and a better
+                                        buying experience for our clinical customers."</div>
+                                    <div class="wrapper-content-bottom"><a title="Kieli - AI Language Learning App"
+                                            href="portfolio9.html"
+                                            class="u-link u-link_green min-height-auto w-inline-block">
+                                            <div class="wrapper-u-anim-text">
+                                                <div class="u-anim-text">
+                                                    <div class="u-link-text absolute">
+                                                        <div class="text-btn-u-link">View case</div>
+                                                        <div class="arrow-btn-u-link w-embed"><svg width="18"
+                                                                height="16" viewBox="0 0 18 16" fill="currentcolor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z"
+                                                                    fill="currentcolor"></path>
+                                                            </svg></div>
+                                                    </div>
+                                                    <div class="u-link-text">
+                                                        <div class="text-btn-u-link">View case</div>
+                                                        <div class="arrow-btn-u-link w-embed"><svg width="18"
+                                                                height="16" viewBox="0 0 18 16" fill="currentcolor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z"
+                                                                    fill="currentcolor"></path>
+                                                            </svg></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a></div>
+                                </div>
+                                <div class="feedback-item-right">
+                                    <div class="country">
+                                        <div class="text-16-silver-grey">COUNTRY</div>
+                                        <div class="some-country"><img loading="lazy"
+                                                src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+                                                alt="" sizes="100vw"
+                                                srcset="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg 500w, https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg 2500w"
+                                                class="flag-country">
+                                            <div fs-cmsfilter-field="country" class="text-project-testimonial">United
+                                                Kingdom
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-rev-pop">
+                                        <div class="project">
+                                            <div class="p-new _16 mon gre">PROJECT</div>
+                                            <div class="p-new _16 sem _16-m">Building Dental optics e-commerce & tools
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wrapper-item-rev-pop">
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">TEAM SIze</div>
+                                                <div class="p-new _16 sem _16-m">6</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">DURATION</div>
+                                                <div class="p-new _16 sem _16-m">5 months</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">BUDGET</div>
+                                                <div class="p-new _16 sem _16-m">$80,000</div>
+                                                <div class="hide">
+                                                    <div fs-cmsfilter-field="budget"
+                                                        class="p-new _16 sem _16-m w-dyn-bind-empty"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">INDUSTRY</div>
+                                                <div fs-cmsfilter-field="industry" class="p-new _16 sem _16-m">
+                                                    HealthTech
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop w-condition-invisible">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">TECHNOLOGIES</div>
+                                                <div class="p-new _16 sem _16-m w-dyn-bind-empty"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="group" class="swiper-slide swiper-slide-feed w-dyn-item" aria-label="3 / 4"
+                            style="width: 905px; margin-right: 16px;">
+                            <div class="feedback-item">
+                                <div class="feedback-item-left">
+                                    <div class="wrapper-h-feedback-item">
+                                        <!-- <img
+                                            src="https://cdn.prod.website-files.com/625e84e49258fe6c9a43a311/66c316ff217307dee7c9c42d_senka%201.avif"
+                                            loading="lazy" alt="" class="feedback-item-img"> -->
+                                        <div class="wrapper-h-feedback-item display-vertical">
+                                            <div class="wrapper-h-feedback-item">
+                                                <div class="text-18px bold-600 text-montserrat">Calvin Hsieh</div>
+                                                <!-- <a
+                                                    title="Senka Drobac"
+                                                    href="https://www.linkedin.com/in/senka-drobac/?originalSubdomain=fi"
+                                                    target="_blank" class="n-testimonials-review-social w-inline-block">
+                                                    <div class="icon-linkedin w-embed"><svg width="17" height="17"
+                                                            viewBox="0 0 17 17" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M14.8122 0.5H1.27374C0.947318 0.5 0.634267 0.62967 0.403453 0.860484C0.172639 1.0913 0.0429688 1.40435 0.0429688 1.73077V15.2692C0.0429688 15.5957 0.172639 15.9087 0.403453 16.1395C0.634267 16.3703 0.947318 16.5 1.27374 16.5H14.8122C15.1386 16.5 15.4517 16.3703 15.6825 16.1395C15.9133 15.9087 16.043 15.5957 16.043 15.2692V1.73077C16.043 1.40435 15.9133 1.0913 15.6825 0.860484C15.4517 0.62967 15.1386 0.5 14.8122 0.5ZM5.58143 12.1923C5.58143 12.3555 5.5166 12.512 5.40119 12.6275C5.28578 12.7429 5.12926 12.8077 4.96605 12.8077C4.80284 12.8077 4.64631 12.7429 4.5309 12.6275C4.4155 12.512 4.35066 12.3555 4.35066 12.1923V7.26923C4.35066 7.10602 4.4155 6.9495 4.5309 6.83409C4.64631 6.71868 4.80284 6.65385 4.96605 6.65385C5.12926 6.65385 5.28578 6.71868 5.40119 6.83409C5.5166 6.9495 5.58143 7.10602 5.58143 7.26923V12.1923ZM4.96605 6.03846C4.78348 6.03846 4.60501 5.98432 4.45321 5.8829C4.30141 5.78147 4.1831 5.6373 4.11323 5.46863C4.04337 5.29996 4.02509 5.11436 4.06071 4.9353C4.09632 4.75624 4.18424 4.59177 4.31333 4.46267C4.44243 4.33358 4.6069 4.24566 4.78596 4.21004C4.96502 4.17443 5.15062 4.19271 5.31929 4.26257C5.48796 4.33244 5.63213 4.45075 5.73356 4.60255C5.83499 4.75435 5.88912 4.93282 5.88912 5.11538C5.88912 5.3602 5.79187 5.59499 5.61876 5.7681C5.44565 5.94121 5.21086 6.03846 4.96605 6.03846ZM12.3507 12.1923C12.3507 12.3555 12.2858 12.512 12.1704 12.6275C12.055 12.7429 11.8985 12.8077 11.7353 12.8077C11.5721 12.8077 11.4155 12.7429 11.3001 12.6275C11.1847 12.512 11.1199 12.3555 11.1199 12.1923V9.42308C11.1199 9.01505 10.9578 8.62374 10.6693 8.33522C10.3808 8.0467 9.98946 7.88462 9.58143 7.88462C9.17341 7.88462 8.78209 8.0467 8.49357 8.33522C8.20506 8.62374 8.04297 9.01505 8.04297 9.42308V12.1923C8.04297 12.3555 7.97813 12.512 7.86273 12.6275C7.74732 12.7429 7.59079 12.8077 7.42758 12.8077C7.26437 12.8077 7.10785 12.7429 6.99244 12.6275C6.87703 12.512 6.8122 12.3555 6.8122 12.1923V7.26923C6.81296 7.1185 6.86902 6.97328 6.96975 6.86114C7.07047 6.749 7.20885 6.67772 7.35864 6.66084C7.50843 6.64395 7.6592 6.68263 7.78237 6.76953C7.90553 6.85644 7.99251 6.98553 8.02682 7.13231C8.44311 6.8499 8.92847 6.68623 9.43077 6.65886C9.93308 6.63149 10.4333 6.74147 10.8779 6.97697C11.3224 7.21247 11.6943 7.56461 11.9538 7.99557C12.2133 8.42653 12.3505 8.92003 12.3507 9.42308V12.1923Z"
+                                                                fill="currentcolor"></path>
+                                                        </svg></div>
+                                                </a> -->
+                                            </div>
+                                            <div class="wrapper-h-feedback-item gap-2px">
+                                                <div class="text-10">CTO</div>
+                                                <div class="text-10">at</div><a title="vidaXL" href="#"
+                                                    class="text-12 bold-600">StormX</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mobile-view">
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">PROJECT</div>
+                                                <div class="p-new _16 sem _16-m">Building Crypto Cashback & Rewards
+                                                    Platform</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-20px bold-600">StormX - Crypto Cashback & Rewards Platform
+                                    </div>
+                                    <div class="text-16px">"When we started this project we had three urgent problems:
+                                        flaky merchant integrations, reconciliation that required constant manual work,
+                                        and a membership engine whose boost math moved with token prices. ApiceFlow
+                                        delivered practical engineering, not theory — building a resilient
+                                        partner-adapter layer, tightening fraud controls, and creating a token-aware
+                                        membership service so boosts behave predictably. They stayed outcome-focused,
+                                        documented changes for ops and finance, and communicated clearly throughout.
+                                        Post-launch support cut reconciliation errors and payout disputes. The result:
+                                        lower operational overhead, fewer escalations, and stronger user trust — I’d
+                                        recommend them without hesitation."</div>
+                                    <div class="wrapper-content-bottom"><a
+                                            title="StormX - Crypto Cashback & Rewards Platform" href="portfolio16.html"
+                                            class="u-link u-link_green min-height-auto w-inline-block">
+                                            <div class="wrapper-u-anim-text">
+                                                <div class="u-anim-text">
+                                                    <div class="u-link-text absolute">
+                                                        <div class="text-btn-u-link">View case</div>
+                                                        <div class="arrow-btn-u-link w-embed"><svg width="18"
+                                                                height="16" viewBox="0 0 18 16" fill="currentcolor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z"
+                                                                    fill="currentcolor"></path>
+                                                            </svg></div>
+                                                    </div>
+                                                    <div class="u-link-text">
+                                                        <div class="text-btn-u-link">View case</div>
+                                                        <div class="arrow-btn-u-link w-embed"><svg width="18"
+                                                                height="16" viewBox="0 0 18 16" fill="currentcolor"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z"
+                                                                    fill="currentcolor"></path>
+                                                            </svg></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a></div>
+                                </div>
+                                <div class="feedback-item-right">
+                                    <div class="country">
+                                        <div class="text-16-silver-grey">COUNTRY</div>
+                                        <div class="some-country"><img loading="lazy"
+                                                src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
+                                                alt="" sizes="100vw"
+                                                srcset="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg 500w, https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg 2500w"
+                                                class="flag-country">
+                                            <div fs-cmsfilter-field="country" class="text-project-testimonial">United
+                                                States
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-rev-pop">
+                                        <div class="project">
+                                            <div class="p-new _16 mon gre">PROJECT</div>
+                                            <div class="p-new _16 sem _16-m">Building Crypto Cashback & Rewards
+                                                Platform
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wrapper-item-rev-pop">
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">TEAM SIze</div>
+                                                <div class="p-new _16 sem _16-m">9</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">DURATION</div>
+                                                <div class="p-new _16 sem _16-m">4 months</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">BUDGET</div>
+                                                <div class="p-new _16 sem _16-m">$100,000+</div>
+                                                <div class="hide">
+                                                    <div fs-cmsfilter-field="budget"
+                                                        class="p-new _16 sem _16-m w-dyn-bind-empty"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">INDUSTRY</div>
+                                                <div fs-cmsfilter-field="industry" class="p-new _16 sem _16-m">
+                                                    Fintech & Crypto
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item-rev-pop w-condition-invisible">
+                                            <div class="project">
+                                                <div class="p-new _16 mon gre">TECHNOLOGIES</div>
+                                                <div class="p-new _16 sem _16-m w-dyn-bind-empty"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- rts testimonials area end -->
 
     <!-- <section class="tech-tabs-section" aria-label="Technology tabs">
@@ -4163,228 +2254,217 @@ textarea {
     </section> -->
 
 
-    <div class="section-collaborate gradien-bg">
-        <div class="contentwrapper w-container">
-            <img src="./assets/images/logo/ApiceFlow_Logo/logo-watermark.png" style="opacity: 0.3;" loading="lazy"
-                alt="Logo ApiceFlow" class="logo-sign">
+    <div class="section-colloborate gradien-bg">
+        <div class="contentwrapper w-container"><img
+                src="https://cdn.prod.website-files.com/6256688a7a5e476c6dbfec98/667c31cc11faddd33ec2adb2_Logo%20Sign.webp"
+                loading="lazy" alt="Logo ApiceFlow" class="logo-sign">
             <div class="coloborate-wrap">
-                <h2 class="n-title-block big center sem">Let's collaborate</h2>
+                <h2 class="n-title-block big center sem">Let’s collaborate</h2>
                 <div class="more-info-coloborate">
                     <div class="n-title-block small ceo">Have a project in mind?</div>
-                    <div class="n-collaborate-text new-st">Tell us everything about your project or product, we'll be
-                        gload to help</div>
-                    <a href="tel:+17132394774" class="n-collaborate-link n0-mar w-inline-block">
-                        <img src="./assets/images/icons_new/phone-call.svg" loading="lazy" alt="call icon"
-                            class="icon-form" style="padding-right: 5px;">
-                        +1 713 239 47 74
+                    <div class="n-collaborate-text new-st">Tell us everything about your project or product, we’ll be
+                        glad to help.</div>
+                    <div>
+                        <a href="tel:+17132394774" class="n-collaborate-link n0-mar w-inline-block">
+                            <img src="https://cdn.prod.website-files.com/6256688a7a5e476c6dbfec98/6667dd96ea9f9a57c3e4d2a7_fluent_call-32-regular.svg"
+                                loading="lazy" alt="call icon" class="icon-form">
+                            +1 (713) 239 4774
+                    </div>
                     </a>
-
-                    <a href="mailto:contact@apiceflow.com" class="n-collaborate-link n0-mar w-inline-block">
-                        <img src="./assets/images/icons_new/email.svg" loading="lazy" alt="email icon" class="icon-form"
-                            style="padding-right: 5px;">
+                    <a href="mailto:contact@apiceflow.com" class="n-collaborate-link n0-mar w-inline-block"><img
+                            src="https://cdn.prod.website-files.com/6256688a7a5e476c6dbfec98/6667dd946b3a3840a1414d19_carbon_email.svg"
+                            loading="lazy" alt="email icon" class="icon-form">
                         contact@apiceflow.com
                     </a>
                 </div>
                 <div id="Contact-Form" data-scroll="mid" class="n-collaborate-form new-ster w-form">
                     <form id="wf-form-Project-request" name="wf-form-Project-request" data-name="Project request"
-                        method="post" class="form-colloborate" data-wf-page-id="" data-wf-element-id=""
-                        data-turnstile-sitekey="" aria-label="Project request">
+                        method="post" class="form-colloborate" data-wf-page-id="6285eea26bb4a7f98deefb9c"
+                        data-wf-element-id="73b89ccc-3e4e-ec14-7196-46aea473f24b"
+                        data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e" aria-label="Project request">
                         <div class="w-layout-grid grid-2-form">
-                            <div id="" class="cell-form-item">
-                                <label for="name" id="" class="n-title-form-field padding-bottom-16px">Project
-                                    type</label>
+                            <div id="w-node-_73b89ccc-3e4e-ec14-7196-46aea473f24d-a473f24a" class="cell-form-item">
+                                <label for="name" id="w-node-_73b89ccc-3e4e-ec14-7196-46aea473f24e-a473f24a"
+                                    class="n-title-form-field padding-bottom-16px">Project type
+                                </label>
                                 <div class="radio-wrapper">
                                     <label class="w-checkbox n-check-box-wrap">
                                         <div
                                             class="w-checkbox-input w-checkbox-input--inputType-custom check-box w--redirected-checked">
                                         </div>
                                         <input type="checkbox" name="Website" id="Website" data-name="Website"
-                                            style="opacity: 0; position: absolute; z-index: -1" checked>
-                                        <span class="n-check-box w-form-label" for="Website">Website</span>
+                                            style="opacity:0;position:absolute;z-index:-1" checked="">
+                                        <span class="n-check-box w-form-label" for="Website">Website
+                                        </span>
                                     </label>
                                     <label class="w-checkbox n-check-box-wrap">
                                         <div class="w-checkbox-input w-checkbox-input--inputType-custom check-box">
                                         </div>
                                         <input type="checkbox" name="App" id="App" data-name="App"
-                                            style="opacity: 0; position: absolute; z-index: -1">
+                                            style="opacity:0;position:absolute;z-index:-1">
                                         <span class="n-check-box w-form-label" for="App">App</span>
-                                    </label>
-                                    <label class="w-checkbox n-check-box-wrap">
+                                    </label><label class="w-checkbox n-check-box-wrap">
                                         <div class="w-checkbox-input w-checkbox-input--inputType-custom check-box">
-                                        </div>
-                                        <input type="checkbox" name="E-Commerce" id="E-Commerce" data-name="E-Commerce"
-                                            style="opacity: 0; position: absolute; z-index: -1">
-                                        <span class="n-check-box w-form-label" for="E-Commerce">E-commerce</span>
-                                    </label>
-                                    <label class="w-checkbox n-check-box-wrap">
+                                        </div><input type="checkbox" name="E-Commerce" id="E-Commerce"
+                                            data-name="E Commerce" style="opacity:0;position:absolute;z-index:-1"><span
+                                            class="n-check-box w-form-label" for="E-Commerce">E-commerce</span>
+                                    </label><label class="w-checkbox n-check-box-wrap">
                                         <div class="w-checkbox-input w-checkbox-input--inputType-custom check-box">
-                                        </div>
-                                        <input type="checkbox" name="Landing-Page" id="Landing-Page"
-                                            data-name="Landing-Page"
-                                            style="opacity: 0; position: absolute; z-index: -1">
-                                        <span class="n-check-box w-form-label" for="Landing-Page">Landing Page</span>
-                                    </label>
-                                    <label class="w-checkbox n-check-box-wrap">
+                                        </div><input type="checkbox" name="Landing-Page" id="Landing-Page"
+                                            data-name="Landing Page"
+                                            style="opacity:0;position:absolute;z-index:-1"><span
+                                            class="n-check-box w-form-label" for="Landing-Page">Landing page</span>
+                                    </label><label class="w-checkbox n-check-box-wrap">
                                         <div class="w-checkbox-input w-checkbox-input--inputType-custom check-box">
-                                        </div>
-                                        <input type="checkbox" name="Other" id="Other" data-name="Other"
-                                            style="opacity: 0; position: absolute; z-index: -1">
-                                        <span class="n-check-box w-form-label" for="Other">Other</span>
+                                        </div><input type="checkbox" name="Other" id="Other" data-name="Other"
+                                            style="opacity:0;position:absolute;z-index:-1"><span
+                                            class="n-check-box w-form-label" for="Other">Other</span>
                                     </label>
                                 </div>
                             </div>
-                            <div id="" class="cell-form-item">
+                            <div id="w-node-_73b89ccc-3e4e-ec14-7196-46aea473f265-a473f24a" class="cell-form-item">
                                 <label for="name" class="n-title-form-field padding-bottom-16px">Budget</label>
                                 <div class="radio-wrapper">
-                                    <label class="n-radio w-radio">
-                                        <div
-                                            class="w-form-formradioinput w-form-formradioinput--inputType-custom n-radio-btn w-radio-input">
-                                        </div>
-                                        <input type="radio" name="budget" id="10k--20k" data-name="budget" required
-                                            style="opacity:0;position:absolute;z-index:-1;" value="$10k-$20k">
+                                    <label class="w-checkbox n-check-box-wrap checked">
+                                        <div class="n-check-box w-form-label">
+                                        </div><input type="radio" name="budget" id="10k--20k" data-name="budget"
+                                            required="" style="opacity:0;position:absolute;z-index:-1" value="$10k-$20k"
+                                            checked>
                                         <span class="n-radio-label w-form-label" for="10k--20k">$10k - $20k</span>
                                     </label>
-                                    <label class="n-radio w-radio">
-                                        <div
-                                            class="w-form-formradioinput w-form-formradioinput--inputType-custom n-radio-btn w-radio-input">
-                                        </div>
-                                        <input type="radio" name="budget" id="20k--30k" data-name="budget" required
-                                            style="opacity:0;position:absolute;z-index:-1;" value="$20k-$30k">
-                                        <span class="n-radio-label w-form-label" for="20k--30k">$20k - $30k</span>
-                                    </label>
-                                    <label class="n-radio w-radio">
-                                        <div
-                                            class="w-form-formradioinput w-form-formradioinput--inputType-custom n-radio-btn w-radio-input">
-                                        </div>
-                                        <input type="radio" name="budget" id="30k--40k" data-name="budget" required
-                                            style="opacity:0;position:absolute;z-index:-1;" value="$30k-$40k">
-                                        <span class="n-radio-label w-form-label" for="30k--40k">$30k - $40k</span>
-                                    </label>
-                                    <label class="n-radio w-radio">
-                                        <div
-                                            class="w-form-formradioinput w-form-formradioinput--inputType-custom n-radio-btn w-radio-input">
-                                        </div>
-                                        <input type="radio" name="budget" id="50k" data-name="budget" required
-                                            style="opacity:0;position:absolute;z-index:-1;" value="$50k+">
-                                        <span class="n-radio-label w-form-label" for="50k">$50k+</span>
+
+                                    <label class="w-checkbox n-check-box-wrap">
+                                        <div class="n-check-box w-form-label">
+                                        </div><input type="radio" name="budget" id="20k---30k" data-name="budget"
+                                            required="" style="opacity:0;position:absolute;z-index:-1"
+                                            value="$20k - $30k"><span class="n-radio-label w-form-label"
+                                            for="20k---30k">$20k - $30k</span>
+                                    </label><label class="w-checkbox n-check-box-wrap">
+                                        <div class="n-check-box w-form-label">
+                                        </div><input type="radio" name="budget" id="30k---50k" data-name="budget"
+                                            required="" style="opacity:0;position:absolute;z-index:-1"
+                                            value="$30k - $50k"><span class="n-radio-label w-form-label"
+                                            for="30k---50k">$30k - $50k</span>
+                                    </label><label class="w-checkbox n-check-box-wrap">
+                                        <div class="n-check-box w-form-label">
+                                        </div><input type="radio" name="budget" id="50k" data-name="budget" required=""
+                                            style="opacity:0;position:absolute;z-index:-1" value="$50k+"><span
+                                            class="n-radio-label w-form-label" for="50k">$50k+</span>
                                     </label>
                                 </div>
                             </div>
-                            <div id="" class="cell-form-item">
+                            <div id="w-node-_73b89ccc-3e4e-ec14-7196-46aea473f279-a473f24a" class="cell-form-item">
                                 <label for="task" class="n-title-form-field padding-bottom-16px">Task</label>
-                                <div class="wrapper-n-input-text">
-                                    <textarea placeholder="Pitch your project idea here" maxlength="5000"
-                                        id="task-field-f" name="Task" data-name="Task"
-                                        class="n-input-text text-area w-input"></textarea>
-                                </div>
+                                <div class="wrapper-n-input-text"><textarea placeholder="Pitch your project idea here"
+                                        maxlength="5000" id="task-field-f" name="Task" data-name="Task"
+                                        class="n-input-text text-area w-input"></textarea></div>
                             </div>
                             <div class="cell-form-item hide-mobile">
-                                <div class="wrraper_attach-file">
-                                    <label for="task">Attach your file here:</label>
+                                <div class="wrraper_attach-file"><label for="task">Attach your file here:</label>
                                     <div class="p-new _16 gree">Attach file</div>
                                 </div>
                             </div>
-                            <div id="" class="cell-form-item">
+                            <div id="w-node-_73b89ccc-3e4e-ec14-7196-46aea473f284-a473f24a" class="cell-form-item">
                                 <label for="name" class="n-title-form-field padding-bottom-16px">Your contacts</label>
-                                <div class="wrapper-n-input-text">
-                                    <input class="n-input-text w-input" maxlength="256" name="Name" data-name="Name"
-                                        placeholder="Name" type="text" id="name-field-f" required>
-                                    <input class="n-input-text w-input" maxlength="256" name="Company-Website"
-                                        data-name="Company Website" placeholder="Company website" type="text"
-                                        id="Company-Website">
-                                </div>
+                                <div class="wrapper-n-input-text"><input class="n-input-text w-input" maxlength="256"
+                                        name="Name" data-name="Name" placeholder="Name" type="text" id="name-field-f"
+                                        required=""><input class="n-input-text w-input" maxlength="256"
+                                        name="Company-Website" data-name="Company Website" placeholder="Company website"
+                                        type="text" id="Company-Website"></div>
                             </div>
-                            <div id="" class="cell-form-item">
-                                <div class="wrapper-n-input-text">
-                                    <input class="n-input-text w-input" maxlength="256" name="Email" data-name="Email"
-                                        placeholder="Email" type="email" id="email-field-f" required>
-                                    <input class="n-input-text w-input" maxlength="256" name="Phone" data-name="Phone"
-                                        placeholder="Phone" type="tel" id="phone-field-f" required>
-                                </div>
+                            <div id="w-node-_73b89ccc-3e4e-ec14-7196-46aea473f28a-a473f24a" class="cell-form-item"
+                                style="align-self: end;">
+                                <div class="wrapper-n-input-text"><input class="n-input-text w-input" maxlength="256"
+                                        name="Email" data-name="Email" placeholder="Email" type="email"
+                                        id="email-field-f" required=""><input class="n-input-text w-input" name="Phone"
+                                        data-allow-paste="true" data-name="Phone" placeholder="Phone number" type="tel"
+                                        id="phone-field-f" required="" inputmode="text"></div>
                             </div>
                         </div>
-                        <div id="" class="attach-btn">
-                            <div class="some-atach">
-                                <label class="w-checkbox checkbox-field">
-                                    <div class="w-checkbox-input w-checkbox-input--inputType-custom chekbox-squ"></div>
-                                    <input type="checkbox" name="I-agree-with-the-terms-of-service-of-ApiceFlow"
-                                        id="I-agree-with-the-terms-of-service-of-ApiceFlow"
-                                        data-name="I agree the terms of service of ApiceFlow"
-                                        style="opacity:0;position:absolute;z-index:-1">
-                                    <span class="checkbox-text-main w-form-label"
-                                        for="I-agree-with-the-terms-of-service-of-ApiceFlow">I agree with the Privacy Policy of <b>ApiceFlow, Limited.</b></span>
+                        <div id="w-node-_73b89ccc-3e4e-ec14-7196-46aea473f28e-a473f24a" class="atach-btn">
+                            <div class="some-atach"><label class="w-checkbox checkbox-field">
+                                    <div class="w-checkbox-input w-checkbox-input--inputType-custom chekbox-squ"
+                                        style="transform: translateX(15px);"></div>
+                                    <input type="checkbox" name="I-agree-to-receive-marketing"
+                                        id="I-agree-to-receive-marketing" data-name="I agree to receive marketing..."
+                                        style="opacity: 0;"><span class="checkbox-text-main w-form-label"
+                                        for="I-agree-to-receive-marketing" required="true">I
+                                        agree with the terms Privacy Policy of ApiceFlow LIMITED</span>
                                 </label>
-                                <div class="p-new _12 reg wid _10-mob">
-                                    By submitting this form, you consent to the processing of your personal data
-                                    uploaded through the contact form above, in accordance with the terms of ApiceFlow,
-                                    Limited.'s
-                                    <a href="privacy.html" target="_blank" style="color:#40d6be;">Privacy Policy</a>
-                                </div>
+                                <div class="p-new _12 reg wid _10-mob">By submitting this form, you consent to the
+                                    processing of your personal data uploaded through the contact form above, in
+                                    accordance with the terms of ApiceFlow LIMITED's&nbsp;&nbsp;<a href="privacy.html"
+                                        target="_blank" style="color: #50b1a2; text-decoration: underline;">Privacy
+                                        Policy</a>.</div>
                             </div>
-                            <div class="dbt-flx" style="padding: 30px 0;">
-                                <input type="submit" dta-wait="Please wait..." value="Send"
-                                    class="button-new--forma black form width-mob-100 w-button">
+                            <div class="dbt-flx"><input type="submit" data-wait="Please wait..."
+                                    class="button-new--forma black form width-mob-100 w-button" value="Send">
                                 <a href="https://calendly.com/adam-apiceflow/discovery-call" target="_blank"
                                     class="button-new-st-forma black border form w-inline-block">
                                     <div class="readmore-popup">Book a call</div>
                                 </a>
                             </div>
+                        </div><input type="hidden" name="utm_source" id="utm_utm_source"><input type="hidden"
+                            name="utm_medium" id="utm_utm_medium"><input type="hidden" name="utm_campaign"
+                            id="utm_utm_campaign"><input type="hidden" name="utm_term" id="utm_utm_term"><input
+                            type="hidden" name="utm_content" id="utm_utm_content"><input type="hidden" name="page_url"
+                            id="page_url" value="https://www.ApiceFlow.tech/">
+                        <div>
+                            <div><template shadowrootmode="closed"><iframe
+                                        src="https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/8nxk1/0x4AAAAAAAQTptj2So4dx43e/auto/fbE/auto_expire/normal/auto"
+                                        allow="cross-origin-isolated; fullscreen; autoplay"
+                                        sandbox="allow-same-origin allow-scripts allow-popups" id="cf-chl-widget-8nxk1"
+                                        tabindex="-1" title="Widget containing a Cloudflare security challenge"
+                                        aria-hidden="true"
+                                        style="border: none; overflow: hidden; width: 0px; height: 0px; position: absolute; visibility: hidden;"></iframe></template><input
+                                    type="hidden" name="cf-turnstile-response" id="cf-chl-widget-8nxk1_response"
+                                    value="0.nArdFIKqcoPmieQjDlnuBPKIZkNGqCi5Jg3nSSekd32qDOZtYqsu8w6okjqPxcXKbmsOikoS7hW6jJddJusPVOTFdTUFsUkmLHoYR-UGqBNMqMMHJTF4VsddJmNvUlmEnq2O4solD8gd87qaUDEwOyy1ltb6OBFtYCnSZM7NKpb2GkAyYB0IJIJAKMomVdTIoLcGWl1hR2BxiL_V5jjWRSC6GOXjNmGPqBfTugSRTAxSgmgDrqN9jJx4PC_MTdwlPjcV5yEL-1o-HROlSCSR55pxwFBUNofGpkSpcnkkVEdwdjgBEIt36bcizOn5XTF6cmnDnF-IeGAsFG5tykK2IFBCg-emCwVGpBwltLxqxjkWoADcSe_ayJxIJYMJnWbZg_BZBWy_bTb-jB6bDnqhzshCwelBFEAzxPYvqGKIOmbHWlER03MipaJpR32oncI2Kb6z22YtFReX_yH_emzW0FNSqTRhlZvtHl4MhEuCQvn7IRA4kClSsRI6lcw9Uh8JiCjPfchyGSMkeSzvI9KXo7DzITHiHf0nYp6vRwptoV3fLUrLIb4YdGEjyKeZTtORgWitKwQ9vh8N-uINAqumgw5JBRPC68ggZqq3yRHxqEXGmR7bpxFTA92MUJIln4LTAAUgdRJIV5xhaBAHrICek-zb2OBd3PgEK-8TriWB3tpibxE9sGXFAUSROxItBZCXy9hDjoe7Inz1m1oWflRa8FsDn-POKCq1TcHtL0M_HrY47keRnhJDad7lp5m9vOZbuH2n1I7OXrv-_uPzkxGC-c2qvk0QY-phmiIzuUF9QbX0ETZZ7Ke4VkCHNCa8ACDBTvmT275p-lrKXuS7BadUZbcv5cuEQbSAmzVxGKLASRUUQau1PRax57F9ChUAzTwn3an_la73SesD9EA9rbr_rYhmtCguZ23rPknJc3NgJFJAwgfzVdU00p8SExezcj3n284OK0XJlou_fEfqSFrMuw.NR4XfOIy3ZBQSJrfWIh4dA.c91c644b7a274163322e3c78aced487d75f36271cfd27656900d5b4b1677720d">
+                            </div>
                         </div>
-                        <input type="hidden" name="utm_source" id="utm_utm_source">
-                        <input type="hidden" name="utm_medium" id="utm_utm_medium">
-                        <input type="hidden" name="utm_campaign" id="utm_utm_campaign">
-                        <input type="hidden" name="utm_term" id="utm_utm_term">
-                        <input type="hidden" name="utm_content" id="utm_utm_content">
-                        <input type="hidden" name="page_url" id="page_url" value="https://www.apiceflow.com/">
                     </form>
                     <div class="success-message w-form-done" tabindex="-1" role="region"
-                        aria-label="project request success">
+                        aria-label="Project request success">
                         <div class="succes-wrap">
                             <div class="h-succes">
                                 <h2 class="h2-h-succes">Thank you!</h2>
                                 <div class="desc-h-succes">Your submission has been received!</div>
                             </div>
                             <div class="wrap-info-succes">
-                                <h3 class="h3-h-succes">What's next?</h3>
+                                <h3 class="h3-h-succes">What’s next?</h3>
                                 <div class="step-wrap-succes">
                                     <div class="step-item-succes">
                                         <div class="circle-number">
                                             <div class="h-new _32 darck">1</div>
                                         </div>
-                                        <div class="step-text-succes">
-                                            Our experts will analyse your requirements and contact you within 1-2
-                                            business days.
+                                        <div class="step-text-succes">Our experts will analyse your requirements and
+                                            contact you within 1-2 business days.</div>
+                                    </div>
+                                    <div class="line-step">
+                                        <div class="some-line-step"></div>
+                                    </div>
+                                    <div class="step-item-succes">
+                                        <div class="circle-number">
+                                            <div class="h-new _32 darck">2</div>
                                         </div>
+                                        <div class="step-text-succes">Out team will collect all requirements for your
+                                            project, and if needed, we will sign an NDA to ensure the highest level of
+                                            privacy.</div>
                                     </div>
-                                </div>
-                                <div class="line-step">
-                                    <div class="some-line-step"></div>
-                                </div>
-                                <div class="step-item-succes">
-                                    <div class="circle-number">
-                                        <div class="h-new _32 darck">2</div>
+                                    <div class="line-step">
+                                        <div class="some-line-step"></div>
                                     </div>
-                                    <div class="step-text-succes">
-                                        Out team will collect all requirements for your project, and if needed, we will
-                                        sign an NDA to ensure the highest level of privacy.
-                                    </div>
-                                </div>
-                                <div class="line-step">
-                                    <div class="some-line-step"></div>
-                                </div>
-                                <div class="step-item-succes">
-                                    <div class="circle-number">
-                                        <div class="h-new _32 darck">3</div>
-                                    </div>
-                                    <div class="step-text-succes">
-                                        We will develop a comprehensive proposal and an action plan for your project
-                                        with estimates, timelines, CVs, etc.
+                                    <div class="step-item-succes">
+                                        <div class="circle-number">
+                                            <div class="h-new _32 darck">3</div>
+                                        </div>
+                                        <div class="step-text-succes">We will develop a comprehensive proposal and an
+                                            action plan for your project with estimates, timelines, CVs, etc.</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="w-form-fail" tabindex="-1" role="region" aria-label="project request failure">
+                    <div class="w-form-fail" tabindex="-1" role="region" aria-label="Project request failure">
                         <div>Oops! Something went wrong while submitting the form.</div>
                     </div>
                 </div>
@@ -5154,6 +3234,479 @@ textarea {
             if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyMenuColor);
             else applyMenuColor();
         })();
+    </script>
+    <script>
+        (function () {
+            // Ensure the testimonial/feedback slider (the .swiper-feed instance) ALWAYS shows 1 full slide.
+            function initSinglePerViewFeed() {
+                if (typeof Swiper === 'undefined') return;
+                var container = document.querySelector('.swiper.swiper-feed');
+                if (!container) return;
+
+                // If Swiper already attached to this element, destroy for clean re-init
+                try {
+                    if (container.swiper && typeof container.swiper.destroy === 'function') {
+                        container.swiper.destroy(true, true);
+                    }
+                } catch (e) { /* ignore */ }
+
+                // Remove inline widths/margins that come from previous inits or server markup
+                Array.from(container.querySelectorAll('.swiper-slide')).forEach(function (s) {
+                    try {
+                        s.style.width = '';
+                        s.style.maxWidth = '';
+                        s.style.marginRight = '';
+                        s.style.boxSizing = '';
+                    } catch (e) { }
+                });
+
+                // Initialize Swiper with strict single-slide layout (responsive)
+                var feedSwiper = new Swiper(container, {
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                    centeredSlides: false,
+                    loop: false,
+                    watchOverflow: true,
+                    observer: true,
+                    observeParents: true,
+                    // preserve existing pagination if present
+                    pagination: {
+                        el: container.querySelector('.swiper-pagination') || undefined,
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: container.parentElement?.querySelector('.healthtech-next') || container.querySelector('.swiper-button-next'),
+                        prevEl: container.parentElement?.querySelector('.healthtech-prev') || container.querySelector('.swiper-button-prev')
+                    },
+                    breakpoints: {
+                        // always 1 slide per view at all sizes
+                        0: { slidesPerView: 1, spaceBetween: 12 },
+                        480: { slidesPerView: 1, spaceBetween: 12 },
+                        768: { slidesPerView: 1, spaceBetween: 16 },
+                        992: { slidesPerView: 1, spaceBetween: 20 }
+                    },
+                    on: {
+                        init: function () {
+                            // enforce slide sizing on init (important on mobile)
+                            try {
+                                Array.from(this.slides).forEach(function (s) {
+                                    s.style.width = '100%';
+                                    s.style.maxWidth = '100%';
+                                    s.style.marginRight = '0';
+                                    s.style.boxSizing = 'border-box';
+                                });
+                            } catch (e) { }
+                            // small delayed update to let layout settle
+                            var self = this;
+                            setTimeout(function () { try { self.update(); } catch (e) { } }, 50);
+                        },
+                        resize: function () {
+                            // keep slides full-width on resize
+                            try {
+                                Array.from(this.slides).forEach(function (s) {
+                                    s.style.width = '100%';
+                                    s.style.maxWidth = '100%';
+                                    s.style.marginRight = '0';
+                                    s.style.boxSizing = 'border-box';
+                                });
+                                this.update();
+                            } catch (e) { }
+                        }
+                    }
+                });
+
+                // Make navigation buttons always call API (reliable)
+                var prevBtn = container.parentElement?.querySelector('.healthtech-prev, .swiper-button-prev1');
+                var nextBtn = container.parentElement?.querySelector('.healthtech-next, .swiper-button-next1');
+                [prevBtn, nextBtn].forEach(function (btn) {
+                    if (!btn) return;
+                    btn.addEventListener('click', function (ev) {
+                        ev.preventDefault();
+                        if (btn === prevBtn) feedSwiper.slidePrev();
+                        else feedSwiper.slideNext();
+                    });
+                });
+            }
+
+            // Wait for DOM + Swiper plugin
+            function ready(attempts) {
+                attempts = attempts || 0;
+                if (document.readyState !== 'loading' && typeof Swiper !== 'undefined') initSinglePerViewFeed();
+                else if (attempts < 30) setTimeout(function () { ready(attempts + 1); }, 120);
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { ready(0); });
+            else ready(0);
+        })();
+    </script>
+    <script>
+        // Ensure visual state of the custom faux-checkbox/radio matches the real input.
+        (function () {
+            function syncChecks(root) {
+                root = root || document;
+                var wrappers = Array.from(root.querySelectorAll('.n-check-box-wrap'));
+                wrappers.forEach(function (label) {
+                    var input = label.querySelector('input[type="checkbox"], input[type="radio"]');
+                    if (!input) return;
+
+                    // update wrapper state based on current input.checked
+                    function update() {
+                        if (input.checked) label.classList.add('checked');
+                        else label.classList.remove('checked');
+                    }
+
+                    // initial sync
+                    update();
+
+                    // listen for changes
+                    input.addEventListener('change', update);
+
+                    // also support clicks on label (label + input inside already toggles input)
+                    label.addEventListener('click', function () {
+                        // small timeout to let native change occur then sync
+                        setTimeout(update, 10);
+                    });
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function () { syncChecks(); });
+            } else {
+                syncChecks();
+            }
+
+            // If parts of the form are loaded dynamically later, expose helper:
+            window.syncCheckboxWrappers = syncChecks;
+        })();
+    </script>
+
+    <script>
+        // Ensure radio wrappers inside the Budget cell reflect the radio group's checked state.
+        (function () {
+            var scopeId = '#w-node-_73b89ccc-3e4e-ec14-7196-46aea473f265-a473f24a';
+            function syncBudgetRadios() {
+                var root = document.querySelector(scopeId);
+                if (!root) return;
+                var wrappers = Array.from(root.querySelectorAll('.n-check-box-wrap'));
+                wrappers.forEach(function (wrap) {
+                    var input = wrap.querySelector('input[type="radio"]');
+                    if (!input) return;
+                    // initial state
+                    wrap.classList.toggle('checked', !!input.checked);
+
+                    // update on change: ensure exclusivity visuals within this budget group
+                    input.addEventListener('change', function () {
+                        wrappers.forEach(function (w) {
+                            var i = w.querySelector('input[type="radio"]');
+                            w.classList.toggle('checked', !!(i && i.checked));
+                        });
+                    });
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', syncBudgetRadios);
+            } else {
+                syncBudgetRadios();
+            }
+
+            // expose for debugging / dynamic content
+            window.syncBudgetRadios = syncBudgetRadios;
+        })();
+    </script>
+    <script>
+        // Sync visual state for attach-file checkbox(s): add/remove .checked on the label
+        (function () {
+            function syncAttachCheckboxes(root) {
+                root = root || document;
+                var labels = Array.from(root.querySelectorAll('.checkbox-field'));
+                labels.forEach(function (label) {
+                    var input = label.querySelector('input[type="checkbox"]');
+                    if (!input) return;
+
+                    function update() { label.classList.toggle('checked', !!input.checked); }
+
+                    // initial
+                    update();
+
+                    // keep in sync on change and click
+                    input.addEventListener('change', update);
+                    label.addEventListener('click', function () { setTimeout(update, 10); });
+                });
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { syncAttachCheckboxes(); });
+            else syncAttachCheckboxes();
+
+            // expose for dynamic updates
+            window.syncAttachCheckboxes = syncAttachCheckboxes;
+        })();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('wf-form-Project-request');
+            if (!form) return;
+
+            var attachCheckbox = form.querySelector('#I-agree-to-receive-marketing');
+            var attachLabel = form.querySelector('.checkbox-field');
+
+            // Create persistent error node (insert after the checkbox label wrapper)
+            var errNode = document.createElement('div');
+            errNode.className = 'attach-error';
+            errNode.setAttribute('role', 'alert');
+            errNode.setAttribute('aria-live', 'polite');
+            errNode.textContent = 'Please accept the Privacy Policy to continue.';
+            errNode.style.display = 'none';
+            if (attachLabel && attachLabel.parentNode) {
+                attachLabel.parentNode.insertBefore(errNode, attachLabel.nextSibling);
+            } else {
+                // fallback: append to form
+                form.appendChild(errNode);
+            }
+
+            // on submit: validate attach checkbox
+            form.addEventListener('submit', function (e) {
+                try {
+                    if (attachCheckbox && !attachCheckbox.checked) {
+                        e.preventDefault();
+                        // show visual error
+                        errNode.style.display = 'block';
+                        // highlight label
+                        if (attachLabel) attachLabel.classList.add('error');
+                        // focus the (hidden) native input for accessibility
+                        try { attachCheckbox.focus(); } catch (ignore) { }
+                        // scroll into view if needed
+                        var target = attachLabel || attachCheckbox;
+                        if (target && target.scrollIntoView) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    } else {
+                        // hide any leftover error if checked
+                        errNode.style.display = 'none';
+                        if (attachLabel) attachLabel.classList.remove('error');
+                    }
+                } catch (err) {
+                    // do not block submission on unexpected errors
+                    console.warn('Attach checkbox validation failed', err);
+                }
+            });
+
+            // Remove error when user checks the box
+            if (attachCheckbox) {
+                attachCheckbox.addEventListener('change', function () {
+                    if (attachCheckbox.checked) {
+                        errNode.style.display = 'none';
+                        if (attachLabel) attachLabel.classList.remove('error');
+                    }
+                });
+            }
+        });
+    </script>
+    // ...existing code...
+    <script>
+    (function () {
+        // Submission handler for #wf-form-Project-request
+        // Tries EmailJS (if configured), then Formspree endpoint (if configured), otherwise falls back to mailto.
+        // Replace placeholders below with your real service IDs / endpoints for automatic server-less sending.
+        var EMAILJS_USER_ID = '';         // e.g. 'user_xxxxxxxxxxxxx'
+        var EMAILJS_SERVICE_ID = '';      // e.g. 'service_xxx'
+        var EMAILJS_TEMPLATE_ID = '';     // e.g. 'template_xxx'
+        var FORMSPREE_ENDPOINT = '';      // e.g. 'https://formspree.io/f/xxxxxx' (POST)
+
+        function showSuccess(form) {
+            var done = form.querySelector('.success-message');
+            var fail = form.querySelector('.w-form-fail');
+            if (fail) fail.style.display = 'none';
+            if (done) { done.style.display = 'block'; done.focus(); }
+        }
+        function showFail(form) {
+            var done = form.querySelector('.success-message');
+            var fail = form.querySelector('.w-form-fail');
+            if (done) done.style.display = 'none';
+            if (fail) { fail.style.display = 'block'; fail.focus(); }
+        }
+
+        function collectFormData(form) {
+            var data = {};
+            // project types (checkboxes)
+            var projectChecks = Array.from(form.querySelectorAll('input[type="checkbox"][name]'))
+                .filter(function (i) {
+                    // exclude the attach marketing checkbox by id
+                    return i.id !== 'I-agree-to-receive-marketing' && i.name && i.checked;
+                })
+                .map(function (i) { return i.name || i.id || i.value; });
+            data.project_types = projectChecks.join(', ') || '';
+
+            // Budget (radio)
+            var budget = form.querySelector('input[type="radio"][name="budget"]:checked');
+            data.budget = budget ? budget.value : '';
+
+            // text fields
+            data.task = (form.querySelector('textarea[name="Task"], textarea#task-field-f') || {}).value || '';
+            data.name = (form.querySelector('input[name="Name"], input#name-field-f') || {}).value || '';
+            data.company = (form.querySelector('input[name="Company-Website"]') || {}).value || '';
+            data.email = (form.querySelector('input[name="Email"], input#email-field-f') || {}).value || '';
+            data.phone = (form.querySelector('input[name="Phone"], input#phone-field-f') || {}).value || '';
+
+            // attach marketing checkbox
+            var attach = form.querySelector('input#I-agree-to-receive-marketing');
+            data.attach_marketing = attach ? !!attach.checked : false;
+
+            // Any other visible custom values (optionally)
+            return data;
+        }
+
+        function buildPlainText(data) {
+            return [
+                'New Project Request from website',
+                '',
+                'Name: ' + (data.name || '-'),
+                'Company / Website: ' + (data.company || '-'),
+                'Email: ' + (data.email || '-'),
+                'Phone: ' + (data.phone || '-'),
+                '',
+                'Project types: ' + (data.project_types || '-'),
+                'Budget: ' + (data.budget || '-'),
+                '',
+                'Task / Description:',
+                (data.task || '-'),
+                '',
+                'Accepted Privacy Policy (marketing attach): ' + (data.attach_marketing ? 'Yes' : 'No'),
+                ''
+            ].join('\n');
+        }
+
+        function handleEmailjsSend(templateParams, form) {
+            // dynamic load emailjs SDK if needed
+            return new Promise(function (resolve, reject) {
+                if (!window.emailjs) {
+                    var s = document.createElement('script');
+                    s.src = 'https://cdn.emailjs.com/sdk/3.2.0/email.min.js';
+                    s.onload = function () {
+                        try {
+                            emailjs.init(EMAILJS_USER_ID);
+                            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams).then(resolve, reject);
+                        } catch (err) { reject(err); }
+                    };
+                    s.onerror = function () { reject(new Error('Failed to load EmailJS SDK')); };
+                    document.head.appendChild(s);
+                } else {
+                    try {
+                        emailjs.init(EMAILJS_USER_ID);
+                        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams).then(resolve, reject);
+                    } catch (err) { reject(err); }
+                }
+            });
+        }
+
+        function handleFormspreeSend(form, formData) {
+            // send as form-encoded
+            return fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            }).then(function (res) {
+                if (!res.ok) throw new Error('Formspree failed: ' + res.status);
+                return res.json ? res.json() : res;
+            });
+        }
+
+        function fallbackMailto(data) {
+            var subject = encodeURIComponent('New project request from website: ' + (data.name || data.email || ''));
+            var body = encodeURIComponent(buildPlainText(data));
+            // use contact@apiceflow.com
+            window.location.href = 'mailto:contact@apiceflow.com?subject=' + subject + '&body=' + body;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('wf-form-Project-request');
+            if (!form) return;
+
+            form.addEventListener('submit', function (ev) {
+                ev.preventDefault();
+                // basic required validation
+                var requiredEmail = form.querySelector('input[name="Email"], input#email-field-f');
+                var requiredName = form.querySelector('input[name="Name"], input#name-field-f');
+                var attachCheckbox = form.querySelector('#I-agree-to-receive-marketing');
+
+                // show existing error if attach not checked (existing validation already does this)
+                if (attachCheckbox && !attachCheckbox.checked) {
+                    // trigger the previously implemented validation UI
+                    var evt = new Event('submit', { cancelable: true });
+                    // but better: show error inline
+                    var errNode = form.querySelector('.attach-error');
+                    if (errNode) errNode.style.display = 'block';
+                    attachCheckbox.focus && attachCheckbox.focus();
+                    return;
+                }
+                if (!requiredName || !requiredName.value.trim()) {
+                    alert('Please enter your name.');
+                    requiredName && requiredName.focus();
+                    return;
+                }
+                if (!requiredEmail || !requiredEmail.value.trim()) {
+                    alert('Please enter your email.');
+                    requiredEmail && requiredEmail.focus();
+                    return;
+                }
+
+                var data = collectFormData(form);
+                var plain = buildPlainText(data);
+
+                // Prepare template params for EmailJS (if used)
+                var templateParams = {
+                    subject: 'New project request from website',
+                    message: plain,
+                    name: data.name,
+                    email: data.email,
+                    phone: data.phone,
+                    project_types: data.project_types,
+                    budget: data.budget,
+                    task: data.task,
+                    attach_marketing: data.attach_marketing ? 'Yes' : 'No'
+                };
+
+                // Prefer EmailJS if configured
+                if (EMAILJS_USER_ID && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID) {
+                    handleEmailjsSend(templateParams, form).then(function (resp) {
+                        showSuccess(form);
+                        form.reset();
+                    }).catch(function (err) {
+                        console.error('EmailJS send error', err);
+                        // attempt Formspree if configured
+                        if (FORMSPREE_ENDPOINT) {
+                            var fd = new FormData();
+                            Object.keys(templateParams).forEach(function (k) { fd.append(k, templateParams[k]); });
+                            fd.append('to', 'contact@apiceflow.com');
+                            handleFormspreeSend(form, fd).then(function () {
+                                showSuccess(form); form.reset();
+                            }).catch(function (err2) { console.error('Formspree send failed', err2); showFail(form); });
+                        } else {
+                            // final fallback: mailto
+                            fallbackMailto(data);
+                        }
+                    });
+                    return;
+                }
+
+                // If EmailJS not configured but Formspree is
+                if (FORMSPREE_ENDPOINT) {
+                    var fd2 = new FormData();
+                    Object.keys(templateParams).forEach(function (k) { fd2.append(k, templateParams[k]); });
+                    fd2.append('to', 'contact@apiceflow.com');
+                    handleFormspreeSend(form, fd2).then(function () { showSuccess(form); form.reset(); }).catch(function (err) {
+                        console.error('Formspree send failed', err);
+                        // fallback to mailto
+                        fallbackMailto(data);
+                    });
+                    return;
+                }
+
+                // No remote send configured: fallback to mailto (opens user's email client prefilled)
+                fallbackMailto(data);
+            });
+        });
+    })();
     </script>
 </body>
 
