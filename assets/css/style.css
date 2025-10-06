@@ -40497,8 +40497,8 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
 
 .benefits-n_item.inactive {
   width: 33.33%;
-  color: #D9F1E8;
-  background-color: #384249;
+  color: #D9F1E8 !important;
+  background-color: #384249 !important;
 }
 
 @media (max-width: 1280px) {
@@ -40632,7 +40632,7 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
   .benefits-n_left {
     grid-column-gap: 16px;
     grid-row-gap: 16px;
-    color: var(--dark);
+    /* color: var(--dark); */
     justify-content: center;
     align-items: flex-start;
   }
