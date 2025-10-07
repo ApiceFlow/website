@@ -10166,8 +10166,9 @@ header.header-three .rts-mega-menu.service-mega-menu-style {
 .rts-mega-menu.service-mega-menu-style li a .single-service-menu .title {
   color: #000000;
   margin-bottom: 11px;
-  line-height: 1;
-  font-size: 14px;
+  line-height: 1.5;
+  font-size: 12px;
+  font-weight: 500 !important;
 }
 
 .rts-mega-menu.service-mega-menu-style li a .single-service-menu p.details {
@@ -10196,10 +10197,13 @@ header.header-three .rts-mega-menu.service-mega-menu-style {
   transform: scaleX(0);
   transform-origin: left center;
   /* animate from left edge */
-  width: 55px;
+  /* width: 100%; */
+  width: 60px;
   /* new required width */
+  /* height: 32px; */
   height: 1.5px;
-  background: #40d6be;
+  /* background: #40d6bd17; */
+  background: #40d6bd;
   border-radius: 2px;
   transition: transform 440ms cubic-bezier(.2, .9, .2, 1);
 }
@@ -18864,7 +18868,7 @@ section.main-wrapper-sticky .sticky-statement.narrow .left-side img {
 }
 
 .footer-bg-two {
-  background: url(../images/footer/02.webp);
+  /* background: url(../images/footer/02.webp); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -18905,8 +18909,10 @@ section.main-wrapper-sticky .sticky-statement.narrow .left-side img {
 
 .footer-two-single-wized .wized-title-area .wized-title {
   margin-bottom: 4px;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding-bottom: 10px;
 }
 
 .footer-two-single-wized .wized-2-body ul {
@@ -18915,9 +18921,9 @@ section.main-wrapper-sticky .sticky-statement.narrow .left-side img {
 }
 
 .footer-two-single-wized .wized-2-body ul li a {
-  color: #5D666F;
+  color: #3f454b;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   align-items: center;
   transition: 0.3s;
@@ -30171,7 +30177,7 @@ header.header-transparent.in-full-screen .action-area .menu-btn {
 
 .ptb--10 {
   /* padding: 10px 0; */
-  background: url(../images/footer/02.webp);
+  /* background: url(../images/footer/02.webp); */
 }
 
 .plr--10 {
@@ -30899,7 +30905,7 @@ header.header-transparent.in-full-screen .action-area .menu-btn {
 }
 
 .pt--100 {
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 .pb--100 {
@@ -43745,14 +43751,14 @@ img {
 @media screen and (max-width: 991px) {
   .feedback-item {
     flex-flow: column;
-    padding: 32px;
+    padding: 64px;
     display: flex;
   }
 }
 
 @media screen and (max-width: 767px) {
   .feedback-item {
-    padding: 16px 16px 32px;
+    padding: 45px 24px 32px;
   }
 }
 
