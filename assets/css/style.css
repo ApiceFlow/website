@@ -8667,7 +8667,7 @@ header .nav-area ul li.main-nav:hover::after {
   opacity: 0;
   visibility: hidden;
   text-align: left;
-  transition: transform 0.5s cubic-bezier(.22, .9, .3, 1), opacity 0.5s ease, visibility 0.8s linear;
+  transition: transform 0.5s cubic-bezier(.22, .9, .3, 1), opacity 0.5s ease, visibility 0.2s linear;
   /* transition: 
     opacity 0.3s ease,
     visibility 0.3s linear; */
@@ -8678,6 +8678,8 @@ header .nav-area ul li.main-nav:hover::after {
   transform-origin: 0 0 0;
   padding: 30px 30px;
 }
+
+
 
 /* Mega-menu item link hover color (when hovering items inside the mega menu) */
 .rts-mega-menu .mega-menu-item li a:hover,
@@ -9148,7 +9150,7 @@ header .action-area #menu-btn {
   background: #f9f9f9;
   color: #1e1e1e;
   /* soft near-white for readability */
-  padding: 48px 0;
+  padding: 80px 0;
 }
 
 /* Menu icon: white by default, switch to black when header indicates a light background */
@@ -39063,7 +39065,7 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
 /* Our mission section styles (tighten spacing, add quote) */
 .our-mission-wrapper {
   max-width: 1140px;
-  margin: 0 auto 30px;
+  margin: 0 auto 60px;
 }
 
 .our-mission-wrapper .mission-text {
@@ -39674,7 +39676,7 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
   }
 
   .vision-overlay p {
-    font-size: 10px;
+    font-size: 12px !important;
     margin: 0;
     opacity: 0.95;
   }
@@ -41036,7 +41038,8 @@ img {
 
 @media screen and (max-width: 767px) {
   .h3-new {
-    font-size: 28px;
+    font-size: 24px;
+    font-weight: 800;
   }
 }
 
@@ -41365,7 +41368,7 @@ body.page-portfolio2 .hero-banner-image .page-description p {
   grid-row-gap: 16px;
   grid-column-gap: 16px;
   grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
   grid-auto-columns: 1fr;
   display: grid;
 }
@@ -41711,11 +41714,6 @@ li {
   text-align: center;
 }
 
-@media screen and (max-width: 767px) {
-  .h3-new {
-    font-size: 28px;
-  }
-}
 
 .align-center {
   margin-left: auto;
@@ -42480,11 +42478,7 @@ li {
 }
 
 
-@media screen and (max-width: 767px) {
-  .h3-new {
-    font-size: 28px;
-  }
-}
+
 
 .text-white {
   color: #fff;
@@ -43360,11 +43354,7 @@ summary {
   color: #fff;
 }
 
-@media screen and (max-width: 767px) {
-  .h3-new {
-    font-size: 28px;
-  }
-}
+
 
 .align-center {
   margin-left: auto;
@@ -44969,7 +44959,8 @@ img {
 
 @media screen and (max-width: 767px) {
   .h3-new {
-    font-size: 28px;
+    font-size: 25px;
+    font-weight: 700;
   }
 }
 
@@ -45556,7 +45547,7 @@ img {
   grid-row-gap: 16px;
   grid-column-gap: 16px;
   grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
   grid-auto-columns: 1fr;
   display: grid;
 }
@@ -46907,7 +46898,7 @@ textarea.w-select {
 /* Responsive overrides for Sneak Peek section when viewport is < 768px */
 @media (max-width: 767.98px) {
   .sneak-peek-section {
-    padding: clamp(28px, 6vw, 48px) 12px !important;
+    padding: clamp(50px, 6vw, 64px) 12px !important;
   }
 
   .sneak-peek-section .peek-header {
