@@ -6613,8 +6613,8 @@ header.header-seven .nav-area ul li a,
 header.header-seven .main-header .nav-main ul li a {
   display: inline-flex;
   align-items: center;
-  height: 55px;
-  line-height: 55px;
+  height: 40px;
+  line-height: 20px;
   padding: 0 8px;
   /* horizontal spacing only */
 }
@@ -7448,7 +7448,7 @@ header.header-seven .action-area .menu-btn {
 
 .nav-area ul li a {
   color: #ffffff;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   font-size: 12px;
 }
 
@@ -8667,7 +8667,7 @@ header .nav-area ul li.main-nav:hover::after {
   opacity: 0;
   visibility: hidden;
   text-align: left;
-  transition: transform 1s cubic-bezier(.22, .9, .3, 1), opacity 1s ease, visibility 0.8s linear;
+  transition: transform 0.5s cubic-bezier(.22, .9, .3, 1), opacity 0.5s ease, visibility 0.8s linear;
   /* transition: 
     opacity 0.3s ease,
     visibility 0.3s linear; */
@@ -38165,7 +38165,7 @@ header.header-transparent.in-full-screen .action-area .menu-btn {
 .header-transparent .nav-area ul li.menu-dark-on-hover>a,
 .header-transparent .nav-area ul li.menu-dark-on-hover>a:focus {
   transition: color .15s ease;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
 }
 
 .header-transparent .nav-area ul li.menu-dark-on-hover:hover>a,
