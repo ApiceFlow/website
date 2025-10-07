@@ -8,7 +8,7 @@
                                         blockchain platforms, we blend technology with vision to drive growth and
                                         innovation.">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/ApiceFlow_Logo/fav-blue.png">
-    <title>Portfolio: ApiceFlow, Global Software Agency</title>
+    <title>Trainerize: ApiceFlow, Global Software Agency</title>
     <link rel="stylesheet preload" href="assets/css/plugins/fontawesome.css" as="style">
     <link rel="stylesheet preload" href="assets/css/plugins/swiper.css" as="style">
     <link rel="stylesheet preload" href="assets/css/plugins/metismenu.css" as="style">
@@ -21,6 +21,22 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet preload" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Global font and fallback variable */
+        :root {
+            --dark: #333333;
+        }
+
+        /* rely on the global stylesheet's --font-primary (Montserrat) */
+        input,
+        textarea,
+        button,
+        select {
+            font-family: inherit;
+        }
+    </style>
     <link rel="preload" as="image" href="assets/images/banner/21.webp" />
     <link rel="stylesheet preload" href="assets/css/style.css" as="style">
     <style>
@@ -263,7 +279,7 @@
             color: #3e3e3ec9;
             padding: 6px 10px;
             border-radius: 5px;
-            font-size: clamp(0.9rem, 0.9vw + 0.6rem, 1.52rem);
+            font-size: 1.52rem;
             font-weight: 400;
             box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
         }
@@ -275,7 +291,7 @@
             color: #21aeffef !important;
             font-weight: 450;
             /* desktop target size requested by user */
-            font-size: 20px;
+            font-size: 22px;
             line-height: 1;
             padding: 8px 0;
             cursor: pointer;
@@ -404,9 +420,9 @@
         #portfolio-pagination .pg-btn {
             display: inline-grid;
             place-items: center;
-            width: 36px;
+            width: 28px;
             /* enforce square */
-            height: 36px;
+            height: 28px;
             padding: 0;
             border-radius: 50%;
             background: #fff;
@@ -414,7 +430,7 @@
             box-shadow: 0 1px 6px rgba(16, 24, 40, 0.06);
             border: 1px solid rgba(16, 24, 40, 0.06);
             font-weight: 400;
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
             line-height: 1;
@@ -434,8 +450,8 @@
         }
 
         #portfolio-pagination .pg-arrow {
-            width: 36px;
-            height: 36px;
+            width: 28px;
+            height: 28px;
             display: inline-grid;
             place-items: center;
             border-radius: 50%;
@@ -443,26 +459,22 @@
 
         /* Single-digit numeric buttons remain perfect circles; wider pills for longer labels */
         #portfolio-pagination .pg-btn[data-length="1"] {
-            width: 36px;
+            width: 28px;
             border-radius: 50%;
         }
 
-        .case-desc {
-            font-weight: 400 !important;
-        }
-
         #portfolio-pagination .pg-btn[data-length="2"] {
-            min-width: 60px;
+            min-width: 40px;
             width: auto;
             padding: 0 8px;
-            border-radius: 30px;
+            border-radius: 20px;
         }
 
         #portfolio-pagination .pg-btn[data-length="3"] {
-            min-width: 72px;
+            min-width: 48px;
             width: auto;
             padding: 0 10px;
-            border-radius: 36px;
+            border-radius: 24px;
         }
 
         /* compact ellipsis */
@@ -633,9 +645,115 @@
             border-bottom-color: #39c8c5;
         }
     </style>
+    <style>
+        /* Page-scoped styles for portfolio2 hero alignment, stacking order, and responsive typography */
+        body.page-portfolio2 .hero-banner-image {
+            display: block;
+            position: relative;
+        }
+
+        /* Bring hero content above any overlay/mask elements */
+        body.page-portfolio2 .hero-banner-image .hero-center-text,
+        body.page-portfolio2 .hero-banner-image .hero-center-text *,
+        body.page-portfolio2 .hero-banner-image .page-description,
+        body.page-portfolio2 .hero-banner-image .hero-badges {
+            position: relative;
+            z-index: 120;
+            /* above menu-overlay (50) and other masks */
+        }
+
+        /* Align hero-center-text to the same content start as the header container (.container) */
+        body.page-portfolio2 .hero-banner-image .hero-center-text {
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            padding-top: 65px;
+            padding-left: 15px;
+            /* small gutter to match container */
+            padding-right: 15px;
+            /* Responsive heading size that doesn't overflow */
+            font-size: clamp(22px, 4.5vw, 37px);
+            line-height: 1.05;
+            font-weight: 500;
+            color: #fff;
+            /* ensure contrast on background */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Page description: responsive and constrained width */
+        body.page-portfolio2 .hero-banner-image .page-description {
+            margin-left: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        body.page-portfolio2 .hero-banner-image .page-description p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: clamp(12px, 1.8vw, 16px);
+            max-width: 70ch;
+            margin: 0;
+            line-height: 1.45;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        /* Hero badges under description */
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .hero-badges .badge {
+            display: inline-block;
+            background: rgba(24, 139, 206, 0.12);
+            color: #86cff9;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-weight: 450;
+            font-size: 13px;
+            border: 1px solid rgba(24, 139, 206, 0.18);
+            white-space: nowrap;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991.98px) {
+            body.page-portfolio2 .hero-banner-image .hero-center-text {
+                padding-left: 18px;
+                padding-right: 18px;
+                text-align: left;
+                font-size: clamp(20px, 6.5vw, 34px);
+            }
+
+            .hero-badges .badge {
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+        }
+
+        @media (max-width: 479.98px) {
+            body.page-portfolio2 .hero-banner-image .hero-center-text {
+                padding-top: 32px;
+                font-size: 20px;
+            }
+
+            .hero-badges {
+                gap: 8px;
+            }
+
+            .hero-badges .badge {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="page-portfolio2">
 
 
     <!-- header trasnparent area start -->
@@ -669,7 +787,7 @@
                                                     <div class="col-lg-4">
                                                         <div class="menu-thumb pl--20" style="padding:20px 20px;">
                                                             <h4
-                                                                style="font-size:25px; font-weight:600; color:#39c8c5; margin-bottom:10px;">
+                                                                style="font-size:25px; font-weight:800; color:#39c8c5; margin-bottom:10px;">
                                                                 OUR SERVICES</h4>
                                                             <p
                                                                 style="font-size:15px; color:#323232cd; line-height:1.5;">
@@ -811,7 +929,7 @@
                                                     <div class="col-lg-4">
                                                         <div class="menu-thumb pl--20" style="padding:20px 20px;">
                                                             <h4
-                                                                style="font-size:25px; font-weight:600; color:#39c8c5; padding-top: 20px; ">
+                                                                style="font-size:25px; font-weight:800; color:#39c8c5; padding-top: 20px; ">
                                                                 INDUSTRIES</h4>
                                                             <p
                                                                 style="font-size:15px; color:#323232cd; line-height:1.5;">
@@ -1089,6 +1207,75 @@
                 </div>
             </div>
         </div>
+
+        <!-- New: five-item info strip (white background) -->
+        <style>
+            /* Scoped styles for the five-section info area */
+            .pf2-info-strip {
+                background: #ffffff;
+                /* padding: 28px 16px; */
+                box-sizing: border-box;
+            }
+
+            .pf2-info-grid {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 0;
+                align-items: start;
+                /* border-top: 1px solid #e6e6e6; */
+                /* border-bottom: 1px solid #e6e6e6; */
+            }
+
+            .pf2-info-item {
+                padding: 18px 22px;
+                box-sizing: border-box;
+                text-align: left;
+                min-height: 84px;
+            }
+
+            /* vertical divider between items */
+            .pf2-info-item+.pf2-info-item {
+                border-left: 1px solid #ededed;
+            }
+
+            .pf2-info-item .info-title {
+                margin: 0 0 12px 0;
+                font-size: 16px;
+                /* font-weight: 450; */
+                color: var(--grey-special);
+                line-height: 1.5;
+            }
+
+            .pf2-info-item .info-sub {
+                margin: 0;
+                font-size: 18px;
+                font-weight: 600;
+                color: var(--dark);
+                line-height: 1.35;
+            }
+
+            /* Responsive: collapse columns on smaller screens */
+            @media (max-width: 1199.98px) {
+                .pf2-info-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+
+            @media (max-width: 767.98px) {
+                .pf2-info-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .pf2-info-item {
+                    padding: 14px 12px;
+                }
+
+                .pf2-info-item+.pf2-info-item {
+                    border-left: none;
+                    border-top: 1px solid #f0f0f0;
+                }
+            }
+        </style>
     </header>
     <!-- header trasnparent area end -->
     <div id="menu-overlay" class="menu-overlay" aria-hidden="true"></div>
@@ -1096,1378 +1283,1443 @@
     <div class="page-wrapper radious-none-button">
         <div class="banner-about-wrapper">
             <!-- index seven area start -->
-            <div class="hero-banner-image" style="background-image: url('assets/images/banner/portfolio.avif');">
-                <div class="hero-center-text" style="padding-top: 65px;">Case Studies
-                    <div class="page-description" style="max-width: 800px; padding: 30px 0px;">
-                        <p>At ApiceFlow, every project is a collaboration of unique visions, creative expertise, and
-                            functionality. See our portfolio of works to get a sense of our strategic thinking and
-                            commitment to user-centered design.</p>
+            <div class="hero-banner-image" style="background-image: url('assets/images/portfolio/portfolio44/1.png');">
+                <div class="hero-center-text" style="padding-top: 150px;">TRAINERIZE - Personal Training SaaS Platform
+                    <div class="page-description"
+                        style="max-width: 700px; padding: 20px 0px; font-weight: 500 !important;">
+                        <p>Trainerize was a mobile-first coaching and client-engagement platform that let trainers,
+                            studios and clubs deliver workouts, nutrition, habit coaching and appointment/payment
+                            management to customers through branded apps. The product combined program builders, in-app
+                            messaging, client tracking and commerce/booking features to digitize the member experience
+                            for independent coaches up to large chains.</p>
+                    </div>
+                    <div class="hero-badges" aria-hidden="false">
+                        <span class="badge">Sports & Fitness</span>
+                        <span class="badge">Web</span>
+                        <span class="badge">Mobile</span>
+                        <span class="badge">Quality Engineering & Testing</span>
+                        <span class="badge">Enterprise Systems & Modernization</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="our-mission-wrapper" style="margin-left: auto; margin-right: auto;">
-            <div class="row" style="padding-top: 30px;">
-                <!-- <div class="col-xl-1"></div> -->
-                <div class="col-xl-7">
-                    <h3 style="font-weight: 900; font-size: 35px;">OUR <span
-                            style="font-weight: 900; color: #39c8c5; font-size: 35px;"> CASE STUDIES</span></h3>
-                </div>
-                <div class="col-xl-4">
-
-                </div>
-                <div class="col-xl-1" dir="ltr">
-                    <div class="portfolio-search" id="portfolio-search">
-                        <button class="search-toggle" id="portfolio-search-toggle" aria-label="Open search"><i
-                                class="fa fa-search"></i></button>
-                        <div class="search-box" aria-hidden="true"><input type="search" id="portfolio-search-input"
-                                placeholder="Search case studies" /></div>
+        <section class="pf2-info-strip" aria-label="Project details">
+            <div class="container">
+                <div class="pf2-info-grid">
+                    <div class="pf2-info-item">
+                        <h4 class="info-title">COUNTRY</h4>
+                        <p class="info-sub">Canada</p>
+                    </div>
+                    <div class="pf2-info-item">
+                        <h4 class="info-title">TEAM SIZE</h4>
+                        <p class="info-sub">5</p>
+                    </div>
+                    <div class="pf2-info-item">
+                        <h4 class="info-title">BUDGET</h4>
+                        <p class="info-sub">70k+</p>
+                    </div>
+                    <div class="pf2-info-item">
+                        <h4 class="info-title">INDUSTRY</h4>
+                        <p class="info-sub">Fitness</p>
+                    </div>
+                    <div class="pf2-info-item">
+                        <h4 class="info-title">TECHNOLOGIES</h4>
+                        <p class="info-sub">React/Express</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="our-mission-wrapper" style="margin-left: auto; margin-right: auto;">
-            <!-- Portfolio / Case Studies section -->
-            <section class="portfolio-section rts-section-gap" aria-label="Portfolio">
-                <div class="container">
-                    <div class="portfolio-controls"
-                        style="display:flex; gap:12px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; margin-bottom:18px;">
-                        <div style="display:flex; flex-direction:column; gap:8px;">
-                            <label class="filter-label" style="font-weight:700; margin-bottom:6px;">Filter by: <b
-                                    style="font-weight:600; margin-bottom:6px; font-size: 15px;">INDUSTRY</b></label>
-                            <div class="filter-group filter-group--stacked">
-                                <!-- keep native select for progressive enhancement but hide it visually -->
-                                <select id="filter-industry" class="filter-select" aria-hidden="true"
-                                    style="position:absolute;left:-9999px;">
-                                    <option value="all">All Industries</option>
-                                    <option value="fintech">Fintech</option>
-                                    <option value="healthcare">Healthcare</option>
-                                    <option value="retail">Retail & eCommerce</option>
-                                    <option value="financial">Financial Service</option>
-                                    <option value="supply">Supply Chain</option>
-                                    <option value="web3">Web3-specific</option>
-                                    <option value="media">Media & Entertainment</option>
-                                    <option value="travel">Travel, Hospitality & Ticketing</option>
-                                    <option value="education">Education</option>
-                                    <option value="telecom">Telecommunications</option>
-                                    <option value="realestate">Real Estate & Proptech</option>
-                                    <option value="gaming">Gaming</option>
-                                    <option value="foodtech">Foodtech & Restaurants</option>
-                                    <option value="sports">Sports & Fitness</option>
-                                </select>
-                                <div class="custom-multiselect" data-target="filter-industry" tabindex="0">
-                                    <div class="multiselect-panel" aria-hidden="true"></div>
-                                </div>
-                            </div>
-
-                            <label class="filter-label" style="font-weight:700; margin-bottom:6px;">Filter by: <b
-                                    style="font-weight:600; margin-bottom:6px; font-size: 15px;">SERVICE</b></label>
-                            <div class="filter-group filter-group--stacked">
-                                <select id="filter-service" class="filter-select" aria-hidden="true"
-                                    style="position:absolute;left:-9999px;">
-                                    <option value="all">All Services</option>
-                                    <option value="web">Web</option>
-                                    <option value="mobile">Mobile</option>
-                                    <option value="blockchain">Blockchain & Web3</option>
-                                    <option value="ai">AI/Machine Learning</option>
-                                    <option value="design">Design</option>
-                                    <option value="devops">Cloud & DevOps</option>
-                                    <option value="qa">Quality Engineering & Testing</option>
-                                    <option value="nocode">No-Code/Low-Code</option>
-                                    <option value="enterprise">Enterprise systems</option>
-                                </select>
-                                <div class="custom-multiselect" data-target="filter-service" tabindex="0">
-                                    <div class="multiselect-panel" aria-hidden="true"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            style="min-width:220px; display:flex; flex-direction:column; gap:6px; align-items:flex-end;">
-                            <!-- hidden technology select (JS filter source) -->
-                            <select id="filter-technology" class="filter-select" aria-hidden="true"
-                                style="position:absolute;left:-9999px;">
-                                <option value="all">All Technologies</option>
-                                <option value="react">React</option>
-                                <option value="node">Node</option>
-                                <option value="aws">AWS</option>
-                            </select>
-                            <div class="custom-multiselect" data-target="filter-technology" tabindex="0"
-                                style="display:none;">
-                                <div class="multiselect-panel" aria-hidden="true"></div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div id="portfolio-grid" class="portfolio-grid" aria-live="polite">
-                        <!-- Static sample cards (11) so the UI is visible without JS -->
-                        <!-- Cards mirror the structure created by the JS renderer -->
-                        <!-- Use images found in assets/images/about/01.webp .. 11.webp -->
-
-                        <!-- Card 1 -->
-                        <div data-industry="realestate web3"
-                            data-service="web blockchain web3 enterprise design devops">
-                            <div class="portfolio-card" data-id="1">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio33/4.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio33/6.jpg')">
-                                </div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Real Estate</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Web3-specific</div>
-                                            <div class="badge">Enterprise systems</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio33.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio33.html" title="Blocksquare">Blocksquare</a>
-                                </h3>
-                                <p class="case-desc">Real-estate Tokenization Infrastructure</p>
-                            </div>
-                        </div>
-                        <!-- Card 2 -->
-                        <div data-industry="healthcare" data-service="mobile design">
-                            <div class="portfolio-card" data-id="2">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio25/Genie1.avif')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio25/Genie2.avif')">
-                                </div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Healthcare</div>
-                                            <div class="badge">Mobile</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio1.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio1.html" title="Genie">Genie</a></h3>
-                                <p class="case-desc">DNA Analysis Tool</p>
-                            </div>
-                        </div><!-- Card 29 -->
-                        <div data-industry="healthcare" data-service="mobile enterprise devops">
-                            <div class="portfolio-card" data-id="29">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio8/1.png')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio8/7.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Healthcare</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio21.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio21.html" title="SG Santé">SG Santé</a></h3>
-                                <p class="case-desc">Health Benefits Mobile App</p>
-                            </div>
-                        </div>
-                        <!-- Card 3 -->
-                        <div data-industry="gaming web3" data-service="blockchain web design">
-                            <div class="portfolio-card" data-id="3">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio4/portfolio4-2.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio4/portfolio4-mini.jpg')">
-                                </div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Gaming</div>
-                                            <div class="badge">UI / UX Design</div>
-                                            <div class="badge">Blockchain/Web3</div>
-                                            <div class="badge">Web</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio4.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio4.html" title="The Sandbox">The SandBox</a>
-                                </h3>
-                                <p class="case-desc">Blockchain Metaverse & Game Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 4 -->
-                        <div data-industry="sports" data-service="web mobile design">
-                            <div class="portfolio-card" data-id="4">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio30/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio30/3.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Sports & Fitness</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">UI / UX Design</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio30.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio30.html" title="CoachNow">CoachNow</a></h3>
-                                <p class="case-desc">Coaching & Video Analysis Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 5 -->
-                        <div data-industry="healthcare" data-service="web mobile design qa devops">
-                            <div class="portfolio-card" data-id="5">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio29/5.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio29/6.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Healthcare</div>
-                                            <div class="badge">Web Mobile Development</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio29.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio29.html" title="Doxy.me">Doxy.me</a></h3>
-                                <p class="case-desc">Telehealth Video & Clinic Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 6 -->
-                        <div data-industry="retail foodtech" data-service="web mobile enterprise">
-                            <div class="portfolio-card" data-id="6">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio28/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio28/3.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Retail & Ecommerce</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio28.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio28.html" title="Lightspeed">Lightspeed</a></h3>
-                                <p class="case-desc">POS & Unified Commerce Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 37 -->
-                        <div data-industry="sports" data-service="web mobile qa enterprise devops ai">
-                            <div class="portfolio-card" data-id="37">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio44/1.png')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio44/2.png')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Sports & Fitness</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">Quality Engineering & Testing</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio36.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio36.html" title="Trainerize">Trainerize</a></h3>
-                                <p class="case-desc">Personal Training SaaS Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 7 -->
-                        <div data-industry="financial fintech" data-service="web enterprise qa">
-                            <div class="portfolio-card" data-id="7">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio27/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio27/3.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">FinTech</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio27.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio27.html" title="Quodd">Quodd</a></h3>
-                                <p class="case-desc">Market Data API & Feeds</p>
-                            </div>
-                        </div>
-                        <!-- Card 8 -->
-                        <div data-industry="supply-chain" data-service="web devops qa">
-                            <div class="portfolio-card" data-id="8">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio3/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio3/3.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Supply Chain</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio3.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio3.html" title="ShipHero">ShipHero</a></h3>
-                                <p class="case-desc">eCommerce Warehouse Management Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 9 -->
-                        <div data-industry="foodtech" data-service="web mobile ai">
-                            <div class="portfolio-card" data-id="9">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio31/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio31/4.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">FoodTech</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">AI / Machine Learning</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio31.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio31.html" title="SevenRoom">SevenRoom</a></h3>
-                                <p class="case-desc">Reservations, CRM & Guest Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 10 -->
-                        <div data-industry="travel" data-service="web mobile devops design">
-                            <div class="portfolio-card" data-id="10">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio2/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio2/3.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Ticketing</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">UI / UX Design</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio2.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio2.html" title="Bookinglayer">Bookinglayer</a>
-                                </h3>
-                                <p class="case-desc">Activity & Retreat Booking Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 11 -->
-                        <div data-industry="media" data-service="web mobile devops qa">
-                            <div class="portfolio-card" data-id="11">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio26/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio26/5.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Media & Entertainment</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">DevOps</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio20.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio20.html" title="Mux">Mux</a></h3>
-                                <p class="case-desc">Video API & Analytics Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 12 -->
-                        <div data-industry="retail media" data-service="web devops qa ai design enterprise">
-                            <div class="portfolio-card" data-id="12">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio1/portfolio1-1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio1/portfolio1-2.jpg')">
-                                </div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Web</div>
-                                            <div class="badge">AI / Machine Learning</div>
-                                            <div class="badge">UI / UX Design</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio32.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio32.html" title="Reeact.io">Reeact.io</a></h3>
-                                <p class="case-desc">Online Reputation Management Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 13 -->
-                        <div data-industry="telecom" data-service="web devops qa enterprise">
-                            <div class="portfolio-card" data-id="13">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio34/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio34/2.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Telecommunications</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Enterprise Systems</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio34.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio34.html" title="Cerillion">Cerillion</a></h3>
-                                <p class="case-desc">BSS/OSS Billing & Charging Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 14 -->
-                        <div data-industry="fintech" data-service="web ai enterprise">
-                            <div class="portfolio-card" data-id="14">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio35/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio35/2.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Fintech</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Enterprise Systems</div>
-                                            <div class="badge">AI / ML</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio5.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio5.html" title="Lendio">Lendio</a></h3>
-                                <p class="case-desc">Small-Business Loan Marketplace</p>
-                            </div>
-                        </div>
-                        <!-- Card 15 -->
-                        <div data-industry="education" data-service="web mobile nocode design">
-                            <div class="portfolio-card" data-id="15">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio36/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio36/3.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">EdTech</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">Low-Code / No-Code</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio6.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio6.html" title="Thinkific">Thinkific</a></h3>
-                                <p class="case-desc">Learning Commerce & Course Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 16 -->
-                        <div data-industry="travel" data-service="web mobile devops">
-                            <div class="portfolio-card" data-id="16">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio37/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio37/3.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Hospitality & Ticketing</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio7.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio7.html" title="Cubilis">Cubilis</a></h3>
-                                <p class="case-desc">Learning Commerce & Course Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 17 -->
-                        <div data-industry="media" data-service="web mobile qa">
-                            <div class="portfolio-card" data-id="17">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio38/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio38/3.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Media, Streaming & Entertainment</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio8.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio8.html" title="Ant Media">Ant Media</a></h3>
-                                <p class="case-desc">Real-time Streaming & Media Server</p>
-                            </div>
-                        </div>
-                        <!-- Card 18 -->
-                        <div data-industry="healthcare" data-service="web design qa">
-                            <div class="portfolio-card" data-id="18">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio9/portfolio-1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio9/portfolio-3.jpg')">
-                                </div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Healthcare</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">UI / UX Design</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio9.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio9.html" title="Bryant Dental">Bryant Dental</a>
-                                </h3>
-                                <p class="case-desc">Dental optics e-commerce & tools</p>
-                            </div>
-                        </div>
-                        <!-- Card 19 -->
-                        <div data-industry="retail" data-service="web design qa nocode ai">
-                            <div class="portfolio-card" data-id="19">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio39/5.png')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio39/1.png')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Retail & eCommerce</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Low-Code/No-code Development</div>
-                                            <div class="badge">UI / UX Design</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio10.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio10.html" title="EnelPico">EnelPico</a></h3>
-                                <p class="case-desc">Surfshop e-commerce & content hub</p>
-                            </div>
-                        </div>
-                        <!-- Card 33 -->
-                        <div data-industry="edtech" data-service="mobile design qa nocode ai">
-                            <div class="portfolio-card" data-id="33">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio20/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio20/2.webp')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">EdTech</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">AI / Machine Learning</div>
-                                            <div class="badge">Quality Engineering & Testing</div>
-                                            <div class="badge">UI / UX Design</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio25.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio25.html" title="Eduport">Eduport</a></h3>
-                                <p class="case-desc">AI-driven K-12 & entrance coaching</p>
-                            </div>
-                        </div>
-                        <!-- Card 20 -->
-                        <div data-industry="realestate" data-service="web design qa">
-                            <div class="portfolio-card" data-id="20">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio40/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio40/2.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Real Estate</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Quality Engineering & Testing</div>
-                                            <div class="badge">UI / UX Design</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio11.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio11.html" title="BlocHome">BlocHome</a></h3>
-                                <p class="case-desc">Real-estate fractional investment platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 21 -->
-                        <div data-industry="education" data-service="web ai enterprise devops qa">
-                            <div class="portfolio-card" data-id="21">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio18/portfolio18-2.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio18/portfolio18-3.jpg')">
-                                </div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">EdTech</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">AI / Machine Learning</div>
-                                            <div class="badge">Quality Engineering & Testing</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio12.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio12.html" title="Level All">Level All</a></h3>
-                                <p class="case-desc">College & Career Readiness Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 22 -->
-                        <div data-industry="web3" data-service="web blockchain enterprise devops qa design">
-                            <div class="portfolio-card" data-id="22">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio13/portfolio13-1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio13/portfolio13-2.jpg')">
-                                </div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Web3-specific</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio13.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio13.html" title="Port Finance">Port Finance</a>
-                                </h3>
-                                <p class="case-desc">Solana DeFi Lending Protocol</p>
-                            </div>
-                        </div>
-                        <!-- Card 23 -->
-                        <div data-industry="fintech" data-service="web ai mobile devops qa design enterprise">
-                            <div class="portfolio-card" data-id="23">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio14/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio14/3.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">FinTech</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio14.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio14.html" title="Jump">Jump</a></h3>
-                                <p class="case-desc">Advisor AI productivity platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 24 -->
-                        <div data-industry="education" data-service="web nocode qa devops">
-                            <div class="portfolio-card" data-id="24">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio15/portfolio15-mini.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio15/portfolio15-2.jpg')">
-                                </div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Education</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Low-Code/No-Code</div>
-                                            <div class="badge">Quality Engineering & Testing</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio15.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio15.html" title="Digital Sumo">Digital Sumo</a>
-                                </h3>
-                                <p class="case-desc">Paid-traffic & training marketplace</p>
-                            </div>
-                        </div>
-                        <!-- Card 25 -->
-                        <div data-industry="fintech web3" data-service="web mobile blockchain qa devops">
-                            <div class="portfolio-card" data-id="25">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio11/portfolio11-1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio11/portfolio11-5.jpg')">
-                                </div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Web3-specific</div>
-                                            <div class="badge">Fintech</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">Blockchain</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio16.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio16.html" title="StormX">StormX</a></h3>
-                                <p class="case-desc">Crypto Cashback & Rewards Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 26 -->
-                        <div data-industry="fintech healthcare retail financial supply-chain media travel education telecom realestate gaming foodtech sports web3"
-                            data-service="web ai nocode qa devops">
-                            <div class="portfolio-card" data-id="26">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio24/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio24/2.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">SaaS</div>
-                                            <div class="badge">AI / Machine Learning</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Quality Engineering & Testing</div>
-                                            <div class="badge">Design</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio17.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio17.html" title="MagicAI">MagicAI</a></h3>
-                                <p class="case-desc">All-in-one AI content platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 27 -->
-                        <div data-industry="web3" data-service="web blockchain nocode qa devops">
-                            <div class="portfolio-card" data-id="27">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio16/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio16/4.webp')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">NFT</div>
-                                            <div class="badge">Blockchain</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                            <div class="badge">Low-Code/No-Code</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio18.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio18.html" title="Refinable">Refinable</a></h3>
-                                <p class="case-desc">NFT Marketplace & Launchpad Project</p>
-                            </div>
-                        </div>
-                        <!-- Card 28 -->
-                        <div data-industry="healthcare" data-service="web ai enterprise qa devops">
-                            <div class="portfolio-card" data-id="28">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio10/portfolio10-mini.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio10/portfolio10-2.jpg')">
-                                </div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Healthcare</div>
-                                            <div class="badge">AI/Machine Learning</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio19.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio19.html" title="Mixcare Health">Mixcare
-                                        Health</a></h3>
-                                <p class="case-desc">Employee Benefits & Wellness Platform</p>
-                            </div>
-                        </div>
-
-                        <!-- Card 30 -->
-                        <div data-industry="gaming" data-service="mobile qa design devops">
-                            <div class="portfolio-card" data-id="30">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio41/1.webp')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio41/2.webp')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Gaming</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio22.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio22.html" title="Indies' Lies">Indies' Lies</a>
-                                </h3>
-                                <p class="case-desc">Deck-building Roguelike RPG</p>
-                            </div>
-                        </div>
-                        <!-- Card 31 -->
-                        <div data-industry="media edtech" data-service="mobile qa design devops nocode">
-                            <div class="portfolio-card" data-id="31">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio21/1.webp')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio21/3.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Marketing</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">No-Code/Low-Code</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                            <div class="badge">UI/UX Design</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio23.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio23.html" title="Brandly®">Brandly®</a></h3>
-                                <p class="case-desc">Business Post Maker App</p>
-                            </div>
-                        </div>
-                        <!-- Card 32 -->
-                        <div data-industry="retail" data-service="mobile qa enterprise devops ai">
-                            <div class="portfolio-card" data-id="32">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio19/brand1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio19/brand2.jpg')">
-                                </div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Retail & Ecommerce</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">AI/Machine Learning</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio24.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio24.html" title="Shopee">Shopee</a></h3>
-                                <p class="case-desc">Mobile E-commerce Marketplace App</p>
-                            </div>
-                        </div>
-                        <!-- Card 35 -->
-                        <div data-industry="travel" data-service="web qa enterprise devops ai nocode">
-                            <div class="portfolio-card" data-id="35">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio42/1.webp')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio42/2.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Travel & Hospitality</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">AI/Machine Learning</div>
-                                            <div class="badge">Quality Engineering & Testing</div>
-                                            <div class="badge">No-code / Low-code</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio26.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio26.html" title="RoomRacoon">RoomRacoon</a>
-                                </h3>
-                                <p class="case-desc">Hotel PMS / Channel Manager</p>
-                            </div>
-                        </div>
-                        <!-- Card 34 -->
-                        <div data-industry="sports" data-service="web mobile qa enterprise devops ai">
-                            <div class="portfolio-card" data-id="32">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio12/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio12/3.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Sports & Fitness</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">Mobile</div>
-                                            <div class="badge">AI/Machine Learning</div>
-                                            <div class="badge">Quality Engineering & Testing</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio25.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio25.html" title="Hudl">Hudl</a></h3>
-                                <p class="case-desc">Sports video & analytics platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 36 -->
-                        <div data-industry="retail" data-service="web qa enterprise devops ai">
-                            <div class="portfolio-card" data-id="36">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio43/1.webp')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio43/2.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Retail & Ecommerce</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">AI / Machine Learning</div>
-                                            <div class="badge">Quality Engineering & Testing</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio35.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio35.html" title="Nosto">Nosto</a></h3>
-                                <p class="case-desc">AI-powered Ecommerce Personalization Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 38 -->
-                        <div data-industry="supply-chain" data-service="web qa enterprise devops ai">
-                            <div class="portfolio-card" data-id="38">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio45/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio45/2.png')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Supply Chain</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">AI / Machine Learning</div>
-                                            <div class="badge">Quality Engineering & Testing</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio37.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio37.html" title="Freightos">Freightos</a></h3>
-                                <p class="case-desc">AI-powered Ecommerce Personalization Platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 39 -->
-                        <div data-industry="supply-chain" data-service="web qa enterprise devops ai">
-                            <div class="portfolio-card" data-id="39">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio47/1.jpg')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio47/2.jpg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Supply Chain</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">AI / Machine Learning</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio38.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio38.html" title="Tive">Tive</a></h3>
-                                <p class="case-desc">Real-time shipment visibility platform</p>
-                            </div>
-                        </div>
-                        <!-- Card 40 -->
-                        <div data-industry="financial fintech" data-service="web qa enterprise devops ai">
-                            <div class="portfolio-card" data-id="40">
-                                <div class="bg"
-                                    style="background-image:url('assets/images/portfolio/portfolio46/1.avif')">
-                                </div>
-                                <div class="bg alt"
-                                    style="background-image:url('assets/images/portfolio/portfolio46/2.jpeg')"></div>
-                                <div class="mask">
-                                    <div class="meta">
-                                        <div class="badges">
-                                            <div class="badge">Financial Services</div>
-                                            <div class="badge">Web</div>
-                                            <div class="badge">AI / Machine Learning</div>
-                                            <div class="badge">Cloud & DevOps</div>
-                                            <div class="badge">Enterprise Systems & Modernization</div>
-                                        </div>
-                                    </div>
-                                    <div class="cta"><a class="btn-view" href="portfolio39.html">View case study <span
-                                                class="arrow">→</span></a></div>
-                                </div>
-                            </div>
-                            <div class="card-caption">
-                                <h3 class="case-title"><a href="portfolio30.html" title="Kyriba">Kyriba</a></h3>
-                                <p class="case-desc">Cloud Treasury & Liquidity Platform</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="portfolio-pagination" style="display:flex; justify-content:center; margin-top:18px;"
-                    id="portfolio-pagination"></div>
-        </div>
         </section>
-    </div>
 
 
+        <!-- Project TOC & Details section -->
+        <section class="pf2-toc-section" aria-label="Table of contents and details">
+            <style>
+                /* Scoped styles for TOC/Details */
+                .pf2-toc-section {
+                    background: #ffffff;
+                    padding: 40px 0;
+                }
 
+                .pf2-toc-wrap {
+                    display: flex;
+                    gap: 28px;
+                    align-items: flex-start;
+                }
 
+                /* Left: 4/1 width; Right: 4/3 width -> using fraction math */
+                .pf2-toc-left {
+                    flex: 4 1 0%;
+                    max-width: 29%;
+                }
 
+                .pf2-toc-right {
+                    flex: 3 1 0%;
+                    max-width: 71%;
+                    padding: 0px 20px;
+                }
 
-    <div class="rts-footer-area pt--100 pb--100 pt_sm--50 pb_sm--40  footer-two footer-bg-two">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
-                    <div class="footer-two-single-wized two">
-                        <div class="wized-title-area">
-                            <h5 class="wized-title">Our Services</h5>
-                            <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
-                        </div>
-                        <div class="row">
-                            <div class="wized-2-body col-xl-6">
-                                <ul>
-                                    <li><a href="service-details.html">Web
-                                            Development</a>
-                                    </li>
-                                    <li><a href="service-details.html">Mobile
-                                            Development</a></li>
-                                    <li><a href="blockchain.html">Blockchain & Web3</a></li>
-                                    <li><a href="ai.html">AI
-                                            /
-                                            Machine Learning</a></li>
-                                    <li><a href="design.html">UI
-                                            /
-                                            UX Design Services</a></li>
-                                    <!-- <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Career</a></li> -->
-                                </ul>
-                            </div>
-                            <div class="wized-2-body col-xl-6">
-                                <ul>
-                                    <li><a href="devops.html">Cloud
-                                            &
-                                            DevOps</a></li>
-                                    <li><a href="q&a.html">Quality
-                                            Engineering & Testing</a></li>
-                                    <li><a href="low-code&no-code.html">No-Code /
-                                            Low-Code Development</a></li>
-                                    <li><a href="enterprise.html">Enterprise
-                                            Systems & Modernization</a></li>
-                                    <!-- <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Career</a></li> -->
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
-                    <div class="footer-two-single-wized two">
-                        <div class="wized-title-area">
-                            <h5 class="wized-title">Industries</h5>
-                            <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
-                        </div>
-                        <div class="row">
-                            <div class="wized-2-body col-xl-6">
-                                <ul>
-                                    <li><a href="fintech.html">Fintech</a>
-                                    </li>
-                                    <li><a href="healthcare.html">Healthcare</a></li>
-                                    <li><a href="retail.html">Retail & eCommerce</a></li>
-                                    <li><a href="financial.html">Financial Services</a></li>
-                                    <li><a href="supplychain.html">Supply Chain & Transportation</a></li>
-                                    <li><a href="web3-specific.html">Web3-specific industries</a>
-                                    </li>
-                                    <li><a href="entertainment.html">Media & Entertainment</a></li>
-                                </ul>
-                            </div>
-                            <div class="wized-2-body col-xl-6">
-                                <ul>
-                                    <li><a href="travel.html">Travel & Hospitality</a>
-                                    </li>
-                                    <li><a href="edtech.html">Education & EdTech</a></li>
-                                    <li><a href="telecom.html">Telecommunications</a></li>
-                                    <li><a href="realestate.html">Real Estate</a></li>
-                                    <li><a href="gaming.html">Gaming</a></li>
-                                    <li><a href="foodtech.html">Foodtech & Restaurants</a>
-                                    </li>
-                                    <li><a href="sports.html">Sports & Fitness</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- single wized -->
-                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
-                    <div class="footer-two-single-wized two">
-                        <div class="wized-title-area">
-                            <h5 class="wized-title">Others</h5>
-                            <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
-                        </div>
-                        <div class="wized-2-body">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About</a>
-                                </li>
-                                <li><a href="case-studies.html" style="color:#39c8c5;">Case Studies</a></li>
-                                <li><a href="contact.html">Contact</a>
-                                </li>
+                /* Constrain within container */
+                .pf2-toc-inner {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 16px;
+                    box-sizing: border-box;
+                }
+
+                .pf2-toc-card {
+                    position: sticky;
+                    top: 24px;
+                    align-self: start;
+                }
+
+                .pf2-toc-title {
+                    font-size: 12px;
+                    font-weight: 600;
+                    margin: 0 0 10px 0;
+                    color: #898989;
+                }
+
+                .pf2-toc-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0 0 18px 0;
+                }
+
+                /* 
+                .pf2-toc-list li {
+                    padding: 4px 0;
+                } */
+
+                .pf2-toc-list li a {
+                    color: #2f2f2f;
+                    font-weight: 500;
+                    font-size: 15px;
+                    text-decoration: none;
+                    display: block;
+                }
+
+                /* .pf2-toc-list li a:hover { text-decoration: underline; } */
+
+                /* Active TOC item styles: blue text and a vertical indicator to the left */
+                .pf2-toc-list li a {
+                    position: relative;
+                    padding-left: 8px;
+                    /* room for the indicator */
+                    transition: color .14s ease, transform .12s ease;
+                }
+
+                .pf2-toc-list li a.active {
+                    color: #39c8c5;
+                    font-weight: 500;
+                }
+
+                .pf2-toc-list li a.active::before {
+                    content: '';
+                    position: absolute;
+                    left: 0px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 3px;
+                    height: 18px;
+                    background: #345771;
+                    border-radius: 3px;
+                    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+                }
+
+                /* Make sure the spacing works on small screens */
+                @media (max-width: 767.98px) {
+                    .pf2-toc-list li a::before {
+                        left: -14px;
+                        width: 5px;
+                        height: 14px;
+                    }
+
+                    .pf2-toc-list li a {
+                        padding-left: 6px;
+                    }
+                }
+
+                .pf2-profile {
+                    background: #f7f7f7;
+                    padding: 12px;
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
+                    border-radius: 6px;
+                }
+
+                .pf2-profile img {
+                    width: 64px;
+                    height: 64px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+
+                .pf2-profile .pinfo {
+                    font-size: 0.95rem;
+                    /* center content inside profile info so CTA sits in the middle */
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .pf2-profile .pinfo .name {
+                    font-weight: 600;
+                    margin: 0;
+                }
+
+                .pf2-profile .pinfo .role {
+                    margin: 2px 0;
+                    color: #666;
+                    font-size: 0.92rem;
+                }
+
+                .pf2-profile .pinfo .desc {
+                    margin: 6px 0 8px 0;
+                    color: #555;
+                    font-size: 0.9rem;
+                    line-height: 1.3;
+                }
+
+                .pf2-profile .pinfo .cta {
+                    display: inline-block;
+                    background: #39c8c5;
+                    color: #fff;
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    text-decoration: none;
+                    font-weight: 450;
+                }
+
+                .pf2-detail-section {
+                    padding: 6px 0 28px 0;
+                    /* border-bottom: 1px solid #f0f0f0; */
+                }
+
+                /* Heading style for sections (pf2-about etc.) */
+                .pf2-detail-section h3 {
+                    margin: 0 0 12px 0;
+                    font-size: 36px;
+                    /* font-weight: 400; */
+                    line-height: 1.2;
+                    /* 120% */
+                    color: #384249;
+                    -webkit-font-smoothing: antialiased;
+                    text-rendering: optimizeLegibility;
+                }
+
+                /* Paragraph style inside detail sections */
+                .pf2-detail-section p {
+                    color: var(--dark);
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    font-family: var(--font-primary);
+                    line-height: 175%;
+                    font-weight: 500 !important;
+                    font-size: 16px;
+                    color: var(--dark);
+                }
+
+                /* Responsive typography */
+                @media (max-width: 1199.98px) {
+                    .pf2-detail-section h3 {
+                        font-size: clamp(28px, 5vw, 36px);
+                    }
+
+                    .pf2-detail-section p {
+                        font-size: clamp(15px, 2.2vw, 16px);
+                        line-height: 26px;
+                    }
+                }
+
+                @media (max-width: 767.98px) {
+                    .pf2-detail-section h3 {
+                        font-size: clamp(22px, 6.5vw, 28px);
+                    }
+
+                    .pf2-detail-section p {
+                        font-size: 15px;
+                        line-height: 22px;
+                    }
+                }
+
+                /* Behavior: right column scroll area on desktop, left stays fixed */
+                .pf2-toc-right-inner {
+                    max-height: calc(100vh - 120px);
+                    overflow-y: auto;
+                    padding-right: 8px;
+                    scroll-behavior: smooth;
+                    -ms-overflow-style: auto;
+                    /* fallback for old Edge/IE */
+                    scrollbar-width: thin;
+                    /* Firefox: thin by default */
+                    scrollbar-color: rgba(52, 119, 170, 0.75) rgba(0, 0, 0, 0.04);
+                    /* thumb, track */
+                    -webkit-overflow-scrolling: touch;
+                    /* smooth on iOS */
+                }
+
+                /* WebKit (Chrome/Safari/Edge Chromium) scrollbar */
+                .pf2-toc-right-inner::-webkit-scrollbar {
+                    width: 10px;
+                    height: 10px;
+                    transition: width .18s ease, background-color .18s ease;
+                }
+
+                .pf2-toc-right-inner.is-scrolling::-webkit-scrollbar {
+                    width: 14px;
+                    /* slightly larger while actively scrolling */
+                }
+
+                .pf2-toc-right-inner::-webkit-scrollbar-track {
+                    background: rgba(0, 0, 0, 0.04);
+                    margin: 6px 0;
+                    border-radius: 10px;
+                }
+
+                .pf2-toc-right-inner::-webkit-scrollbar-thumb {
+                    background: linear-gradient(180deg, rgba(52, 119, 170, 0.85), rgba(24, 139, 206, 0.8));
+                    border-radius: 10px;
+                    min-height: 36px;
+                    box-shadow: 0 2px 10px rgba(34, 34, 34, 0.12);
+                    transition: background .18s ease, box-shadow .18s ease, border-radius .18s ease;
+                }
+
+                .pf2-toc-right-inner.is-scrolling::-webkit-scrollbar-thumb {
+                    background: linear-gradient(180deg, rgba(24, 139, 206, 1), rgba(52, 119, 170, 0.98));
+                    box-shadow: 0 6px 20px rgba(24, 139, 206, 0.22);
+                }
+
+                .pf2-toc-right-inner::-webkit-scrollbar-thumb:hover {
+                    background: linear-gradient(180deg, rgba(24, 139, 206, 1), rgba(52, 119, 170, 1));
+                    cursor: pointer;
+                }
+
+                /* Remove up/down buttons and corner on WebKit-based browsers */
+                .pf2-toc-right-inner::-webkit-scrollbar-button {
+                    display: none;
+                    height: 0;
+                    width: 0;
+
+                }
+
+                .pf2-toc-right-inner::-webkit-scrollbar-corner {
+                    background: transparent;
+                }
+
+                /* Cursor */
+                .pf2-toc-right-inner:hover {
+                    cursor: pointer;
+                }
+
+                /* Firefox: stronger appearance while scrolling */
+                .pf2-toc-right-inner.is-scrolling {
+                    scrollbar-color: rgba(24, 139, 206, 0.95) rgba(0, 0, 0, 0.06);
+                }
+
+                /* Prevent text selection inside the right pane (visual preference) */
+                .pf2-toc-right-inner,
+                .pf2-toc-right-inner * {
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+
+                /* Also make the entire right column non-selectable (links in TOC left remain selectable) */
+                .pf2-toc-right,
+                .pf2-toc-right * {
+                    user-select: none;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                }
+
+                /* Allow scroll chaining so when the inner scroll is at start/end the outer page scroll continues as normal */
+                .pf2-toc-right-inner {
+                    overscroll-behavior: auto;
+                    /* allow scroll to bubble to parent when at boundary */
+                    -webkit-overflow-scrolling: touch;
+                    /* smooth scrolling on iOS */
+                }
+
+                /* Responsive fallback: stack on small screens and disable sticky. Also make TOC touch-friendly. */
+                @media (max-width: 991.98px) {
+                    .pf2-toc-wrap {
+                        flex-direction: column;
+                        gap: 18px;
+                    }
+
+                    .pf2-toc-left,
+                    .pf2-toc-right {
+                        flex-basis: 100%;
+                        max-width: 100%;
+                        width: 100%;
+                    }
+
+                    /* Turn the card into a normal block so it flows above the details */
+                    .pf2-toc-card {
+                        position: relative;
+                        top: auto;
+                        width: 100%;
+                        box-sizing: border-box;
+                        padding-bottom: 6px;
+                    }
+
+                    /* Make the TOC list full-width and touch-friendly */
+                    .pf2-toc-list {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    .pf2-toc-list li {
+                        margin: 0;
+                        border-bottom: 1px solid #f2f2f2;
+                    }
+
+                    .pf2-toc-list li a {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        padding: 12px 10px;
+                        box-sizing: border-box;
+                        font-size: 15px;
+                        touch-action: manipulation;
+                        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.06);
+                        cursor: pointer;
+                    }
+
+                    .pf2-toc-list li a::before {
+                        left: 8px;
+                    }
+
+                    .pf2-toc-list li a.active {
+                        background: rgba(24, 139, 206, 0.06);
+                        color: #39c8c5;
+                        font-weight: 600;
+                    }
+
+                    .pf2-toc-right-inner {
+                        max-height: none;
+                        overflow: visible;
+                    }
+                }
+
+                .u-link.u-link_dark.padding-74px {
+                    padding-left: 74px;
+                    padding-right: 74px;
+                }
+
+                .u-link.u-link_dark {
+                    border: 2px solid var(--dark);
+                    background-color: var(--dark);
+                    border-radius: 50px;
+                    min-height: 56px;
+                    max-height: 56px;
+                    padding: 0 31px;
+                    font-family: Montserrat, sans-serif;
+                    font-weight: 500;
+                }
+
+                /* Hover/focus state: make the text (and svg via currentColor) use the brand blue */
+                .u-link.u-link_dark:hover,
+                .u-link.u-link_dark:focus {
+                    color: #86cff9;
+                    /* keep other visual styles unchanged */
+                    outline: none;
+                }
+
+                .u-link {
+                    z-index: 1;
+                    grid-column-gap: 8px;
+                    grid-row-gap: 8px;
+                    color: #fff;
+                    white-space: nowrap;
+                    background-color: #fff0;
+                    border-radius: 12px;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 14.5px 24px;
+                    font-size: 16px;
+                    text-decoration: none;
+                    transition: all .2s;
+                    display: flex;
+                    position: relative;
+                }
+
+                /* Ensure CTA inside the pf2 profile card is centered and not absolutely positioned */
+                .pf2-profile .u-link {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: auto;
+                }
+
+                .pf2-profile .u-link-text {
+                    position: static !important;
+                }
+
+                .w-inline-block {
+                    max-width: 100%;
+                    display: inline-block;
+                }
+
+                .wrapper-u-anim-text {
+                    width: 100%;
+                    overflow: hidden;
+                }
+
+                .u-anim-text {
+                    position: relative;
+                }
+
+                .u-link-text {
+                    white-space: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                }
+
+                .arrow-btn-u-link {
+                    justify-content: center;
+                    align-items: center;
+                    min-width: 16px;
+                    max-width: 16px;
+                    min-height: 17px;
+                    max-height: 17px;
+                    margin-left: 16px;
+                    display: flex;
+                }
+
+                .w-embed:before,
+                .w-embed:after {
+                    content: " ";
+                    grid-area: 1 / 1 / 2 / 2;
+                    display: table;
+                }
+            </style>
+
+            <div class="pf2-toc-inner">
+                <div class="pf2-toc-wrap">
+                    <div class="pf2-toc-left">
+                        <div class="pf2-toc-card">
+                            <h4 class="pf2-toc-title">TABLE OF CONTENT</h4>
+                            <ul class="pf2-toc-list" id="pf2-toc-list">
+                                <li><a href="#pf2-about" data-target="pf2-about">About the Project</a></li>
+                                <li><a href="#pf2-challenge" data-target="pf2-challenge">Challenge</a></li>
+                                <li><a href="#pf2-solution" data-target="pf2-solution">Solution</a></li>
+                                <li><a href="#pf2-result" data-target="pf2-result">Result</a></li>
                             </ul>
+
+                            <div class="pf2-profile"
+                                style="grid-column-gap: 0px; grid-row-gap: 0px; flex-flow: column; justify-content: center; align-items: center; display: flex; background-color: #f8f8f8; border-radius: 24px; margin-top: 25px; padding: 40px 16px; min-height: 260px;">
+                                <img src="assets/images/team/adam.png" alt="Profile"
+                                    style="object-fit: cover; border-radius: 100%; min-width: 80px; max-width: 80px; min-height: 80px; max-height: 80px; margin-bottom: 24px;">
+                                <p class="name"
+                                    style="color: var(--dark); margin-bottom: 2px; font-family: Montserrat, sans-serif; font-size: 16px; font-weight: 600; line-height: 120%;">
+                                    Adam Lee</p>
+
+                                <div class="pinfo">
+                                    <p class="role"
+                                        style="letter-spacing: 1px; text-transform: uppercase; font-family: Montserrat, sans-serif; font-size: 10px; font-weight: 400; line-height: 120%; margin-bottom: 24px; display: flex; align-items: center; flex-flow: column;">
+                                        Co-Founder & CTO</p>
+                                    <p class="desc"
+                                        style="color: var(--dark); text-align: center; margin-top: 0; margin-bottom: 24px; font-family: Montserrat, sans-serif; font-size: 24px; font-weight: 600; line-height: 120%;">
+                                        Get your project estimation!</p>
+                                    <!-- <a class="cta" href="https://calendly.com/adam-apiceflow/discovery-call"
+                                        target="_blank" rel="noopener">Schedule a Call</a> -->
+                                    <!-- <div class="contact-cta" style="padding-top: 20px;"> -->
+                                    <a href="https://calendly.com/adam-apiceflow/discovery-call"
+                                        class="u-link u-link_dark padding-74px w-inline-block" target="_blank">
+                                        <div class="wrapper-u-anim-text">
+                                            <div class="u-anim-text"
+                                                style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                <div class="u-link-text">
+                                                    <div class="text-btn-u-link">
+                                                        Schedule a call
+                                                    </div>
+                                                    <div class="arrow-btn-u-link w-embed">
+                                                        <svg width="18" height="16" viewBox="0 0 18 16"
+                                                            fill="currentcolor" xmlns="https://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="u-link-text">
+                                                        <div class="text-btn-u-link">
+                                                            Schedule a call
+                                                        </div>
+                                                        <div class="arrow-btn-u-link w-embed">
+                                                            <svg width="18" height="16" viewBox="0 0 18 16"
+                                                                fill="currentcolor" xmlns="https://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
+                                                    </div> -->
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pf2-toc-right">
+                        <div class="pf2-toc-right-inner" id="pf2-right-scroll">
+                            <div id="pf2-about" class="pf2-detail-section">
+                                <h3>About the Project</h3>
+                                <p>Trainerize had built an end-to-end coaching platform that helped fitness
+                                    professionals deliver programs and scale services online. Coaches created workout
+                                    templates, nutrition plans and habit programs in the admin console, then assigned
+                                    them to clients who used the Trainerize mobile app to follow plans, log workouts,
+                                    message coaches and book/pay for sessions. The platform also offered branded app
+                                    white-labeling, a trainer-discovery profile (Trainerize.me), and integrations to
+                                    support payments, scheduling and larger club/enterprise deployments. Major customers
+                                    and channel partners (e.g., Gold’s Gym, Life Time, YMCA) used the platform to
+                                    standardize client engagement across locations.</p>
+                            </div>
+                            <style>
+                                .collection-list-words {
+                                    grid-column-gap: 24px;
+                                    grid-row-gap: 24px;
+                                    flex-flow: column;
+                                    display: flex;
+                                }
+
+                                .wrapper-words {
+                                    grid-column-gap: 24px;
+                                    grid-row-gap: 24px;
+                                    justify-content: flex-start;
+                                    align-items: flex-start;
+                                    display: flex;
+                                }
+
+                                .icon-words {
+                                    margin-top: 10px;
+                                }
+
+                                .richtext-projects-words {
+                                    grid-column-gap: 0px;
+                                    grid-row-gap: 0px;
+                                    color: var(--dark);
+                                    flex-flow: column;
+                                    justify-content: space-between;
+                                    align-items: stretch;
+                                    display: block;
+                                }
+
+                                .w-richtext:before,
+                                .w-richtext:after {
+                                    content: " ";
+                                    grid-area: 1 / 1 / 2 / 2;
+                                    display: table;
+                                }
+
+                                .richtext-projects-words strong {
+                                    font-size: 20px;
+                                    font-weight: 600;
+                                    line-height: 120%;
+                                }
+
+                                .richtext-projects-words p {
+                                    color: var(--dark);
+                                    margin-top: 0;
+                                    margin-bottom: 0;
+                                    line-height: 27px;
+                                }
+
+                                .richtext-projects-words h6 {
+                                    font-family: Montserrat, sans-serif;
+                                }
+
+                                h6 {
+                                    margin-top: 10px;
+                                    margin-bottom: 10px;
+                                    font-size: 12px;
+                                    font-weight: 450;
+                                    line-height: 18px;
+                                }
+
+                                .collection-list-words {
+                                    grid-column-gap: 24px;
+                                    grid-row-gap: 24px;
+                                    flex-flow: column;
+                                    display: flex;
+                                }
+
+                                .grid-projects-tools {
+                                    width: 100%;
+                                    padding-top: 0;
+                                }
+
+                                .item-tools {
+                                    grid-column-gap: 0px;
+                                    grid-row-gap: 0px;
+                                    background-color: var(--bg-gray);
+                                    grid-template-rows: auto auto;
+                                    grid-template-columns: 1fr 1fr;
+                                    grid-auto-columns: 1fr;
+                                    justify-content: center;
+                                    align-items: center;
+                                    min-height: 160px;
+                                    max-height: 160px;
+                                    display: flex;
+                                    position: relative;
+                                }
+
+                                .collection-list-tools {
+                                    grid-column-gap: 8px;
+                                    grid-row-gap: 8px;
+                                    grid-template-rows: auto auto;
+                                    grid-template-columns: 1fr 1fr 1fr;
+                                    grid-auto-columns: 1fr;
+                                    align-items: stretch;
+                                    width: 100%;
+                                    display: grid;
+                                }
+
+                                .item-tools {
+                                    grid-column-gap: 0px;
+                                    grid-row-gap: 0px;
+                                    background-color: var(--bg-gray);
+                                    grid-template-rows: auto auto;
+                                    grid-template-columns: 1fr 1fr;
+                                    grid-auto-columns: 1fr;
+                                    justify-content: center;
+                                    align-items: center;
+                                    min-height: 160px;
+                                    max-height: 160px;
+                                    display: flex;
+                                    position: relative;
+                                }
+
+                                .item-tools-img {
+                                    grid-column-gap: 16px;
+                                    grid-row-gap: 16px;
+                                    background-image: url(https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg);
+                                    background-position: 50%;
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    background-attachment: scroll;
+                                    grid-template-rows: auto auto;
+                                    grid-template-columns: 1fr 1fr;
+                                    grid-auto-columns: 1fr;
+                                    width: 50%;
+                                    height: 50%;
+                                    margin: auto;
+                                    position: absolute;
+                                    inset: 0%;
+                                }
+
+                                .full-block,
+                                .crop-block {
+                                    grid-column-gap: clamp(20px, 4vw, 80px);
+                                    grid-row-gap: clamp(20px, 4vw, 80px);
+                                    flex-flow: column;
+                                    display: flex;
+                                }
+
+                                .result--section {
+                                    grid-column-gap: 24px;
+                                    grid-row-gap: 24px;
+                                    flex-flow: column;
+                                    padding: clamp(20px, 6vw, 80px);
+                                    display: flex;
+                                    position: relative;
+                                }
+
+                                @media (max-width: 991.98px) {
+
+                                    .full-block,
+                                    .crop-block {
+                                        grid-column-gap: 28px;
+                                        grid-row-gap: 28px;
+                                    }
+
+                                    .result--section {
+                                        padding: 40px;
+                                    }
+                                }
+
+                                @media (max-width: 767.98px) {
+
+                                    .full-block,
+                                    .crop-block {
+                                        grid-column-gap: 16px;
+                                        grid-row-gap: 16px;
+                                    }
+
+                                    .result--section {
+                                        padding: 24px;
+                                    }
+                                }
+
+                                .gradien-bg {
+                                    background-image: linear-gradient(90deg, #5cc29329, #3477aa21);
+                                }
+
+                                .h3-new {
+                                    color: #384249;
+                                    text-align: left;
+                                    margin-top: 0;
+                                    margin-bottom: 0;
+                                    font-family: var(--font-primary);
+                                    font-size: clamp(20px, 3.2vw, 36px);
+                                    font-weight: 600;
+                                    line-height: 1.2;
+                                }
+
+                                @media (max-width: 479.98px) {
+                                    .h3-new {
+                                        font-size: clamp(18px, 5.6vw, 22px);
+                                    }
+                                }
+
+                                .richtext-projects {
+                                    grid-column-gap: 0px;
+                                    grid-row-gap: 0px;
+                                    color: var(--dark);
+                                    flex-flow: column;
+                                    justify-content: space-between;
+                                    align-items: stretch;
+                                    display: block;
+                                }
+                            </style>
+                            <div id="pf2-challenge" class="pf2-detail-section">
+                                <h3>Challenges in Development</h3>
+                                <div class="w-dyn-list">
+                                    <div role="list" class="collection-list-words w-dyn-items">
+                                        <div role="listitem" class="w-dyn-item" style="padding-top: 20px;">
+                                            <div class="wrapper-words">
+                                                <img src="./assets/images/icons_new/icon-database.svg" loading="lazy"
+                                                    alt class="icon-words">
+                                                <div class="richtext-projects-words w-richtext">
+                                                    <p>
+                                                        <strong>Reliable cross-device experience</strong>
+                                                    </p>
+                                                    <p>Delivering consistent UX and data sync across many mobile devices
+                                                        and intermittent networks required resilient offline handling
+                                                        and sync logic.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div role="listitem" class="w-dyn-item">
+                                            <div class="wrapper-words">
+                                                <img src="./assets/images/icons_new/icon-sheldcheck.svg" loading="lazy"
+                                                    alt class="icon-words">
+                                                <div class="richtext-projects-words w-richtext">
+                                                    <p>
+                                                        <strong>Scale & multi-tenant orchestration</strong>
+                                                    </p>
+                                                    <p>Supporting thousands of coaches and millions of client
+                                                        interactions demanded scalable multi-tenant services, per-tenant
+                                                        configuration and billing controls.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div role="listitem" class="w-dyn-item">
+                                            <div class="wrapper-words">
+                                                <img src="./assets/images/icons_new/icon-graph.svg" loading="lazy" alt
+                                                    class="icon-words">
+                                                <div class="richtext-projects-words w-richtext">
+                                                    <p>
+                                                        <strong>Engagement & retention mechanics</strong>
+                                                    </p>
+                                                    <p>Driving sustained client engagement (beyond initial signup)
+                                                        required rich motivation features, analytics and coach workflows
+                                                        to keep clients returning.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <style>
+                                .w-richtext figure img {
+                                    padding-top: 40px;
+                                    padding-bottom: 40px;
+                                }
+
+                                .w-richtext figure img {
+                                    width: 100%;
+                                }
+
+                                img {
+                                    vertical-align: middle;
+                                    max-width: 100%;
+                                    display: inline-block;
+                                }
+
+                                .richtext-projects h5 {
+                                    margin-top: 0;
+                                    margin-bottom: 0;
+                                    padding-top: 80px;
+                                    padding-bottom: 24px;
+                                    font-family: Montserrat, sans-serif;
+                                    font-size: 28px;
+                                    font-weight: 600;
+                                    line-height: 120%;
+                                }
+
+                                .richtext-projects p {
+                                    color: var(--dark);
+                                    margin-top: 0;
+                                    margin-bottom: 16px;
+                                    font-weight: 400 !important;
+                                    font-family: Open Sans, sans-serif;
+                                    line-height: 27px;
+                                }
+
+                                .grid-tools {
+                                    grid-column-gap: 40px;
+                                    grid-row-gap: 40px;
+                                    flex-flow: column;
+                                    display: flex;
+                                    position: relative;
+                                }
+                            </style>
+                            <div id="pf2-solution" class="pf2-detail-section">
+                                <h3>Solutions: Our software agency provided</h3>
+                                <p>We rebuilt the mobile sync layer to be offline-first so clients’ workout logs and
+                                    media never disappeared during spotty connectivity. We modularized the backend into
+                                    tenant-aware services and autoscaling workers to handle peak usage across thousands
+                                    of trainers. We introduced a connector hub for payments and calendars and added
+                                    reconciliation tooling so finance operations required less manual intervention.
+                                    Finally, we implemented a white-label app pipeline and retention tooling that helped
+                                    trainers increase client engagement and reduced time-to-market for branded apps.
+                                </p>
+                                <div>
+                                    <img src="assets/images/portfolio/portfolio44/2.png" alt="QUODD Screenshot"
+                                        style="width: 100%; margin-top: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                </div>
+                                <div>
+                                    <img src="assets/images/portfolio/portfolio44/3.png" alt="QUODD Screenshot"
+                                        style="width: 100%; margin-top: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                </div>
+
+                                <h5 style="padding-top: 50px;">Key Features of the Application</h5>
+                                <p>
+                                    <strong>1. Program & Workout Builder</strong>
+                                </p>
+                                <p>Coaches created and reused structured workout templates and periodized programs to
+                                    deliver consistent training across clients.</p>
+                                <p>
+                                    <strong>2. Nutrition & Habit Coaching</strong>
+                                </p>
+                                <p>The product supported meal plans, macro tracking and habit workflows so coaches
+                                    delivered holistic coaching beyond workouts.</p>
+                                <p>
+                                    <strong>3. Client App & Activity Tracking</strong>
+                                </p>
+                                <p>Nosto customized banners, landing pages and content blocks in real time by segment,
+                                    increasing homepage relevancy and conversion for targeted cohorts.
+                                </p>
+                                <p>
+                                    <strong>4. Messaging & Community Engagement</strong>
+                                </p>
+                                <p>In-app messaging, groups, badges and challenges were used to motivate clients and
+                                    boost retention.</p>
+                                <p>
+                                    <strong>5. Payments, Scheduling & Commerce</strong>
+                                </p>
+                                <p>Integrated payments, package management and appointment scheduling let coaches
+                                    monetize services and manage bookings.
+                                </p>
+
+                                <div>
+                                    <video src="assets/images/portfolio/portfolio44/4.mp4" alt="QUODD App Screenshot"
+                                        style="width: 100%; margin-top: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" muted controls></video>
+                                </div>
+                                <h5 style="padding-top: 50px;">Technologies We Use in This Project</h5>
+                                <p>The solution improved user
+                                    engagement, and
+                                    a pilot adoption rate exceeding expectations.</p>
+                                <div class="grid-tools">
+                                    <div class="grid-projects-tools">
+                                        <div class="collection-list-wrapper-tools w-dyn-list">
+                                            <div role="list" class="collection-list-tools w-dyn-items">
+                                                <div role="listitem" class="collection-item-tools w-dyn-item">
+                                                    <div class="item-tools">
+                                                        <div style="background-image:url('assets/images/icons_new/teck_stack/framework/React.svg')"
+                                                            class="item-tools-img">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="listitem" class="collection-item-tools w-dyn-item">
+                                                    <div class="item-tools">
+                                                        <div style="background-image:url('assets/images/icons_new/teck_stack/framework/Express.svg')"
+                                                            class="item-tools-img">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="listitem" class="collection-item-tools w-dyn-item">
+                                                    <div class="item-tools">
+                                                        <div style="background-image:url('assets/images/icons_new/teck_stack/database/MongoDB.svg')"
+                                                            class="item-tools-img">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="pf2-result" class="pf2-detail-section">
+                                <div class="result--section gradien-bg">
+                                    <div class="full-block">
+                                        <h2 class="h3-new">
+                                            Results & Business Impact — Engagement & Operational Outcomes
+                                        </h2>
+                                        <div class="richtext-projects w-richtext">
+                                            <p>
+                                                Trainerize increased platform adoption among independent coaches and
+                                                enterprise clubs by offering reliable mobile experiences and scalable
+                                                back-end services. Offline sync and client UX fixes reduced data-loss
+                                                support tickets and increased weekly active client retention. Payment
+                                                connector hardening and reconciliation dashboards lowered settlement
+                                                errors and reduced ops headcount needed for daily accounting. Branded
+                                                app automation sped deployments for clubs and improved NPS for
+                                                white-label customers.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="assets/images/portfolio/portfolio44/5.jpg" alt="Genie App Screenshot"
+                                        style="width: 100%; margin-top: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--30 mt_md--30">
-                    <div class="footer-two-single-wized">
-                        <div class="wized-title-area">
-                            <h5 class="wized-title">Contact Us</h5>
-                            <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
+            </div>
+        </section>
+
+        <script>
+            (function () {
+                // IntersectionObserver-backed TOC syncing for the right pane.
+                var toc = document.getElementById('pf2-toc-list');
+                var right = document.getElementById('pf2-right-scroll');
+                if (!toc || !right) return;
+
+                var links = Array.from(toc.querySelectorAll('a[data-target]'));
+                var sections = links.map(function (lnk) { return document.getElementById(lnk.getAttribute('data-target')); }).filter(Boolean);
+
+                // helper to set active link
+                function setActiveLink(id) {
+                    links.forEach(function (lnk) {
+                        if (lnk.getAttribute('data-target') === id) lnk.classList.add('active');
+                        else lnk.classList.remove('active');
+                    });
+                }
+
+                // Custom smooth scroller (cancelable) to provide consistent easing and duration
+                var _scrollAnimation = null;
+                function cancelScrollAnimation() {
+                    if (_scrollAnimation) {
+                        cancelAnimationFrame(_scrollAnimation);
+                        _scrollAnimation = null;
+                    }
+                }
+
+                function smoothScrollTo(container, target, duration) {
+                    cancelScrollAnimation();
+                    var start = container.scrollTop;
+                    var change = target - start;
+                    if (Math.abs(change) < 2) {
+                        container.scrollTop = target;
+                        return Promise.resolve();
+                    }
+                    var startTime = performance.now();
+                    // easeInOutCubic
+                    function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+
+                    return new Promise(function (resolve) {
+                        function step(now) {
+                            var elapsed = now - startTime;
+                            var t = Math.min(1, elapsed / duration);
+                            var val = start + change * ease(t);
+                            container.scrollTop = Math.round(val);
+                            if (t < 1) {
+                                _scrollAnimation = requestAnimationFrame(step);
+                            } else {
+                                _scrollAnimation = null;
+                                resolve();
+                            }
+                        }
+                        _scrollAnimation = requestAnimationFrame(step);
+                    });
+                }
+
+                // scroll-to calculation: compute target top relative to the scroll container
+                function scrollToSectionId(id) {
+                    var sec = document.getElementById(id);
+                    if (!sec) return;
+                    var rightRect = right.getBoundingClientRect();
+                    var secRect = sec.getBoundingClientRect();
+                    var topRelative = secRect.top - rightRect.top + right.scrollTop;
+                    var target = Math.max(0, Math.round(topRelative - 6));
+                    // choose duration based on distance for a professional feel
+                    var distance = Math.abs(target - right.scrollTop);
+                    var duration = Math.min(900, Math.max(320, Math.round(distance * 0.5)));
+                    // mark programmatic scroll and perform the smooth animation
+                    programmaticScroll = true;
+                    cancelScrollAnimation();
+                    smoothScrollTo(right, target, duration).then(function () {
+                        // allow observer updates to resume shortly after animation completes
+                        if (scrollSettleTimer) clearTimeout(scrollSettleTimer);
+                        scrollSettleTimer = setTimeout(function () { programmaticScroll = false; }, 140);
+                    });
+                }
+
+                // Click handler: scroll right pane and mark active immediately for responsiveness
+                // Suppress observer updates for a short window while smooth scroll completes
+                var suppressUntil = 0;
+                var SCROLL_SUPPRESS_MS = 1200;
+                var programmaticScroll = false;
+                var scrollSettleTimer = null;
+                toc.addEventListener('click', function (e) {
+                    var a = e.target.closest('a[data-target]');
+                    if (!a) return;
+                    e.preventDefault();
+                    var id = a.getAttribute('data-target');
+                    suppressUntil = Date.now() + SCROLL_SUPPRESS_MS;
+                    programmaticScroll = true;
+                    setActiveLink(id);
+                    scrollToSectionId(id);
+                    // when the right pane scrolls, clear programmatic flag after it settles
+                    if (scrollSettleTimer) clearTimeout(scrollSettleTimer);
+                    scrollSettleTimer = setTimeout(function () { programmaticScroll = false; }, SCROLL_SUPPRESS_MS);
+                });
+
+                // Scroll-based sync: set active item when the right-pane top reaches each section's H3
+                var currentActiveId = null;
+
+                function computeSections() {
+                    sections = links.map(function (lnk) { return document.getElementById(lnk.getAttribute('data-target')); }).filter(Boolean);
+                }
+
+                // Determine the section whose H3 has reached the top border of the right pane
+                function onRightScrollDetected() {
+                    // don't update while we're programmatically scrolling (click -> smooth scroll)
+                    if (programmaticScroll || Date.now() < suppressUntil) return;
+                    var rightRect = right.getBoundingClientRect();
+                    var chosen = null;
+                    for (var i = 0; i < sections.length; i++) {
+                        var sec = sections[i];
+                        if (!sec) continue;
+                        var h = sec.querySelector('h3') || sec;
+                        var r = h.getBoundingClientRect();
+                        // if the top of the heading is at or above the right-pane top, mark it
+                        if (r.top <= rightRect.top + 1) {
+                            chosen = sec;
+                        }
+                    }
+                    if (!chosen) chosen = sections[0];
+                    if (!chosen) return;
+                    var id = chosen.id;
+                    if (id && id !== currentActiveId) {
+                        currentActiveId = id;
+                        // smooth active transition: add a transient class
+                        setActiveLink(id);
+                        var link = toc.querySelector('a[data-target="' + id + '"]');
+                        if (link) {
+                            link.classList.add('active-anim');
+                            setTimeout(function () { link.classList.remove('active-anim'); }, 300);
+                        }
+                    }
+                }
+
+                // Refresh sections and set initial state
+                function refresh() {
+                    computeSections();
+                    // trigger an immediate check
+                    setTimeout(onRightScrollDetected, 40);
+                }
+
+                // initial wiring
+                computeSections();
+                // throttle scroll handling
+                right.addEventListener('scroll', throttle(onRightScrollDetected, 80), { passive: true });
+
+                // When programmatic scrolling occurs, restart the settle timer on actual scroll events
+                right.addEventListener('scroll', function () {
+                    if (!programmaticScroll) return;
+                    if (scrollSettleTimer) clearTimeout(scrollSettleTimer);
+                    scrollSettleTimer = setTimeout(function () { programmaticScroll = false; }, 180);
+                }, { passive: true });
+
+                // Cancel programmatic smooth scrolling if the user interacts
+                function userInteractedToCancel(e) {
+                    // If the animation is active and the event is a user gesture, cancel it
+                    if (_scrollAnimation) {
+                        cancelScrollAnimation();
+                        programmaticScroll = false;
+                    }
+                }
+
+                right.addEventListener('wheel', userInteractedToCancel, { passive: true });
+                right.addEventListener('touchstart', userInteractedToCancel, { passive: true });
+                right.addEventListener('pointerdown', userInteractedToCancel, { passive: true });
+                window.addEventListener('keydown', userInteractedToCancel, { passive: true });
+
+                // re-evaluate on resize and load
+                window.addEventListener('resize', throttle(refresh, 160));
+                window.addEventListener('load', function () { setTimeout(refresh, 80); });
+
+                // ensure keyboard focus on links activates immediately
+                links.forEach(function (lnk) { lnk.addEventListener('focus', function () { setActiveLink(lnk.getAttribute('data-target')); }); });
+
+                // lightweight throttle (reused)
+                function throttle(fn, wait) {
+                    var time = Date.now();
+                    return function () {
+                        if ((time + wait - Date.now()) < 0) {
+                            fn();
+                            time = Date.now();
+                        }
+                    };
+                }
+            })();
+        </script>
+        <!-- <script>
+            (function () {
+                // Ensure pf2-right-scroll carries over wheel/touch to the page when the right pane is at its boundary.
+                // This improves the UX so the user can scroll the main page while the cursor is over the right pane without clicking outside.
+                var right = document.getElementById('pf2-right-scroll');
+                if (!right) return;
+
+                // Wheel handling: when the right pane cannot scroll further in the wheel direction,
+                // prevent default and apply the same delta to the window so the page scrolls smoothly.
+                right.addEventListener('wheel', function (e) {
+                    try {
+                        var deltaY = e.deltaY;
+                        var atTop = right.scrollTop <= 0;
+                        var atBottom = Math.ceil(right.scrollTop + right.clientHeight) >= right.scrollHeight;
+
+                        // If the right pane is at a boundary and the user is scrolling further in that direction,
+                        // transfer the delta to the page for a seamless experience.
+                        if ((atTop && deltaY < 0) || (atBottom && deltaY > 0)) {
+                            // Prevent the default so the browser doesn't try to double-handle the event.
+                            e.preventDefault();
+                            // Apply the same delta to the document scrolling. Use instant behavior to match wheel immediacy.
+                            window.scrollBy(0, deltaY);
+                            return;
+                        }
+
+                        // Otherwise let the native scroll on the right pane occur (do nothing).
+                    } catch (err) {
+                        // swallow errors silently to avoid breaking the page
+                    }
+                }, { passive: false });
+
+                // Touch handling: similar carryover for touch gestures. Use non-passive so we can preventDefault and scroll the page manually.
+                var touchStartY = 0;
+                right.addEventListener('touchstart', function (e) { touchStartY = e.touches ? e.touches[0].clientY : 0; }, { passive: true });
+                right.addEventListener('touchmove', function (e) {
+                    try {
+                        var y = e.touches ? e.touches[0].clientY : 0;
+                        var deltaY = touchStartY - y;
+                        var atTop = right.scrollTop <= 0;
+                        var atBottom = Math.ceil(right.scrollTop + right.clientHeight) >= right.scrollHeight;
+
+                        if ((atTop && deltaY < 0) || (atBottom && deltaY > 0)) {
+                            // transfer the touch delta to the page
+                            e.preventDefault();
+                            window.scrollBy(0, deltaY);
+                            // reset baseline so subsequent moves are incremental
+                            touchStartY = y;
+                            return;
+                        }
+                        // else let native scrolling proceed inside the right pane
+                    } catch (err) {
+                        // swallow
+                    }
+                }, { passive: false });
+            })();
+        </script> -->
+
+        <div class="rts-footer-area pt--100 pb--100 pt_sm--50 pb_sm--40  footer-two footer-bg-two">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
+                        <div class="footer-two-single-wized two">
+                            <div class="wized-title-area">
+                                <h5 class="wized-title">Our Services</h5>
+                                <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
+                            </div>
+                            <div class="row">
+                                <div class="wized-2-body col-xl-6">
+                                    <ul>
+                                        <li><a href="service-details.html">Web
+                                                Development</a>
+                                        </li>
+                                        <li><a href="service-details.html">Mobile
+                                                Development</a></li>
+                                        <li><a href="blockchain.html">Blockchain & Web3</a>
+                                        </li>
+                                        <li><a href="ai.html">AI
+                                                /
+                                                Machine Learning</a></li>
+                                        <li><a href="design.html">UI
+                                                /
+                                                UX Design Services</a></li>
+                                        <!-- <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Career</a></li> -->
+                                    </ul>
+                                </div>
+                                <div class="wized-2-body col-xl-6">
+                                    <ul>
+                                        <li><a href="devops.html">Cloud
+                                                &
+                                                DevOps</a></li>
+                                        <li><a href="q&a.html">Quality
+                                                Engineering & Testing</a></li>
+                                        <li><a href="low-code&no-code.html">No-Code /
+                                                Low-Code Development</a></li>
+                                        <li><a href="enterprise.html">Enterprise
+                                                Systems & Modernization</a></li>
+                                        <!-- <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Career</a></li> -->
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="wized-2-body">
-                            <div class="contact-info-1">
-                                <!-- <div class="icon">
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
+                        <div class="footer-two-single-wized two">
+                            <div class="wized-title-area">
+                                <h5 class="wized-title">Industries</h5>
+                                <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
+                            </div>
+                            <div class="row">
+                                <div class="wized-2-body col-xl-6">
+                                    <ul>
+                                        <li><a href="fintech.html">Fintech</a>
+                                        </li>
+                                        <li><a href="healthcare.html">Healthcare</a></li>
+                                        <li><a href="retail.html">Retail & eCommerce</a></li>
+                                        <li><a href="financial.html">Financial Services</a>
+                                        </li>
+                                        <li><a href="supplychain.html">Supply Chain & Transportation</a></li>
+                                        <li><a href="web3-specific.html">Web3-specific industries</a>
+                                        </li>
+                                        <li><a href="entertainment.html">Media & Entertainment</a></li>
+                                    </ul>
+                                </div>
+                                <div class="wized-2-body col-xl-6">
+                                    <ul>
+                                        <li><a href="travel.html">Travel & Hospitality</a>
+                                        </li>
+                                        <li><a href="edtech.html">Education & EdTech</a>
+                                        </li>
+                                        <li><a href="telecom.html">Telecommunications</a>
+                                        </li>
+                                        <li><a href="realestate.html">Real Estate</a></li>
+                                        <li><a href="gaming.html">Gaming</a></li>
+                                        <li><a href="foodtech.html">Foodtech & Restaurants</a>
+                                        </li>
+                                        <li><a href="sports.html">Sports & Fitness</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single wized -->
+                    <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
+                        <div class="footer-two-single-wized two">
+                            <div class="wized-title-area">
+                                <h5 class="wized-title">Others</h5>
+                                <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
+                            </div>
+                            <div class="wized-2-body">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a>
+                                    </li>
+                                    <li><a href="case-studies.html" style="color:#39c8c5;">Case
+                                            Studies</a></li>
+                                    <li><a href="contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--30 mt_md--30">
+                        <div class="footer-two-single-wized">
+                            <div class="wized-title-area">
+                                <h5 class="wized-title">Contact Us</h5>
+                                <!-- <img src="assets/images/footer/01.png" alt="Invena_Footer"> -->
+                            </div>
+                            <div class="wized-2-body">
+                                <div class="contact-info-1">
+                                    <!-- <div class="icon">
                                     <i class="fas fa-phone-alt"></i>
                                 </div> -->
-                                <div class="disc">
-                                    <!-- <span>Call Us 24/7</span> -->
-                                    <a href="tel:+17132394774">+1 713 239 4774</a>
+                                    <div class="disc">
+                                        <!-- <span>Call Us 24/7</span> -->
+                                        <a href="tel:+17132394774">+1 713 239 4774</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="contact-info-1">
-                                <!-- <div class="icon">
+                                <div class="contact-info-1">
+                                    <!-- <div class="icon">
                                     <i class="fas fa-envelope"></i>
                                 </div> -->
-                                <div class="disc">
-                                    <a href="mailto:contact@apiceflow.com">contact@apiceflow.com</a>
+                                    <div class="disc">
+                                        <a href="mailto:contact@apiceflow.com">contact@apiceflow.com</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="contact-info-1">
-                                <div class="disc">
-                                    <a href="https://www.google.com/maps/place/Glenealy+Tower,+1+Glenealy,+Central,+Hong+Kong/@22.2798136,114.152531,17z/data=!3m1!4b1!4m6!3m5!1s0x3404007acff3ffff:0xbafe3c4dfcb13abe!8m2!3d22.2798087!4d114.1551059!16s%2Fg%2F11xcfzb3gw?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
-                                        target="_blank">Glenealy Tower, No.1 Glenealy, Central, Hong Kong <br>
-                                    </a>
+                                <div class="contact-info-1">
+                                    <div class="disc">
+                                        <a href="https://www.google.com/maps/place/Glenealy+Tower,+1+Glenealy,+Central,+Hong+Kong/@22.2798136,114.152531,17z/data=!3m1!4b1!4m6!3m5!1s0x3404007acff3ffff:0xbafe3c4dfcb13abe!8m2!3d22.2798087!4d114.1551059!16s%2Fg%2F11xcfzb3gw?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+                                            target="_blank">Glenealy Tower, No.1 Glenealy, Central, Hong Kong <br>
+                                        </a>
+                                    </div>
                                 </div>
+                                <a href="https://www.x.com/apiceflowglobal" target="_blank"><i
+                                        class="fa-brands fa-twitter" style="padding: 0px 10px"></i></a>
+                                <a href="https://www.linkedin.com/company/apiceflow-global/" target="_blank"><i
+                                        class="fa-brands fa-linkedin-in" style="padding: 0px 10px"></i></a>
+                                <a href="https://github.com/ApiceFlow" target="_blank"><i class="fa-brands fa-github"
+                                        style="padding: 0px 10px"></i></a>
                             </div>
-                            <a href="https://www.x.com/apiceflowglobal" target="_blank"><i class="fa-brands fa-twitter"
-                                    style="padding: 0px 10px"></i></a>
-                            <a href="https://www.linkedin.com/company/apiceflow-global/" target="_blank"><i
-                                    class="fa-brands fa-linkedin-in" style="padding: 0px 10px"></i></a>
-                            <a href="https://github.com/ApiceFlow" target="_blank"><i class="fa-brands fa-github"
-                                    style="padding: 0px 10px"></i></a>
                         </div>
                     </div>
-                </div>
-                <!-- <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12"></div> -->
-            </div>
-        </div>
-    </div>
-    <div class="rts-copy-right-1 ptb--10">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="copyright-h-2-wrapper">
-                        <p class="disc">
-                            ©
-                            <script>
-                                document.write(
-                                    new Date().getFullYear()
-                                )
-                            </script> All rights reserved.
-                            <b>ApiceFlow LIMITED</b>
-                        </p>
-                        <div class="right">
-                            <ul>
-                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                <li><a href="terms.html">Terms of Use</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <!-- <div class="col-xl-1 col-lg-6 col-md-6 col-sm-12 col-12"></div> -->
                 </div>
             </div>
         </div>
-    </div>
-
-
+        <div class="rts-copy-right-1 ptb--10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-h-2-wrapper">
+                            <p class="disc">
+                                ©
+                                <script>
+                                    document.write(
+                                        new Date().getFullYear()
+                                    )
+                                </script> All rights reserved.
+                                <b>ApiceFlow LIMITED</b>
+                            </p>
+                            <div class="right">
+                                <ul>
+                                    <li><a href="privacy.html">Privacy Policy</a></li>
+                                    <li><a href="terms.html">Terms of Use</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -2908,17 +3160,12 @@
                 // expose a simple recalc method to allow filtering to recompute pages
                 window.__portfolioPagination = {
                     recalc: function () {
-                        // Rebuild the items array from all wrappers but only include those
-                        // that are not filtered-out. applyFilters toggles 'is-hidden' / 'is-visible'
-                        // classes — we must base pagination on that, not on inline style.display
-                        var allWrappers = Array.from(grid.children);
+                        // rebuild the items array from currently visible wrappers
+                        var rawChildren = Array.from(grid.children).filter(function (el) { return el.style.display !== 'none'; });
                         items = [];
-                        allWrappers.forEach(function (el) {
+                        rawChildren.forEach(function (el) {
                             var card = el.querySelector ? el.querySelector('.portfolio-card') : null;
-                            if (!card) return;
-                            // Skip wrappers explicitly hidden by the filter logic
-                            if (el.classList.contains('is-hidden')) return;
-                            items.push({ cardEl: card, captionEl: el.querySelector('.card-caption'), wrapper: el });
+                            if (card) items.push({ cardEl: card, captionEl: el.querySelector('.card-caption'), wrapper: el });
                         });
                         total = items.length;
                         totalPages = Math.max(1, Math.ceil(total / perPage));
@@ -3002,10 +3249,6 @@
 
                 var wrappers = Array.from(document.querySelectorAll('#portfolio-grid > div'));
                 var visibleCount = 0;
-
-                // collect promises for each wrapper's display change so we can wait for all to finish
-                var changePromises = [];
-
                 wrappers.forEach(function (wrap) {
                     var card = wrap.querySelector('.portfolio-card');
                     if (!card) return;
@@ -3041,17 +3284,20 @@
                     var techMatch = techSel.length === 0 || techSel.some(function (v) {
                         v = (v || '').toLowerCase();
                         if (badges.indexOf(v) !== -1) return true;
+                        // also check if the tech token appears inside the industry or service tokens
                         var indTokens = tokensOf(dataIndustry);
                         var svcTokens = tokensOf(dataService);
                         return indTokens.indexOf(v) !== -1 || svcTokens.indexOf(v) !== -1;
                     });
 
+                    // search matching (title/description/badges)
                     var title = (wrap.querySelector('.case-title') ? wrap.querySelector('.case-title').textContent : '') || '';
                     var desc = (wrap.querySelector('.case-desc') ? wrap.querySelector('.case-desc').textContent : '') || '';
                     title = title.toLowerCase();
                     desc = desc.toLowerCase();
                     var searchMatch = true;
                     if (searchTerm) {
+                        // split into tokens and require each token to appear somewhere (title, desc or badges)
                         var tokens = searchTerm.split(/\s+/).map(function (t) { return t.trim(); }).filter(function (t) { return t.length > 0; });
                         if (tokens.length === 0) searchMatch = true;
                         else {
@@ -3069,31 +3315,23 @@
                     if (visible) {
                         wrap.classList.remove('is-hidden');
                         wrap.classList.add('is-visible');
-                        // resolve after the show timeout used elsewhere (350ms)
-                        changePromises.push(new Promise(function (resolve) {
-                            setTimeout(function () { wrap.style.display = ''; resolve(); }, 350);
-                        }));
+                        setTimeout(function () { wrap.style.display = ''; }, 350);
                         visibleCount++;
                     } else {
                         wrap.classList.remove('is-visible');
                         wrap.classList.add('is-hidden');
-                        // resolve after the hide timeout used elsewhere (320ms)
-                        changePromises.push(new Promise(function (resolve) {
-                            setTimeout(function () { wrap.style.display = 'none'; resolve(); }, 320);
-                        }));
+                        setTimeout(function () { wrap.style.display = 'none'; }, 320);
                     }
                 });
 
                 var noResults = document.getElementById('no-results');
                 if (noResults) noResults.style.display = visibleCount ? 'none' : '';
 
-                // wait for all show/hide actions to complete, then notify pagination
-                Promise.all(changePromises).then(function () {
-                    document.dispatchEvent(new Event('filters:changed'));
-                    if (window.__portfolioPagination && typeof window.__portfolioPagination.recalc === 'function') {
-                        window.__portfolioPagination.recalc();
-                    }
-                });
+                // dispatch event in case pagination needs recalculation
+                document.dispatchEvent(new Event('filters:changed'));
+                if (window.__portfolioPagination && typeof window.__portfolioPagination.recalc === 'function') {
+                    window.__portfolioPagination.recalc();
+                }
             }
 
             // expose filter function so other UI (search control) can trigger it
