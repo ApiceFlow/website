@@ -41302,7 +41302,7 @@ body.page-portfolio2 .hero-banner-image .page-description p {
   padding-right: 0;
   display: block;
   overflow: hidden;
-  /* transform: translateY(-70px); */
+  transform: translateY(-70px);
 }
 
 .contentwrapper {
@@ -45888,7 +45888,7 @@ textarea {
 
 .n-input-text.text-area {
   min-width: 200px;
-  max-width: 530px;
+  /* max-width: 530px; */
   min-height: 32px;
   max-height: 530px;
 }
@@ -46569,7 +46569,7 @@ input.w-button {
 
 .n-input-text.text-area {
   min-width: 200px;
-  max-width: 530px;
+  /* max-width: 530px; */
   min-height: 32px;
   max-height: 530px;
 }
