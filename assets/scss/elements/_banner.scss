@@ -851,7 +851,7 @@
 
 .bg_banner-seven {
     height: 1076px;
-    background-image: url(../images/banner/07.webp);
+    /* background-image: url(../images/banner/07.webp); */
     display: flex;
     align-items: center;
 
@@ -864,7 +864,7 @@
     }
 
     &.two {
-        background-image: url(../images/banner/08.webp);
+        /* background-image: url(../images/banner/08.webp); */
         position: relative;
 
         &.with-video {

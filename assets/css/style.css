@@ -43,9 +43,6 @@
 
 ==============================================  */
 /* Default  */
-:root {
-  /* Ensure Montserrat is available when pages don't include the font link — import here as a fallback */
-}
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
@@ -8204,7 +8201,7 @@ header .main-nav>a {
 }
 
 #anywhere-home {
-  cursor: url(../images/banner/shape/close.png), auto;
+  /* cursor: url(../images/banner/shape/close.png), auto; */
   background: #0e1013;
   position: fixed;
   width: 100%;
@@ -11474,7 +11471,7 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 
 .bg_banner-seven {
   height: 1076px;
-  background-image: url(../images/banner/07.webp);
+  /* background-image: url(../images/banner/07.webp); */
   display: flex;
   align-items: center;
 }
@@ -11492,7 +11489,7 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 }
 
 .bg_banner-seven.two {
-  background-image: url(../images/banner/08.webp);
+  /* /* background-image: url(../images/banner/08.webp); */ */
   position: relative;
 }
 
@@ -13564,7 +13561,7 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 }
 
 .about-bg-four {
-  background-image: url(../images/about/07.webp);
+  /* background-image: url(../images/about/07.webp); */
   margin-top: -70px;
 }
 
@@ -16672,7 +16669,7 @@ section.main-wrapper-sticky .sticky-statement.narrow .left-side img {
 }
 
 .radious-none-button .rts-call-to-action-area-two {
-  background-image: url(../images/cta/07.webp);
+  /* background-image: url(../images/cta/07.webp); */
 }
 
 .bg_primary {
@@ -25204,7 +25201,7 @@ section.main-wrapper-sticky .sticky-statement.narrow .left-side img {
 }
 
 #anywhere-home {
-  cursor: url(../images/banner/shape/close.png), auto;
+  /* cursor: url(../images/banner/shape/close.png), auto; */
   background: #0e1013;
   position: fixed;
   width: 100%;
@@ -25683,7 +25680,7 @@ body.contact-page .rts-breadcrumb-area .title-area-left {
 }
 
 .contactform-accountentarea {
-  background-image: url(../images/appoinment/07.webp);
+  /* background-image: url(../images/appoinment/07.webp); */
 }
 
 .contactform-accountentarea .appoinment-left {
@@ -28113,7 +28110,7 @@ body.contact-page .rts-breadcrumb-area .title-area-left {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 5000;
+  z-index: 9000;
 }
 
 .loader-wrapper .loader-section {
@@ -28122,7 +28119,7 @@ body.contact-page .rts-breadcrumb-area .title-area-left {
   background: var(--color-white);
   width: 50%;
   height: 100%;
-  z-index: 5000;
+  z-index: 9000;
 }
 
 .loader-wrapper .loader-section.section-left {
