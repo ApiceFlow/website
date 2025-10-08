@@ -41302,7 +41302,7 @@ body.page-portfolio2 .hero-banner-image .page-description p {
   padding-right: 0;
   display: block;
   overflow: hidden;
-  transform: translateY(-70px);
+  /* transform: translateY(-70px); */
 }
 
 .contentwrapper {
@@ -47000,3 +47000,30 @@ textarea.w-select {
 .section-wrapper.bg-white-f8 {
   background-color: #f8f8f8;
 }
+
+
+
+/* Slash style */
+
+:root,
+.elementor-kit-9 {
+  --hr-gradient: linear-gradient(90deg, #98c1cc 8.85%, #efc4ba 100.01%);
+  --hr-gradient-horizontal: linear-gradient(0deg, #98c1cc 8.85%, #efc4ba 100.01%);
+  --gradient-sunset: linear-gradient(90deg, #5bd4f3 8.85%, #f9b8aa 54.43%, #ffa853 100.01%);
+  --gradient-form: linear-gradient(92deg, #98c1cc 8.54%, #e6d0c3 143.37%);
+
+  --drop-shadow--small: 0px 4px 4px 0px rgba(172, 166, 244, 0.16);
+  --drop-shadow--medium: 0px 16px 16px 0px rgba(172, 166, 244, 0.16);
+  --drop-shadow--large: 0px 40px 40px 0px rgba(172, 166, 244, 0.16);
+  --drop-shadow--card: var(--drop-shadow--small);
+  --transition-default: all 0.3s ease;
+  --col-gap: calc(10rem / 16);
+  --p-xl: calc(120rem / 16);
+  --p-l: calc(100rem / 16);
+  --p-m: calc(80rem / 16);
+  --p-s: calc(60rem / 16);
+  --p-h: 2rem;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-mobile: 767px;
+}
+
