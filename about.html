@@ -1281,13 +1281,13 @@
             stroke-opacity: 0.4;
             stroke-dasharray: 1200;
             stroke-dashoffset: 1200;
-            transition: stroke-dashoffset 1.5s cubic-bezier(.2, .5, .7, 1), stroke 1.5s linear;
+            transition: stroke-dashoffset 1.5s cubic-bezier(.5, .5, .7, 1), stroke 1.5s linear;
             shape-rendering: geometricPrecision;
         }
 
         /* on hover: draw outline */
-        .apf-team-card:hover .card-outline rect,
-        .apf-team-card:focus-within .card-outline rect {
+        .apf-team-card:hover .card-outline rect
+        {
             stroke-dashoffset: 0;
         }
 
