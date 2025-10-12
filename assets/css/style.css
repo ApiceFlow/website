@@ -40132,24 +40132,30 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
 
 .portfolio-card {
   position: relative;
-  overflow: hidden;
-  border-radius: 10px;
+  /* overflow: hidden; */
+  background-size: cover;
+  object-fit: cover;
+  
+  /* border-radius: 10px; */
   min-height: 200px;
   background: #f3f6f8;
   cursor: pointer;
 }
 
 .portfolio-card .bg {
+  /* background-color: #666; */
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  background-size: contain !important;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   transition: transform .6s cubic-bezier(.2, .9, .2, 1);
 }
 
 .portfolio-card .bg.alt {
   opacity: 0;
-  transform: scale(1.02);
+  transform: scale(1);
 }
 
 .portfolio-card:hover .bg.alt {
@@ -41923,7 +41929,7 @@ li {
 .portfolio-card .bg.alt {
   z-index: 1;
   opacity: 0;
-  transform: scale(1.03);
+  transform: scale(1);
 }
 
 /* On hover show alt image (slight zoom-in) */
@@ -41945,6 +41951,7 @@ li {
   /* slightly lower than before for a tighter layout */
   min-height: 380px;
   /* desktop/tablet default */
+  background-size: cover;
   display: block;
 }
 
