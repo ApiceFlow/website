@@ -40146,8 +40146,9 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
   /* background-color: #666; */
   position: absolute;
   inset: 0;
-  background-size: contain !important;
+  background-size: cover !important;
   object-fit: cover;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center center;
   transition: transform .6s cubic-bezier(.2, .9, .2, 1);
