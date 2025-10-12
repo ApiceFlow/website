@@ -39468,8 +39468,10 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
 
 .vision-overlay h4 {
   margin: 0 0 6px;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-weight: 700;
+  font-size: 25px; color: #fff;
+  padding: 10px 30px;
 }
 
 .vision-overlay p {
@@ -39612,7 +39614,7 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
   }
 
   .vision-overlay h4 {
-    font-size: 20px;
+    font-size: 22px !important;
   }
 
   .vision-overlay p {
@@ -39656,15 +39658,15 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
     z-index: 6;
     opacity: 0;
     background: rgba(0, 0, 0, 0.55);
-    padding: 12px;
+    padding: 8px;
     border-radius: 8px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
     transition: opacity .36s cubic-bezier(.22, .61, .36, 1);
   }
-
   .vision-overlay h4 {
-    font-size: 12px;
-    margin: 0 0 6px;
+    font-size: 18px !important;
+    /* margin: 0 0 6px; */
+    padding: 0 6px;
   }
 
   .vision-overlay p {
