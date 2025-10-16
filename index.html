@@ -493,8 +493,8 @@
                                     <img src="assets/images/banner/icon/01.svg" alt="banner">
                                     Business Success Starts Here
                                 </span> -->
-                                <h4 class="title">Where Top Tech <br>
-                                    <span>Flows Freely</span>
+                                <h4 class="title">Where <span style="color: #39c8c5;">Top Tech</span> <br>
+                                    <span>Flows</span><span style="color: #39c8c5;"> Freely</span>
                                     </h5>
                                     <p class="disc">
                                         Creating an environment where innovation, cutting-edge technology, and seamless
@@ -512,6 +512,45 @@
                     <video id="myVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
                         <source src="assets/images/banner/01.mp4" type="video/mp4">
                     </video>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="wrapper-infinity-line">
+            <div data-w-id="79c6133d-de45-43ff-423d-77317460a1de" class="infinity-line">
+                <div class="infinity-line-content" style="background-color: #3333330a;">
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">mobile apps</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">RWA</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">real estate platforms</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">sports apps</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">fitness apps</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">casino</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">travel apps</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">restaurant platforms</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">supply chain platforms</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">SaaS</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">landing pages</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">dashboards</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">websites</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">medical platforms</div>
+                    <div class="dot-infinity-line"></div>
+                    <div class="text-infinity-line">learning platforms</div>
+                    
                 </div>
             </div>
         </div>
@@ -3687,6 +3726,87 @@
                     fallbackMailto(data);
                 });
             });
+        })();
+    </script>
+    <script>
+        (function () {
+            'use strict';
+            function initInfinityLine() {
+                var wrapper = document.querySelector('.wrapper-infinity-line');
+                if (!wrapper) { console.warn('[infinity] wrapper not found'); return; }
+                var line = wrapper.querySelector('.infinity-line');
+                if (!line) { console.warn('[infinity] line not found'); return; }
+
+                // Helper to remove previously injected dynamic style
+                function clearDynStyle() {
+                    var prev = document.getElementById('infinity-dyn-style');
+                    if (prev && prev.parentNode) prev.parentNode.removeChild(prev);
+                    line.classList.remove('playing');
+                    line.style.animationDuration = '';
+                }
+
+                // Build a single cycle width from first .infinity-line-content
+                function ensureDuplicationAndCreateAnimation() {
+                    clearDynStyle();
+
+                    var firstBlock = line.querySelector('.infinity-line-content');
+                    if (!firstBlock) { console.warn('[infinity] first content block missing'); return; }
+
+                    var blockWidth = firstBlock.getBoundingClientRect().width;
+                    // If there's not at least two cycles, duplicate the existing children once
+                    // (If markup already contains many cycles that's OK)
+                    var totalBlocks = line.querySelectorAll('.infinity-line-content').length;
+                    if (totalBlocks < 2) {
+                        var nodes = Array.from(line.children).map(function (n) { return n.cloneNode(true); });
+                        nodes.forEach(function (n) { line.appendChild(n); });
+                    }
+
+                    // Recompute after possible duplication
+                    blockWidth = firstBlock.getBoundingClientRect().width;
+                    if (blockWidth < 1) { console.warn('[infinity] blockWidth too small'); return; }
+
+                    // distance to move = blockWidth (one cycle)
+                    var distance = Math.round(blockWidth);
+
+                    // speed tuning (px per second)
+                    var pxPerSec = 36; // smaller = slower; tweak as needed
+                    var durationSec = Math.max(8, Math.round(distance / pxPerSec));
+
+                    // create dynamic keyframes moving from 0 -> -distance px
+                    var animName = 'inf_scroll_' + distance;
+                    var keyframes = '\n@keyframes ' + animName + ' { from { transform: translate3d(0,0,0); } to { transform: translate3d(' + (-distance) + 'px,0,0); } }\n';
+
+                    var style = document.createElement('style');
+                    style.id = 'infinity-dyn-style';
+                    style.textContent = keyframes;
+                    document.head.appendChild(style);
+
+                    // apply animation
+                    line.style.animationName = animName;
+                    line.style.animationDuration = durationSec + 's';
+                    line.classList.add('playing');
+
+                    // pause on hover/focus
+                    line.addEventListener('mouseenter', function () { line.style.animationPlayState = 'running'; });
+                    line.addEventListener('mouseleave', function () { line.style.animationPlayState = 'running'; });
+                    line.addEventListener('focusin', function () { line.style.animationPlayState = 'running'; });
+                    line.addEventListener('focusout', function () { line.style.animationPlayState = 'running'; });
+                }
+
+                // Debounced resize -> rebuild animation (recompute widths)
+                var to;
+                window.addEventListener('resize', function () {
+                    clearTimeout(to);
+                    to = setTimeout(function () { ensureDuplicationAndCreateAnimation(); }, 200);
+                }, { passive: true });
+
+                // run once
+                ensureDuplicationAndCreateAnimation();
+                console.debug && console.debug('[infinity] initialized');
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initInfinityLine);
+            else initInfinityLine();
         })();
     </script>
 </body>

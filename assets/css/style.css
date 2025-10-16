@@ -6605,6 +6605,7 @@ header.header-seven .nav-area ul li {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
+
 /* montblanc511 */
 header.header-seven .nav-area ul li a,
 header.header-seven .main-header .nav-main ul li a {
@@ -10111,6 +10112,7 @@ header.header-three .rts-mega-menu.service-mega-menu-style {
   z-index: 1000;
   background-color: #ffffff;
 }
+
 /* montblanc511 */
 .rts-mega-menu.service-mega-menu-style li {
   margin-bottom: 5px;
@@ -11490,8 +11492,8 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 }
 
 .bg_banner-seven.two {
-  /* /* background-image: url(../images/banner/08.webp); */ */
-  position: relative;
+  /* /* background-image: url(../images/banner/08.webp); */
+  */ position: relative;
 }
 
 .bg_banner-seven.two.with-video {
@@ -11657,9 +11659,9 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 
 .banner-seven-inner-content p.disc {
   padding-left: 360px;
-  max-width: 80%;
+  max-width: 50%;
   color: #EAEAEA;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1.5;
   font-weight: 400;
   margin-bottom: 40px;
@@ -11667,8 +11669,9 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 
 @media only screen and (max-width: 991px) {
   .banner-seven-inner-content p.disc {
-    padding-left: 0;
-    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 80%;
     font-size: 15px;
     margin-bottom: 40px;
   }
@@ -39470,7 +39473,8 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
   margin: 0 0 6px;
   /* font-size: 20px; */
   font-weight: 700;
-  font-size: 25px; color: #fff;
+  font-size: 25px;
+  color: #fff;
   padding: 10px 30px;
 }
 
@@ -39663,6 +39667,7 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
     transition: opacity .36s cubic-bezier(.22, .61, .36, 1);
   }
+
   .vision-overlay h4 {
     font-size: 18px !important;
     /* margin: 0 0 6px; */
@@ -40137,7 +40142,7 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
   /* overflow: hidden; */
   background-size: cover;
   object-fit: cover;
-  
+
   /* border-radius: 10px; */
   min-height: 200px;
   background: #f3f6f8;
@@ -47029,3 +47034,108 @@ textarea.w-select {
   --breakpoint-mobile: 767px;
 }
 
+.wrapper-infinity-line {
+  white-space: nowrap;
+   background-color: #3333330a;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper-infinity-line {
+    padding-bottom: 40px;
+  }
+}
+
+/* .infinity-line {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  white-space: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1440px;
+  display: flex;
+  position: absolute;
+  inset: auto 0% 70px;
+}
+
+@media screen and (max-width: 991px) {
+  .infinity-line {
+    margin-top: 60px;
+    bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .infinity-line {
+    bottom: 40px;
+  }
+}
+
+.infinity-line-content {
+  white-space: nowrap;
+  background-color: #0919240d;
+  justify-content: center;
+  align-items: center;
+  max-width: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .infinity-line-content {
+    position: relative;
+  }
+} */
+
+.text-infinity-line {
+  /* padding-left: 32px; */
+  padding-right: 32px;
+  font-weight: 600;
+}
+
+.dot-infinity-line {
+  background-color: #2e303f;
+  border-radius: 100%;
+  min-width: 8px;
+  max-width: 8px;
+  min-height: 8px;
+  max-height: 8px;
+}
+
+.wrapper-infinity-line {
+  overflow: hidden;
+  position: relative;
+}
+
+.infinity-line {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  background-color: transparent !important;
+}
+
+.infinity-line .infinity-line-content {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  /* background-color: #3333330a; */
+  background-color: transparent !important;
+}
+
+/* animation class applied by JS */
+.infinity-line.playing {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .infinity-line.playing {
+    animation-play-state: paused !important;
+  }
+}
