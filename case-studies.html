@@ -2990,6 +2990,8 @@
                 return Array.from(active).map(function (c) { return c.getAttribute('data-value'); });
             }
 
+            // ...existing code...
+            // ...existing code...
             function applyFilters() {
                 var industrySel = getSelectedValues('filter-industry');
                 var techSel = getSelectedValues('filter-technology');
@@ -3001,54 +3003,72 @@
 
                 var wrappers = Array.from(document.querySelectorAll('#portfolio-grid > div'));
                 var visibleCount = 0;
-
-                // collect promises for each wrapper's display change so we can wait for all to finish
                 var changePromises = [];
 
                 wrappers.forEach(function (wrap) {
                     var card = wrap.querySelector('.portfolio-card');
                     if (!card) return;
-                    // gather badges text (lowercase keys)
-                    var badges = Array.from(card.querySelectorAll('.badge')).map(function (b) { return b.textContent.trim().toLowerCase(); });
+
+                    // collect badge texts and data attributes
+                    var badges = Array.from(wrap.querySelectorAll('.badge')).map(function (b) { return (b.textContent || '').trim().toLowerCase(); });
                     var dataIndustry = (wrap.getAttribute('data-industry') || '').toLowerCase();
                     var dataService = (wrap.getAttribute('data-service') || '').toLowerCase();
 
-                    // helper: split a target string into simple tokens (split on non-word chars)
+                    // collect caption/title/description corpus
+                    var titleEl = wrap.querySelector('.case-title');
+                    var descEl = wrap.querySelector('.case-desc');
+                    var captionEl = wrap.querySelector('.card-caption');
+
+                    var title = titleEl ? (titleEl.textContent || '').trim().toLowerCase() : '';
+                    var desc = descEl ? (descEl.textContent || '').trim().toLowerCase() : '';
+                    var caption = captionEl ? (captionEl.textContent || '').trim().toLowerCase() : '';
+
+                    // searchable corpus: include badges, data attributes, title, desc, caption
+                    var corpus = [title, desc, caption, dataIndustry, dataService, badges.join(' ')].join(' ');
+
+                    // token helper
                     function tokensOf(str) {
                         if (!str) return [];
                         return Array.from(new Set(String(str).toLowerCase().split(/[^a-z0-9#@\+]+/).filter(Boolean)));
                     }
 
-                    function matchesSelection(list, targetString) {
+                    // match list (industry/service) against this card using badges, data attrs and text corpus
+                    function matchesSelection(list) {
                         if (!list || !list.length) return true;
-                        var t = (targetString || '').toLowerCase();
-                        var tTokens = tokensOf(t);
+                        var cardTokens = tokensOf(corpus + ' ' + dataIndustry + ' ' + dataService);
                         return list.some(function (v) {
-                            v = (v || '').toLowerCase();
-                            // match against badges text
+                            if (!v) return false;
+                            v = v.toLowerCase();
+                            // direct badge match
                             if (badges.indexOf(v) !== -1) return true;
-                            // exact match to the whole target string
-                            if (t === v) return true;
-                            // match any token in the target string
-                            if (tTokens.indexOf(v) !== -1) return true;
+                            // direct substring in data attributes / corpus
+                            if (dataIndustry.indexOf(v) !== -1) return true;
+                            if (dataService.indexOf(v) !== -1) return true;
+                            if (corpus.indexOf(v) !== -1) return true;
+                            // token-level match
+                            if (cardTokens.indexOf(v) !== -1) return true;
                             return false;
                         });
                     }
 
-                    var industryMatch = matchesSelection(industrySel, dataIndustry);
-                    var serviceMatch = matchesSelection(serviceSel, dataService);
-                    var techMatch = techSel.length === 0 || techSel.some(function (v) {
-                        v = (v || '').toLowerCase();
-                        if (badges.indexOf(v) !== -1) return true;
-                        var indTokens = tokensOf(dataIndustry);
-                        var svcTokens = tokensOf(dataService);
-                        return indTokens.indexOf(v) !== -1 || svcTokens.indexOf(v) !== -1;
-                    });
+                    var industryMatch = matchesSelection(industrySel);
+                    var serviceMatch = matchesSelection(serviceSel);
 
-                    var title = (wrap.querySelector('.case-title') ? wrap.querySelector('.case-title').textContent : '') || '';
-                    var desc = (wrap.querySelector('.case-desc') ? wrap.querySelector('.case-desc').textContent : '') || '';
-                    title = title.toLowerCase();
-                    desc = desc.toLowerCase();
+                    var techMatch = true;
+                    if (techSel && techSel.length) {
+                        techMatch = techSel.some(function (v) {
+                            if (!v) return false;
+                            v = v.toLowerCase();
+                            if (badges.indexOf(v) !== -1) return true;
+                            if (dataIndustry.indexOf(v) !== -1) return true;
+                            if (dataService.indexOf(v) !== -1) return true;
+                            if (corpus.indexOf(v) !== -1) return true;
+                            var tkns = tokensOf(corpus);
+                            return tkns.indexOf(v) !== -1;
+                        });
+                    }
+
+                    // search matching: test tokens against title, desc, badges and data attrs
                     var searchMatch = true;
                     if (searchTerm) {
                         var tokens = searchTerm.split(/\s+/).map(function (t) { return t.trim(); }).filter(function (t) { return t.length > 0; });
@@ -3058,7 +3078,11 @@
                                 if (!tok) return true;
                                 if (title.indexOf(tok) !== -1) return true;
                                 if (desc.indexOf(tok) !== -1) return true;
-                                return badges.some(function (b) { return b.indexOf(tok) !== -1; });
+                                if (caption.indexOf(tok) !== -1) return true;
+                                if (corpus.indexOf(tok) !== -1) return true;
+                                // check individual badge tokens
+                                if (badges.some(function (b) { return b.indexOf(tok) !== -1; })) return true;
+                                return false;
                             });
                         }
                     }
@@ -3068,7 +3092,6 @@
                     if (visible) {
                         wrap.classList.remove('is-hidden');
                         wrap.classList.add('is-visible');
-                        // resolve after the show timeout used elsewhere (350ms)
                         changePromises.push(new Promise(function (resolve) {
                             setTimeout(function () { wrap.style.display = ''; resolve(); }, 350);
                         }));
@@ -3076,7 +3099,6 @@
                     } else {
                         wrap.classList.remove('is-visible');
                         wrap.classList.add('is-hidden');
-                        // resolve after the hide timeout used elsewhere (320ms)
                         changePromises.push(new Promise(function (resolve) {
                             setTimeout(function () { wrap.style.display = 'none'; resolve(); }, 320);
                         }));
@@ -3086,7 +3108,6 @@
                 var noResults = document.getElementById('no-results');
                 if (noResults) noResults.style.display = visibleCount ? 'none' : '';
 
-                // wait for all show/hide actions to complete, then notify pagination
                 Promise.all(changePromises).then(function () {
                     document.dispatchEvent(new Event('filters:changed'));
                     if (window.__portfolioPagination && typeof window.__portfolioPagination.recalc === 'function') {
@@ -3094,6 +3115,8 @@
                     }
                 });
             }
+            // ...existing code...
+            // ...existing code...
 
             // expose filter function so other UI (search control) can trigger it
             window.__portfolioApplyFilters = applyFilters;
