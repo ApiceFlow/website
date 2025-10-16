@@ -44919,6 +44919,17 @@ img {
   position: relative;
 }
 
+.section-wrapper-gradient {
+  /* /* main gradient: top -> bottom / */
+  background: linear-gradient(180deg, rgb(71 244 240 / 5%) 0%, rgb(82 255 251 / 6%) 35%, rgba(255, 255, 255, 0.85) 85%, #ffffff 100%);
+
+  /* optional modern styling */
+  /* border-radius: 12px; */
+  /* box-shadow: 0 8px 24px rgba(15, 23, 36, 0.06); */
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
 
 
 @media screen and (max-width: 991px) {
@@ -45040,7 +45051,8 @@ img {
 .choose_content-item {
   grid-column-gap: 24px;
   grid-row-gap: 24px;
-  border-left: 4px solid var(--green-light);
+  /* border-left: 4px solid var(--green-light); */
+  border-left: 4px solid #3bad9c !important;
   flex-flow: column;
   padding-left: 24px;
   display: flex;
@@ -47035,7 +47047,7 @@ textarea.w-select {
 
 .wrapper-infinity-line {
   white-space: nowrap;
-   background-color: #3333330a;
+  background-color: #3333330a;
 }
 
 @media screen and (max-width: 767px) {
