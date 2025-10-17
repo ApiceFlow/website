@@ -44935,7 +44935,7 @@ img {
 
 .section-wrapper-gradient {
   /* /* main gradient: top -> bottom / */
-  background: linear-gradient(180deg, rgb(186 202 251 / 9%) 0%, rgb(148 155 255 / 2%) 35%, rgb(167 172 245 / 5%) 85%, #ffffff 100%);
+  background: linear-gradient(180deg, rgb(186 202 251 / 9%) 0%, rgb(148 155 255 / 2%) 35%, rgb(167 172 245 / 3%) 85%, #ffffff 100%);
 
   /* optional modern styling */
   /* border-radius: 12px; */
@@ -44946,7 +44946,7 @@ img {
 
 .section-wrapper-gradient1 {
   /* /* main gradient: top -> bottom / */
-  background: linear-gradient(180deg, #ffffff 0%, rgb(167 172 245 / 5%) 15%, rgb(148 155 255 / 2%) 65%, rgb(186 202 251 / 9%) 100%);
+  background: linear-gradient(180deg, #ffffff 0%, rgb(167 172 245 / 2%) 15%, rgb(148 155 255 / 2%) 65%, rgb(186 202 251 / 9%) 100%);
 
 
   /* optional modern styling */
@@ -47231,6 +47231,7 @@ textarea.w-select {
   border-top: 2px solid #dfe0e1;
   display: block;
 }
+
 /* 
 .about-card:first-child {
   border-top: none;
@@ -47279,7 +47280,7 @@ textarea.w-select {
   font-size: 20px;
   font-weight: 700;
   text-align: left;
-  margin-right: 70px;
+  /* margin-right: 70px; */
 }
 
 .about-card__text {
@@ -47319,71 +47320,98 @@ textarea.w-select {
 
 
 .about-card:first-child {
-    border-top: none;
-    border-left: none;
-    /* padding-top: 0; */
+  border-top: none;
+  border-left: none;
+  /* padding-top: 0; */
 }
+
 @media screen and (min-width: 991.98px) {
-    .about-card:first-child, .about-card:nth-child(4) {
-        padding-right: 37px;
-    }
+
+  .about-card:first-child,
+  .about-card:nth-child(4) {
+    padding-right: 37px;
+  }
 }
+
 @media screen and (min-width: 991.98px) {
-    .about-card {
-        padding: 0 70px 0 0;
-        border: none;
-        margin-left: 0;
-    }
+  .about-card {
+    padding: 0 70px 0 0;
+    border: none;
+    margin-left: 0;
+  }
 }
+
 .about-card {
-    padding: 30px 0;
-    position: relative;
-    border-top: 2px solid #dfe0e1;
-    display: block;
+  padding: 30px 0;
+  position: relative;
+  border-top: 2px solid #dfe0e1;
+  display: block;
 }
-.row>* {
-    padding-left: 15px;
-    padding-right: 15px;
-}
+
 @media (min-width: 992px) {
-    .col-lg-4 {
-        flex: 0 0 auto;
-        width: 33.33333333%;
-    }
-}
-.row>* {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5);
-    margin-top: var(--bs-gutter-y);
+  .col-lg-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
 }
 
 
 @media screen and (min-width: 991.98px) {
-    .about-card:nth-child(2) {
-        padding-left: 30px;
-        padding-right: 46px;
-        border-top: none;
-    }
+  .about-card:nth-child(2) {
+    padding-left: 30px;
+    padding-right: 46px;
+    border-top: none;
+  }
 }
 
 @media screen and (min-width: 991.98px) {
-    .about-card:nth-child(3) {
-        padding-left: 30px;
-        padding-right: 46px;
-        border-top: none;
-    }
+  .about-card:nth-child(3) {
+    padding-left: 30px;
+    padding-right: 46px;
+    border-top: none;
+  }
 }
 
 @media screen and (min-width: 991.98px) {
-    .about-card:nth-child(4) {
-        /* padding-left: 30px; */
-        padding-right: 46px;
-        border-left: none;
-    }
+  .about-card:nth-child(4) {
+    /* padding-left: 30px; */
+    padding-right: 46px;
+    border-left: none;
+  }
 }
+
+@media screen and (min-width: 991.98px) {
+  .about-card:nth-child(5) {
+    padding-left: 30px;
+    padding-right: 46px;
+    border-left: none;
+  }
+}
+
+@media screen and (min-width: 991.98px) {
+  .about-card:nth-child(6) {
+    padding-left: 30px;
+    /* padding-right: 46px; */
+    border-left: none;
+  }
+}
+
+@media screen and (min-width: 991.98px) {
+  .about-card:nth-child(8) {
+    padding-left: 30px;
+    padding-right: 46px;
+    border-left: none;
+  }
+}
+
+@media screen and (min-width: 991.98px) {
+  .about-card:nth-child(9) {
+    padding-left: 30px;
+    /* padding-right: 46px; */
+    border-left: none;
+  }
+}
+
 /* 
 @media screen and (min-width: 991.98px) {
     .about-card {
@@ -47392,4 +47420,7 @@ textarea.w-select {
         margin-left: 0;
     }
 } */
-
+/* 
+.about-card__container:first-child::before {
+  display: none;
+} */
