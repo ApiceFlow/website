@@ -11634,6 +11634,15 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 }
 
 .banner-seven-inner-content .title {
+  font-size: 45px;
+  text-transform: uppercase;
+  color: #fff;
+  
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.banner-seven-inner-content .title span {
   font-size: 70px;
   text-transform: uppercase;
   color: #fff;
@@ -11643,13 +11652,19 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 
 @media only screen and (max-width: 1199px) {
   .banner-seven-inner-content .title {
+    font-size: 45px;
+  }
+  .banner-seven-inner-content .title span {
     font-size: 70px;
   }
 }
 
 @media only screen and (max-width: 991px) {
   .banner-seven-inner-content .title {
-    font-size: 50px;
+    font-size: 35px;
+  }
+    .banner-seven-inner-content .title span {
+    font-size: 60px;
   }
 
   .banner-seven-inner-content .title br {
@@ -11659,13 +11674,19 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 
 @media only screen and (max-width: 767px) {
   .banner-seven-inner-content .title {
-    font-size: 42px !important;
+    font-size: 32px !important;
+  }
+    .banner-seven-inner-content .title span {
+    font-size: 55px;
   }
 }
 
 @media only screen and (max-width: 575px) {
   .banner-seven-inner-content .title {
-    font-size: 30px !important;
+    font-size: 25px !important;
+  }
+    .banner-seven-inner-content .title span {
+    font-size: 35px;
   }
 }
 
@@ -41269,7 +41290,7 @@ body.page-portfolio2 .hero-banner-image .page-description p {
 .hero-badges .badge {
   display: inline-block;
   background: rgba(24, 139, 206, 0.12);
-  color: #3b53b1;
+  color: #e5eaff;
   border-radius: 999px;
   padding: 6px 12px;
   font-weight: 450;
@@ -42091,7 +42112,7 @@ li {
 .btn-view {
   background: transparent !important;
   border: none !important;
-  color: #9fb3ff !important;
+  color: #8fa6ff !important;
   font-weight: 450;
   /* desktop target size requested by user */
   font-size: 20px;
