@@ -105,7 +105,7 @@
   --h5: 24px;
   --h6: 18px;
 
-  --n-green: #50b1a2;
+  --n-green: #3b53b1;
   --gray-dark: #282626;
   --blue: #e4f2fe;
   --border-blue: #b7deff;
@@ -1351,7 +1351,7 @@ input[type=email]:focus,
 input[type=number]:focus,
 input[type=tel]:focus,
 textarea:focus {
-  border-color: var(--color-primary);
+  border-color: #8fa6ff;
 }
 
 input[type=checkbox],
@@ -6521,11 +6521,12 @@ Copyright (c) 2015 Daniel Eden
 .header-transparent.header--sticky.sticky .header-transparent-main-wrapper .nav-area li a,
 .header-transparent.header--sticky.sticky .header-transparent-main-wrapper .main-nav>a {
   color: #141416;
+  position: relative;
 }
 
 .header-transparent.header--sticky.sticky .header-transparent-main-wrapper .main-nav a:hover,
 .header-transparent.header--sticky.sticky .header-transparent-main-wrapper .nav-area a:hover {
-  color: #364ca0;
+  /* color: #364ca0; */
 }
 
 @media only screen and (max-width: 1199px) {
@@ -8643,14 +8644,34 @@ li.has-dropdown:hover::after {
   filter: brightness(0) saturate(100%) invert(100%) sepia(10%) saturate(7500%) hue-rotate(241deg) brightness(114%) contrast(108%);
 }
 
-header .nav-area ul li.main-nav:hover>a {
-  transition: 0.3s;
-  color: #364ca0 !important;
-  font-weight: 400;
+header .nav-area ul li.main-nav > a {
+  position: relative; /* Needed for ::after positioning */
+}
+
+/* Default state: line is hidden (width: 0) */
+.nav-area ul li.main-nav > a::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background-color: #8fa6ff;
+  border-radius: 50px;
+  transition: width 0.3s;
+  /* Optionally, add opacity for smoother effect */
+  opacity: 1;
+}
+
+/* On hover or when active: line expands smoothly */
+.nav-area ul li.main-nav:hover > a::after,
+.nav-area ul li.main-nav > a.active::after {
+  width: 10px;
 }
 
 header .nav-area ul li.main-nav:hover::after {
-  color: var(--color-primary) !important;
+  color: #8fa6ff !important;
 }
 
 /* MegaMenu animation section Montblanc511 */
@@ -10370,7 +10391,7 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 /* 10.17 */
 .header-transparent.header--sticky .nav-area ul li.main-nav:hover>a {
   transition: 0.3s;
-  color: #a3b5ff !important;
+  /* color: #a3b5ff !important; */
 
   font-weight: 400;
 }
@@ -38178,6 +38199,7 @@ header.header-transparent.in-full-screen .action-area .menu-btn {
 .header-transparent .nav-area ul li.menu-dark-on-hover>a:focus {
   transition: color .15s ease;
   font-weight: 500 !important;
+  /* position: relative; */
 }
 
 .header-transparent .nav-area ul li.menu-dark-on-hover:hover>a,
@@ -41168,13 +41190,13 @@ body.page-portfolio2 .hero-banner-image .page-description {
 
 .u-link.u-link_dark:hover,
 .u-link.u-link_dark:focus {
-  color: #86cff9;
+  color: #8fa6ff;
   outline: none;
 }
 
 .u-link.u-link_dark:hover svg,
 .u-link.u-link_dark:focus svg {
-  color: #86cff9;
+  color: #8fa6ff;
 }
 
 body.page-portfolio2 .hero-banner-image .page-description p {
@@ -41243,7 +41265,7 @@ body.page-portfolio2 .hero-banner-image .page-description p {
 .hero-badges .badge {
   display: inline-block;
   background: rgba(24, 139, 206, 0.12);
-  color: #86cff9;
+  color: #3b53b1;
   border-radius: 999px;
   padding: 6px 12px;
   font-weight: 450;
@@ -41291,7 +41313,7 @@ body.page-portfolio2 .hero-banner-image .page-description p {
 }
 
 .span-green {
-  /* color: #50b1a2; */
+  /* color: #3b53b1; */
   color: #364ca0;
 }
 
@@ -42279,7 +42301,7 @@ li {
 }
 
 .span-green {
-  color: #50b1a2;
+  color: #3b53b1;
 }
 
 .wrapper-u-anim-text {
@@ -42311,7 +42333,7 @@ li {
 }
 
 .u-link.u-link_green {
-  color: #364ca0;
+  color: #3b53b1;
   border-radius: 0;
   min-height: 56px;
   padding: 0;
@@ -42358,7 +42380,7 @@ li {
 }
 
 .span-green {
-  color: #50b1a2;
+  color: #3b53b1;
 }
 
 @media screen and (max-width: 767px) {
@@ -42702,7 +42724,7 @@ li {
 }
 
 .text-span {
-  color: #50b1a2;
+  color: #3b53b1;
 }
 
 @media screen and (max-width: 767px) {
@@ -42922,12 +42944,12 @@ li {
 
   .u-link.u-link_green-light,
   .u-link.u-link_green-light-green {
-    color: #364ca0;
+    color: #3b53b1;
   }
 }
 
 .u-link.u-link_green-light {
-  color: #6ee7d4;
+  color: #3b53b1;
   border-radius: 0;
   min-height: 56px;
   padding: 10px 0;
@@ -43154,7 +43176,7 @@ summary {
 .wrapper-arrow {
   grid-column-gap: 64px;
   grid-row-gap: 64px;
-  color: #50b1a2;
+  color: #3b53b1;
   justify-content: space-between;
   align-items: center;
   padding-top: 16px;
@@ -43187,7 +43209,7 @@ summary {
 .swiper-button-prev,
 .swiper-button-next {
   position: relative;
-  color: #50B1A2;
+  color: #3b53b1;
   width: 13px;
   height: 28px;
 }
@@ -43231,7 +43253,7 @@ summary {
 .swiper-button-prev,
 .swiper-button-next {
   position: relative;
-  color: #50B1A2;
+  color: #3b53b1;
   width: 13px;
   height: 28px;
 }
@@ -44313,7 +44335,7 @@ scrollbar-horizontal {
 }
 
 .healthtech-scrollbar .swiper-scrollbar-drag {
-  background: #50B1A2;
+  background: #3b53b1;
   border-radius: 999px;
   height: 100% !important;
   transition: transform .12s ease;
@@ -44361,7 +44383,7 @@ scrollbar-horizontal {
 .wrapper-arrow {
   grid-column-gap: 64px;
   grid-row-gap: 64px;
-  color: #50b1a2;
+  color: #3b53b1;
   justify-content: space-between;
   align-items: center;
   padding-top: 16px;
@@ -44586,7 +44608,7 @@ scrollbar-horizontal {
   min-width: 20px;
   min-height: 20px;
   background-color: #ffffff;
-  border: 2px solid #50b1a2;
+  border: 2px solid #364ca0;
   border-radius: 4px;
   box-sizing: border-box;
   transition: background-color .18s ease, border-color .18s ease, opacity .12s ease,
@@ -44620,8 +44642,8 @@ scrollbar-horizontal {
 
 /* Checked visual state toggled by JS adding .checked to the label */
 .checkbox-field.checked .chekbox-squ {
-  background-color: #50b1a2;
-  border-color: #50b1a2;
+  background-color: #364ca0;
+  border-color: #364ca0;
 }
 
 /* show white check icon when checked */
@@ -44636,14 +44658,14 @@ scrollbar-horizontal {
 
 .button-new-st-forma.black.border.form:hover,
 .button-new-st-forma.black.border.form:focus {
-  color: #50b1a2 !important;
-  border-color: #50b1a2 !important;
+  color: #3b53b1 !important;
+  border-color: #3b53b1 !important;
   background-color: transparent !important;
 }
 
 .button-new-st-forma.black.border.form:hover .readmore-popup,
 .button-new-st-forma.black.border.form:focus .readmore-popup {
-  color: #50b1a2 !important;
+  color: #3b53b1 !important;
 }
 
 /* Send button: only respond to its own hover (no parent .dbt-flx hover effects).
@@ -44659,7 +44681,7 @@ scrollbar-horizontal {
 .button-new--forma:hover,
 .button-new--forma:focus {
   /* Only change Send text color when hovering the Send button itself */
-  color: #50b1a2 !important;
+  color: #3b53b1 !important;
 }
 
 /* Ensure parent hover does not cascade to Send */
@@ -44668,7 +44690,7 @@ scrollbar-horizontal {
   color: #fff !important;
   transform: none !important;
   box-shadow: none !important;
-  /* background-color: #50b1a2; */
+  /* background-color: #3b53b1; */
 }
 
 .button-new--forma {
@@ -44692,7 +44714,7 @@ input.button-new--forma.black.form {
 .button-new--forma.black.form:focus,
 input.button-new--forma.black.form:hover,
 input.button-new--forma.black.form:focus {
-  color: #50b1a2 !important;
+  color: #3b53b1 !important;
   background-color: #2e303f !important;
   /* explicitly keep background unchanged */
   transform: none !important;
@@ -44702,7 +44724,7 @@ input.button-new--forma.black.form:focus {
 /* Extra specificity fallback to override any parent hover rules */
 .dbt-flx .button-new--forma.black.form:hover,
 .dbt-flx input.button-new--forma.black.form:hover {
-  color: #50b1a2 !important;
+  color: #c8d3ff !important;
   background-color: #2e303f !important;
   transform: none !important;
   box-shadow: none !important;
@@ -45988,7 +46010,7 @@ textarea {
 }
 
 .p-new._16.gree {
-  color: #50b1a2;
+  color: #3b53b1;
   font-family: Montserrat, sans-serif;
   font-weight: 500;
   line-height: 120%;
@@ -46111,7 +46133,7 @@ textarea {
 }
 
 .chekbox-squ {
-  border-color: #50b1a2;
+  border-color: #3b53b1;
   width: 20px;
   min-width: 20px;
   height: 20px;
@@ -46619,7 +46641,7 @@ input.w-button {
 }
 
 .n-input-text:focus {
-  border-bottom-color: #50b1a2;
+  border-bottom-color: #8fa6ff;
 }
 
 /* .w-input:focus,
@@ -46781,7 +46803,7 @@ textarea {
 
 
 .n-check-box-wrap {
-  border: 1px none #50b1a2;
+  border: 1px none #3b53b1;
   color: #2e303f;
   white-space: nowrap;
   cursor: pointer;
@@ -46914,7 +46936,7 @@ textarea.w-select {
 /* When JS sets .checked on the wrapper (or when you add this class server-side) */
 .n-check-box-wrap.checked .w-checkbox-input,
 .n-check-box-wrap.checked .n-check-box {
-  background-color: #d9f1e8;
+  background-color: #dbe2fe;
   /* selected */
 }
 
