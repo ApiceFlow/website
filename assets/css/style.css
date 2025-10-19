@@ -43794,7 +43794,7 @@ img {
 .feedback-item {
   grid-column-gap: 64px;
   grid-row-gap: 64px;
-  background-color: #f0f3fb;
+  background-color: #f0f3fb8a;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
