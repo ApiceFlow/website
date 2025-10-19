@@ -8658,7 +8658,8 @@ header .nav-area ul li.main-nav > a {
   transform: translateX(-50%);
   width: 0;
   height: 4px;
-  background-color: #a9b9fc;
+  /* background-color: #a9b9fc; */
+  background-color: #364ca0 !important;
   border-radius: 50px;
   transition: width 0.3s;
   /* Optionally, add opacity for smoother effect */
@@ -43793,7 +43794,7 @@ img {
 .feedback-item {
   grid-column-gap: 64px;
   grid-row-gap: 64px;
-  background-color: #f8f8f8;
+  background-color: #f0f3fb;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
@@ -44981,7 +44982,7 @@ img {
 
 .section-wrapper-gradient {
   /* /* main gradient: top -> bottom / */
-  background: linear-gradient(180deg, rgb(186 202 251 / 9%) 0%, rgb(148 155 255 / 2%) 35%, rgb(167 172 245 / 3%) 85%, #ffffff 100%);
+  background: linear-gradient(180deg, rgb(186 202 251 / 10%) 0%, rgb(148 155 255 / 5%) 35%, rgb(167 172 245 / 3%) 85%, #ffffff 100%);
 
   /* optional modern styling */
   /* border-radius: 12px; */
@@ -44992,7 +44993,7 @@ img {
 
 .section-wrapper-gradient1 {
   /* /* main gradient: top -> bottom / */
-  background: linear-gradient(180deg, #ffffff 0%, rgb(167 172 245 / 2%) 15%, rgb(148 155 255 / 2%) 65%, rgb(186 202 251 / 9%) 100%);
+  background: linear-gradient(180deg, #ffffff 0%, rgb(167 172 245 / 3%) 15%, rgb(148 155 255 / 5%) 65%, rgb(186 202 251 / 10%) 100%);
 
 
   /* optional modern styling */

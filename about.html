@@ -932,7 +932,8 @@
         </div>
 
         <!-- Sneak Peek section start -->
-        <div class="sneak-peek-section" role="region" aria-label="Sneak Peek into our Journey">
+        <div class="sneak-peek-section section-wrapper-gradient1" role="region"
+            aria-label="Sneak Peek into our Journey">
             <div class="container">
                 <div class="peek-header text-center"
                     style="color: #3b53b1; font-size: 35px; font-weight: 900; line-height: 1.5; padding-bottom: 15px;">
@@ -969,7 +970,7 @@
         </div>
         <!-- Sneak Peek section end -->
         <!-- Vision section start -->
-        <div class="vision-section" style="background:#fff; padding:60px 0px 120px 0px;">
+        <div class="vision-section section-wrapper-gradient" style="padding:60px 0px 120px 0px;">
             <div class="container">
                 <div class="vision-row">
                     <div class="vision-left">
@@ -1127,12 +1128,21 @@
     <style>
         /* Page-scoped team section: clean, no shadow, no radius */
         .apf-team-section {
-            background: #ffffff;
+            /* background: #ffffff; */
             padding: 48px 18px 72px;
             max-width: 1200px;
-            margin: 30px auto;
+            /* margin: 30px auto; */
             color: #0f1720;
             font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* Optional: ensure full width and remove max-width if you want true centering */
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            /* text-align: center; */
         }
 
         .apf-team-header {
@@ -1324,320 +1334,335 @@
         }
     </style>
 
-    <section class="apf-team-section" aria-labelledby="apf-team-heading">
-        <div class="apf-team-header">
-            <span class="pre">A GLOBAL TEAM OF INNOVATORS</span>
-            <h2 id="apf-team-heading" style="padding-bottom: 30px;">Meet Our Members</h2>
-            <p>Working globally, our dedicated team of product and software engineering specialists co-create with
-                leading brands and daring start-ups tech solutions for a better future. Meet the people behind
-                ApiceFlow.</p>
-        </div>
-
-        <!-- Row 1: Executive Members -->
-        <div class="apf-team-row" aria-labelledby="exec-row">
-            <!-- <div id="exec-row" class="row-title">Executive Members</div> -->
-            <div class="apf-team-grid" role="list" aria-label="Executive members">
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="Jan Robert Ong — Co-Founder & CEO">
-                    <div class="apf-team-photo">
-                        <img loading="lazy" src="assets/images/team/jan.png" alt="Jan Robert Ong" width="480"
-                            height="480">
-                    </div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Jan Robert Ong</div>
-                        <div class="apf-team-right">
-                            <a class="apf-linkedin" href="https://www.linkedin.com/in/janrobertong/" target="_blank"
-                                rel="noopener noreferrer" aria-label="Jan Robert Ong on LinkedIn"><i
-                                    class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="apf-team-role">Co‑Founder & CEO</div>
-
-                    <!-- SVG outline (no radius) -->
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
-                        focusable="false">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
-
-                <article class="apf-team-card" role="listitem" tabindex="0" aria-label="Adam Lee — Co-Founder & CTO">
-                    <div class="apf-team-photo">
-                        <img loading="lazy" src="assets/images/team/adam.png" alt="Adam Lee" width="480" height="480">
-                    </div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Adam Lee</div>
-                        <div class="apf-team-right">
-                            <a class="apf-linkedin" href="https://www.linkedin.com/in/adam-lee-05aa45262/"
-                                target="_blank" rel="noopener noreferrer" aria-label="Adam Lee on LinkedIn"><i
-                                    class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="apf-team-role">Co‑Founder & CTO</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
-                        focusable="false">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
-
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="Hiroshi Takahashi — Co-Founder & COO">
-                    <div class="apf-team-photo">
-                        <img loading="lazy" src="assets/images/team/hiroshi.png" alt="Hiroshi Takahashi" width="480"
-                            height="480">
-                    </div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Hiroshi Takahashi</div>
-                        <div class="apf-team-right">
-                            <a class="apf-linkedin" href="https://www.linkedin.com/in/hiroshi-t-691397381/"
-                                target="_blank" rel="noopener noreferrer" aria-label="Hiroshi Takahashi on LinkedIn"><i
-                                    class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="apf-team-role">Co‑Founder & COO</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
-                        focusable="false">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
-
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="Christopher Gerard — BD Manager">
-                    <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/chris.jpg"
-                            alt="Christopher Gerard" width="480" height="480"></div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Christopher Gerard</div>
-                        <div class="apf-team-right"><a class="apf-linkedin" href="https://www.linkedin.com/in/cdgerard"
-                                target="_blank" rel="noopener noreferrer" aria-label="Christopher Gerard on LinkedIn"><i
-                                    class="fab fa-linkedin-in"></i></a></div>
-                    </div>
-                    <div class="apf-team-role">BD Manager</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
+    <div class="section-wrapper-gradient1">
+        <section class="apf-team-section" aria-labelledby="apf-team-heading">
+            <div class="apf-team-header">
+                <span class="pre">A GLOBAL TEAM OF INNOVATORS</span>
+                <h2 id="apf-team-heading" style="padding-bottom: 30px;">Meet Our Members</h2>
+                <p>Working globally, our dedicated team of product and software engineering specialists co-create with
+                    leading brands and daring start-ups tech solutions for a better future. Meet the people behind
+                    ApiceFlow.</p>
             </div>
-        </div>
 
-        <!-- Row 2: Sales Members -->
-        <div class="apf-team-row" aria-labelledby="sales-row">
-            <!-- <div id="sales-row" class="row-title">Sales Members</div> -->
-            <div class="apf-team-grid" role="list" aria-label="Sales members">
-
-
-                <article class="apf-team-card" role="listitem" tabindex="0" aria-label="Alvaro Daniel — External CMO">
-                    <div class="apf-team-photo">
-                        <img loading="lazy" src="assets/images/team/alvaro.jpg" alt="Alvaro Daniel" width="480"
-                            height="480">
-                    </div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Álvaro Daniel</div>
-                        <div class="apf-team-right">
-                            <a class="apf-linkedin" href="https://www.linkedin.com/in/alvarodanielgonzalezlamarque/"
-                                target="_blank" rel="noopener noreferrer" aria-label="Alvaro Daniel on LinkedIn"><i
-                                    class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <!-- Row 1: Executive Members -->
+            <div class="apf-team-row" aria-labelledby="exec-row">
+                <!-- <div id="exec-row" class="row-title">Executive Members</div> -->
+                <div class="apf-team-grid" role="list" aria-label="Executive members">
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Jan Robert Ong — Co-Founder & CEO">
+                        <div class="apf-team-photo">
+                            <img loading="lazy" src="assets/images/team/jan.png" alt="Jan Robert Ong" width="480"
+                                height="480">
                         </div>
-                    </div>
-                    <div class="apf-team-role">External CMO</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
-                        focusable="false">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="Alex Thomas — BD Representative">
-                    <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/alex.jpg" alt="Alex Thomas"
-                            width="480" height="480"></div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Alex Thomas</div>
-                        <div class="apf-team-right"><a class="apf-linkedin"
-                                href="https://www.linkedin.com/in/alexthomasphysics/" target="_blank"
-                                rel="noopener noreferrer" aria-label="Alex Thomas on LinkedIn"><i
-                                    class="fab fa-linkedin-in"></i></a></div>
-                    </div>
-                    <div class="apf-team-role">BD Representative</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="Geoff Thomas — BD Representative">
-                    <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Geoff.jpeg"
-                            alt="Alex Thomas" width="480" height="480"></div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Geoffrey Cheng</div>
-                        <div class="apf-team-right"><a class="apf-linkedin"
-                                href="https://www.linkedin.com/in/geoffreycheng" target="_blank"
-                                rel="noopener noreferrer" aria-label="Alex Thomas on LinkedIn"><i
-                                    class="fab fa-linkedin-in"></i></a></div>
-                    </div>
-                    <div class="apf-team-role">BD Representative</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Jan Robert Ong</div>
+                            <div class="apf-team-right">
+                                <a class="apf-linkedin" href="https://www.linkedin.com/in/janrobertong/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Jan Robert Ong on LinkedIn"><i
+                                        class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="apf-team-role">Co‑Founder & CEO</div>
 
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="Marcos Monroy — Design Consultant">
-                    <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/marcos.jpg"
-                            alt="Marcos Monroy" width="480" height="480"></div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Marcos Monroy</div>
-                        <div class="apf-team-right"><a class="apf-linkedin"
-                                href="https://www.linkedin.com/in/marcosmonroy/" target="_blank"
-                                rel="noopener noreferrer" aria-label="Marcos Monroy on LinkedIn"><i
-                                    class="fab fa-linkedin-in"></i></a></div>
-                    </div>
-                    <div class="apf-team-role">Design Consultant</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
+                        <!-- SVG outline (no radius) -->
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
+                            focusable="false">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
 
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Adam Lee — Co-Founder & CTO">
+                        <div class="apf-team-photo">
+                            <img loading="lazy" src="assets/images/team/adam.png" alt="Adam Lee" width="480"
+                                height="480">
+                        </div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Adam Lee</div>
+                            <div class="apf-team-right">
+                                <a class="apf-linkedin" href="https://www.linkedin.com/in/adam-lee-05aa45262/"
+                                    target="_blank" rel="noopener noreferrer" aria-label="Adam Lee on LinkedIn"><i
+                                        class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="apf-team-role">Co‑Founder & CTO</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
+                            focusable="false">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
 
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Hiroshi Takahashi — Co-Founder & COO">
+                        <div class="apf-team-photo">
+                            <img loading="lazy" src="assets/images/team/hiroshi.png" alt="Hiroshi Takahashi" width="480"
+                                height="480">
+                        </div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Hiroshi Takahashi</div>
+                            <div class="apf-team-right">
+                                <a class="apf-linkedin" href="https://www.linkedin.com/in/hiroshi-t-691397381/"
+                                    target="_blank" rel="noopener noreferrer"
+                                    aria-label="Hiroshi Takahashi on LinkedIn"><i class="fab fa-linkedin-in"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="apf-team-role">Co‑Founder & COO</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
+                            focusable="false">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
+
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Christopher Gerard — BD Manager">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/chris.jpg"
+                                alt="Christopher Gerard" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Christopher Gerard</div>
+                            <div class="apf-team-right"><a class="apf-linkedin"
+                                    href="https://www.linkedin.com/in/cdgerard" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Christopher Gerard on LinkedIn"><i
+                                        class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="apf-team-role">BD Manager</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
+                </div>
             </div>
-        </div>
 
-        <!-- Row 3: Team Leads -->
-        <div class="apf-team-row" aria-labelledby="leads-row">
-            <!-- <div id="leads-row" class="row-title">Team Leads</div> -->
-            <div class="apf-team-grid" role="list" aria-label="Team leads">
+            <!-- Row 2: Sales Members -->
+            <div class="apf-team-row" aria-labelledby="sales-row">
+                <!-- <div id="sales-row" class="row-title">Sales Members</div> -->
+                <div class="apf-team-grid" role="list" aria-label="Sales members">
 
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="Product Lead — Product & Design">
-                    <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Takashi.png"
-                            alt="Product Lead" width="480" height="480"></div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Takashi Nakano</div>
-                        <!-- <div class="apf-team-right"><a class="apf-linkedin" href="https://www.linkedin.com/in/takashi-n-71b419389/"
+
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Alvaro Daniel — External CMO">
+                        <div class="apf-team-photo">
+                            <img loading="lazy" src="assets/images/team/alvaro.jpg" alt="Alvaro Daniel" width="480"
+                                height="480">
+                        </div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Álvaro Daniel</div>
+                            <div class="apf-team-right">
+                                <a class="apf-linkedin" href="https://www.linkedin.com/in/alvarodanielgonzalezlamarque/"
+                                    target="_blank" rel="noopener noreferrer" aria-label="Alvaro Daniel on LinkedIn"><i
+                                        class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="apf-team-role">External CMO</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
+                            focusable="false">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Alex Thomas — BD Representative">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/alex.jpg"
+                                alt="Alex Thomas" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Alex Thomas</div>
+                            <div class="apf-team-right"><a class="apf-linkedin"
+                                    href="https://www.linkedin.com/in/alexthomasphysics/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Alex Thomas on LinkedIn"><i
+                                        class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="apf-team-role">BD Representative</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Geoff Thomas — BD Representative">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Geoff.jpeg"
+                                alt="Alex Thomas" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Geoffrey Cheng</div>
+                            <div class="apf-team-right"><a class="apf-linkedin"
+                                    href="https://www.linkedin.com/in/geoffreycheng" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Alex Thomas on LinkedIn"><i
+                                        class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="apf-team-role">BD Representative</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
+
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Marcos Monroy — Design Consultant">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/marcos.jpg"
+                                alt="Marcos Monroy" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Marcos Monroy</div>
+                            <div class="apf-team-right"><a class="apf-linkedin"
+                                    href="https://www.linkedin.com/in/marcosmonroy/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Marcos Monroy on LinkedIn"><i
+                                        class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="apf-team-role">Design Consultant</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
+
+
+                </div>
+            </div>
+
+            <!-- Row 3: Team Leads -->
+            <div class="apf-team-row" aria-labelledby="leads-row">
+                <!-- <div id="leads-row" class="row-title">Team Leads</div> -->
+                <div class="apf-team-grid" role="list" aria-label="Team leads">
+
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Product Lead — Product & Design">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Takashi.png"
+                                alt="Product Lead" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Takashi Nakano</div>
+                            <!-- <div class="apf-team-right"><a class="apf-linkedin" href="https://www.linkedin.com/in/takashi-n-71b419389/"
                                 aria-label="Product Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div> -->
-                        <div class="apf-team-right"><a class="apf-linkedin"
-                                aria-label="Product Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div>
-                    </div>
-                    <div class="apf-team-role">AI Team Lead</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
+                            <div class="apf-team-right"><a class="apf-linkedin" aria-label="Product Lead on LinkedIn"><i
+                                        class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="apf-team-role">AI Team Lead</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
 
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="Engineering Lead — Platform & Infrastructure">
-                    <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Shu.jpg"
-                            alt="Engineering Lead" width="480" height="480"></div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Shu Wang</div>
-                        <div class="apf-team-right"><a class="apf-linkedin" href="https://www.linkedin.com/in/shu-wang-17b884a"
-                                aria-label="Engineering Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div>
-                    </div>
-                    <div class="apf-team-role">Project Manager</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Engineering Lead — Platform & Infrastructure">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Shu.jpg"
+                                alt="Engineering Lead" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Shu Wang</div>
+                            <div class="apf-team-right"><a class="apf-linkedin"
+                                    href="https://www.linkedin.com/in/shu-wang-17b884a"
+                                    aria-label="Engineering Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="apf-team-role">Project Manager</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
 
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="Engineering Lead — Platform & Infrastructure">
-                    <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/AlexLai.png"
-                            alt="Engineering Lead" width="480" height="480"></div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Alex Lai</div>
-                        <div class="apf-team-right"><a class="apf-linkedin" href="https://www.linkedin.com/in/mun-chun-lai-92510a230/"
-                                aria-label="Engineering Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div>
-                    </div>
-                    <div class="apf-team-role">Project Manager</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Engineering Lead — Platform & Infrastructure">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/AlexLai.png"
+                                alt="Engineering Lead" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Alex Lai</div>
+                            <div class="apf-team-right"><a class="apf-linkedin"
+                                    href="https://www.linkedin.com/in/mun-chun-lai-92510a230/"
+                                    aria-label="Engineering Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="apf-team-role">Project Manager</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
 
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="Engineering Lead — Platform & Infrastructure">
-                    <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Hendrik.jpg"
-                            alt="Engineering Lead" width="480" height="480"></div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Hendrik Tekayadi</div>
-                        <div class="apf-team-right"><a class="apf-linkedin" href="https://www.linkedin.com/in/hendrik-tekayadi-76856152/"
-                                aria-label="Engineering Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div>
-                    </div>
-                    <div class="apf-team-role">Project Manager</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Engineering Lead — Platform & Infrastructure">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Hendrik.jpg"
+                                alt="Engineering Lead" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Hendrik Tekayadi</div>
+                            <div class="apf-team-right"><a class="apf-linkedin"
+                                    href="https://www.linkedin.com/in/hendrik-tekayadi-76856152/"
+                                    aria-label="Engineering Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="apf-team-role">Project Manager</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
+                </div>
             </div>
-        </div>
 
-        <div class="apf-team-row" aria-labelledby="leads-row">
-            <!-- <div id="leads-row" class="row-title">Team Leads</div> -->
-            <div class="apf-team-grid" role="list" aria-label="Team leads">
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="Engineering Lead — Platform & Infrastructure">
-                    <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Steve.jpg"
-                            alt="Engineering Lead" width="480" height="480"></div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Steve Hoang</div>
-                        <div class="apf-team-right"><a class="apf-linkedin" href="https://www.linkedin.com/in/thanhq/"
-                                aria-label="Engineering Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div>
-                    </div>
-                    <div class="apf-team-role">Project Manager</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
-                <article class="apf-team-card" role="listitem" tabindex="0" aria-label="UI / UX Designer">
-                    <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/lead3-480.png" alt="QA Lead"
-                            width="480" height="480"></div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">UI / UX Designer</div>
-                        <div class="apf-team-right"><a class="apf-linkedin" href="#" aria-label="QA Lead on LinkedIn"><i
-                                    class="fab fa-linkedin-in"></i></a></div>
-                    </div>
-                    <div class="apf-team-role">Taliaa Abdelghani</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
+            <div class="apf-team-row" aria-labelledby="leads-row">
+                <!-- <div id="leads-row" class="row-title">Team Leads</div> -->
+                <div class="apf-team-grid" role="list" aria-label="Team leads">
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Engineering Lead — Platform & Infrastructure">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Steve.jpg"
+                                alt="Engineering Lead" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Steve Hoang</div>
+                            <div class="apf-team-right"><a class="apf-linkedin"
+                                    href="https://www.linkedin.com/in/thanhq/"
+                                    aria-label="Engineering Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="apf-team-role">Project Manager</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
+                    <article class="apf-team-card" role="listitem" tabindex="0" aria-label="UI / UX Designer">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/lead3-480.png"
+                                alt="QA Lead" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">UI / UX Designer</div>
+                            <div class="apf-team-right"><a class="apf-linkedin" href="#"
+                                    aria-label="QA Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="apf-team-role">Taliaa Abdelghani</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
 
-                <article class="apf-team-card" role="listitem" tabindex="0"
-                    aria-label="UI / UX Designer">
-                    <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Irvan.jpg"
-                            alt="Design Lead" width="480" height="480"></div>
-                    <div class="apf-team-meta">
-                        <div class="apf-team-name">Irvan Trinanda</div>
-                        <div class="apf-team-right"><a class="apf-linkedin" href="https://www.linkedin.com/in/irvan-trinanda-2281a11ba/"
-                                aria-label="Design Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div>
-                    </div>
-                    <div class="apf-team-role">UI & UX Designer</div>
-                    <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <rect x="1" y="1" width="98" height="98" />
-                    </svg>
-                </article>
+                    <article class="apf-team-card" role="listitem" tabindex="0" aria-label="UI / UX Designer">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Irvan.jpg"
+                                alt="Design Lead" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Irvan Trinanda</div>
+                            <div class="apf-team-right"><a class="apf-linkedin"
+                                    href="https://www.linkedin.com/in/irvan-trinanda-2281a11ba/"
+                                    aria-label="Design Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="apf-team-role">UI & UX Designer</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <!-- end replacement -->
 
-    <div class="section-wrapper bg-dark" style="transform: translateY(0px);">
+    <div class="section-wrapper-gradient" style="transform: translateY(0px);">
         <div class="content-center">
             <div class="choose_section">
                 <div class="choose_text">
-                    <h2 class="h3-new allcaps text-white">
+                    <h2 class="h3-new allcaps">
                         WHY MANY CLIENTS
-                        <span class="span-green-light">CHOOSE</span>
+                        <span class="span-green-light" style="color: #364ca0;">CHOOSE</span>
                         APICEFLOW?
                     </h2>
                 </div>
                 <div class="choose_content">
                     <div class="choose_content-item">
-                        <h3 class="h6-new white-color">High-Tech</h3>
-                        <p class="bodynew text-white">
+                        <h3 class="h6-new">High-Tech</h3>
+                        <p class="bodynew">
                             We deliver modern, production-ready systems using cloud-native architecture, API-first
                             design, and best-in-class platforms (ML, real-time, edge) so clients get future-proof
                             solutions that scale, perform, and reduce technical debt.
                         </p>
                     </div>
                     <div class="choose_content-item">
-                        <h3 class="h6-new white-color">Cost-Effective</h3>
-                        <p class="bodynew text-white">
+                        <h3 class="h6-new">Cost-Effective</h3>
+                        <p class="bodynew">
                             Our delivery model pairs a well-structured engineering process with a geographically
                             distributed talent network: we match appropriately priced, highly skilled engineers across
                             time zones so hourly rates are optimized without compromising craftsmanship — producing
@@ -1645,32 +1670,32 @@
                         </p>
                     </div>
                     <div class="choose_content-item">
-                        <h3 class="h6-new white-color">Long-Term</h3>
-                        <p class="bodynew text-white">
+                        <h3 class="h6-new">Long-Term</h3>
+                        <p class="bodynew">
                             We act as strategic engineering partners: roadmaps, maintainable codebases, and continuous
                             improvement practices ensure your product evolves securely and efficiently as market needs
                             and scale change.
                         </p>
                     </div>
                     <div class="choose_content-item">
-                        <h3 class="h6-new white-color">Communication</h3>
-                        <p class="bodynew text-white">
+                        <h3 class="h6-new">Communication</h3>
+                        <p class="bodynew ">
                             Transparent collaboration — dedicated PMs, regular demos, concise status reporting and clear
                             decision points — keeps stakeholders aligned, accelerates feedback loops, and limits
                             delivery risk.
                         </p>
                     </div>
                     <div class="choose_content-item">
-                        <h3 class="h6-new white-color">Distributed Talent Network</h3>
-                        <p class="bodynew text-white">
+                        <h3 class="h6-new">Distributed Talent Network</h3>
+                        <p class="bodynew">
                             A curated, global bench of senior engineers lets us flex team size and skills rapidly,
                             deploy coverage across time zones, and combine local-market cost advantages with
                             enterprise-grade capability.
                         </p>
                     </div>
                     <div class="choose_content-item">
-                        <h3 class="h6-new white-color">Outcome & Accountability</h3>
-                        <p class="bodynew text-white">
+                        <h3 class="h6-new">Outcome & Accountability</h3>
+                        <p class="bodynew">
                             We align delivery to measurable business KPIs and SLAs — not just feature lists — and take
                             shared responsibility for product outcomes, with clear metrics, acceptance gates, and a
                             focus on ROI.
@@ -1678,177 +1703,13 @@
                     </div>
                 </div>
             </div>
-            <img src="./assets/images/logo/ApiceFlow_Logo/logo-watermark.png" style="opacity: 0.2;" loading="lazy"
-                alt="Logo ApiceFlow" class="logo-sign z-index-1">
+            <!-- <img src="./assets/images/logo/ApiceFlow_Logo/logo-watermark.png" style="opacity: 0.2;" loading="lazy"
+                alt="Logo ApiceFlow" class="logo-sign z-index-1"> -->
         </div>
     </div>
 
-    <!-- <div class="rts-team-area rts-section-gapBottom pt--40">
-        <div class="container">
-            <div class="row">
-                <div class="title-style-two" style=" max-width: 600px; padding-bottom: 60px;">
-                    <span class="bg-content">INNOVATORS</span>
-                    <span class="pre" style="font-size: 13px; font-weight: 600; color: #2a2a2a60;">A GLOBAL TEAM OF
-                        INNOVATORS</span>
-                    <h2 class="title rts-text-anime-style-1"
-                        style="font-weight: 900;font-size: clamp(22px, 6.5vw, 35px) !important;">Meet Our Management
-                        Members
-                    </h2>
-                    <span style="padding: 50px 0px; font-weight: 500; font-size: 14px;">Working remotely, our dedicated
-                        team of product and software engineering specialists co-create with leading brands and daring
-                        start-ups tech solutions for a better future. Meet some of the people behind ApiceFlow.</span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="swiper mySwiperh1_team pt--50 pb--80" dir="ltr">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" style="cursor: pointer;">
-                                <div class="team-single-one-start">
-                                    <div class="team-image-area">
-                                        <img loading="lazy" src="assets/images/team/jan.png" alt="Business_Team_single">
-                                        <div class="team-social">
-                                            <div class="team-social" dir="rtl"
-                                                style="padding-top: 20px; padding-right: 30px;">
-                                                <div class="team-social-one">
-                                                    <a href="https://www.linkedin.com/in/janrobertong/"><i
-                                                            class="fab fa-linkedin-in"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-details" dir="rtl">
-                                        <h5 class="title">Jan Robert Ong</h5>
-                                        <p>Co-Founder & CEO</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="cursor: pointer;">
-                                <div class="team-single-one-start">
-                                    <div class="team-image-area">
-                                        <img loading="lazy" src="assets/images/team/adam.png"
-                                            alt="Business_Team_single">
-                                        <div class="team-social" dir="rtl"
-                                            style="padding-top: 20px; padding-right: 30px;">
-                                            <div class="team-social-one">
-                                                <a href="https://www.linkedin.com/in/adam-lee-05aa45262/"><i
-                                                        class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-details" dir="rtl">
-                                        <div>
-                                            <h5 class="title">Adam Lee </h5>
-                                        </div>
-                                        <p>Co-Founder & CTO</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="cursor: pointer;">
-                                <div class="team-single-one-start">
-                                    <div class="team-image-area">
-                                        <img loading="lazy" src="assets/images/team/hiroshi.png"
-                                            alt="Business_Team_single">
-                                        <div class="team-social" dir="rtl"
-                                            style="padding-top: 20px; padding-right: 30px;">
-                                            <div class="team-social-one">
-                                                <a href="https://www.linkedin.com/in/hiroshi-t-691397381/"><i
-                                                        class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-details" dir="rtl">
-                                        <h5 class="title">Hiroshi Takahashi</h5>
-                                        <p>Co-Founder & COO</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="cursor: pointer;">
-                                <div class="team-single-one-start">
-                                    <div class="team-image-area">
-                                        <img loading="lazy" src="assets/images/team/alvaro.jpg"
-                                            alt="Business_Team_single">
-                                        <div class="team-social" dir="rtl"
-                                            style="padding-top: 20px; padding-right: 30px;">
-                                            <div class="team-social-one">
-                                                <a href="https://www.linkedin.com/in/alvarodanielgonzalezlamarque/"><i
-                                                        class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-details" dir="rtl">
-                                        <h5 class="title">Alvaro Daniel</h5>
-                                        <p>External CMO - Uruguay</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="cursor: pointer;">
-                                <div class="team-single-one-start">
-                                    <div class="team-image-area">
-                                        <img loading="lazy" src="assets/images/team/chris.jpg"
-                                            alt="Business_Team_single">
-                                        <div class="team-social" dir="rtl"
-                                            style="padding-top: 20px; padding-right: 30px;">
-                                            <div class="team-social-one">
-                                                <a href="https://www.linkedin.com/in/cdgerard"><i
-                                                        class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-details" dir="rtl">
-                                        <h5 class="title">Christopher Gerard</h5>
-                                        <p>BD Manager</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="cursor: pointer;">
-                                <div class="team-single-one-start">
-                                    <div class="team-image-area">
-                                        <a href="team-details.html">
-                                            <img loading="lazy" src="assets/images/team/alex.jpg"
-                                                alt="Business_Team_single">
-                                            <div class="team-social" dir="rtl"
-                                                style="padding-top: 20px; padding-right: 30px;">
-                                                <div class="team-social-one">
-                                                    <a href="https://www.linkedin.com/in/alexthomasphysics/"><i
-                                                            class="fab fa-linkedin-in"></i></a>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="single-details" dir="rtl">
-                                        <h5 class="title">Alex Thomas</h5>
-                                        <p>BD Representative</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="cursor: pointer;">
-                                <div class="team-single-one-start">
-                                    <div class="team-image-area">
-                                        <img loading="lazy" src="assets/images/team/marcos.jpg"
-                                            alt="Business_Team_single">
-                                        <div class="team-social" dir="rtl"
-                                            style="padding-top: 20px; padding-right: 30px;">
-                                            <div class="team-social-one">
-                                                <a href="https://www.linkedin.com/in/marcosmonroy/"><i
-                                                        class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-details" dir="rtl">
-                                        <h5 class="title">Marcos Monroy</h5>
-                                        <p>Design Consultant</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
-    <div class="section-wrapper rev-feedback">
+    <div class="section-wrapper rev-feedback section-wrapper-gradient1">
         <div class="contentwrapper" style="padding-top:60px; padding-bottom: 60px;">
             <div class="testimonials-wrapper">
                 <div class="row">
@@ -2148,7 +2009,8 @@
                                             </div>
                                             <div class="wrapper-h-feedback-item gap-2px">
                                                 <div class="text-10">Co-Founder</div>
-                                                <div class="text-10">at</div><a class="text-12 bold-600">Bryant Dental</a>
+                                                <div class="text-10">at</div><a class="text-12 bold-600">Bryant
+                                                    Dental</a>
                                             </div>
                                         </div>
                                     </div>
@@ -2168,7 +2030,8 @@
                                         international checkout — all integrated cleanly with our CRM. Their senior devs
                                         solved tricky performance and pipeline issues quickly, and the PM kept
                                         communication and scope entirely under control."</div>
-                                    <div class="wrapper-content-bottom"><a title="Bryant Dental - Dental optics e-commerce & tools"
+                                    <div class="wrapper-content-bottom"><a
+                                            title="Bryant Dental - Dental optics e-commerce & tools"
                                             href="portfolio9.html"
                                             class="u-link u-link_green min-height-auto w-inline-block">
                                             <div class="wrapper-u-anim-text">
