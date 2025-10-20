@@ -39052,7 +39052,8 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  background-image: linear-gradient(#141417, #14141780);
+  /* background-image: linear-gradient(#141417, #14141780); */
+  background-image: linear-gradient(90deg, #010417, #171a3af2, #33387f24);
 }
 
 .hero-banner-image .hero-center-text {
