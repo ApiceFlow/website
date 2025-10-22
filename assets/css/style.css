@@ -13135,10 +13135,11 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 
 @media only screen and (max-width: 575px) {
   .rts-btn {
-    height: 47px;
-    padding: 13px 20px;
+    height: 40px;
+    /* padding: 13px 20px; */
     display: flex !important;
     align-items: center !important;
+    font-size:13px !important;
   }
 }
 
@@ -16526,7 +16527,7 @@ section.main-wrapper-sticky .sticky-statement.narrow .left-side img {
 
 @media only screen and (max-width: 575px) {
   .title-style-five .title {
-    font-size: 28px;
+    font-size: 25px !important;
     line-height: 1.3;
   }
 }
@@ -44219,8 +44220,8 @@ img {
 /* Smaller hero on narrow screens */
 @media (max-width: 991.98px) {
   .index-seven-area.rts-section-gap.with-video {
-    height: 65vh;
-    max-height: 65vh;
+    height: 75vh;
+    max-height: 75vh;
   }
 }
 
@@ -44784,8 +44785,8 @@ input.button-new--forma.black.form:focus {
 /* Smaller hero on narrow screens */
 @media (max-width: 991.98px) {
   .index-seven-area.rts-section-gap.with-video {
-    height: 65vh;
-    max-height: 65vh;
+    height: 75vh;
+    max-height: 75vh;
   }
 }
 
@@ -44873,15 +44874,17 @@ input.button-new--forma.black.form:focus {
   flex: 1;
 }
 
-@media screen and (max-width: 767px) {
-  .section-colloborate {
-    width: 100%;
-  }
-}
+
 
 .section-colloborate {
   padding-top: 80px;
   padding-bottom: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  .section-colloborate {
+    width: 100%;
+  }
 }
 
 .gradien-bg {
@@ -46883,17 +46886,20 @@ textarea.w-select {
   flex: 1;
 }
 
-@media screen and (max-width: 767px) {
-  .section-colloborate {
-    width: 100%;
-  }
-}
+
 
 .section-collaborate {
   padding-top: 80px;
   padding-bottom: 80px;
 }
 
+
+@media screen and (max-width: 767px) {
+  .section-colloborate {
+    width: 100%;
+    padding-top: 0px;
+  }
+}
 /* INDEX-ONLY: ensure form controls inside the collaborate section render consistently
            This is intentionally scoped to .section-collaborate so it doesn't affect other pages. */
 /* .section-collaborate .w-checkbox-input--inputType-custom,
@@ -47629,7 +47635,7 @@ textarea.w-select {
   .text-gradient {
     /* background: linear-gradient(90deg, #143677, #efc7ff, #ffffff, #cb4272) !important; */
     /* background: linear-gradient(90deg, #143677, #9a53ff, #ff7575, #cb4272) !important; */
-    background: linear-gradient(90deg, #143677, #239bff, #fff5f5, #ff0000) !important;
+    background: linear-gradient(90deg, #143677, #239bff, #fff5f5, #ff0000);
     background-clip: text !important;
   }
 
