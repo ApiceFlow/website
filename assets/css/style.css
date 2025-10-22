@@ -47613,7 +47613,7 @@ textarea.w-select {
 @media (max-width: 750.98px) {
   .banner-about-wrapper1::before {
     width: 75%;
-    transform: translateY(-120px);
+    transform: translateY(-125px);
     /* background-size: 80% 100%; */
     opacity: 0.95;
   }
@@ -47628,7 +47628,8 @@ textarea.w-select {
 
   .text-gradient {
     /* background: linear-gradient(90deg, #143677, #efc7ff, #ffffff, #cb4272) !important; */
-    background: linear-gradient(90deg, #143677, #9a53ff, #ff7575, #cb4272) !important;
+    /* background: linear-gradient(90deg, #143677, #9a53ff, #ff7575, #cb4272) !important; */
+    background: linear-gradient(90deg, #143677, #239bff, #fff5f5, #ff0000) !important;
     background-clip: text !important;
   }
 

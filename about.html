@@ -1348,11 +1348,20 @@
 
         @media (max-width: 575.98px) {
             .apf-team-grid {
-                grid-template-columns: 1fr;
+                /* grid-template-columns: 1fr; */
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .apf-team-photo {
                 max-width: 320px;
+            }
+
+            .apf-team-card {
+                height: 300px;
+            }
+
+            .apf-team-name {
+                font-size: 12px;
             }
         }
     </style>
