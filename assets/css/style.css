@@ -11689,7 +11689,7 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
 
 @media only screen and (max-width: 575px) {
   .banner-seven-inner-content .title {
-    font-size: 22px !important;
+    font-size: 25px !important;
   }
 
   .banner-seven-inner-content .title span {
@@ -11728,7 +11728,7 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
     padding-left: 20px;
     padding-right: 20px;
     max-width: 80%;
-    font-size: 12px;
+    font-size: 15px;
     margin-bottom: 40px;
   }
 }
@@ -39190,9 +39190,9 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
     max-width: 100%;
   }
 
-  /* .our-mission-wrapper .col-xl-2 {
+  .our-mission-wrapper .col-xl-2 {
     display: none;
-  } */
+  }
 
   .our-mission-wrapper {
     padding-left: 20px;
@@ -47126,11 +47126,11 @@ textarea.w-select {
   background-color: #3333330a;
 }
 
-/* @media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapper-infinity-line {
     padding-bottom: 40px;
   }
-} */
+}
 
 /* .infinity-line {
   grid-column-gap: 0px;
@@ -47530,4 +47530,32 @@ textarea.w-select {
   /* padding-top: clamp(50px, 8vw, 130px) !important; */
   padding-top: 120px;
   /* text-shadow: 0 8px 28px rgba(0, 0, 0, 0.6); */
+}
+
+
+.banner-about-wrapper1 {
+  position: relative;
+  z-index: 1;
+
+  transform: translateY(-28px);
+
+}
+
+/* Right-side watermark for about/banner sections. Uses slider-banner.png at 50% width.
+   Non-interactive, low opacity, and hidden on small viewports. */
+
+.banner-about-wrapper1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background-image: url("../images/banner/sider-banner.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+  opacity: 0.98;
+  pointer-events: none;
+  z-index: 0; /* sit behind banner content */
 }
