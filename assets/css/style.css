@@ -13139,7 +13139,7 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
     /* padding: 13px 20px; */
     display: flex !important;
     align-items: center !important;
-    font-size:13px !important;
+    font-size: 13px !important;
   }
 }
 
@@ -46900,6 +46900,7 @@ textarea.w-select {
     padding-top: 0px;
   }
 }
+
 /* INDEX-ONLY: ensure form controls inside the collaborate section render consistently
            This is intentionally scoped to .section-collaborate so it doesn't affect other pages. */
 /* .section-collaborate .w-checkbox-input--inputType-custom,
@@ -47503,7 +47504,7 @@ textarea.w-select {
 
 .hero-banner-image1 {
   position: relative;
-  width: 80%;
+  width: 70%;
   height: 670px;
   min-height: 300px;
   background-position: center top;
@@ -47626,16 +47627,16 @@ textarea.w-select {
 
   .hero-banner-image1 .hero-center-text {
     padding-top: 0px !important;
-    font-size: 33px;
-    width: 70%;
+    font-size: 35px;
+    width: 80%;
     margin-top: 170px;
-    /* color: linear-gradient(90deg, #143677, #efc7ff, #ffffff, #cb4272) !important; */
   }
 
   .text-gradient {
     /* background: linear-gradient(90deg, #143677, #efc7ff, #ffffff, #cb4272) !important; */
     /* background: linear-gradient(90deg, #143677, #9a53ff, #ff7575, #cb4272) !important; */
-    background: linear-gradient(90deg, #143677, #239bff, #fff5f5, #ff0000);
+    /* background: linear-gradient(90deg, #143677, #239bff, #fff5f5, #ff0000); */
+    background: linear-gradient(90deg, #214fa9, #bf3fc8, #ffffffe3, #ff0031);
     background-clip: text !important;
   }
 
