@@ -414,7 +414,7 @@ p {
 
 @media only screen and (max-width: 575.98px) {
   p {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -719,15 +719,16 @@ ol ul {
 
 @media only screen and (max-width: 575px) {
   h3 {
-    font-size: 24px;
+    font-size: 6.5vw;
     line-height: 36px;
   }
 }
 
 @media only screen and (max-width: 479px) {
   h3 {
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 6.5vw;
+    /* line-height: 30px; */
+    font-weight: 900 !important;
   }
 }
 
@@ -9447,7 +9448,7 @@ p {
 
 @media (max-width: 575.98px) {
   p {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -39107,7 +39108,8 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
 
   .hero-banner-image .hero-center-text {
     padding-top: 80px;
-    font-size: 20px
+    font-size: 20px;
+    background: linear-gradient(90deg, #143677, #efc7ff, #ffffff, #cb4272) !important;
   }
 
   .hero-banner-image .p {
@@ -39183,20 +39185,47 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
   .our-mission-wrapper .row {
     display: flex;
     flex-wrap: wrap;
+    padding: 20px 20px;
   }
 
-  .our-mission-wrapper .col-xl-4 {
+  .our-mission-wrapper .col-xl-5 {
+    width: 50%;
+    max-width: 50%;
+  }
+
+
+
+  .our-mission-wrapper {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .our-mission-wrapper .mission-text {
+    padding-left: 18px;
+  }
+
+  .mission-author-row {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 718.98px) {
+  .our-mission-wrapper .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px;
+  }
+
+  .our-mission-wrapper .col-xl-5 {
     width: 100%;
     max-width: 100%;
   }
 
-  .our-mission-wrapper .col-xl-2 {
-    display: none;
-  }
+
 
   .our-mission-wrapper {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .our-mission-wrapper .mission-text {
@@ -41516,16 +41545,7 @@ body.page-portfolio2 .hero-banner-image .page-description p {
   display: flex;
 }
 
-.h6-new {
-  color: #2e303f;
-  text-transform: none;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: Montserrat, sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 120%;
-}
+
 
 .bodynew {
   color: #2e303f;
@@ -42654,22 +42674,7 @@ li {
   text-transform: none;
 }
 
-@media screen and (max-width: 767px) {
-  .h6-new {
-    font-size: 20px;
-  }
-}
 
-.h6-new {
-  color: var(--dark);
-  text-transform: none;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: Montserrat, sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 120%;
-}
 
 
 .span-green-light {
@@ -42681,12 +42686,6 @@ li {
   text-transform: none;
 }
 
-@media screen and (max-width: 767px) {
-  .h6-new {
-    font-size: 20px;
-  }
-}
-
 .h6-new {
   color: #2e303f;
   text-transform: none;
@@ -42696,6 +42695,12 @@ li {
   font-size: 24px;
   font-weight: 600;
   line-height: 120%;
+}
+
+@media screen and (max-width: 767px) {
+  .h6-new {
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -45142,32 +45147,19 @@ img {
   text-transform: none;
 }
 
+
+
+
 @media screen and (max-width: 767px) {
-  .h6-new {
-    font-size: 20px;
+  .bodynew {
+    font-size: 14px;
   }
 }
 
-.h6-new {
-  color: #2e303f;
-  text-transform: none;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: Montserrat, sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 120%;
-}
 
 @media screen and (max-width: 479px) {
   .bodynew {
     letter-spacing: .1px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .bodynew {
-    font-size: 16px;
   }
 }
 
@@ -47496,7 +47488,8 @@ textarea.w-select {
 } */
 
 .text-gradient {
-  background: linear-gradient(90deg, #214fa9, #326bd7, #4093e2, #cf6087);
+  /* background: linear-gradient(90deg, #214fa9, #326bd7, #4093e2, #cf6087); */
+  background: linear-gradient(90deg, #214fa9, #326bd7, #ff50c4e3, #ff2a53);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: #fff0;
@@ -47541,8 +47534,19 @@ textarea.w-select {
 
 }
 
-/* Right-side watermark for about/banner sections. Uses slider-banner.png at 50% width.
-   Non-interactive, low opacity, and hidden on small viewports. */
+/* Right-side watermark for about/banner sections.
+   Responsive behaviour:
+   - Large screens: visible at 50% width with subtle opacity
+   - Medium: reduced width and opacity
+   - Small: hidden to avoid covering content
+*/
+.banner-about-wrapper1 {
+  position: relative;
+  z-index: 1;
+  transform: translateY(-28px);
+  overflow: hidden;
+  /* ensure watermark doesn't overflow the banner */
+}
 
 .banner-about-wrapper1::before {
   content: "";
@@ -47555,7 +47559,124 @@ textarea.w-select {
   background-repeat: no-repeat;
   background-position: center right;
   background-size: contain;
-  opacity: 0.98;
+  opacity: 0.95;
+  /* subtle watermark */
   pointer-events: none;
-  z-index: 0; /* sit behind banner content */
+  z-index: 0;
+  /* sit behind banner content */
+  transition: opacity .25s ease, width .25s ease, transform .25s ease;
+}
+
+/* Large (desktop) — keep watermark prominent but subtle */
+@media (min-width: 1200px) {
+  .banner-about-wrapper1::before {
+    width: 50%;
+    background-size: contain;
+    opacity: 0.95;
+  }
+}
+
+/* Medium screens — reduce footprint */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .banner-about-wrapper1::before {
+    width: 50%;
+    transform: translateY(-120px);
+    /* background-size: 80% 100%; */
+    opacity: 0.95;
+  }
+
+  .hero-banner-image1 .hero-center-text {
+    padding-top: 0px !important;
+    font-size: 33px;
+    width: 70%;
+    /* reduce top padding slightly on medium screens */
+  }
+
+  .hero-banner-image1 {
+    position: relative;
+    width: 70%;
+    height: 640px;
+    min-height: 300px;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    /* padding-left: 50px; */
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    overflow: hidden;
+  }
+}
+
+/* Small screens — hide watermark to avoid covering content */
+@media (max-width: 750.98px) {
+  .banner-about-wrapper1::before {
+    width: 75%;
+    transform: translateY(-120px);
+    /* background-size: 80% 100%; */
+    opacity: 0.95;
+  }
+
+  .hero-banner-image1 .hero-center-text {
+    padding-top: 0px !important;
+    font-size: 33px;
+    width: 70%;
+    margin-top: 170px;
+    /* color: linear-gradient(90deg, #143677, #efc7ff, #ffffff, #cb4272) !important; */
+  }
+
+  .text-gradient {
+    /* background: linear-gradient(90deg, #143677, #efc7ff, #ffffff, #cb4272) !important; */
+    background: linear-gradient(90deg, #143677, #9a53ff, #ff7575, #cb4272) !important;
+    background-clip: text !important;
+  }
+
+  .page-description p {
+    background: linear-gradient(90deg, rgb(33, 79, 169), rgb(50, 107, 215), rgb(64, 147, 226), rgb(207, 96, 135)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+  }
+
+  .hero-banner-image1 {
+    position: relative;
+    width: 100%;
+    height: 640px;
+    min-height: 300px;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    /* padding-left: 50px; */
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    overflow: hidden;
+  }
+}
+
+/* Show `.mobile-desc` only on mobile and hide desktop `.page-description` on small screens
+   Default: mobile-desc hidden; page-description visible
+*/
+.mobile-desc {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+
+  .page-description {
+    margin-top: 120px !important;
+  }
+
+  /* .web-description */
+  .mobile-desc {
+    display: block;
+    font-size: 15px;
+    color: #555555;
+    padding: 12px 18px 24px 18px;
+    max-width: 100%;
+    font-weight: 500;
+    margin-top: 100px !important;
+    line-height: 1.5;
+  }
 }
