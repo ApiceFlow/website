@@ -47620,14 +47620,14 @@ textarea.w-select {
 @media (max-width: 750.98px) {
   .banner-about-wrapper1::before {
     width: 75%;
-    transform: translateY(-125px);
+    transform: translateY(-128px);
     /* background-size: 80% 100%; */
     opacity: 0.95;
   }
 
   .hero-banner-image1 .hero-center-text {
     padding-top: 0px !important;
-    font-size: 35px;
+    font-size: 28px;
     width: 80%;
     margin-top: 170px;
   }
