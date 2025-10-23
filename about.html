@@ -435,7 +435,20 @@
     </style>
 </head>
 
+
 <body>
+    <!-- Shared SVG defs for gradients (hidden) -->
+    <svg aria-hidden="true" focusable="false" width="0" height="0" style="position: absolute; left: -9999px;">
+        <defs>
+            <linearGradient id="apf-line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#214fa9" />
+                <stop offset="33%" stop-color="#326bd7" />
+                <!-- interpreted #ff50c4e3 as color #ff50c4 with alpha E3 (~0.89) -->
+                <stop offset="66%" stop-color="#ff50c4" stop-opacity="0.89" />
+                <stop offset="100%" stop-color="#ff2a53" />
+            </linearGradient>
+        </defs>
+    </svg>
 
 
     <!-- header trasnparent area start -->
@@ -914,7 +927,8 @@
                     Grows.
                     <div class="page-description"
                         style="max-width: 700px; padding: 30px 0px; font-weight: 500 !important; text-align: left !important;">
-                        <p>ApiceFlow translates advanced technology into targeted, measurable profit drivers for non-tech
+                        <p>ApiceFlow translates advanced technology into targeted, measurable profit drivers for
+                            non-tech
                             businesses. Our senior engineers and industry specialists deliver pilots that prove value
                             fast and scale with low risk.
                         </p>
@@ -1308,10 +1322,11 @@
 
         .apf-team-card .card-outline rect {
             fill: none;
-            stroke: #3e3e3e;
-            /* accent color */
+            stroke: url(#apf-line-gradient);
+            /* accent: linear gradient */
             stroke-width: 0.3px;
-            stroke-opacity: 0.4;
+            /* keep a subtle base opacity; gradient stops may include opacity as needed */
+            stroke-opacity: 0.95;
             stroke-dasharray: 1200;
             stroke-dashoffset: 1200;
             transition: stroke-dashoffset 1.5s cubic-bezier(.5, .5, .7, 1), stroke 1.5s linear;
@@ -1405,27 +1420,6 @@
                     </article>
 
                     <article class="apf-team-card" role="listitem" tabindex="0"
-                        aria-label="Adam Lee — Co-Founder & CTO">
-                        <div class="apf-team-photo">
-                            <img loading="lazy" src="assets/images/team/adam.png" alt="Adam Lee" width="480"
-                                height="480">
-                        </div>
-                        <div class="apf-team-meta">
-                            <div class="apf-team-name">Adam Lee</div>
-                            <div class="apf-team-right">
-                                <a class="apf-linkedin" href="https://www.linkedin.com/in/adam-lee-05aa45262/"
-                                    target="_blank" rel="noopener noreferrer" aria-label="Adam Lee on LinkedIn"><i
-                                        class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                        <div class="apf-team-role">Co‑Founder & CTO</div>
-                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
-                            focusable="false">
-                            <rect x="1" y="1" width="98" height="98" />
-                        </svg>
-                    </article>
-
-                    <article class="apf-team-card" role="listitem" tabindex="0"
                         aria-label="Hiroshi Takahashi — Co-Founder & COO">
                         <div class="apf-team-photo">
                             <img loading="lazy" src="assets/images/team/hiroshi.png" alt="Hiroshi Takahashi" width="480"
@@ -1463,14 +1457,6 @@
                             <rect x="1" y="1" width="98" height="98" />
                         </svg>
                     </article>
-                </div>
-            </div>
-
-            <!-- Row 2: Sales Members -->
-            <div class="apf-team-row" aria-labelledby="sales-row">
-                <!-- <div id="sales-row" class="row-title">Sales Members</div> -->
-                <div class="apf-team-grid" role="list" aria-label="Sales members">
-
 
                     <article class="apf-team-card" role="listitem" tabindex="0"
                         aria-label="Alvaro Daniel — External CMO">
@@ -1492,6 +1478,16 @@
                             <rect x="1" y="1" width="98" height="98" />
                         </svg>
                     </article>
+                </div>
+            </div>
+
+            <!-- Row 2: Sales Members -->
+            <div class="apf-team-row" aria-labelledby="sales-row">
+                <!-- <div id="sales-row" class="row-title">Sales Members</div> -->
+                <div class="apf-team-grid" role="list" aria-label="Sales members">
+
+
+
                     <article class="apf-team-card" role="listitem" tabindex="0"
                         aria-label="Alex Thomas — BD Representative">
                         <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/alex.jpg"
@@ -1541,29 +1537,49 @@
                             <rect x="1" y="1" width="98" height="98" />
                         </svg>
                     </article>
-
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Marcos Monroy — Design Consultant">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Maria.jpg"
+                                alt="Marcos Monroy" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Marcus Kehn</div>
+                            <div class="apf-team-right"><a class="apf-linkedin"
+                                    href="https://www.linkedin.com/in/mariaannk/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Marcos Monroy on LinkedIn"><i
+                                        class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="apf-team-role">BD Representative</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
 
                 </div>
             </div>
+
+
 
             <!-- Row 3: Team Leads -->
             <div class="apf-team-row" aria-labelledby="leads-row">
                 <!-- <div id="leads-row" class="row-title">Team Leads</div> -->
                 <div class="apf-team-grid" role="list" aria-label="Team leads">
-
                     <article class="apf-team-card" role="listitem" tabindex="0"
-                        aria-label="Product Lead — Product & Design">
-                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Takashi.png"
-                                alt="Product Lead" width="480" height="480"></div>
-                        <div class="apf-team-meta">
-                            <div class="apf-team-name">Takashi Nakano</div>
-                            <!-- <div class="apf-team-right"><a class="apf-linkedin" href="https://www.linkedin.com/in/takashi-n-71b419389/"
-                                aria-label="Product Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div> -->
-                            <div class="apf-team-right"><a class="apf-linkedin" aria-label="Product Lead on LinkedIn"><i
-                                        class="fab fa-linkedin-in"></i></a></div>
+                        aria-label="Adam Lee — Co-Founder & CTO">
+                        <div class="apf-team-photo">
+                            <img loading="lazy" src="assets/images/team/adam.png" alt="Adam Lee" width="480"
+                                height="480">
                         </div>
-                        <div class="apf-team-role">AI Team Lead</div>
-                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Adam Lee</div>
+                            <div class="apf-team-right">
+                                <a class="apf-linkedin" href="https://www.linkedin.com/in/adam-lee-05aa45262/"
+                                    target="_blank" rel="noopener noreferrer" aria-label="Adam Lee on LinkedIn"><i
+                                        class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="apf-team-role">Co‑Founder & CTO</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
+                            focusable="false">
                             <rect x="1" y="1" width="98" height="98" />
                         </svg>
                     </article>
@@ -1670,16 +1686,18 @@
                             <rect x="1" y="1" width="98" height="98" />
                         </svg>
                     </article>
-                    <article class="apf-team-card" role="listitem" tabindex="0" aria-label="UI / UX Designer">
-                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/taliaa.png"
-                                alt="QA Lead" width="480" height="480"></div>
+                    <article class="apf-team-card" role="listitem" tabindex="0"
+                        aria-label="Product Lead — Product & Design">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/Takashi.png"
+                                alt="Product Lead" width="480" height="480"></div>
                         <div class="apf-team-meta">
-                            <div class="apf-team-name">Taliaa Abdelghani</div>
-                            <div class="apf-team-right"><a class="apf-linkedin"
-                                    href="https://www.linkedin.com/in/taliaa-abdelghani/"
-                                    aria-label="QA Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div>
+                            <div class="apf-team-name">Takashi Nakano</div>
+                            <!-- <div class="apf-team-right"><a class="apf-linkedin" href="https://www.linkedin.com/in/takashi-n-71b419389/"
+                                aria-label="Product Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div> -->
+                            <div class="apf-team-right"><a class="apf-linkedin" aria-label="Product Lead on LinkedIn"><i
+                                        class="fab fa-linkedin-in"></i></a></div>
                         </div>
-                        <div class="apf-team-role">UI / UX Designer</div>
+                        <div class="apf-team-role">AI Team Lead</div>
                         <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                             <rect x="1" y="1" width="98" height="98" />
                         </svg>
@@ -1697,6 +1715,20 @@
                             <div class="apf-team-name">Mostafa Esmat</div>
                             <div class="apf-team-right"><a class="apf-linkedin"
                                     href="https://www.linkedin.com/in/mostafa-esmat/"
+                                    aria-label="QA Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div>
+                        </div>
+                        <div class="apf-team-role">UI / UX Designer</div>
+                        <svg class="card-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <rect x="1" y="1" width="98" height="98" />
+                        </svg>
+                    </article>
+                    <article class="apf-team-card" role="listitem" tabindex="0" aria-label="UI / UX Designer">
+                        <div class="apf-team-photo"><img loading="lazy" src="assets/images/team/taliaa.png"
+                                alt="QA Lead" width="480" height="480"></div>
+                        <div class="apf-team-meta">
+                            <div class="apf-team-name">Taliaa Abdelghani</div>
+                            <div class="apf-team-right"><a class="apf-linkedin"
+                                    href="https://www.linkedin.com/in/taliaa-abdelghani/"
                                     aria-label="QA Lead on LinkedIn"><i class="fab fa-linkedin-in"></i></a></div>
                         </div>
                         <div class="apf-team-role">UI / UX Designer</div>
