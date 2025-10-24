@@ -47126,9 +47126,9 @@ textarea.w-select {
 }
 
 @media screen and (max-width: 767px) {
-  .wrapper-infinity-line {
+  /* .wrapper-infinity-line {
     padding-bottom: 40px;
-  }
+  } */
 }
 
 /* .infinity-line {
