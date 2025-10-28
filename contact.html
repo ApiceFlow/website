@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -1744,9 +1744,7 @@
         /* background: rgba(0, 0, 0, 0.78); */
         opacity: 0;
         visibility: hidden;
-        transition:
-          opacity 0.18s ease,
-          visibility 0.18s;
+        transition: opacity 0.18s ease, visibility 0.18s;
         z-index: 50;
         /* below header but above page content */
         pointer-events: none;
@@ -2045,8 +2043,7 @@
         padding: 12px 6px 14px 6px;
         font-size: 15px;
         color: #11252f;
-        transition:
-          box-shadow 0.28s cubic-bezier(0.2, 0.9, 0.2, 1),
+        transition: box-shadow 0.28s cubic-bezier(0.2, 0.9, 0.2, 1),
           border-color 0.28s cubic-bezier(0.2, 0.9, 0.2, 1);
         outline: none;
       }
@@ -2105,9 +2102,7 @@
         box-shadow: 0 10px 30px rgba(24, 139, 206, 0.14);
         cursor: pointer;
         font-weight: 450;
-        transition:
-          transform 0.14s ease,
-          box-shadow 0.18s ease,
+        transition: transform 0.14s ease, box-shadow 0.18s ease,
           opacity 0.12s ease;
       }
 
@@ -2230,7 +2225,7 @@
         // keyboard accessibility: arrow keys to navigate
         slider.addEventListener("keydown", function (e) {
           var activeIndex = slides.findIndex((s) =>
-            s.classList.contains("active"),
+            s.classList.contains("active")
           );
           if (e.key === "ArrowRight")
             setActive(Math.min(slides.length - 1, activeIndex + 1));
@@ -2333,7 +2328,7 @@
             if (left2 + tooltipRect2.width > maxRight) {
               left2 = Math.max(
                 window.scrollX + 8,
-                maxRight - tooltipRect2.width,
+                maxRight - tooltipRect2.width
               );
             }
             var minTop = window.scrollY + 8;
@@ -2357,7 +2352,7 @@
         // Attach events to icons (live on DOMContentLoaded)
         function attach() {
           var icons = document.querySelectorAll(
-            ".tech-tabs-section .icons-grid img",
+            ".tech-tabs-section .icons-grid img"
           );
           icons.forEach(function (img) {
             img.addEventListener("mouseenter", function () {
@@ -2476,16 +2471,13 @@
 
           // Poll fallback for CSS transitions that don't trigger attributes changes
           var lastColor = null;
-          setInterval(
-            function () {
-              var c = getComputedNavColor();
-              if (c !== lastColor) {
-                lastColor = c;
-                check();
-              }
-            },
-            Math.max(200, Math.floor(fadeDuration / 2)),
-          );
+          setInterval(function () {
+            var c = getComputedNavColor();
+            if (c !== lastColor) {
+              lastColor = c;
+              check();
+            }
+          }, Math.max(200, Math.floor(fadeDuration / 2)));
 
           // Initial check
           check();
@@ -2555,7 +2547,7 @@
           var wrappers = Array.from(root.querySelectorAll(".n-check-box-wrap"));
           wrappers.forEach(function (label) {
             var input = label.querySelector(
-              'input[type="checkbox"], input[type="radio"]',
+              'input[type="checkbox"], input[type="radio"]'
             );
             if (!input) return;
 
@@ -2667,7 +2659,7 @@
         if (!form) return;
 
         var attachCheckbox = form.querySelector(
-          "#I-agree-to-receive-marketing",
+          "#I-agree-to-receive-marketing"
         );
         var attachLabel = form.querySelector(".checkbox-field");
 
@@ -2724,6 +2716,284 @@
           });
         }
       });
+    </script>
+    <script>
+      (function () {
+        // Submission handler for #wf-form-Project-request
+        // Tries EmailJS (if configured), then Formspree endpoint (if configured), otherwise falls back to mailto.
+        // Replace placeholders below with your real service IDs / endpoints for automatic server-less sending.
+        var EMAILJS_USER_ID = ""; // e.g. 'user_xxxxxxxxxxxxx'
+        var EMAILJS_SERVICE_ID = ""; // e.g. 'service_xxx'
+        var EMAILJS_TEMPLATE_ID = ""; // e.g. 'template_xxx'
+        var FORMSPREE_ENDPOINT = "https://formspree.io/f/xblpgalv"; // e.g. 'https://formspree.io/f/xxxxxx' (POST)
+
+        function showSuccess(form) {
+          var done = form.querySelector(".success-message");
+          var fail = form.querySelector(".w-form-fail");
+          if (fail) fail.style.display = "none";
+          if (done) {
+            done.style.display = "block";
+            done.focus();
+          }
+        }
+        function showFail(form) {
+          var done = form.querySelector(".success-message");
+          var fail = form.querySelector(".w-form-fail");
+          if (done) done.style.display = "none";
+          if (fail) {
+            fail.style.display = "block";
+            fail.focus();
+          }
+        }
+
+        function collectFormData(form) {
+          var data = {};
+          // project types (checkboxes)
+          var projectChecks = Array.from(
+            form.querySelectorAll('input[type="checkbox"][name]')
+          )
+            .filter(function (i) {
+              // exclude the attach marketing checkbox by id
+              return (
+                i.id !== "I-agree-to-receive-marketing" && i.name && i.checked
+              );
+            })
+            .map(function (i) {
+              return i.name || i.id || i.value;
+            });
+          data.project_types = projectChecks.join(", ") || "";
+
+          // Budget (radio)
+          var budget = form.querySelector(
+            'input[type="radio"][name="budget"]:checked'
+          );
+          data.budget = budget ? budget.value : "";
+
+          // text fields
+          data.task =
+            (
+              form.querySelector(
+                'textarea[name="Task"], textarea#task-field-f'
+              ) || {}
+            ).value || "";
+          data.name =
+            (form.querySelector('input[name="Name"], input#name-field-f') || {})
+              .value || "";
+          data.company =
+            (form.querySelector('input[name="Company-Website"]') || {}).value ||
+            "";
+          data.email =
+            (
+              form.querySelector('input[name="Email"], input#email-field-f') ||
+              {}
+            ).value || "";
+          data.phone =
+            (
+              form.querySelector('input[name="Phone"], input#phone-field-f') ||
+              {}
+            ).value || "";
+
+          // attach marketing checkbox
+          var attach = form.querySelector("input#I-agree-to-receive-marketing");
+          data.attach_marketing = attach ? !!attach.checked : false;
+
+          // Any other visible custom values (optionally)
+          return data;
+        }
+
+        function buildPlainText(data) {
+          return [
+            "New Project Request from website",
+            "",
+            "Name: " + (data.name || "-"),
+            "Company / Website: " + (data.company || "-"),
+            "Email: " + (data.email || "-"),
+            "Phone: " + (data.phone || "-"),
+            "",
+            "Project types: " + (data.project_types || "-"),
+            "Budget: " + (data.budget || "-"),
+            "",
+            "Task / Description:",
+            data.task || "-",
+            "",
+            "Accepted Privacy Policy (marketing attach): " +
+              (data.attach_marketing ? "Yes" : "No"),
+            "",
+          ].join("\n");
+        }
+
+        function handleEmailjsSend(templateParams, form) {
+          // dynamic load emailjs SDK if needed
+          return new Promise(function (resolve, reject) {
+            if (!window.emailjs) {
+              var s = document.createElement("script");
+              s.src = "https://cdn.emailjs.com/sdk/3.2.0/email.min.js";
+              s.onload = function () {
+                try {
+                  emailjs.init(EMAILJS_USER_ID);
+                  emailjs
+                    .send(
+                      EMAILJS_SERVICE_ID,
+                      EMAILJS_TEMPLATE_ID,
+                      templateParams
+                    )
+                    .then(resolve, reject);
+                } catch (err) {
+                  reject(err);
+                }
+              };
+              s.onerror = function () {
+                reject(new Error("Failed to load EmailJS SDK"));
+              };
+              document.head.appendChild(s);
+            } else {
+              try {
+                emailjs.init(EMAILJS_USER_ID);
+                emailjs
+                  .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                  .then(resolve, reject);
+              } catch (err) {
+                reject(err);
+              }
+            }
+          });
+        }
+
+        function handleFormspreeSend(form, formData) {
+          // send as form-encoded
+          return fetch(FORMSPREE_ENDPOINT, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: formData,
+          }).then(function (res) {
+            if (!res.ok) throw new Error("Formspree failed: " + res.status);
+            return res.json ? res.json() : res;
+          });
+        }
+
+        function fallbackMailto(data) {
+          var subject = encodeURIComponent(
+            "New project request from website: " +
+              (data.name || data.email || "")
+          );
+          var body = encodeURIComponent(buildPlainText(data));
+          // use contact@apiceflow.com
+          window.location.href =
+            "mailto:contact@apiceflow.com?subject=" + subject + "&body=" + body;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          var form = document.getElementById("wf-form-Project-request");
+          if (!form) return;
+
+          form.addEventListener("submit", function (ev) {
+            ev.preventDefault();
+            // basic required validation
+            var requiredEmail = form.querySelector(
+              'input[name="Email"], input#email-field-f'
+            );
+            var requiredName = form.querySelector(
+              'input[name="Name"], input#name-field-f'
+            );
+            var attachCheckbox = form.querySelector(
+              "#I-agree-to-receive-marketing"
+            );
+
+            // show existing error if attach not checked (existing validation already does this)
+            if (attachCheckbox && !attachCheckbox.checked) {
+              // trigger the previously implemented validation UI
+              var evt = new Event("submit", { cancelable: true });
+              // but better: show error inline
+              var errNode = form.querySelector(".attach-error");
+              if (errNode) errNode.style.display = "block";
+              attachCheckbox.focus && attachCheckbox.focus();
+              return;
+            }
+            if (!requiredName || !requiredName.value.trim()) {
+              alert("Please enter your name.");
+              requiredName && requiredName.focus();
+              return;
+            }
+            if (!requiredEmail || !requiredEmail.value.trim()) {
+              alert("Please enter your email.");
+              requiredEmail && requiredEmail.focus();
+              return;
+            }
+
+            var data = collectFormData(form);
+            var plain = buildPlainText(data);
+
+            // Prepare template params for EmailJS (if used)
+            var templateParams = {
+              subject: "New project request from website",
+              message: plain,
+              name: data.name,
+              email: data.email,
+              phone: data.phone,
+              project_types: data.project_types,
+              budget: data.budget,
+              task: data.task,
+              attach_marketing: data.attach_marketing ? "Yes" : "No",
+            };
+
+            // Prefer EmailJS if configured
+            if (EMAILJS_USER_ID && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID) {
+              handleEmailjsSend(templateParams, form)
+                .then(function (resp) {
+                  showSuccess(form);
+                  form.reset();
+                })
+                .catch(function (err) {
+                  console.error("EmailJS send error", err);
+                  // attempt Formspree if configured
+                  if (FORMSPREE_ENDPOINT) {
+                    var fd = new FormData();
+                    Object.keys(templateParams).forEach(function (k) {
+                      fd.append(k, templateParams[k]);
+                    });
+                    fd.append("to", "contact@apiceflow.com");
+                    handleFormspreeSend(form, fd)
+                      .then(function () {
+                        showSuccess(form);
+                        form.reset();
+                      })
+                      .catch(function (err2) {
+                        console.error("Formspree send failed", err2);
+                        showFail(form);
+                      });
+                  } else {
+                    // final fallback: mailto
+                    fallbackMailto(data);
+                  }
+                });
+              return;
+            }
+
+            // If EmailJS not configured but Formspree is
+            if (FORMSPREE_ENDPOINT) {
+              var fd2 = new FormData();
+              Object.keys(templateParams).forEach(function (k) {
+                fd2.append(k, templateParams[k]);
+              });
+              fd2.append("to", "contact@apiceflow.com");
+              handleFormspreeSend(form, fd2)
+                .then(function () {
+                  showSuccess(form);
+                  form.reset();
+                })
+                .catch(function (err) {
+                  console.error("Formspree send failed", err);
+                  // fallback to mailto
+                  fallbackMailto(data);
+                });
+              return;
+            }
+
+            // No remote send configured: fallback to mailto (opens user's email client prefilled)
+            fallbackMailto(data);
+          });
+        });
+      })();
     </script>
   </body>
 </html>

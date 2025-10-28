@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -3051,7 +3051,12 @@
                       StormX - Crypto Cashback & Rewards Platform
                     </div>
                     <div class="text-16px">
-                      "ApiceFlow fixed our urgent integration and reconciliation problems. They built a solid partner adapter, tightened fraud checks, and stabilised the token membership boosts. The PM kept stakeholders aligned and handed over clear docs for ops and finance — and post-launch, reconciliation errors and payout disputes dropped a lot"
+                      "ApiceFlow fixed our urgent integration and reconciliation
+                      problems. They built a solid partner adapter, tightened
+                      fraud checks, and stabilised the token membership boosts.
+                      The PM kept stakeholders aligned and handed over clear
+                      docs for ops and finance — and post-launch, reconciliation
+                      errors and payout disputes dropped a lot"
                     </div>
                     <div class="wrapper-content-bottom">
                       <a
@@ -3236,7 +3241,9 @@
                       Reeact.io - Building Online Reputation Management Product
                     </div>
                     <div class="text-16px">
-                      “We rolled out a practical AI+human moderation setup that improved results. GDPR-ready audit logs and quick, clear communication made the whole process painless.”
+                      “We rolled out a practical AI+human moderation setup that
+                      improved results. GDPR-ready audit logs and quick, clear
+                      communication made the whole process painless.”
                     </div>
                     <div class="wrapper-content-bottom">
                       <a
@@ -3327,7 +3334,9 @@
                       <div class="item-rev-pop">
                         <div class="project">
                           <div class="p-new _16 mon gre">DURATION</div>
-                          <div class="p-new _16 sem _16-m">3 months (MVP) + 1 year (Maintenance)</div>
+                          <div class="p-new _16 sem _16-m">
+                            3 months (MVP) + 1 year (Maintenance)
+                          </div>
                         </div>
                       </div>
                       <div class="item-rev-pop">
@@ -3424,7 +3433,11 @@
                     </div>
                     <div class="text-20px bold-600 w-dyn-bind-empty"></div>
                     <div class="text-16px">
-                      "We got a secure app with SSO and encrypted offline storage plus OCR document intake — it cut processing time and knocked down support calls. Docs and post-launch help were practical and fast, so overall a smooth delivery that boosted member satisfaction. 😊"
+                      "We got a secure app with SSO and encrypted offline
+                      storage plus OCR document intake — it cut processing time
+                      and knocked down support calls. Docs and post-launch help
+                      were practical and fast, so overall a smooth delivery that
+                      boosted member satisfaction. 😊"
                     </div>
                     <div class="wrapper-content-bottom">
                       <a
@@ -3514,7 +3527,9 @@
                       <div class="item-rev-pop">
                         <div class="project">
                           <div class="p-new _16 mon gre">DURATION</div>
-                          <div class="p-new _16 sem _16-m">6 months (First Launch) + 2 years (Maintenance)</div>
+                          <div class="p-new _16 sem _16-m">
+                            6 months (First Launch) + 2 years (Maintenance)
+                          </div>
                         </div>
                       </div>
                       <div class="item-rev-pop">
@@ -3605,7 +3620,12 @@
                       Bryant Dental - Dental optics e-commerce & tools
                     </div>
                     <div class="text-16px">
-                      "Delivered exactly what was needed: media-first product pages, a regionally routed demo flow, and a headless international checkout — all cleanly integrated with the CRM. Senior devs tore through tricky performance and pipeline issues, and the PM kept communication and scope tight. Smooth rollout, fewer headaches."
+                      "Delivered exactly what was needed: media-first product
+                      pages, a regionally routed demo flow, and a headless
+                      international checkout — all cleanly integrated with the
+                      CRM. Senior devs tore through tricky performance and
+                      pipeline issues, and the PM kept communication and scope
+                      tight. Smooth rollout, fewer headaches."
                     </div>
                     <div class="wrapper-content-bottom">
                       <a
@@ -4719,7 +4739,9 @@
         /* background: rgba(0, 0, 0, 0.78); */
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.18s ease, visibility 0.18s;
+        transition:
+          opacity 0.18s ease,
+          visibility 0.18s;
         z-index: 50;
         /* below header but above page content */
         pointer-events: none;
@@ -4986,7 +5008,7 @@
             if (left2 + tooltipRect2.width > maxRight) {
               left2 = Math.max(
                 window.scrollX + 8,
-                maxRight - tooltipRect2.width
+                maxRight - tooltipRect2.width,
               );
             }
             var minTop = window.scrollY + 8;
@@ -5010,7 +5032,7 @@
         // Attach events to icons (live on DOMContentLoaded)
         function attach() {
           var icons = document.querySelectorAll(
-            ".tech-tabs-section .icons-grid img"
+            ".tech-tabs-section .icons-grid img",
           );
           icons.forEach(function (img) {
             img.addEventListener("mouseenter", function () {
@@ -5129,13 +5151,16 @@
 
           // Poll fallback for CSS transitions that don't trigger attributes changes
           var lastColor = null;
-          setInterval(function () {
-            var c = getComputedNavColor();
-            if (c !== lastColor) {
-              lastColor = c;
-              check();
-            }
-          }, Math.max(200, Math.floor(fadeDuration / 2)));
+          setInterval(
+            function () {
+              var c = getComputedNavColor();
+              if (c !== lastColor) {
+                lastColor = c;
+                check();
+              }
+            },
+            Math.max(200, Math.floor(fadeDuration / 2)),
+          );
 
           // Initial check
           check();
@@ -5226,7 +5251,7 @@
                 s.style.marginRight = "";
                 s.style.boxSizing = "";
               } catch (e) {}
-            }
+            },
           );
 
           // Initialize Swiper with strict single-slide layout (responsive)
@@ -5294,10 +5319,10 @@
 
           // Make navigation buttons always call API (reliable)
           var prevBtn = container.parentElement?.querySelector(
-            ".healthtech-prev, .swiper-button-prev1"
+            ".healthtech-prev, .swiper-button-prev1",
           );
           var nextBtn = container.parentElement?.querySelector(
-            ".healthtech-next, .swiper-button-next1"
+            ".healthtech-next, .swiper-button-next1",
           );
           [prevBtn, nextBtn].forEach(function (btn) {
             if (!btn) return;
@@ -5338,7 +5363,7 @@
           var wrappers = Array.from(root.querySelectorAll(".n-check-box-wrap"));
           wrappers.forEach(function (label) {
             var input = label.querySelector(
-              'input[type="checkbox"], input[type="radio"]'
+              'input[type="checkbox"], input[type="radio"]',
             );
             if (!input) return;
 
@@ -5450,7 +5475,7 @@
         if (!form) return;
 
         var attachCheckbox = form.querySelector(
-          "#I-agree-to-receive-marketing"
+          "#I-agree-to-receive-marketing",
         );
         var attachLabel = form.querySelector(".checkbox-field");
 
@@ -5516,7 +5541,7 @@
         var EMAILJS_USER_ID = ""; // e.g. 'user_xxxxxxxxxxxxx'
         var EMAILJS_SERVICE_ID = ""; // e.g. 'service_xxx'
         var EMAILJS_TEMPLATE_ID = ""; // e.g. 'template_xxx'
-        var FORMSPREE_ENDPOINT = "https://formspree.io/f/mnngzoye"; // e.g. 'https://formspree.io/f/xxxxxx' (POST)
+        var FORMSPREE_ENDPOINT = "https://formspree.io/f/xblpgalv"; // e.g. 'https://formspree.io/f/xxxxxx' (POST)
 
         function showSuccess(form) {
           var done = form.querySelector(".success-message");
@@ -5541,7 +5566,7 @@
           var data = {};
           // project types (checkboxes)
           var projectChecks = Array.from(
-            form.querySelectorAll('input[type="checkbox"][name]')
+            form.querySelectorAll('input[type="checkbox"][name]'),
           )
             .filter(function (i) {
               // exclude the attach marketing checkbox by id
@@ -5556,7 +5581,7 @@
 
           // Budget (radio)
           var budget = form.querySelector(
-            'input[type="radio"][name="budget"]:checked'
+            'input[type="radio"][name="budget"]:checked',
           );
           data.budget = budget ? budget.value : "";
 
@@ -5564,7 +5589,7 @@
           data.task =
             (
               form.querySelector(
-                'textarea[name="Task"], textarea#task-field-f'
+                'textarea[name="Task"], textarea#task-field-f',
               ) || {}
             ).value || "";
           data.name =
@@ -5626,7 +5651,7 @@
                     .send(
                       EMAILJS_SERVICE_ID,
                       EMAILJS_TEMPLATE_ID,
-                      templateParams
+                      templateParams,
                     )
                     .then(resolve, reject);
                 } catch (err) {
@@ -5665,7 +5690,7 @@
         function fallbackMailto(data) {
           var subject = encodeURIComponent(
             "New project request from website: " +
-              (data.name || data.email || "")
+              (data.name || data.email || ""),
           );
           var body = encodeURIComponent(buildPlainText(data));
           // use contact@apiceflow.com
@@ -5681,13 +5706,13 @@
             ev.preventDefault();
             // basic required validation
             var requiredEmail = form.querySelector(
-              'input[name="Email"], input#email-field-f'
+              'input[name="Email"], input#email-field-f',
             );
             var requiredName = form.querySelector(
-              'input[name="Name"], input#name-field-f'
+              'input[name="Name"], input#name-field-f',
             );
             var attachCheckbox = form.querySelector(
-              "#I-agree-to-receive-marketing"
+              "#I-agree-to-receive-marketing",
             );
 
             // show existing error if attach not checked (existing validation already does this)
@@ -5823,7 +5848,7 @@
             // If there's not at least two cycles, duplicate the existing children once
             // (If markup already contains many cycles that's OK)
             var totalBlocks = line.querySelectorAll(
-              ".infinity-line-content"
+              ".infinity-line-content",
             ).length;
             if (totalBlocks < 2) {
               var nodes = Array.from(line.children).map(function (n) {
@@ -5892,7 +5917,7 @@
                 ensureDuplicationAndCreateAnimation();
               }, 200);
             },
-            { passive: true }
+            { passive: true },
           );
 
           // run once
