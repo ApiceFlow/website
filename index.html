@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -4739,7 +4739,9 @@
         /* background: rgba(0, 0, 0, 0.78); */
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.18s ease, visibility 0.18s;
+        transition:
+          opacity 0.18s ease,
+          visibility 0.18s;
         z-index: 50;
         /* below header but above page content */
         pointer-events: none;
@@ -5006,7 +5008,7 @@
             if (left2 + tooltipRect2.width > maxRight) {
               left2 = Math.max(
                 window.scrollX + 8,
-                maxRight - tooltipRect2.width
+                maxRight - tooltipRect2.width,
               );
             }
             var minTop = window.scrollY + 8;
@@ -5030,7 +5032,7 @@
         // Attach events to icons (live on DOMContentLoaded)
         function attach() {
           var icons = document.querySelectorAll(
-            ".tech-tabs-section .icons-grid img"
+            ".tech-tabs-section .icons-grid img",
           );
           icons.forEach(function (img) {
             img.addEventListener("mouseenter", function () {
@@ -5149,13 +5151,16 @@
 
           // Poll fallback for CSS transitions that don't trigger attributes changes
           var lastColor = null;
-          setInterval(function () {
-            var c = getComputedNavColor();
-            if (c !== lastColor) {
-              lastColor = c;
-              check();
-            }
-          }, Math.max(200, Math.floor(fadeDuration / 2)));
+          setInterval(
+            function () {
+              var c = getComputedNavColor();
+              if (c !== lastColor) {
+                lastColor = c;
+                check();
+              }
+            },
+            Math.max(200, Math.floor(fadeDuration / 2)),
+          );
 
           // Initial check
           check();
@@ -5246,7 +5251,7 @@
                 s.style.marginRight = "";
                 s.style.boxSizing = "";
               } catch (e) {}
-            }
+            },
           );
 
           // Initialize Swiper with strict single-slide layout (responsive)
@@ -5314,10 +5319,10 @@
 
           // Make navigation buttons always call API (reliable)
           var prevBtn = container.parentElement?.querySelector(
-            ".healthtech-prev, .swiper-button-prev1"
+            ".healthtech-prev, .swiper-button-prev1",
           );
           var nextBtn = container.parentElement?.querySelector(
-            ".healthtech-next, .swiper-button-next1"
+            ".healthtech-next, .swiper-button-next1",
           );
           [prevBtn, nextBtn].forEach(function (btn) {
             if (!btn) return;
@@ -5358,7 +5363,7 @@
           var wrappers = Array.from(root.querySelectorAll(".n-check-box-wrap"));
           wrappers.forEach(function (label) {
             var input = label.querySelector(
-              'input[type="checkbox"], input[type="radio"]'
+              'input[type="checkbox"], input[type="radio"]',
             );
             if (!input) return;
 
@@ -5470,7 +5475,7 @@
         if (!form) return;
 
         var attachCheckbox = form.querySelector(
-          "#I-agree-to-receive-marketing"
+          "#I-agree-to-receive-marketing",
         );
         var attachLabel = form.querySelector(".checkbox-field");
 
@@ -5561,7 +5566,7 @@
           var data = {};
           // project types (checkboxes)
           var projectChecks = Array.from(
-            form.querySelectorAll('input[type="checkbox"][name]')
+            form.querySelectorAll('input[type="checkbox"][name]'),
           )
             .filter(function (i) {
               // exclude the attach marketing checkbox by id
@@ -5576,7 +5581,7 @@
 
           // Budget (radio)
           var budget = form.querySelector(
-            'input[type="radio"][name="budget"]:checked'
+            'input[type="radio"][name="budget"]:checked',
           );
           data.budget = budget ? budget.value : "";
 
@@ -5584,7 +5589,7 @@
           data.task =
             (
               form.querySelector(
-                'textarea[name="Task"], textarea#task-field-f'
+                'textarea[name="Task"], textarea#task-field-f',
               ) || {}
             ).value || "";
           data.name =
@@ -5646,7 +5651,7 @@
                     .send(
                       EMAILJS_SERVICE_ID,
                       EMAILJS_TEMPLATE_ID,
-                      templateParams
+                      templateParams,
                     )
                     .then(resolve, reject);
                 } catch (err) {
@@ -5685,7 +5690,7 @@
         function fallbackMailto(data) {
           var subject = encodeURIComponent(
             "New project request from website: " +
-              (data.name || data.email || "")
+              (data.name || data.email || ""),
           );
           var body = encodeURIComponent(buildPlainText(data));
           // use contact@apiceflow.com
@@ -5701,13 +5706,13 @@
             ev.preventDefault();
             // basic required validation
             var requiredEmail = form.querySelector(
-              'input[name="Email"], input#email-field-f'
+              'input[name="Email"], input#email-field-f',
             );
             var requiredName = form.querySelector(
-              'input[name="Name"], input#name-field-f'
+              'input[name="Name"], input#name-field-f',
             );
             var attachCheckbox = form.querySelector(
-              "#I-agree-to-receive-marketing"
+              "#I-agree-to-receive-marketing",
             );
 
             // show existing error if attach not checked (existing validation already does this)
@@ -5843,7 +5848,7 @@
             // If there's not at least two cycles, duplicate the existing children once
             // (If markup already contains many cycles that's OK)
             var totalBlocks = line.querySelectorAll(
-              ".infinity-line-content"
+              ".infinity-line-content",
             ).length;
             if (totalBlocks < 2) {
               var nodes = Array.from(line.children).map(function (n) {
@@ -5912,7 +5917,7 @@
                 ensureDuplicationAndCreateAnimation();
               }, 200);
             },
-            { passive: true }
+            { passive: true },
           );
 
           // run once
