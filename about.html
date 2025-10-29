@@ -465,6 +465,68 @@
         position: relative;
         transition: transform 0.08s ease, opacity 0.12s ease;
       }
+
+      .banner-about-wrapper1 {
+        max-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: left;
+      }
+
+      .banner-about-wrapper1 .hero-banner-image1 {
+        width: auto;
+        height: 670px;
+      }
+
+      @media (max-width: 1200px) {
+        .banner-about-wrapper1 .hero-banner-image1 {
+          height: 610px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .banner-about-wrapper1 .hero-banner-image1 {
+          height: 550px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .banner-about-wrapper1 .hero-banner-image1 {
+          height: 490px;
+        }
+      }
+
+      @media (max-width: 540px) {
+        .banner-about-wrapper1 .hero-banner-image1 {
+          height: 600px;
+        }
+      }
+
+      .banner-about-wrapper1::before {
+        transform: translateY(0px) !important;
+      }
+
+      @media (max-width: 768px) {
+        .banner-about-wrapper1 .hero-banner-image1 {
+          height: 600px;
+        }
+
+        .banner-about-wrapper1::before {
+          width: 50%;
+          right: 36px;
+          transform: translateY(-84px) !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-banner-image1 .hero-center-text {
+          padding-top: 0px !important;
+          font-size: 28px;
+          width: 80%;
+          margin-top: 170px;
+        }
+      }
     </style>
 
     <!-- Leaflet CSS -->
@@ -1280,10 +1342,7 @@
       <div class="banner-about-wrapper1">
         <!-- index seven area start -->
         <div class="hero-banner-image1">
-          <div
-            class="hero-center-text text-gradient"
-            style="padding-top: 130px"
-          >
+          <div class="hero-center-text text-gradient">
             Tech That Runs. <br />Profit That Grows.
             <div
               class="page-description"
