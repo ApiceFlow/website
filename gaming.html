@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -201,9 +201,7 @@
         color: #384249;
         margin-top: 0;
         margin-bottom: 0;
-        font-family:
-          Open Sans,
-          sans-serif;
+        font-family: Open Sans, sans-serif;
         font-size: 1.125em;
         font-weight: 400;
       }
@@ -287,9 +285,7 @@
         color: #2e303f;
         margin-top: 0;
         margin-bottom: 0;
-        font-family:
-          Open Sans,
-          sans-serif;
+        font-family: Open Sans, sans-serif;
         font-size: 18px;
         font-weight: 400;
         line-height: 27px;
@@ -384,8 +380,7 @@
       a.get-consultation .text-btn-u-link,
       a.get-consultation .arrow-btn-u-link,
       a.get-consultation .arrow-btn-u-link svg {
-        transition:
-          transform 0.28s cubic-bezier(0.22, 0.9, 0.32, 1),
+        transition: transform 0.28s cubic-bezier(0.22, 0.9, 0.32, 1),
           opacity 0.28s cubic-bezier(0.22, 0.9, 0.32, 1);
         will-change: transform, opacity;
       }
@@ -578,10 +573,8 @@
         /* initial thin indicator */
         background-color: #384249;
         /* border-radius: 6px; */
-        transition:
-          width 0.5s cubic-bezier(0.2, 0.9, 0.2, 1),
-          opacity 0.18s ease,
-          background-color 0.18s ease;
+        transition: width 0.5s cubic-bezier(0.2, 0.9, 0.2, 1),
+          opacity 0.18s ease, background-color 0.18s ease;
         /* opacity: 0; */
         /* keep hidden until hover to preserve current look */
         z-index: 1;
@@ -698,9 +691,7 @@
 
       /* Keep existing slide visuals intact but ensure hover contrast */
       .swiper-healthtech .our-expertise_item {
-        transition:
-          transform 0.18s ease,
-          box-shadow 0.18s ease;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
         /* border-radius: 6px; */
       }
 
@@ -749,9 +740,7 @@
         cursor: pointer;
         padding: 0;
         position: relative;
-        transition:
-          transform 0.08s ease,
-          opacity 0.12s ease;
+        transition: transform 0.08s ease, opacity 0.12s ease;
       }
 
       /* Use compact SVG arrows centered inside the button. Arrow icon size: 13x28 as requested. */
@@ -1577,7 +1566,7 @@
         <div
           class="hero-banner-image"
           style="
-            background-image: url(&quot;assets/images/banner/industries/gaming.jpg&quot;);
+            background-image: url('assets/images/banner/industries/gaming.jpg');
             height: 550px;
           "
         >
@@ -3760,13 +3749,13 @@
                     <div
                       class="bg"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio48/1.png&quot;);
+                        background-image: url('assets/images/portfolio/portfolio48/1.png');
                       "
                     ></div>
                     <div
                       class="bg alt"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio48/2.jpg&quot;);
+                        background-image: url('assets/images/portfolio/portfolio48/2.jpg');
                       "
                     ></div>
                     <div class="mask">
@@ -3803,13 +3792,13 @@
                     <div
                       class="bg"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio4/portfolio4-2.jpg&quot;);
+                        background-image: url('assets/images/portfolio/portfolio4/portfolio4-2.jpg');
                       "
                     ></div>
                     <div
                       class="bg alt"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio4/portfolio4-mini.jpg&quot;);
+                        background-image: url('assets/images/portfolio/portfolio4/portfolio4-mini.jpg');
                       "
                     ></div>
                     <div class="mask">
@@ -3849,13 +3838,13 @@
                     <div
                       class="bg"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio41/1.webp&quot;);
+                        background-image: url('assets/images/portfolio/portfolio41/1.webp');
                       "
                     ></div>
                     <div
                       class="bg alt"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio41/2.webp&quot;);
+                        background-image: url('assets/images/portfolio/portfolio41/2.webp');
                       "
                     ></div>
                     <div class="mask">
@@ -4266,7 +4255,7 @@
                                 </div> -->
                     <div class="disc">
                       <!-- <span>Call Us 24/7</span> -->
-                      <a href="tel:+17132394774">+1 713 239 4774</a>
+                      <a href="tel:+85292930420">+852 9293 0420</a>
                     </div>
                   </div>
                   <div class="contact-info-1">
@@ -4362,7 +4351,7 @@
               <!-- single -->
               <div class="single">
                 <i class="fas fa-phone-alt"></i>
-                <a href="tel:+17132394774">+1 713 239 4774</a>
+                <a href="tel:+85292930420">+852 9293 0420</a>
               </div>
               <!-- single ENd -->
               <!-- single -->
@@ -4617,9 +4606,7 @@
         /* background: rgba(0, 0, 0, 0.78); */
         opacity: 0;
         visibility: hidden;
-        transition:
-          opacity 0.18s ease,
-          visibility 0.18s;
+        transition: opacity 0.18s ease, visibility 0.18s;
         z-index: 50;
         /* below header but above page content */
         pointer-events: none;
@@ -4853,7 +4840,7 @@
         // keyboard accessibility: arrow keys to navigate
         slider.addEventListener("keydown", function (e) {
           var activeIndex = slides.findIndex((s) =>
-            s.classList.contains("active"),
+            s.classList.contains("active")
           );
           if (e.key === "ArrowRight")
             setActive(Math.min(slides.length - 1, activeIndex + 1));
@@ -4956,7 +4943,7 @@
             if (left2 + tooltipRect2.width > maxRight) {
               left2 = Math.max(
                 window.scrollX + 8,
-                maxRight - tooltipRect2.width,
+                maxRight - tooltipRect2.width
               );
             }
             var minTop = window.scrollY + 8;
@@ -4980,7 +4967,7 @@
         // Attach events to icons (live on DOMContentLoaded)
         function attach() {
           var icons = document.querySelectorAll(
-            ".tech-tabs-section .icons-grid img",
+            ".tech-tabs-section .icons-grid img"
           );
           icons.forEach(function (img) {
             img.addEventListener("mouseenter", function () {
@@ -5099,16 +5086,13 @@
 
           // Poll fallback for CSS transitions that don't trigger attributes changes
           var lastColor = null;
-          setInterval(
-            function () {
-              var c = getComputedNavColor();
-              if (c !== lastColor) {
-                lastColor = c;
-                check();
-              }
-            },
-            Math.max(200, Math.floor(fadeDuration / 2)),
-          );
+          setInterval(function () {
+            var c = getComputedNavColor();
+            if (c !== lastColor) {
+              lastColor = c;
+              check();
+            }
+          }, Math.max(200, Math.floor(fadeDuration / 2)));
 
           // Initial check
           check();
@@ -5201,7 +5185,7 @@
           }
 
           var containers = Array.from(
-            document.querySelectorAll(".swiper.swiper-healthtech"),
+            document.querySelectorAll(".swiper.swiper-healthtech")
           );
           containers.forEach(function (container) {
             // destroy existing instance (clean start)
@@ -5218,7 +5202,7 @@
 
             // clear inline styles that could interfere with responsive sizing
             var slides = Array.from(
-              container.querySelectorAll(".swiper-slide"),
+              container.querySelectorAll(".swiper-slide")
             );
             slides.forEach(function (s) {
               try {
@@ -5331,7 +5315,7 @@
                         "gap",
                         (this.params && this.params.spaceBetween
                           ? this.params.spaceBetween
-                          : computedGap) + "px",
+                          : computedGap) + "px"
                       );
                   } catch (e) {
                     /* ignore */
@@ -5372,12 +5356,12 @@
               if (prevEl)
                 prevEl.setAttribute(
                   "aria-disabled",
-                  sw.isBeginning ? "true" : "false",
+                  sw.isBeginning ? "true" : "false"
                 );
               if (nextEl)
                 nextEl.setAttribute(
                   "aria-disabled",
-                  sw.isEnd ? "true" : "false",
+                  sw.isEnd ? "true" : "false"
                 );
             }
 
@@ -5389,7 +5373,7 @@
                 function (ev) {
                   if (ev.button === 0) btn.classList.add("pressed");
                 },
-                { passive: true },
+                { passive: true }
               );
               document.addEventListener("pointerup", function () {
                 btn.classList.remove("pressed");
@@ -5424,7 +5408,7 @@
                   if (ev.key === "Enter" || ev.key === " ") {
                     ev.preventDefault();
                     var link = slide.querySelector(
-                      ".wrapper-btn-link a, a.u-link.u-link_green-light, a.u-link_green-light",
+                      ".wrapper-btn-link a, a.u-link.u-link_green-light, a.u-link_green-light"
                     );
                     if (link) link.click();
                   }

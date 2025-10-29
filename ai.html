@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -806,7 +806,7 @@
         <div
           class="hero-banner-image"
           style="
-            background-image: url(&quot;assets/images/banner/portfolio-banner/ai.jpg&quot;);
+            background-image: url('assets/images/banner/portfolio-banner/ai.jpg');
           "
         >
           <div class="hero-center-text" style="padding-top: 130px">
@@ -2384,13 +2384,13 @@
                     <div
                       class="bg"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio33/4.jpg&quot;);
+                        background-image: url('assets/images/portfolio/portfolio33/4.jpg');
                       "
                     ></div>
                     <div
                       class="bg alt"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio33/6.jpg&quot;);
+                        background-image: url('assets/images/portfolio/portfolio33/6.jpg');
                       "
                     ></div>
                     <div class="mask">
@@ -2426,13 +2426,13 @@
                     <div
                       class="bg"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio25/Genie1.avif&quot;);
+                        background-image: url('assets/images/portfolio/portfolio25/Genie1.avif');
                       "
                     ></div>
                     <div
                       class="bg alt"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio25/Genie2.avif&quot;);
+                        background-image: url('assets/images/portfolio/portfolio25/Genie2.avif');
                       "
                     ></div>
                     <div class="mask">
@@ -2466,13 +2466,13 @@
                     <div
                       class="bg"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio4/portfolio4-2.jpg&quot;);
+                        background-image: url('assets/images/portfolio/portfolio4/portfolio4-2.jpg');
                       "
                     ></div>
                     <div
                       class="bg alt"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio4/portfolio4-mini.jpg&quot;);
+                        background-image: url('assets/images/portfolio/portfolio4/portfolio4-mini.jpg');
                       "
                     ></div>
                     <div class="mask">
@@ -2509,13 +2509,13 @@
                     <div
                       class="bg"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio30/mini1.jpg&quot;);
+                        background-image: url('assets/images/portfolio/portfolio30/mini1.jpg');
                       "
                     ></div>
                     <div
                       class="bg alt"
                       style="
-                        background-image: url(&quot;assets/images/portfolio/portfolio30/mini2.jpg&quot;);
+                        background-image: url('assets/images/portfolio/portfolio30/mini2.jpg');
                       "
                     ></div>
                     <div class="mask">
@@ -2910,7 +2910,7 @@
                                 </div> -->
                     <div class="disc">
                       <!-- <span>Call Us 24/7</span> -->
-                      <a href="tel:+17132394774">+1 713 239 4774</a>
+                      <a href="tel:+85292930420">+852 9293 0420</a>
                     </div>
                   </div>
                   <div class="contact-info-1">
@@ -3006,7 +3006,7 @@
               <!-- single -->
               <div class="single">
                 <i class="fas fa-phone-alt"></i>
-                <a href="tel:+17132394774">+1 713 239 4774</a>
+                <a href="tel:+85292930420">+852 9293 0420</a>
               </div>
               <!-- single ENd -->
               <!-- single -->
@@ -3261,9 +3261,7 @@
         /* background: rgba(0, 0, 0, 0.78); */
         opacity: 0;
         visibility: hidden;
-        transition:
-          opacity 0.18s ease,
-          visibility 0.18s;
+        transition: opacity 0.18s ease, visibility 0.18s;
         z-index: 50;
         /* below header but above page content */
         pointer-events: none;
@@ -3497,7 +3495,7 @@
         // keyboard accessibility: arrow keys to navigate
         slider.addEventListener("keydown", function (e) {
           var activeIndex = slides.findIndex((s) =>
-            s.classList.contains("active"),
+            s.classList.contains("active")
           );
           if (e.key === "ArrowRight")
             setActive(Math.min(slides.length - 1, activeIndex + 1));
@@ -3600,7 +3598,7 @@
             if (left2 + tooltipRect2.width > maxRight) {
               left2 = Math.max(
                 window.scrollX + 8,
-                maxRight - tooltipRect2.width,
+                maxRight - tooltipRect2.width
               );
             }
             var minTop = window.scrollY + 8;
@@ -3624,7 +3622,7 @@
         // Attach events to icons (live on DOMContentLoaded)
         function attach() {
           var icons = document.querySelectorAll(
-            ".tech-tabs-section .icons-grid img",
+            ".tech-tabs-section .icons-grid img"
           );
           icons.forEach(function (img) {
             img.addEventListener("mouseenter", function () {
@@ -3743,16 +3741,13 @@
 
           // Poll fallback for CSS transitions that don't trigger attributes changes
           var lastColor = null;
-          setInterval(
-            function () {
-              var c = getComputedNavColor();
-              if (c !== lastColor) {
-                lastColor = c;
-                check();
-              }
-            },
-            Math.max(200, Math.floor(fadeDuration / 2)),
-          );
+          setInterval(function () {
+            var c = getComputedNavColor();
+            if (c !== lastColor) {
+              lastColor = c;
+              check();
+            }
+          }, Math.max(200, Math.floor(fadeDuration / 2)));
 
           // Initial check
           check();
@@ -3843,7 +3838,7 @@
                 s.style.marginRight = "";
                 s.style.boxSizing = "";
               } catch (e) {}
-            },
+            }
           );
 
           // Initialize Swiper with strict single-slide layout (responsive)
@@ -3911,10 +3906,10 @@
 
           // Make navigation buttons always call API (reliable)
           var prevBtn = container.parentElement?.querySelector(
-            ".healthtech-prev, .swiper-button-prev1",
+            ".healthtech-prev, .swiper-button-prev1"
           );
           var nextBtn = container.parentElement?.querySelector(
-            ".healthtech-next, .swiper-button-next1",
+            ".healthtech-next, .swiper-button-next1"
           );
           [prevBtn, nextBtn].forEach(function (btn) {
             if (!btn) return;
