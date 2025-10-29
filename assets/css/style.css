@@ -41765,12 +41765,12 @@ header.header-transparent .rts-mega-menu .menu-thumb .all-services-link:focus {
 }
 
 .mission-profile-image {
-  width: 64px;
-  height: 64px;
+  width: 128px;
+  height: 128px;
   background-size: cover;
   background: #ddd;
   border-radius: 50%;
-  background-image: url("../images/mission/jan.jpg");
+  background-image: url("../images/mission/jan.png");
 }
 
 .mission-author-meta {
@@ -47566,7 +47566,7 @@ img {
   align-items: flex-start;
   width: 100%;
   max-width: 1440px;
-  margin-top: 10em;
+  margin-top: 5em;
   margin-bottom: 10em;
   padding-left: 80px;
   padding-right: 80px;
