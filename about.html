@@ -466,6 +466,46 @@
         transition: transform 0.08s ease, opacity 0.12s ease;
       }
     </style>
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <style>
+      #map-our-location-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 60px;
+      }
+
+      #map-our-location {
+        height: 450px;
+        width: 80%;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .leaflet-popup-close-button {
+        display: none !important;
+      }
+
+      .headquarter-popup .leaflet-popup-content-wrapper {
+        background-color: #e74c3c; /* Red background */
+        color: white;
+      }
+
+      .headquarter-popup .leaflet-popup-tip {
+        background-color: #e74c3c; /* Red arrow */
+      }
+    </style>
   </head>
 
   <body>
@@ -3413,6 +3453,29 @@
       </div>
     </div>
 
+    <div class="section-wrapper-gradient1">
+      <section class="apf-team-section" aria-labelledby="apf-team-heading">
+        <div class="apf-team-header">
+          <span class="pre">REMOTE TEAMS, GLOBAL IMPACT</span>
+          <h2 id="apf-team-heading" style="padding-bottom: 30px">
+            Our Location
+          </h2>
+          <p>
+            Distance doesn't limit innovation. Our talented sales, design, and
+            engineering teams span several countries, working remotely to
+            co-create cutting-edge tech solutions with leading brands and daring
+            start-ups. From closing deals to building products, we collaborate
+            across time zones to shape a better future. Meet the people behind
+            ApiceFlow, wherever they call home.
+          </p>
+        </div>
+        <div id="map-our-location-wrapper">
+          <div id="map-our-location"></div>
+        </div>
+      </section>
+    </div>
+    <!-- end replacement -->
+
     <!-- rts team area end -->
 
     <div class="section-wrapper bg-dark_bgd">
@@ -4546,6 +4609,126 @@
           });
         else ready(0);
       })();
+    </script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+      // Initialize the map with zoom disabled
+      const map = L.map("map-our-location", {
+        center: [22.3193, 114.1694],
+        zoom: 1.28,
+        minZoom: 1.28,
+        maxZoom: 1.28,
+        zoomControl: false,
+        // scrollWheelZoom: false,
+        // doubleClickZoom: false,
+        // boxZoom: false,
+        // touchZoom: false,
+        dragging: false,
+      });
+
+      // Add OpenStreetMap tiles
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+      }).addTo(map);
+
+      // Define team locations
+      const locations = [
+        {
+          name: "Sales Team in ",
+          coords: [-32.5228, -55.7658],
+          location: "Uruguay",
+        },
+        {
+          name: "Sales Team in the ",
+          coords: [37.0902, -95.7129 + 360],
+          location: "USA",
+        },
+        {
+          name: "Sales Team in ",
+          coords: [60.1282, 18.6435],
+          location: "Sweden",
+        },
+        {
+          name: "Design Team in ",
+          coords: [23.6978, 120.9605],
+          location: "Taiwan",
+        },
+        {
+          name: "Design Team in ",
+          coords: [26.8206, 30.8025],
+          location: "Egypt",
+        },
+        {
+          name: "Full-Stack Team in",
+          coords: [14.0583, 108.2772],
+          location: "Vietnam",
+        },
+        {
+          name: "Blockchain Team in ",
+          coords: [1.3521, 103.8198],
+          location: "Singapore",
+        },
+        { name: "AI Team in ", coords: [36.2048, 138.2529], location: "Japan" },
+        {
+          name: "Headquarter in ",
+          coords: [22.3193, 114.1694],
+          location: "HongKong",
+        },
+      ];
+
+      // Create custom red marker icon
+      const redIcon = L.icon({
+        iconUrl:
+          "data:image/svg+xml;base64," +
+          btoa(`
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" width="25" height="41">
+            <path fill="#e74c3c" stroke="#fff" stroke-width="2" d="M12 0C7.03 0 3 4.03 3 9c0 7.5 9 18 9 18s9-10.5 9-18c0-4.97-4.03-9-9-9z"/>
+            <circle cx="12" cy="9" r="3" fill="#fff"/>
+        </svg>
+    `),
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+      });
+
+      // Default blue marker (optional - for differentiation)
+      const blueIcon = L.icon({
+        iconUrl:
+          "data:image/svg+xml;base64," +
+          btoa(`
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" width="25" height="41">
+            <path fill="#3388ff" stroke="#fff" stroke-width="2" d="M12 0C7.03 0 3 4.03 3 9c0 7.5 9 18 9 18s9-10.5 9-18c0-4.97-4.03-9-9-9z"/>
+            <circle cx="12" cy="9" r="3" fill="#fff"/>
+        </svg>
+    `),
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+      });
+
+      // Add markers with permanently open popups
+      locations.forEach((location) => {
+        // Use red icon for Headquarter, blue for others
+        const icon = location.name === "Headquarter in " ? redIcon : blueIcon;
+
+        const marker = L.marker(location.coords, { icon: icon }).addTo(map);
+
+        // Create popup that stays open
+        const popup = L.popup({
+          // closeButton: false,
+          // autoClose: false,
+          // closeOnClick: false,
+          className:
+            location.name === "Headquarter in "
+              ? "headquarter-popup"
+              : "permanent-popup",
+        }).setContent(`<b>${location.name}</b><br>${location.location}`);
+
+        marker.bindPopup(popup).openPopup();
+      });
     </script>
   </body>
 </html>
