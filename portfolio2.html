@@ -1605,16 +1605,25 @@
           class="hero-banner-image"
           style="
             background-image: url('assets/images/portfolio/portfolio2/1.jpg');
+            height: fit-content;
           "
         >
-          <div class="hero-center-text" style="padding-top: 130px">
+          <div
+            class="hero-center-text"
+            style="
+              padding-top: 130px;
+              padding-bottom: 20px;
+              background: none !important;
+            "
+          >
             BOOKINGLAYER - Activity & Retreat Booking Platform Insights
             <div
               class="page-description"
               style="
                 max-width: 700px;
-                padding: 30px 0px;
+                padding: 20px 0px;
                 font-weight: 500 !important;
+                margin-top: 0px !important;
               "
             >
               <p>
@@ -1687,8 +1696,8 @@
 
           .pf2-toc-right {
             flex: 3 1 0%;
-            max-width: 71%;
-            padding: 0px 20px;
+            /* max-width: 71%; */
+            padding: 20px 20px;
           }
 
           /* Constrain within container */
@@ -1879,18 +1888,14 @@
 
           /* Behavior: right column scroll area on desktop, left stays fixed */
           .pf2-toc-right-inner {
-            max-height: calc(100vh - 120px);
-            overflow-y: auto;
-            padding-right: 8px;
-            scroll-behavior: smooth;
-            -ms-overflow-style: auto;
-            /* fallback for old Edge/IE */
-            scrollbar-width: thin;
-            /* Firefox: thin by default */
-            scrollbar-color: rgba(52, 119, 170, 0.75) rgba(0, 0, 0, 0.04);
-            /* thumb, track */
-            -webkit-overflow-scrolling: touch;
-            /* smooth on iOS */
+            /* max-height: calc(100vh - 120px); */
+            /* overflow-y: auto; */
+            /* padding-right: 8px; */
+            /* scroll-behavior: smooth; */
+            /* -ms-overflow-style:  auto; */ /* fallback for old Edge/IE */
+            /*scrollbar-width: thin; */ /* Firefox: thin by default */
+            /*scrollbar-color: rgba(52, 119, 170, 0.75) rgba(0, 0, 0, 0.04); */ /* thumb, track */
+            /* -webkit-overflow-scrolling: touch; */ /* smooth on iOS */
           }
 
           /* WebKit (Chrome/Safari/Edge Chromium) scrollbar */
@@ -2147,7 +2152,7 @@
 
         <div class="pf2-toc-inner">
           <div class="pf2-toc-wrap">
-            <div class="pf2-toc-left">
+            <!-- <div class="pf2-toc-left">
               <div class="pf2-toc-card">
                 <h4 class="pf2-toc-title">TABLE OF CONTENT</h4>
                 <ul class="pf2-toc-list" id="pf2-toc-list">
@@ -2170,7 +2175,6 @@
                     <a href="#pf2-result" data-target="pf2-result">Result</a>
                   </li>
                 </ul>
-
                 <div
                   class="pf2-profile"
                   style="
@@ -2247,9 +2251,6 @@
                     >
                       Get your project estimation!
                     </p>
-                    <!-- <a class="cta" href="https://calendly.com/adam-apiceflow/discovery-call"
-                                        target="_blank" rel="noopener">Schedule a Call</a> -->
-                    <!-- <div class="contact-cta" style="padding-top: 20px;"> -->
                     <a
                       href="https://calendly.com/adam-apiceflow/discovery-call"
                       class="u-link u-link_dark padding-74px w-inline-block"
@@ -2281,27 +2282,13 @@
                               </svg>
                             </div>
                           </div>
-                          <!-- <div class="u-link-text">
-                                                        <div class="text-btn-u-link">
-                                                            Schedule a call
-                                                        </div>
-                                                        <div class="arrow-btn-u-link w-embed">
-                                                            <svg width="18" height="16" viewBox="0 0 18 16"
-                                                                fill="currentcolor" xmlns="https://www.w3.org/2000/svg">
-                                                                <path
-                                                                    d="M10.0637 15.8199C9.96207 15.7044 9.905 15.5478 9.905 15.3845C9.905 15.2213 9.96207 15.0647 10.0637 14.9492L15.6476 8.60858H1.04257C0.89867 8.60858 0.760666 8.54369 0.658915 8.42816C0.557163 8.31264 0.5 8.15596 0.5 7.99259C0.5 7.82922 0.557163 7.67253 0.658915 7.55701C0.760666 7.44149 0.89867 7.37659 1.04257 7.37659H15.6476L10.0637 1.03594C9.96783 0.919163 9.91566 0.764715 9.91814 0.60513C9.92062 0.445545 9.97756 0.293282 10.077 0.180421C10.1764 0.0675599 10.3105 0.00291166 10.4511 9.59701e-05C10.5916 -0.00271972 10.7277 0.0565169 10.8305 0.165327L17.3413 7.55728C17.4429 7.67278 17.5 7.82935 17.5 7.99259C17.5 8.15583 17.4429 8.31239 17.3413 8.42789L10.8305 15.8199C10.7288 15.9352 10.5909 16 10.4471 16C10.3033 16 10.1654 15.9352 10.0637 15.8199Z">
-                                                                </path>
-                                                            </svg>
-                                                        </div>
-                                                    </div> -->
                         </div>
                       </div>
                     </a>
-                    <!-- </div> -->
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="pf2-toc-right">
               <div class="pf2-toc-right-inner" id="pf2-right-scroll">
