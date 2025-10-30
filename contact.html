@@ -860,13 +860,13 @@
     <div id="menu-overlay" class="menu-overlay" aria-hidden="true"></div>
 
     <div class="section-colloborate gradien-bg">
-      <div class="contentwrapper w-container">
+      <div class="contentwrapper w-container" style="padding-top: 80px">
         <!-- <img
                 src="https://cdn.prod.website-files.com/6256688a7a5e476c6dbfec98/667c31cc11faddd33ec2adb2_Logo%20Sign.webp"
                 loading="lazy" alt="Logo ApiceFlow" class="logo-sign"> -->
         <div class="coloborate-wrap">
           <h2 class="n-title-block big center sem">Let’s collaborate</h2>
-          <div class="more-info-coloborate">
+          <div class="more-info-coloborate" style="width: 100%">
             <div class="n-title-block small ceo">Have a project in mind?</div>
             <div class="n-collaborate-text new-st">
               Tell us everything about your project or product, we’ll be glad to
@@ -1224,6 +1224,7 @@
               tabindex="-1"
               role="region"
               aria-label="Project request success"
+              style="min-width: auto"
             >
               <div class="succes-wrap">
                 <div class="h-succes">
@@ -1458,7 +1459,7 @@
               <div class="right">
                 <ul>
                   <li><a href="privacy.html">Privacy Policy</a></li>
-                  <li><a href="terms.html">Terms of Use</a></li>
+                  <li><a href="terms.html">Terms of Service</a></li>
                 </ul>
               </div>
             </div>
@@ -2728,20 +2729,25 @@
         var FORMSPREE_ENDPOINT = "https://formspree.io/f/xblpgalv"; // e.g. 'https://formspree.io/f/xxxxxx' (POST)
 
         function showSuccess(form) {
-          var done = form.querySelector(".success-message");
-          var fail = form.querySelector(".w-form-fail");
+          var done = document.querySelector(".w-form-done");
+          var fail = document.querySelector(".w-form-fail");
           if (fail) fail.style.display = "none";
           if (done) {
             done.style.display = "block";
+            done.style.margin = "auto";
+            done.style.borderRadius = "4px";
             done.focus();
           }
         }
         function showFail(form) {
-          var done = form.querySelector(".success-message");
-          var fail = form.querySelector(".w-form-fail");
+          var done = document.querySelector(".w-form-done");
+          var fail = document.querySelector(".w-form-fail");
+
           if (done) done.style.display = "none";
           if (fail) {
             fail.style.display = "block";
+            fail.style.margin = "auto";
+            fail.style.borderRadius = "4px";
             fail.focus();
           }
         }
